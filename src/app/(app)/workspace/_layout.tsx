@@ -61,6 +61,12 @@ export default function WorkspaceLayout() {
         }}
       />
       <Tabs.Screen
+        name="chat"
+        options={{
+          href: null,
+        }}
+      />
+      <Tabs.Screen
         name="profile"
         options={{
           title: 'PROFILE',
