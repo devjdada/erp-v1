@@ -1,8 +1,9 @@
 import { Link, useRouter } from 'expo-router';
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, SafeAreaView, KeyboardAvoidingView, Platform, ScrollView } from 'react-native';
+import { StyleSheet, View, Text, SafeAreaView, KeyboardAvoidingView, Platform, ScrollView, Alert } from 'react-native';
 import { LogIn } from 'lucide-react-native';
 import { useTheme } from '@/hooks/use-theme';
+import { useAuth } from '@/context/AuthContext';
 
 import { ERPButton } from '@/components/ERPButton';
 import { ERPInput } from '@/components/ERPInput';
@@ -10,16 +11,30 @@ import { ERPInput } from '@/components/ERPInput';
 export default function LoginScreen() {
   const theme = useTheme();
   const router = useRouter();
+  const { login } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
+    if (!email.trim() || !password.trim()) {
+      Alert.alert('Required Fields', 'Please enter both your email and password.');
+      return;
+    }
+
     setIsLoading(true);
-    setTimeout(() => {
+    try {
+      const response = await login(email.trim(), password);
+      if (response.success) {
+        router.replace('/workspace/index');
+      } else {
+        Alert.alert('Login Failed', response.message);
+      }
+    } catch (err: any) {
+      Alert.alert('Error', err.message || 'An unexpected error occurred. Please try again.');
+    } finally {
       setIsLoading(false);
-      router.replace('/workspace/index');
-    }, 1000);
+    }
   };
 
   return (

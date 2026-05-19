@@ -1,16 +1,16 @@
 # Graph Report - erp-app  (2026-05-20)
 
 ## Corpus Check
-- 57 files · ~69,166 words
+- 58 files · ~70,137 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 430 nodes · 633 edges · 31 communities (24 shown, 7 thin omitted)
+- 437 nodes · 653 edges · 33 communities (26 shown, 7 thin omitted)
 - Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 22 edges (avg confidence: 0.86)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `075e9544`
+- Built from commit: `3d70d5de`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -41,7 +41,9 @@
 - [[_COMMUNITY_Community 25|Community 25]]
 - [[_COMMUNITY_Community 26|Community 26]]
 - [[_COMMUNITY_Community 27|Community 27]]
+- [[_COMMUNITY_Community 28|Community 28]]
 - [[_COMMUNITY_Community 29|Community 29]]
+- [[_COMMUNITY_Community 30|Community 30]]
 - [[_COMMUNITY_Community 31|Community 31]]
 - [[_COMMUNITY_Community 33|Community 33]]
 
@@ -77,11 +79,11 @@
 - **Theme System Integration** — themed_text_themedtext, themed_view_themedview, use_theme_usetheme, themecontext_themeprovider [INFERRED 0.95]
 - **User Entry and Redirection Flow** — onboarding_index_onboardingscreen, login_loginscreen, register_registerscreen [INFERRED 0.85]
 
-## Communities (31 total, 7 thin omitted)
+## Communities (33 total, 7 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.15
-Nodes (14): reactCompiler, typedRoutes, expo, experiments, icon, ios, name, orientation (+6 more)
+Cohesion: 0.2
+Nodes (11): expo, icon, ios, name, orientation, plugins, scheme, slug (+3 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.15
@@ -92,8 +94,8 @@ Cohesion: 0.07
 Nodes (30): dependencies, expo, expo-constants, expo-device, expo-font, expo-glass-effect, @expo-google-fonts/plus-jakarta-sans, expo-image (+22 more)
 
 ### Community 3 - "Community 3"
-Cohesion: 0.06
-Nodes (42): AppContent(), AppLayout(), SettingsScreen(), styles, AuthLayout(), CustomDrawerContent(), styles, Colors (+34 more)
+Cohesion: 0.05
+Nodes (66): EntryScreen(), AppContent(), AppLayout(), SettingsScreen(), styles, AuthLayout(), LoginScreen(), styles (+58 more)
 
 ### Community 4 - "Community 4"
 Cohesion: 0.09
@@ -104,16 +106,16 @@ Cohesion: 0.13
 Nodes (23): Collapsible, HintRowProps, styles, styles, ThemedText(), ThemedTextProps, ThemedView(), ThemedViewProps (+15 more)
 
 ### Community 6 - "Community 6"
-Cohesion: 0.16
-Nodes (18): LoginScreen(), styles, RegisterScreen(), styles, ERPButton(), ERPButtonProps, styles, ERPInput() (+10 more)
+Cohesion: 0.25
+Nodes (6): exampleDirPath, fs, oldDirs, readline, rl, root
 
 ### Community 7 - "Community 7"
 Cohesion: 0.15
 Nodes (12): files, code, document, image, paper, video, graphifyignore_patterns, needs_graph (+4 more)
 
 ### Community 8 - "Community 8"
-Cohesion: 0.29
-Nodes (10): Expo Router Type Declarations, Fleet Inventory Screen, Fleet Navigation Tabs, GPS Tracking Map, Entry Screen, App Navigation Layout, Root Layout, Reset Project Utility (+2 more)
+Cohesion: 0.25
+Nodes (11): Expo Router Type Declarations, Fleet Inventory Screen, Fleet Navigation Tabs, GPS Tracking Map, Entry Screen, App Navigation Layout, Root Layout, Reset Project Utility (+3 more)
 
 ### Community 9 - "Community 9"
 Cohesion: 0.25
@@ -156,36 +158,44 @@ Cohesion: 0.17
 Nodes (12): code:bash (python3 skills/ui-ux-pro-max/scripts/search.py "<keyword>" -), code:bash (python3 skills/ui-ux-pro-max/scripts/search.py "<product_typ), code:bash (python3 skills/ui-ux-pro-max/scripts/search.py "beauty spa w), code:bash (python3 skills/ui-ux-pro-max/scripts/search.py "<query>" --d), code:bash (python3 skills/ui-ux-pro-max/scripts/search.py "<query>" --d), code:bash (python3 skills/ui-ux-pro-max/scripts/search.py "<keyword>" -), How to Use This Skill, Step 1: Analyze User Requirements (+4 more)
 
 ### Community 27 - "Community 27"
-Cohesion: 0.08
-Nodes (23): backgroundColor, backgroundImage, foregroundImage, monochromeImage, adaptiveIcon, predictiveBackGestureEnabled, android, web (+15 more)
+Cohesion: 0.2
+Nodes (10): web, favicon, output, scripts, android, ios, lint, reset-project (+2 more)
+
+### Community 28 - "Community 28"
+Cohesion: 0.29
+Nodes (7): backgroundColor, backgroundImage, foregroundImage, monochromeImage, adaptiveIcon, predictiveBackGestureEnabled, android
 
 ### Community 29 - "Community 29"
 Cohesion: 0.29
 Nodes (5): main, name, private, version, Expo Icon Configuration
+
+### Community 30 - "Community 30"
+Cohesion: 0.67
+Nodes (3): reactCompiler, typedRoutes, experiments
 
 ### Community 31 - "Community 31"
 Cohesion: 0.4
 Nodes (5): devDependencies, eslint, eslint-config-expo, @types/react, typescript
 
 ## Knowledge Gaps
-- **205 isolated node(s):** `name`, `slug`, `version`, `orientation`, `icon` (+200 more)
+- **209 isolated node(s):** `name`, `slug`, `version`, `orientation`, `icon` (+204 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `scripts` connect `Community 27` to `Community 0`, `Community 29`?**
+- **Why does `scripts` connect `Community 27` to `Community 0`, `Community 28`, `Community 29`, `Community 6`?**
   _High betweenness centrality (0.205) - this node is a cross-community bridge._
-- **Why does `path` connect `Community 4` to `Community 27`?**
-  _High betweenness centrality (0.155) - this node is a cross-community bridge._
-- **Why does `styles` connect `Community 3` to `Community 12`, `Community 5`, `Community 6`?**
-  _High betweenness centrality (0.109) - this node is a cross-community bridge._
+- **Why does `path` connect `Community 4` to `Community 6`?**
+  _High betweenness centrality (0.154) - this node is a cross-community bridge._
+- **Why does `styles` connect `Community 3` to `Community 12`, `Community 5`?**
+  _High betweenness centrality (0.118) - this node is a cross-community bridge._
 - **What connects `name`, `slug`, `version` to the rest of the system?**
-  _205 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _209 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 2` be split into smaller, more focused modules?**
   _Cohesion score 0.07 - nodes in this community are weakly interconnected._
 - **Should `Community 3` be split into smaller, more focused modules?**
-  _Cohesion score 0.06 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.05 - nodes in this community are weakly interconnected._
 - **Should `Community 4` be split into smaller, more focused modules?**
   _Cohesion score 0.09 - nodes in this community are weakly interconnected._

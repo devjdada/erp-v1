@@ -1,8 +1,9 @@
 import { Link, useRouter } from 'expo-router';
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, SafeAreaView, KeyboardAvoidingView, Platform, ScrollView } from 'react-native';
+import { StyleSheet, View, Text, SafeAreaView, KeyboardAvoidingView, Platform, ScrollView, Alert } from 'react-native';
 import { UserPlus } from 'lucide-react-native';
 import { useTheme } from '@/hooks/use-theme';
+import { useAuth } from '@/context/AuthContext';
 
 import { ERPButton } from '@/components/ERPButton';
 import { ERPInput } from '@/components/ERPInput';
@@ -10,17 +11,36 @@ import { ERPInput } from '@/components/ERPInput';
 export default function RegisterScreen() {
   const theme = useTheme();
   const router = useRouter();
+  const { register } = useAuth();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleRegister = () => {
+  const handleRegister = async () => {
+    if (!name.trim() || !email.trim() || !password.trim()) {
+      Alert.alert('Required Fields', 'Please fill in all the details.');
+      return;
+    }
+
+    if (password.length < 8) {
+      Alert.alert('Invalid Password', 'Password must be at least 8 characters long.');
+      return;
+    }
+
     setIsLoading(true);
-    setTimeout(() => {
+    try {
+      const response = await register(name.trim(), email.trim(), password);
+      if (response.success) {
+        router.replace('/workspace/index');
+      } else {
+        Alert.alert('Registration Failed', response.message);
+      }
+    } catch (err: any) {
+      Alert.alert('Error', err.message || 'An unexpected error occurred. Please try again.');
+    } finally {
       setIsLoading(false);
-      router.replace('/workspace/index');
-    }, 1000);
+    }
   };
 
   return (

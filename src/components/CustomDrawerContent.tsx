@@ -2,18 +2,46 @@ import React from 'react';
 import { View, Text, StyleSheet, Pressable } from 'react-native';
 import { DrawerContentScrollView, DrawerItemList, DrawerContentComponentProps } from '@react-navigation/drawer';
 import { Image } from 'expo-image';
-import { useRouter } from 'expo-router';
 import { useThemeContext } from '@/context/ThemeContext';
+import { useAuth } from '@/context/AuthContext';
 import { Mail, Phone, LogOut, Shield } from 'lucide-react-native';
 
 export default function CustomDrawerContent(props: DrawerContentComponentProps) {
   const { theme, isDark } = useThemeContext();
-  const router = useRouter();
+  const { user, logout } = useAuth();
 
-  const handleLogout = () => {
-    // Navigate back to the login screen
-    router.replace('/(auth)/login');
+  const handleLogout = async () => {
+    await logout();
   };
+
+  const getDisplayName = () => {
+    if (user?.staff) {
+      const { first_name, middle_name, surname } = user.staff;
+      const parts = [first_name, middle_name, surname].filter(Boolean);
+      if (parts.length > 0) {
+        return parts.join(' ');
+      }
+    }
+    return user?.name || 'Guest User';
+  };
+
+  const displayName = getDisplayName();
+  const designation = user?.staff?.designation || user?.role || 'Staff Member';
+  const email = user?.email || 'No email';
+  const phone = user?.staff?.phone || 'No phone number';
+
+  const getAvatarSource = () => {
+    const photo = user?.staff?.profile_photo;
+    if (photo) {
+      if (photo.startsWith('http://') || photo.startsWith('https://')) {
+        return photo;
+      }
+      return `https://oki.wchapel.com/storage/${photo}`;
+    }
+    return "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&h=150&q=80";
+  };
+
+  const avatarSource = getAvatarSource();
 
   return (
     <View style={[styles.container, { backgroundColor: theme.backgroundElement }]}>
@@ -27,37 +55,41 @@ export default function CustomDrawerContent(props: DrawerContentComponentProps) 
           {/* Avatar Container with Status indicator */}
           <View style={styles.avatarContainer}>
             <Image
-              source="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&h=150&q=80"
+              source={avatarSource}
               style={[styles.avatar, { borderColor: theme.primary }]}
               transition={200}
             />
             {/* Online Status Indicator */}
             <View style={[styles.onlineBadge, { backgroundColor: theme.primary, borderColor: theme.backgroundElement }]} />
           </View>
-
+ 
           {/* User Name & Role */}
           <View style={styles.identityContainer}>
-            <Text style={[styles.userName, { color: theme.text }]}>O.K.I Isokariari</Text>
+            <Text style={[styles.userName, { color: theme.text }]} numberOfLines={1} ellipsizeMode="tail">
+              {displayName}
+            </Text>
             
             {/* Custom Role Badge */}
             <View style={[styles.roleBadge, { backgroundColor: `${theme.primary}15`, borderColor: `${theme.primary}30` }]}>
               <Shield size={11} color={theme.primary} style={styles.badgeIcon} />
-              <Text style={[styles.roleText, { color: theme.primary }]}>System Admin</Text>
+              <Text style={[styles.roleText, { color: theme.primary }]} numberOfLines={1}>
+                {designation}
+              </Text>
             </View>
           </View>
-
+ 
           {/* Contact Details */}
           <View style={styles.contactDetails}>
             <View style={styles.contactRow}>
               <Mail size={14} color={theme.textSecondary} />
-              <Text style={[styles.contactText, { color: theme.textSecondary }]}>
-                oki.isokariari@oki-app.com
+              <Text style={[styles.contactText, { color: theme.textSecondary }]} numberOfLines={1}>
+                {email}
               </Text>
             </View>
             <View style={styles.contactRow}>
               <Phone size={14} color={theme.textSecondary} />
-              <Text style={[styles.contactText, { color: theme.textSecondary }]}>
-                +1 (555) 234-5678
+              <Text style={[styles.contactText, { color: theme.textSecondary }]} numberOfLines={1}>
+                {phone}
               </Text>
             </View>
           </View>

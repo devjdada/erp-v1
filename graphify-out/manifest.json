@@ -50,8 +50,8 @@
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\.expo\\types\\router.d.ts": {
-    "mtime": 1779232898.2751703,
-    "ast_hash": "ab8066c29da0d03622af105000d8b995",
+    "mtime": 1779234298.1403196,
+    "ast_hash": "acdc0c352e84820905a108daf6e53ad6",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\.vscode\\extensions.json": {
@@ -75,13 +75,13 @@
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\app\\index.tsx": {
-    "mtime": 1779228841.6743011,
-    "ast_hash": "f62edc16752576303903a14da475697d",
+    "mtime": 1779234265.6154518,
+    "ast_hash": "b246f206c75595feb3d318cd2783c6b0",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\app\\_layout.tsx": {
-    "mtime": 1779227238.5362718,
-    "ast_hash": "9e0058dc04005bfd53d546cec9b8c893",
+    "mtime": 1779234260.5326447,
+    "ast_hash": "43024807393ff9a437516a2253fd77a0",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\app\\(app)\\settings.tsx": {
@@ -140,13 +140,13 @@
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\app\\(auth)\\login.tsx": {
-    "mtime": 1779230971.1985748,
-    "ast_hash": "347a112b4cb53c0f4e5a62d9cdb631cb",
+    "mtime": 1779234270.8517456,
+    "ast_hash": "0fc854c713cf524edd8afb14b475ad10",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\app\\(auth)\\register.tsx": {
-    "mtime": 1779230973.6075106,
-    "ast_hash": "ee53fc2c73bbc8c0cb0e13c42cfe8f27",
+    "mtime": 1779234275.69487,
+    "ast_hash": "a626955d24fc9dbc5504760447dccaea",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\app\\(auth)\\_layout.tsx": {
@@ -175,8 +175,8 @@
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\components\\CustomDrawerContent.tsx": {
-    "mtime": 1779229227.7013533,
-    "ast_hash": "59fbde4d2d492f1cec2aded1bd8b2435",
+    "mtime": 1779234297.0194316,
+    "ast_hash": "cd20162934972a1e0eff6a61d5acb83b",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\components\\ERPButton.tsx": {
@@ -224,6 +224,11 @@
     "ast_hash": "97484026194cd38d3a67b9760cf4f548",
     "semantic_hash": ""
   },
+  "C:\\erp\\erp-app\\src\\context\\AuthContext.tsx": {
+    "mtime": 1779234255.4600441,
+    "ast_hash": "8a6eb68fb2aedb4eb337c4ef35edbbec",
+    "semantic_hash": ""
+  },
   "C:\\erp\\erp-app\\src\\context\\ThemeContext.tsx": {
     "mtime": 1779227232.8157482,
     "ast_hash": "9c00780590d3abe267bbf5e031ffcc1e",
@@ -250,8 +255,8 @@
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\CLAUDE.md": {
-    "mtime": 1779233711.0542414,
-    "ast_hash": "46919bc6d67fca871e4e8c56f9ec5b5c",
+    "mtime": 1779233846.1974163,
+    "ast_hash": "54b667b99991a0a22d5f23a37f8dc909",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\README.md": {
