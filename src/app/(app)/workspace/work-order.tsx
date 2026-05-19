@@ -87,11 +87,8 @@ export default function WorkOrderScreen() {
                     <Wrench size={16} color={theme.primary} />
                   )}
                 </View>
-
                 <Text style={[styles.woTitle, { color: theme.text }]}>{wo.title}</Text>
-                
                 <View style={styles.woDivider} />
-
                 <View style={styles.woFooter}>
                   <View style={styles.footerDetails}>
                     <Text style={[styles.footerText, { color: theme.textSecondary }]}>Asset: {wo.fleet}</Text>
