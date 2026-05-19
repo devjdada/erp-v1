@@ -1,0 +1,1218 @@
+{
+  "nodes": [
+    {
+      "id": "package_json",
+      "label": "package.json Config",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "app_json",
+      "label": "app.json Config",
+      "file_type": "code",
+      "source_file": "app.json",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "tsconfig_json",
+      "label": "tsconfig.json Config",
+      "file_type": "code",
+      "source_file": "tsconfig.json",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "reset_project_js",
+      "label": "Reset Project Utility",
+      "file_type": "code",
+      "source_file": "scripts/reset-project.js",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "core_py_bm25",
+      "label": "BM25 Search Algorithm",
+      "file_type": "code",
+      "source_file": ".agent/skills/ui-ux-pro-max/scripts/core.py",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "core_py_search",
+      "label": "UI/UX Search Function",
+      "file_type": "code",
+      "source_file": ".agent/skills/ui-ux-pro-max/scripts/core.py",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "core_py_search_stack",
+      "label": "Stack Search Function",
+      "file_type": "code",
+      "source_file": ".agent/skills/ui-ux-pro-max/scripts/core.py",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "design_system_py_generator",
+      "label": "DesignSystemGenerator Class",
+      "file_type": "code",
+      "source_file": ".agent/skills/ui-ux-pro-max/scripts/design_system.py",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "design_system_py_generate",
+      "label": "generate_design_system Function",
+      "file_type": "code",
+      "source_file": ".agent/skills/ui-ux-pro-max/scripts/design_system.py",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "design_system_py_persist",
+      "label": "persist_design_system Function",
+      "file_type": "code",
+      "source_file": ".agent/skills/ui-ux-pro-max/scripts/design_system.py",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "search_py_main",
+      "label": "Search CLI Runner",
+      "file_type": "code",
+      "source_file": ".agent/skills/ui-ux-pro-max/scripts/search.py",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "index_tsx_entry",
+      "label": "Entry Screen",
+      "file_type": "code",
+      "source_file": "src/app/index.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "layout_tsx_root",
+      "label": "Root Layout",
+      "file_type": "code",
+      "source_file": "src/app/_layout.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "settings_tsx_screen",
+      "label": "Settings Screen",
+      "file_type": "code",
+      "source_file": "src/app/(app)/settings.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "layout_tsx_app",
+      "label": "App Navigation Layout",
+      "file_type": "code",
+      "source_file": "src/app/(app)/_layout.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "fleet_index_tsx_vehicles",
+      "label": "Fleet Inventory Screen",
+      "file_type": "code",
+      "source_file": "src/app/(app)/fleet/index.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "fleet_map_tsx_map",
+      "label": "GPS Tracking Map",
+      "file_type": "code",
+      "source_file": "src/app/(app)/fleet/map.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "fleet_layout_tsx_layout",
+      "label": "Fleet Navigation Tabs",
+      "file_type": "code",
+      "source_file": "src/app/(app)/fleet/_layout.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "workspace_index_tsx_dashboard",
+      "label": "Workspace Dashboard",
+      "file_type": "code",
+      "source_file": "src/app/(app)/workspace/index.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "workspace_tasks_tsx_tasks",
+      "label": "Workspace Tasks List",
+      "file_type": "code",
+      "source_file": "src/app/(app)/workspace/tasks.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "workspace_layout_tsx_layout",
+      "label": "Workspace Navigation Tabs",
+      "file_type": "code",
+      "source_file": "src/app/(app)/workspace/_layout.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "expo_router_types",
+      "label": "Expo Router Type Declarations",
+      "file_type": "code",
+      "source_file": ".expo/types/router.d.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "expo_icon_config",
+      "label": "Expo Icon Configuration",
+      "file_type": "code",
+      "source_file": "assets/expo.icon/icon.json",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "login_loginscreen",
+      "label": "LoginScreen",
+      "file_type": "code",
+      "source_file": "src/app/(auth)/login.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "register_registerscreen",
+      "label": "RegisterScreen",
+      "file_type": "code",
+      "source_file": "src/app/(auth)/register.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "auth_layout_authlayout",
+      "label": "AuthLayout",
+      "file_type": "code",
+      "source_file": "src/app/(auth)/_layout.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "onboarding_index_onboardingscreen",
+      "label": "OnboardingScreen",
+      "file_type": "code",
+      "source_file": "src/app/(onboarding)/index.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "onboarding_layout_onboardinglayout",
+      "label": "OnboardingLayout",
+      "file_type": "code",
+      "source_file": "src/app/(onboarding)/_layout.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "animated_icon_animatedicon",
+      "label": "AnimatedIcon",
+      "file_type": "code",
+      "source_file": "src/components/animated-icon.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "animated_icon_animatedsplashoverlay",
+      "label": "AnimatedSplashOverlay",
+      "file_type": "code",
+      "source_file": "src/components/animated-icon.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "animated_icon_web_animatedicon",
+      "label": "AnimatedIcon (Web)",
+      "file_type": "code",
+      "source_file": "src/components/animated-icon.web.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "erpbutton_erpbutton",
+      "label": "ERPButton",
+      "file_type": "code",
+      "source_file": "src/components/ERPButton.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "erpinput_erpinput",
+      "label": "ERPInput",
+      "file_type": "code",
+      "source_file": "src/components/ERPInput.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "external_link_externallink",
+      "label": "ExternalLink",
+      "file_type": "code",
+      "source_file": "src/components/external-link.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "hint_row_hintrow",
+      "label": "HintRow",
+      "file_type": "code",
+      "source_file": "src/components/hint-row.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "themed_text_themedtext",
+      "label": "ThemedText",
+      "file_type": "code",
+      "source_file": "src/components/themed-text.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "themed_view_themedview",
+      "label": "ThemedView",
+      "file_type": "code",
+      "source_file": "src/components/themed-view.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "web_badge_webbadge",
+      "label": "WebBadge",
+      "file_type": "code",
+      "source_file": "src/components/web-badge.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "collapsible_collapsible",
+      "label": "Collapsible",
+      "file_type": "code",
+      "source_file": "src/components/ui/collapsible.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "theme_colors",
+      "label": "Theme Colors",
+      "file_type": "code",
+      "source_file": "src/constants/theme.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "themecontext_themeprovider",
+      "label": "ThemeProvider",
+      "file_type": "code",
+      "source_file": "src/context/ThemeContext.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "use_color_scheme_usecolorscheme",
+      "label": "useColorScheme",
+      "file_type": "code",
+      "source_file": "src/hooks/use-color-scheme.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "use_color_scheme_web_usecolorscheme",
+      "label": "useColorScheme (Web)",
+      "file_type": "code",
+      "source_file": "src/hooks/use-color-scheme.web.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "use_theme_usetheme",
+      "label": "useTheme",
+      "file_type": "code",
+      "source_file": "src/hooks/use-theme.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "agents_md",
+      "label": "AGENTS.md",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "claude_md",
+      "label": "CLAUDE.md",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_md",
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "ui_ux_pro_max_skill_md",
+      "label": "ui-ux-pro-max SKILL.md",
+      "file_type": "document",
+      "source_file": ".agent/skills/ui-ux-pro-max/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "expo_readme_md",
+      "label": "Expo README.md",
+      "file_type": "document",
+      "source_file": ".expo/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "design_system_master_md",
+      "label": "Design System Master",
+      "file_type": "document",
+      "source_file": "design-system/erp-app/MASTER.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "mechanism_static_hydration_web",
+      "label": "Static Hydration Support for Web",
+      "file_type": "rationale",
+      "source_file": "src/hooks/use-color-scheme.web.ts",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Re-calculates color scheme on client-side for web to prevent hydration mismatch errors during static rendering."
+    },
+    {
+      "id": "mechanism_theme_preference",
+      "label": "Theme Preference Mechanism",
+      "file_type": "rationale",
+      "source_file": "src/context/ThemeContext.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Supports persistent theme preferences (light, dark, system) saved via AsyncStorage and evaluated based on React Native's useColorScheme."
+    },
+    {
+      "id": "mechanism_in_app_browser",
+      "label": "In-App Browser Navigation",
+      "file_type": "rationale",
+      "source_file": "src/components/external-link.tsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Opens external links in an in-app browser using expo-web-browser to prevent layout context switching on native devices."
+    },
+    {
+      "id": "expo_v55_compliance",
+      "label": "Expo v55 compliance",
+      "file_type": "rationale",
+      "source_file": "AGENTS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Enforces alignment with Expo version 55.0.0 documentation to avoid breaking changes or deprecations."
+    }
+  ],
+  "edges": [
+    {
+      "source": "core_py_search",
+      "target": "core_py_bm25",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".agent/skills/ui-ux-pro-max/scripts/core.py",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "core_py_search_stack",
+      "target": "core_py_bm25",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".agent/skills/ui-ux-pro-max/scripts/core.py",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "design_system_py_generator",
+      "target": "core_py_search",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".agent/skills/ui-ux-pro-max/scripts/design_system.py",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "design_system_py_generate",
+      "target": "design_system_py_generator",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".agent/skills/ui-ux-pro-max/scripts/design_system.py",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "design_system_py_generate",
+      "target": "design_system_py_persist",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".agent/skills/ui-ux-pro-max/scripts/design_system.py",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "design_system_py_persist",
+      "target": "core_py_search",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".agent/skills/ui-ux-pro-max/scripts/design_system.py",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "search_py_main",
+      "target": "design_system_py_generate",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".agent/skills/ui-ux-pro-max/scripts/search.py",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "search_py_main",
+      "target": "core_py_search",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".agent/skills/ui-ux-pro-max/scripts/search.py",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "search_py_main",
+      "target": "core_py_search_stack",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".agent/skills/ui-ux-pro-max/scripts/search.py",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "layout_tsx_root",
+      "target": "index_tsx_entry",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/_layout.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "layout_tsx_root",
+      "target": "layout_tsx_app",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/_layout.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "layout_tsx_app",
+      "target": "settings_tsx_screen",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/(app)/_layout.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "layout_tsx_app",
+      "target": "workspace_layout_tsx_layout",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/(app)/_layout.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "layout_tsx_app",
+      "target": "fleet_layout_tsx_layout",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/(app)/_layout.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "workspace_layout_tsx_layout",
+      "target": "workspace_index_tsx_dashboard",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/(app)/workspace/_layout.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "workspace_layout_tsx_layout",
+      "target": "workspace_tasks_tsx_tasks",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/(app)/workspace/_layout.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "fleet_layout_tsx_layout",
+      "target": "fleet_index_tsx_vehicles",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/(app)/fleet/_layout.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "fleet_layout_tsx_layout",
+      "target": "fleet_map_tsx_map",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/(app)/fleet/_layout.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "expo_router_types",
+      "target": "layout_tsx_app",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": ".expo/types/router.d.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "expo_router_types",
+      "target": "workspace_layout_tsx_layout",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": ".expo/types/router.d.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "expo_router_types",
+      "target": "fleet_layout_tsx_layout",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": ".expo/types/router.d.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "workspace_layout_tsx_layout",
+      "target": "fleet_layout_tsx_layout",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "src/app/(app)/workspace/_layout.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "fleet_index_tsx_vehicles",
+      "target": "workspace_tasks_tsx_tasks",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "src/app/(app)/fleet/index.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "package_json",
+      "target": "app_json",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "package.json",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "tsconfig_json",
+      "target": "package_json",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "tsconfig.json",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "reset_project_js",
+      "target": "index_tsx_entry",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "scripts/reset-project.js",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "app_json",
+      "target": "expo_icon_config",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.json",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "login_loginscreen",
+      "target": "erpbutton_erpbutton",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/(auth)/login.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "login_loginscreen",
+      "target": "erpinput_erpinput",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/(auth)/login.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "register_registerscreen",
+      "target": "erpbutton_erpbutton",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/(auth)/register.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "register_registerscreen",
+      "target": "erpinput_erpinput",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/(auth)/register.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "onboarding_index_onboardingscreen",
+      "target": "erpbutton_erpbutton",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/(onboarding)/index.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "themed_text_themedtext",
+      "target": "use_theme_usetheme",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/themed-text.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "themed_view_themedview",
+      "target": "use_theme_usetheme",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/themed-view.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "use_theme_usetheme",
+      "target": "themecontext_themeprovider",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/hooks/use-theme.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "collapsible_collapsible",
+      "target": "use_theme_usetheme",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/ui/collapsible.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "hint_row_hintrow",
+      "target": "themed_text_themedtext",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/hint-row.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "hint_row_hintrow",
+      "target": "themed_view_themedview",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/hint-row.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "web_badge_webbadge",
+      "target": "themed_text_themedtext",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/web-badge.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "web_badge_webbadge",
+      "target": "themed_view_themedview",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/web-badge.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "claude_md",
+      "target": "agents_md",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "use_color_scheme_web_usecolorscheme",
+      "target": "use_color_scheme_usecolorscheme",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "src/hooks/use-color-scheme.web.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "animated_icon_web_animatedicon",
+      "target": "animated_icon_animatedicon",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "src/components/animated-icon.web.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "theme_colors",
+      "target": "themecontext_themeprovider",
+      "relation": "shares_data_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/constants/theme.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "login_loginscreen",
+      "target": "design_system_master_md",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "src/app/(auth)/login.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "register_registerscreen",
+      "target": "design_system_master_md",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "src/app/(auth)/register.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "erpbutton_erpbutton",
+      "target": "design_system_master_md",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "src/components/ERPButton.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "erpinput_erpinput",
+      "target": "design_system_master_md",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "src/components/ERPInput.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "design_system_master_md",
+      "target": "ui_ux_pro_max_skill_md",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "design-system/erp-app/MASTER.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "mechanism_static_hydration_web",
+      "target": "use_color_scheme_web_usecolorscheme",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/hooks/use-color-scheme.web.ts",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "mechanism_theme_preference",
+      "target": "themecontext_themeprovider",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/context/ThemeContext.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "mechanism_in_app_browser",
+      "target": "external_link_externallink",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/external-link.tsx",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "expo_v55_compliance",
+      "target": "agents_md",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "AGENTS.md",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "ui_ux_pro_max_toolchain",
+      "label": "UI/UX Pro Max Toolchain",
+      "nodes": [
+        "core_py_search",
+        "design_system_py_generate",
+        "search_py_main"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": ".agent/skills/ui-ux-pro-max/scripts/search.py"
+    },
+    {
+      "id": "app_navigation_layouts",
+      "label": "App Navigation Layouts",
+      "nodes": [
+        "layout_tsx_app",
+        "workspace_layout_tsx_layout",
+        "fleet_layout_tsx_layout"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "src/app/(app)/_layout.tsx"
+    },
+    {
+      "id": "erp_management_screens",
+      "label": "ERP Management Screens",
+      "nodes": [
+        "workspace_index_tsx_dashboard",
+        "workspace_tasks_tsx_tasks",
+        "fleet_index_tsx_vehicles",
+        "fleet_map_tsx_map"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "src/app/(app)/_layout.tsx"
+    },
+    {
+      "id": "authentication_flow",
+      "label": "Authentication Flow",
+      "nodes": [
+        "login_loginscreen",
+        "register_registerscreen",
+        "auth_layout_authlayout"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "src/app/(auth)/_layout.tsx"
+    },
+    {
+      "id": "themed_components",
+      "label": "Theme System Integration",
+      "nodes": [
+        "themed_text_themedtext",
+        "themed_view_themedview",
+        "use_theme_usetheme",
+        "themecontext_themeprovider"
+      ],
+      "relation": "implement",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "src/context/ThemeContext.tsx"
+    },
+    {
+      "id": "onboarding_and_auth_redirection",
+      "label": "User Entry and Redirection Flow",
+      "nodes": [
+        "onboarding_index_onboardingscreen",
+        "login_loginscreen",
+        "register_registerscreen"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "src/app/(onboarding)/index.tsx"
+    }
+  ],
+  "input_tokens": 6200,
+  "output_tokens": 2100
+}
