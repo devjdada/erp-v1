@@ -11,3 +11,8 @@ At the end of every task, always run the following workflow to commit and push c
 1. Stage all changes: `git add .`
 2. Commit changes with a descriptive message (e.g. `feat: add onboarding flow`, `style: update side drawer styling`): `git commit -m "<message>"`
 3. Push to remote: `git push origin <branch_name>` (usually `master` or the current branch)
+
+## Backend API
+- The backend API for this app is developed in the project: **`isokariari-v3`** (located at `C:\Users\USER\Herd\isokariari-v3`).
+- When working on features that require API changes or integrations, refer to that codebase for controllers, models, and routes.
+

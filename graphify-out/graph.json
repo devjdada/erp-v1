@@ -1631,7 +1631,7 @@
       "source_file": "src/app/index.tsx",
       "source_location": "L1",
       "id": "src_app_index_tsx",
-      "community": 6,
+      "community": 3,
       "norm_label": "index.tsx"
     },
     {
@@ -1640,7 +1640,7 @@
       "source_file": "src/app/index.tsx",
       "source_location": "L6",
       "id": "app_index_entryscreen",
-      "community": 6,
+      "community": 3,
       "norm_label": "entryscreen()"
     },
     {
@@ -1802,7 +1802,7 @@
       "source_file": "src/app/(app)/workspace/index.tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_index_tsx",
-      "community": 6,
+      "community": 3,
       "norm_label": "index.tsx"
     },
     {
@@ -1811,7 +1811,7 @@
       "source_file": "src/app/(app)/workspace/index.tsx",
       "source_location": "L8",
       "id": "workspace_index_workspacedashboard",
-      "community": 6,
+      "community": 3,
       "norm_label": "workspacedashboard()"
     },
     {
@@ -1820,7 +1820,7 @@
       "source_file": "src/app/(app)/workspace/index.tsx",
       "source_location": "L212",
       "id": "workspace_index_styles",
-      "community": 6,
+      "community": 3,
       "norm_label": "styles"
     },
     {
@@ -2652,6 +2652,33 @@
       "norm_label": "claude.md"
     },
     {
+      "label": "ERP App Development Guidelines",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "L1",
+      "id": "erp_app_claude_erp_app_development_guidelines",
+      "community": 13,
+      "norm_label": "erp app development guidelines"
+    },
+    {
+      "label": "Commands",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "L3",
+      "id": "erp_app_claude_commands",
+      "community": 13,
+      "norm_label": "commands"
+    },
+    {
+      "label": "Git Workflow Rule",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "L9",
+      "id": "erp_app_claude_git_workflow_rule",
+      "community": 13,
+      "norm_label": "git workflow rule"
+    },
+    {
       "label": "README.md",
       "file_type": "document",
       "source_file": "README.md",
@@ -3385,7 +3412,7 @@
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/index.tsx",
       "source_location": "L61",
-      "community": 6,
+      "community": 3,
       "norm_label": "metriccard()",
       "id": "workspace_index_metriccard"
     },
@@ -3394,7 +3421,7 @@
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/index.tsx",
       "source_location": "L74",
-      "community": 6,
+      "community": 3,
       "norm_label": "activityrow()",
       "id": "workspace_index_activityrow"
     },
@@ -3755,7 +3782,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 8,
+      "community": 3,
       "norm_label": "workspace dashboard",
       "id": "workspace_index_tsx_dashboard"
     },
@@ -3989,7 +4016,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 3,
       "norm_label": "themeprovider",
       "id": "themecontext_themeprovider"
     },
@@ -4056,7 +4083,7 @@
       "author": null,
       "contributor": null,
       "rationale": "Supports persistent theme preferences (light, dark, system) saved via AsyncStorage and evaluated based on React Native's useColorScheme.",
-      "community": 5,
+      "community": 3,
       "norm_label": "theme preference mechanism",
       "id": "mechanism_theme_preference"
     },
@@ -7417,9 +7444,9 @@
       "source_file": "src/app/(auth)/login.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_auth_login_tsx",
-      "target": "src_hooks_use_theme_ts",
-      "confidence_score": 1.0
+      "target": "src_hooks_use_theme_ts"
     },
     {
       "relation": "imports",
@@ -7428,9 +7455,9 @@
       "source_file": "src/app/(auth)/login.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_auth_login_tsx",
-      "target": "hooks_use_theme_usetheme",
-      "confidence_score": 1.0
+      "target": "hooks_use_theme_usetheme"
     },
     {
       "relation": "imports_from",
@@ -7546,9 +7573,9 @@
       "source_file": "src/app/(auth)/register.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_auth_register_tsx",
-      "target": "src_hooks_use_theme_ts",
-      "confidence_score": 1.0
+      "target": "src_hooks_use_theme_ts"
     },
     {
       "relation": "imports",
@@ -7557,9 +7584,9 @@
       "source_file": "src/app/(auth)/register.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_auth_register_tsx",
-      "target": "hooks_use_theme_usetheme",
-      "confidence_score": 1.0
+      "target": "hooks_use_theme_usetheme"
     },
     {
       "relation": "imports_from",
@@ -8000,9 +8027,9 @@
       "source_file": "src/components/ERPButton.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_erpbutton_tsx",
-      "target": "src_hooks_use_theme_ts",
-      "confidence_score": 1.0
+      "target": "src_hooks_use_theme_ts"
     },
     {
       "relation": "imports",
@@ -8011,9 +8038,9 @@
       "source_file": "src/components/ERPButton.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_erpbutton_tsx",
-      "target": "hooks_use_theme_usetheme",
-      "confidence_score": 1.0
+      "target": "hooks_use_theme_usetheme"
     },
     {
       "relation": "contains",
@@ -8073,9 +8100,9 @@
       "source_file": "src/components/ERPInput.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_erpinput_tsx",
-      "target": "src_hooks_use_theme_ts",
-      "confidence_score": 1.0
+      "target": "src_hooks_use_theme_ts"
     },
     {
       "relation": "imports",
@@ -8084,9 +8111,9 @@
       "source_file": "src/components/ERPInput.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_erpinput_tsx",
-      "target": "hooks_use_theme_usetheme",
-      "confidence_score": 1.0
+      "target": "hooks_use_theme_usetheme"
     },
     {
       "relation": "contains",
@@ -9155,6 +9182,36 @@
       "weight": 1.0,
       "source": "expo_v55_compliance",
       "target": "agents_md"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CLAUDE.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "claude_md",
+      "target": "erp_app_claude_erp_app_development_guidelines",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CLAUDE.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "erp_app_claude_erp_app_development_guidelines",
+      "target": "erp_app_claude_commands",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CLAUDE.md",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "erp_app_claude_erp_app_development_guidelines",
+      "target": "erp_app_claude_git_workflow_rule",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -10647,5 +10704,5 @@
       "source_file": "src/app/(onboarding)/index.tsx"
     }
   ],
-  "built_at_commit": "fc39f385d7abb64e680bcf391fa6db1ca195c1b8"
+  "built_at_commit": "037e697d3e99c8101f658a2e3a24cdfd4b1e627e"
 }
