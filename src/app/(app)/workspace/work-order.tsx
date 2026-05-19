@@ -36,7 +36,7 @@ export default function WorkOrderScreen() {
           <Menu color={theme.text} size={24} />
         </Pressable>
         <Text style={[styles.headerTitle, { color: theme.text }]}>Work Orders</Text>
-        <View style={{ width: 40 }} /> {/* balance layout */}
+        <View style={{ width: 40 }} />
       </View>
 
       {/* Filter Tabs */}
