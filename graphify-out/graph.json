@@ -191,7 +191,7 @@
       "source_file": "app.json",
       "source_location": "L13",
       "id": "erp_app_app_expo_android",
-      "community": 30,
+      "community": 27,
       "norm_label": "android"
     },
     {
@@ -200,7 +200,7 @@
       "source_file": "app.json",
       "source_location": "L14",
       "id": "erp_app_app_android_adaptiveicon",
-      "community": 30,
+      "community": 27,
       "norm_label": "adaptiveicon"
     },
     {
@@ -209,7 +209,7 @@
       "source_file": "app.json",
       "source_location": "L15",
       "id": "erp_app_app_adaptiveicon_backgroundcolor",
-      "community": 30,
+      "community": 27,
       "norm_label": "backgroundcolor"
     },
     {
@@ -218,7 +218,7 @@
       "source_file": "app.json",
       "source_location": "L16",
       "id": "erp_app_app_adaptiveicon_foregroundimage",
-      "community": 30,
+      "community": 27,
       "norm_label": "foregroundimage"
     },
     {
@@ -227,7 +227,7 @@
       "source_file": "app.json",
       "source_location": "L17",
       "id": "erp_app_app_adaptiveicon_backgroundimage",
-      "community": 30,
+      "community": 27,
       "norm_label": "backgroundimage"
     },
     {
@@ -236,7 +236,7 @@
       "source_file": "app.json",
       "source_location": "L18",
       "id": "erp_app_app_adaptiveicon_monochromeimage",
-      "community": 30,
+      "community": 27,
       "norm_label": "monochromeimage"
     },
     {
@@ -245,7 +245,7 @@
       "source_file": "app.json",
       "source_location": "L20",
       "id": "erp_app_app_android_predictivebackgestureenabled",
-      "community": 30,
+      "community": 27,
       "norm_label": "predictivebackgestureenabled"
     },
     {
@@ -290,7 +290,7 @@
       "source_file": "app.json",
       "source_location": "L39",
       "id": "erp_app_app_expo_experiments",
-      "community": 32,
+      "community": 0,
       "norm_label": "experiments"
     },
     {
@@ -299,7 +299,7 @@
       "source_file": "app.json",
       "source_location": "L40",
       "id": "erp_app_app_experiments_typedroutes",
-      "community": 32,
+      "community": 0,
       "norm_label": "typedroutes"
     },
     {
@@ -308,7 +308,7 @@
       "source_file": "app.json",
       "source_location": "L41",
       "id": "erp_app_app_experiments_reactcompiler",
-      "community": 32,
+      "community": 0,
       "norm_label": "reactcompiler"
     },
     {
@@ -866,7 +866,7 @@
       "source_file": ".agent/skills/ui-ux-pro-max/scripts/core.py",
       "source_location": "L99",
       "id": "scripts_core_bm25_init",
-      "community": 4,
+      "community": 1,
       "norm_label": ".__init__()"
     },
     {
@@ -1550,7 +1550,7 @@
       "source_file": "scripts/reset-project.js",
       "source_location": "L1",
       "id": "scripts_reset_project_js",
-      "community": 28,
+      "community": 27,
       "norm_label": "reset-project.js"
     },
     {
@@ -1559,7 +1559,7 @@
       "source_file": "scripts/reset-project.js",
       "source_location": "L9",
       "id": "scripts_reset_project_fs",
-      "community": 28,
+      "community": 27,
       "norm_label": "fs"
     },
     {
@@ -1577,7 +1577,7 @@
       "source_file": "scripts/reset-project.js",
       "source_location": "L11",
       "id": "scripts_reset_project_readline",
-      "community": 28,
+      "community": 27,
       "norm_label": "readline"
     },
     {
@@ -1586,7 +1586,7 @@
       "source_file": "scripts/reset-project.js",
       "source_location": "L13",
       "id": "scripts_reset_project_root",
-      "community": 28,
+      "community": 27,
       "norm_label": "root"
     },
     {
@@ -1595,7 +1595,7 @@
       "source_file": "scripts/reset-project.js",
       "source_location": "L14",
       "id": "scripts_reset_project_olddirs",
-      "community": 28,
+      "community": 27,
       "norm_label": "olddirs"
     },
     {
@@ -1604,7 +1604,7 @@
       "source_file": "scripts/reset-project.js",
       "source_location": "L17",
       "id": "scripts_reset_project_exampledirpath",
-      "community": 28,
+      "community": 27,
       "norm_label": "exampledirpath"
     },
     {
@@ -1613,7 +1613,7 @@
       "source_file": "scripts/reset-project.js",
       "source_location": "L45",
       "id": "scripts_reset_project_rl",
-      "community": 28,
+      "community": 27,
       "norm_label": "rl"
     },
     {
@@ -1622,7 +1622,7 @@
       "source_file": "scripts/reset-project.js",
       "source_location": "L50",
       "id": "scripts_reset_project_movedirectories",
-      "community": 28,
+      "community": 27,
       "norm_label": "movedirectories()"
     },
     {
@@ -1775,7 +1775,7 @@
       "source_file": "src/app/(app)/fleet/map.tsx",
       "source_location": "L84",
       "id": "fleet_map_styles",
-      "community": 6,
+      "community": 3,
       "norm_label": "styles"
     },
     {
@@ -2495,7 +2495,7 @@
       "source_file": "src/constants/theme.ts",
       "source_location": "L10",
       "id": "constants_theme_colors",
-      "community": 5,
+      "community": 3,
       "norm_label": "colors"
     },
     {
@@ -2567,7 +2567,7 @@
       "source_file": "src/context/ThemeContext.tsx",
       "source_location": "L19",
       "id": "context_themecontext_themeprovider",
-      "community": 3,
+      "community": 5,
       "norm_label": "themeprovider()"
     },
     {
@@ -2677,6 +2677,15 @@
       "id": "erp_app_claude_git_workflow_rule",
       "community": 13,
       "norm_label": "git workflow rule"
+    },
+    {
+      "label": "Backend API",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "L15",
+      "id": "erp_app_claude_backend_api",
+      "community": 13,
+      "norm_label": "backend api"
     },
     {
       "label": "README.md",
@@ -9189,9 +9198,9 @@
       "source_file": "CLAUDE.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "claude_md",
-      "target": "erp_app_claude_erp_app_development_guidelines",
-      "confidence_score": 1.0
+      "target": "erp_app_claude_erp_app_development_guidelines"
     },
     {
       "relation": "contains",
@@ -9199,9 +9208,9 @@
       "source_file": "CLAUDE.md",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "erp_app_claude_erp_app_development_guidelines",
-      "target": "erp_app_claude_commands",
-      "confidence_score": 1.0
+      "target": "erp_app_claude_commands"
     },
     {
       "relation": "contains",
@@ -9209,8 +9218,18 @@
       "source_file": "CLAUDE.md",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "erp_app_claude_erp_app_development_guidelines",
-      "target": "erp_app_claude_git_workflow_rule",
+      "target": "erp_app_claude_git_workflow_rule"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CLAUDE.md",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "erp_app_claude_erp_app_development_guidelines",
+      "target": "erp_app_claude_backend_api",
       "confidence_score": 1.0
     },
     {
@@ -10704,5 +10723,5 @@
       "source_file": "src/app/(onboarding)/index.tsx"
     }
   ],
-  "built_at_commit": "037e697d3e99c8101f658a2e3a24cdfd4b1e627e"
+  "built_at_commit": "075e95444d18d46352f0635095010f62ca09ad37"
 }
