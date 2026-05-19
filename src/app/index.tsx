@@ -39,7 +39,7 @@ export default function EntryScreen() {
 
   // Redirect based on whether the user has a valid authenticated session
   if (authToken) {
-    return <Redirect href="/workspace/index" />;
+    return <Redirect href="/(app)/workspace" />;
   }
 
   return <Redirect href="/(auth)/login" />;

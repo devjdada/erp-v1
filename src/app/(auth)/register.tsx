@@ -32,7 +32,7 @@ export default function RegisterScreen() {
     try {
       const response = await register(name.trim(), email.trim(), password);
       if (response.success) {
-        router.replace('/workspace/index');
+        router.replace('/(app)/workspace');
       } else {
         Alert.alert('Registration Failed', response.message);
       }

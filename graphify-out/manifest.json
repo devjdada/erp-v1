@@ -50,7 +50,7 @@
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\.expo\\types\\router.d.ts": {
-    "mtime": 1779234298.1403196,
+    "mtime": 1779234509.5605936,
     "ast_hash": "acdc0c352e84820905a108daf6e53ad6",
     "semantic_hash": ""
   },
@@ -75,8 +75,8 @@
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\app\\index.tsx": {
-    "mtime": 1779234265.6154518,
-    "ast_hash": "b246f206c75595feb3d318cd2783c6b0",
+    "mtime": 1779234508.4310756,
+    "ast_hash": "37fee2b804b95d72744dc70b5ec93173",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\app\\_layout.tsx": {
@@ -140,13 +140,13 @@
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\app\\(auth)\\login.tsx": {
-    "mtime": 1779234270.8517456,
-    "ast_hash": "0fc854c713cf524edd8afb14b475ad10",
+    "mtime": 1779234510.769075,
+    "ast_hash": "f855b147881b96445293d216e7eee819",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\app\\(auth)\\register.tsx": {
-    "mtime": 1779234275.69487,
-    "ast_hash": "a626955d24fc9dbc5504760447dccaea",
+    "mtime": 1779234513.2358017,
+    "ast_hash": "6cb17c63dc69766b1887479de9ed1d42",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\app\\(auth)\\_layout.tsx": {
