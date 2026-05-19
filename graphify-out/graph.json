@@ -1809,7 +1809,7 @@
       "label": "WorkspaceDashboard()",
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/index.tsx",
-      "source_location": "L8",
+      "source_location": "L9",
       "id": "workspace_index_workspacedashboard",
       "community": 3,
       "norm_label": "workspacedashboard()"
@@ -1818,7 +1818,7 @@
       "label": "styles",
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/index.tsx",
-      "source_location": "L212",
+      "source_location": "L214",
       "id": "workspace_index_styles",
       "community": 3,
       "norm_label": "styles"
@@ -1890,7 +1890,7 @@
       "label": "ProfileScreen()",
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/profile.tsx",
-      "source_location": "L9",
+      "source_location": "L10",
       "id": "workspace_profile_profilescreen",
       "community": 3,
       "norm_label": "profilescreen()"
@@ -1899,7 +1899,7 @@
       "label": "styles",
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/profile.tsx",
-      "source_location": "L123",
+      "source_location": "L165",
       "id": "workspace_profile_styles",
       "community": 3,
       "norm_label": "styles"
@@ -2495,7 +2495,7 @@
       "source_file": "src/constants/theme.ts",
       "source_location": "L10",
       "id": "constants_theme_colors",
-      "community": 3,
+      "community": 5,
       "norm_label": "colors"
     },
     {
@@ -2594,7 +2594,7 @@
       "source_file": "src/context/ThemeContext.tsx",
       "source_location": "L1",
       "id": "src_context_themecontext_tsx",
-      "community": 3,
+      "community": 5,
       "norm_label": "themecontext.tsx"
     },
     {
@@ -2603,7 +2603,7 @@
       "source_file": "src/context/ThemeContext.tsx",
       "source_location": "L6",
       "id": "context_themecontext_themepreference",
-      "community": 3,
+      "community": 5,
       "norm_label": "themepreference"
     },
     {
@@ -2612,7 +2612,7 @@
       "source_file": "src/context/ThemeContext.tsx",
       "source_location": "L8",
       "id": "context_themecontext_themecontexttype",
-      "community": 3,
+      "community": 5,
       "norm_label": "themecontexttype"
     },
     {
@@ -2621,7 +2621,7 @@
       "source_file": "src/context/ThemeContext.tsx",
       "source_location": "L15",
       "id": "context_themecontext_themecontext",
-      "community": 3,
+      "community": 5,
       "norm_label": "themecontext"
     },
     {
@@ -4088,7 +4088,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 5,
       "norm_label": "themeprovider",
       "id": "themecontext_themeprovider"
     },
@@ -4155,7 +4155,7 @@
       "author": null,
       "contributor": null,
       "rationale": "Supports persistent theme preferences (light, dark, system) saved via AsyncStorage and evaluated based on React Native's useColorScheme.",
-      "community": 3,
+      "community": 5,
       "norm_label": "theme preference mechanism",
       "id": "mechanism_theme_preference"
     },
@@ -6381,9 +6381,9 @@
       "source_file": "src/app/index.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_index_tsx",
-      "target": "src_context_authcontext_tsx",
-      "confidence_score": 1.0
+      "target": "src_context_authcontext_tsx"
     },
     {
       "relation": "imports",
@@ -6392,9 +6392,9 @@
       "source_file": "src/app/index.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_index_tsx",
-      "target": "context_authcontext_useauth",
-      "confidence_score": 1.0
+      "target": "context_authcontext_useauth"
     },
     {
       "relation": "contains",
@@ -6570,9 +6570,9 @@
       "source_file": "src/app/_layout.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_layout_tsx",
-      "target": "src_context_authcontext_tsx",
-      "confidence_score": 1.0
+      "target": "src_context_authcontext_tsx"
     },
     {
       "relation": "imports",
@@ -6581,9 +6581,9 @@
       "source_file": "src/app/_layout.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_layout_tsx",
-      "target": "context_authcontext_authprovider",
-      "confidence_score": 1.0
+      "target": "context_authcontext_authprovider"
     },
     {
       "relation": "contains",
@@ -7238,6 +7238,28 @@
       "target": "hooks_use_theme_usetheme"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/index.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "src_app_app_workspace_index_tsx",
+      "target": "src_context_authcontext_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/index.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "src_app_app_workspace_index_tsx",
+      "target": "context_authcontext_useauth",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/(app)/workspace/index.tsx",
@@ -7287,6 +7309,17 @@
       "weight": 1.0,
       "source": "workspace_index_workspacedashboard",
       "target": "hooks_use_theme_usetheme"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/(app)/workspace/index.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "workspace_index_workspacedashboard",
+      "target": "context_authcontext_useauth"
     },
     {
       "relation": "imports_from",
@@ -7417,6 +7450,28 @@
       "target": "hooks_use_theme_usetheme"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/profile.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "src_app_app_workspace_profile_tsx",
+      "target": "src_context_authcontext_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/profile.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "src_app_app_workspace_profile_tsx",
+      "target": "context_authcontext_useauth",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/(app)/workspace/profile.tsx",
@@ -7446,6 +7501,17 @@
       "weight": 1.0,
       "source": "workspace_profile_profilescreen",
       "target": "hooks_use_theme_usetheme"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/(app)/workspace/profile.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "workspace_profile_profilescreen",
+      "target": "context_authcontext_useauth"
     },
     {
       "relation": "imports_from",
@@ -7593,9 +7659,9 @@
       "source_file": "src/app/(auth)/login.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_auth_login_tsx",
-      "target": "src_context_authcontext_tsx",
-      "confidence_score": 1.0
+      "target": "src_context_authcontext_tsx"
     },
     {
       "relation": "imports",
@@ -7604,9 +7670,9 @@
       "source_file": "src/app/(auth)/login.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_auth_login_tsx",
-      "target": "context_authcontext_useauth",
-      "confidence_score": 1.0
+      "target": "context_authcontext_useauth"
     },
     {
       "relation": "imports_from",
@@ -7755,9 +7821,9 @@
       "source_file": "src/app/(auth)/register.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_auth_register_tsx",
-      "target": "src_context_authcontext_tsx",
-      "confidence_score": 1.0
+      "target": "src_context_authcontext_tsx"
     },
     {
       "relation": "imports",
@@ -7766,9 +7832,9 @@
       "source_file": "src/app/(auth)/register.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_auth_register_tsx",
-      "target": "context_authcontext_useauth",
-      "confidence_score": 1.0
+      "target": "context_authcontext_useauth"
     },
     {
       "relation": "imports_from",
@@ -8189,9 +8255,9 @@
       "source_file": "src/components/CustomDrawerContent.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_customdrawercontent_tsx",
-      "target": "src_context_authcontext_tsx",
-      "confidence_score": 1.0
+      "target": "src_context_authcontext_tsx"
     },
     {
       "relation": "imports",
@@ -8200,9 +8266,9 @@
       "source_file": "src/components/CustomDrawerContent.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_customdrawercontent_tsx",
-      "target": "context_authcontext_useauth",
-      "confidence_score": 1.0
+      "target": "context_authcontext_useauth"
     },
     {
       "relation": "contains",
@@ -9143,9 +9209,9 @@
       "source_file": "src/context/AuthContext.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_context_authcontext_tsx",
-      "target": "context_authcontext_staff",
-      "confidence_score": 1.0
+      "target": "context_authcontext_staff"
     },
     {
       "relation": "contains",
@@ -9153,9 +9219,9 @@
       "source_file": "src/context/AuthContext.tsx",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_context_authcontext_tsx",
-      "target": "context_authcontext_user",
-      "confidence_score": 1.0
+      "target": "context_authcontext_user"
     },
     {
       "relation": "contains",
@@ -9163,9 +9229,9 @@
       "source_file": "src/context/AuthContext.tsx",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_context_authcontext_tsx",
-      "target": "context_authcontext_authcontexttype",
-      "confidence_score": 1.0
+      "target": "context_authcontext_authcontexttype"
     },
     {
       "relation": "contains",
@@ -9173,9 +9239,9 @@
       "source_file": "src/context/AuthContext.tsx",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_context_authcontext_tsx",
-      "target": "context_authcontext_authcontext",
-      "confidence_score": 1.0
+      "target": "context_authcontext_authcontext"
     },
     {
       "relation": "contains",
@@ -9183,9 +9249,9 @@
       "source_file": "src/context/AuthContext.tsx",
       "source_location": "L42",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_context_authcontext_tsx",
-      "target": "context_authcontext_authprovider",
-      "confidence_score": 1.0
+      "target": "context_authcontext_authprovider"
     },
     {
       "relation": "contains",
@@ -9193,9 +9259,9 @@
       "source_file": "src/context/AuthContext.tsx",
       "source_location": "L226",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_context_authcontext_tsx",
-      "target": "context_authcontext_useauth",
-      "confidence_score": 1.0
+      "target": "context_authcontext_useauth"
     },
     {
       "relation": "contains",
@@ -11000,5 +11066,5 @@
       "source_file": "src/app/(onboarding)/index.tsx"
     }
   ],
-  "built_at_commit": "3d70d5de999e376af4d68827babf76a362ef9e1b"
+  "built_at_commit": "19d473b3da4107aa60006fc543ef7ae1df8b25cc"
 }

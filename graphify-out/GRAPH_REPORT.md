@@ -1,16 +1,16 @@
 # Graph Report - erp-app  (2026-05-20)
 
 ## Corpus Check
-- 58 files · ~70,137 words
+- 58 files · ~70,299 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 437 nodes · 653 edges · 33 communities (26 shown, 7 thin omitted)
+- 437 nodes · 659 edges · 33 communities (26 shown, 7 thin omitted)
 - Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 22 edges (avg confidence: 0.86)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `3d70d5de`
+- Built from commit: `19d473b3`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -53,11 +53,11 @@
 3. `useTheme` - 21 edges
 4. `expo` - 17 edges
 5. `styles` - 14 edges
-6. `DesignSystemGenerator Class` - 13 edges
-7. `scripts` - 11 edges
-8. `DesignSystemGenerator` - 11 edges
-9. `useThemeContext()` - 11 edges
-10. `ThemedView` - 10 edges
+6. `useAuth()` - 13 edges
+7. `DesignSystemGenerator Class` - 13 edges
+8. `scripts` - 11 edges
+9. `DesignSystemGenerator` - 11 edges
+10. `useThemeContext()` - 11 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `LoginScreen` --conceptually_related_to--> `Design System Master`  [INFERRED]
@@ -95,15 +95,15 @@ Nodes (30): dependencies, expo, expo-constants, expo-device, expo-font, expo-gla
 
 ### Community 3 - "Community 3"
 Cohesion: 0.05
-Nodes (66): EntryScreen(), AppContent(), AppLayout(), SettingsScreen(), styles, AuthLayout(), LoginScreen(), styles (+58 more)
+Nodes (60): EntryScreen(), AppContent(), AppLayout(), SettingsScreen(), styles, AuthLayout(), LoginScreen(), styles (+52 more)
 
 ### Community 4 - "Community 4"
 Cohesion: 0.09
 Nodes (33): BM25 Search Algorithm, UI/UX Search Function, Stack Search Function, generate_design_system Function, DesignSystemGenerator Class, persist_design_system Function, DesignSystemGenerator, _detect_page_type() (+25 more)
 
 ### Community 5 - "Community 5"
-Cohesion: 0.13
-Nodes (23): Collapsible, HintRowProps, styles, styles, ThemedText(), ThemedTextProps, ThemedView(), ThemedViewProps (+15 more)
+Cohesion: 0.1
+Nodes (29): Collapsible, HintRowProps, styles, styles, ThemedText(), ThemedTextProps, ThemedView(), ThemedViewProps (+21 more)
 
 ### Community 6 - "Community 6"
 Cohesion: 0.25

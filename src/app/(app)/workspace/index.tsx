@@ -4,11 +4,13 @@ import { useTheme } from '@/hooks/use-theme';
 import { useNavigation, useRouter } from 'expo-router';
 import { DrawerActions } from '@react-navigation/native';
 import { Menu, Users, CheckCircle, Clock, MessageSquare, Play, Square } from 'lucide-react-native';
+import { useAuth } from '@/context/AuthContext';
 
 export default function WorkspaceDashboard() {
   const theme = useTheme();
   const navigation = useNavigation();
   const router = useRouter();
+  const { user } = useAuth();
 
   // Time & Date State
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -114,10 +116,10 @@ export default function WorkspaceDashboard() {
         {/* Welcome Section */}
         <View style={styles.welcomeSection}>
           <Text style={[styles.welcomeText, { color: theme.text }]}>
-            Welcome, <Text style={{ color: theme.primary }}>O.K.I</Text>
+            Welcome, <Text style={{ color: theme.primary }}>{user?.staff?.first_name || user?.name?.split(' ')[0] || 'User'}</Text>
           </Text>
           <Text style={[styles.welcomeSubtitle, { color: theme.textSecondary }]}>
-            admin • Isokariari
+            {user?.staff?.designation || user?.role || 'Staff Member'}{user?.staff?.surname ? ` • ${user.staff.surname}` : ''}
           </Text>
         </View>
 

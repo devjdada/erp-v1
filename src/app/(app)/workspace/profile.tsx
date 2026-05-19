@@ -5,11 +5,13 @@ import { useNavigation, useRouter } from 'expo-router';
 import { DrawerActions } from '@react-navigation/native';
 import { Menu, User, Mail, Phone, Shield, Settings, HelpCircle, LogOut } from 'lucide-react-native';
 import { Image } from 'expo-image';
+import { useAuth } from '@/context/AuthContext';
 
 export default function ProfileScreen() {
   const theme = useTheme();
   const navigation = useNavigation();
   const router = useRouter();
+  const { user, logout } = useAuth();
 
   const handleToggleDrawer = () => {
     navigation.dispatch(DrawerActions.toggleDrawer());
@@ -24,13 +26,43 @@ export default function ProfileScreen() {
         { 
           text: 'Log Out', 
           style: 'destructive',
-          onPress: () => {
-            router.replace('/(auth)/login');
+          onPress: async () => {
+            await logout();
           } 
         }
       ]
     );
   };
+
+  const getDisplayName = () => {
+    if (user?.staff) {
+      const { first_name, middle_name, surname } = user.staff;
+      const parts = [first_name, middle_name, surname].filter(Boolean);
+      if (parts.length > 0) {
+        return parts.join(' ');
+      }
+    }
+    return user?.name || 'Guest User';
+  };
+
+  const displayName = getDisplayName();
+  const designation = user?.staff?.designation || user?.role || 'Staff Member';
+  const email = user?.email || 'No email';
+  const phone = user?.staff?.phone || 'No phone number';
+  const employeeId = user?.staff?.id ? `EMP-STAFF-${user.staff.id}` : (user?.id ? `EMP-USER-${user.id}` : 'N/A');
+
+  const getAvatarSource = () => {
+    const photo = user?.staff?.profile_photo;
+    if (photo) {
+      if (photo.startsWith('http://') || photo.startsWith('https://')) {
+        return photo;
+      }
+      return `https://oki.wchapel.com/storage/${photo}`;
+    }
+    return "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&h=150&q=80";
+  };
+
+  const avatarSource = getAvatarSource();
 
   return (
     <SafeAreaView style={[styles.safeArea, { backgroundColor: theme.background }]}>
@@ -47,14 +79,18 @@ export default function ProfileScreen() {
         {/* Profile Card */}
         <View style={[styles.profileCard, { backgroundColor: theme.backgroundElement, borderColor: theme.border }]}>
           <Image
-            source="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&h=150&q=80"
+            source={avatarSource}
             style={[styles.avatar, { borderColor: theme.primary }]}
             transition={200}
           />
-          <Text style={[styles.userName, { color: theme.text }]}>O.K.I Isokariari</Text>
+          <Text style={[styles.userName, { color: theme.text }]} numberOfLines={1}>
+            {displayName}
+          </Text>
           <View style={[styles.roleBadge, { backgroundColor: 'rgba(30, 111, 253, 0.1)', borderColor: 'rgba(30, 111, 253, 0.2)' }]}>
             <Shield size={12} color={theme.primary} style={{ marginRight: 4 }} />
-            <Text style={[styles.roleText, { color: theme.primary }]}>System Administrator</Text>
+            <Text style={[styles.roleText, { color: theme.primary }]} numberOfLines={1}>
+              {designation}
+            </Text>
           </View>
         </View>
 
@@ -65,7 +101,9 @@ export default function ProfileScreen() {
             <Mail size={18} color={theme.textSecondary} />
             <View style={styles.detailTextContainer}>
               <Text style={[styles.detailLabel, { color: theme.textSecondary }]}>EMAIL ADDRESS</Text>
-              <Text style={[styles.detailValue, { color: theme.text }]}>oki.isokariari@oki-app.com</Text>
+              <Text style={[styles.detailValue, { color: theme.text }]} numberOfLines={1}>
+                {email}
+              </Text>
             </View>
           </View>
           <View style={[styles.divider, { backgroundColor: theme.border }]} />
@@ -74,7 +112,9 @@ export default function ProfileScreen() {
             <Phone size={18} color={theme.textSecondary} />
             <View style={styles.detailTextContainer}>
               <Text style={[styles.detailLabel, { color: theme.textSecondary }]}>PHONE NUMBER</Text>
-              <Text style={[styles.detailValue, { color: theme.text }]}>+1 (555) 234-5678</Text>
+              <Text style={[styles.detailValue, { color: theme.text }]} numberOfLines={1}>
+                {phone}
+              </Text>
             </View>
           </View>
           <View style={[styles.divider, { backgroundColor: theme.border }]} />
@@ -83,7 +123,9 @@ export default function ProfileScreen() {
             <User size={18} color={theme.textSecondary} />
             <View style={styles.detailTextContainer}>
               <Text style={[styles.detailLabel, { color: theme.textSecondary }]}>EMPLOYEE ID</Text>
-              <Text style={[styles.detailValue, { color: theme.text }]}>EMP-2026-9041</Text>
+              <Text style={[styles.detailValue, { color: theme.text }]} numberOfLines={1}>
+                {employeeId}
+              </Text>
             </View>
           </View>
         </View>
