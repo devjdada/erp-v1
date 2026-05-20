@@ -15,8 +15,8 @@
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\package.json": {
-    "mtime": 1779228759.6798756,
-    "ast_hash": "64cdc144246dc78a285d82453f01969a",
+    "mtime": 1779238401.4413934,
+    "ast_hash": "457280c2215b931e229c9d525d713d39",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\tsconfig.json": {
@@ -50,8 +50,8 @@
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\.expo\\types\\router.d.ts": {
-    "mtime": 1779235813.4198835,
-    "ast_hash": "302007cceb9e62b95a86692a0b798b97",
+    "mtime": 1779252663.9089286,
+    "ast_hash": "74cb389c18d019d160208802fa357269",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\.vscode\\extensions.json": {
@@ -80,13 +80,13 @@
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\app\\_layout.tsx": {
-    "mtime": 1779234260.5326447,
-    "ast_hash": "43024807393ff9a437516a2253fd77a0",
+    "mtime": 1779237555.45368,
+    "ast_hash": "a5fb3300d503f6fa3b17390bf867bf50",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\app\\(app)\\settings.tsx": {
-    "mtime": 1779227285.0442424,
-    "ast_hash": "e91affbdfb5afa3cf5e359cc5c9f4727",
+    "mtime": 1779252585.3389432,
+    "ast_hash": "3f8570e28e73a090b6fd6503d84409ce",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\app\\(app)\\_layout.tsx": {
@@ -119,19 +119,29 @@
     "ast_hash": "64b10cbaaa9191fa8d6702a7b134ea35",
     "semantic_hash": ""
   },
+  "C:\\erp\\erp-app\\src\\app\\(app)\\workspace\\corrections.tsx": {
+    "mtime": 1779236405.4093733,
+    "ast_hash": "b952d771475e21843969f9ac0a9cd899",
+    "semantic_hash": ""
+  },
   "C:\\erp\\erp-app\\src\\app\\(app)\\workspace\\documents.tsx": {
-    "mtime": 1779235522.6537273,
-    "ast_hash": "791b3b3139859389632e9fbe3521ef56",
+    "mtime": 1779236380.397907,
+    "ast_hash": "8db18fb497a24c1c8ff926005b44be45",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\app\\(app)\\workspace\\index.tsx": {
-    "mtime": 1779235812.286854,
-    "ast_hash": "9f554ab5c31176c4f2aeb94e2435f885",
+    "mtime": 1779237611.2802672,
+    "ast_hash": "38c7ad5400d0ac2c99e1417a61cfef5d",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\app\\(app)\\workspace\\leave.tsx": {
-    "mtime": 1779229200.955209,
-    "ast_hash": "d024728e63b76f02eb4d3a0129b1f6bf",
+    "mtime": 1779236373.1430905,
+    "ast_hash": "7d7d50d27d45219c4cb2104718c25ca5",
+    "semantic_hash": ""
+  },
+  "C:\\erp\\erp-app\\src\\app\\(app)\\workspace\\loans.tsx": {
+    "mtime": 1779236410.249647,
+    "ast_hash": "ef72836eee7a58b4a54c355ee77668de",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\app\\(app)\\workspace\\messages.tsx": {
@@ -144,9 +154,44 @@
     "ast_hash": "18ddcfd6e4327a7d4eef1769706bd9b4",
     "semantic_hash": ""
   },
+  "C:\\erp\\erp-app\\src\\app\\(app)\\workspace\\movements.tsx": {
+    "mtime": 1779236418.2780976,
+    "ast_hash": "5c3f40f6a4eecd9c5c1730f56f96f9f2",
+    "semantic_hash": ""
+  },
+  "C:\\erp\\erp-app\\src\\app\\(app)\\workspace\\permissions.tsx": {
+    "mtime": 1779236413.8084135,
+    "ast_hash": "ae79105053d3c298a01f3f0d4a91793c",
+    "semantic_hash": ""
+  },
   "C:\\erp\\erp-app\\src\\app\\(app)\\workspace\\profile.tsx": {
-    "mtime": 1779234648.7604818,
-    "ast_hash": "8436033f76aecde7ae3fd903aacb6012",
+    "mtime": 1779236356.6655066,
+    "ast_hash": "081b215d5bef77ad68baab7e72dc604a",
+    "semantic_hash": ""
+  },
+  "C:\\erp\\erp-app\\src\\app\\(app)\\workspace\\requisitions.tsx": {
+    "mtime": 1779236421.897216,
+    "ast_hash": "36cda38728df0cc8a5a24beed0bd8f82",
+    "semantic_hash": ""
+  },
+  "C:\\erp\\erp-app\\src\\app\\(app)\\workspace\\tasks.tsx": {
+    "mtime": 1779236429.5289352,
+    "ast_hash": "d6b363c281e5dfa4ac940cf72ae026e0",
+    "semantic_hash": ""
+  },
+  "C:\\erp\\erp-app\\src\\app\\(app)\\workspace\\tickets.tsx": {
+    "mtime": 1779236387.5720742,
+    "ast_hash": "d7862eedc2122679c6355e608e600e82",
+    "semantic_hash": ""
+  },
+  "C:\\erp\\erp-app\\src\\app\\(app)\\workspace\\tools.tsx": {
+    "mtime": 1779236426.4230587,
+    "ast_hash": "84890cacb94631bb6757fc629524e001",
+    "semantic_hash": ""
+  },
+  "C:\\erp\\erp-app\\src\\app\\(app)\\workspace\\visitors.tsx": {
+    "mtime": 1779236393.066995,
+    "ast_hash": "22b375633a7ffe88b7ecdf628ac26ec1",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\app\\(app)\\workspace\\work-order.tsx": {
@@ -155,8 +200,8 @@
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\app\\(app)\\workspace\\_layout.tsx": {
-    "mtime": 1779235907.7961552,
-    "ast_hash": "d7948d143a5b721431e817f7b1eeeca6",
+    "mtime": 1779236338.4167385,
+    "ast_hash": "c150b6c2708bedbb4575cebac9a04cfd",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\app\\(auth)\\login.tsx": {
@@ -220,8 +265,8 @@
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\components\\themed-text.tsx": {
-    "mtime": 1779216292.9812994,
-    "ast_hash": "41869b896e1e9f3472f5c2183af58918",
+    "mtime": 1779252588.937832,
+    "ast_hash": "255379e080fd3194eeab9d56c79d2e59",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\components\\themed-view.tsx": {
@@ -249,9 +294,14 @@
     "ast_hash": "8a6eb68fb2aedb4eb337c4ef35edbbec",
     "semantic_hash": ""
   },
+  "C:\\erp\\erp-app\\src\\context\\FontSizeContext.tsx": {
+    "mtime": 1779252662.7826538,
+    "ast_hash": "433a6158dff0ba58a21fca025c188a93",
+    "semantic_hash": ""
+  },
   "C:\\erp\\erp-app\\src\\context\\ThemeContext.tsx": {
-    "mtime": 1779227232.8157482,
-    "ast_hash": "9c00780590d3abe267bbf5e031ffcc1e",
+    "mtime": 1779238344.0212636,
+    "ast_hash": "a2fd242c647a0f57449d8b223e4f1ae9",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\hooks\\use-color-scheme.ts": {

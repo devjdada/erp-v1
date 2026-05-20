@@ -3,10 +3,12 @@ import { StyleSheet, View, Text, SafeAreaView, ScrollView, TouchableOpacity } fr
 import { useTheme } from '@/hooks/use-theme';
 import { useThemeContext, ThemePreference } from '@/context/ThemeContext';
 import { Sun, Moon, Laptop, Check } from 'lucide-react-native';
-
+import Slider from '@react-native-community/slider';
+import { useFontScale } from '@/context/FontSizeContext';
 export default function SettingsScreen() {
   const theme = useTheme();
   const { themePreference, setThemePreference } = useThemeContext();
+  const { fontScale, setFontScale } = useFontScale();
 
   const options: { value: ThemePreference; label: string; icon: React.ReactNode }[] = [
     { value: 'light', label: 'Light Theme', icon: <Sun color={theme.text} size={20} /> },
@@ -46,7 +48,23 @@ export default function SettingsScreen() {
             })}
           </View>
         </View>
-
+        <View style={styles.section}>
+          <Text style={[styles.sectionTitle, { color: theme.textSecondary }]}>FONT SIZE</Text>
+          <View style={styles.sliderContainer}>
+            <Text style={[styles.sliderLabel, { color: theme.textSecondary }]}>Scale: {fontScale.toFixed(2)}x</Text>
+            <Slider
+              style={{ width: '100%' }}
+              minimumValue={0.8}
+              maximumValue={1.5}
+              step={0.05}
+              value={fontScale}
+              minimumTrackTintColor={theme.primary}
+              maximumTrackTintColor={theme.border}
+              thumbTintColor={theme.primary}
+              onValueChange={setFontScale}
+            />
+          </View>
+        </View>
         <View style={styles.infoSection}>
           <Text style={[styles.infoText, { color: theme.textSecondary }]}>
             ERP Mobile App v1.0.0
@@ -105,6 +123,15 @@ const styles = StyleSheet.create({
   optionLabel: {
     fontFamily: 'PlusJakartaSans_600SemiBold',
     fontSize: 16,
+  },
+  sliderContainer: {
+    marginTop: 12,
+    paddingHorizontal: 12,
+  },
+  sliderLabel: {
+    fontFamily: 'PlusJakartaSans_600SemiBold',
+    fontSize: 14,
+    marginBottom: 4,
   },
   divider: {
     height: 1,

@@ -2,6 +2,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import { useColorScheme } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Colors } from '@/constants/theme';
+import { FontSizeProvider } from '@/context/FontSizeContext';
 
 export type ThemePreference = 'light' | 'dark' | 'system';
 
@@ -51,16 +52,18 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const themeColors = isDark ? Colors.dark : Colors.light;
 
   return (
-    <ThemeContext.Provider
-      value={{
-        themePreference,
-        setThemePreference,
-        isDark,
-        theme: themeColors,
-      }}
-    >
-      {children}
-    </ThemeContext.Provider>
+    <FontSizeProvider>
+      <ThemeContext.Provider
+        value={{
+          themePreference,
+          setThemePreference,
+          isDark,
+          theme: themeColors,
+        }}
+      >
+        {children}
+      </ThemeContext.Provider>
+    </FontSizeProvider>
   );
 }
 
