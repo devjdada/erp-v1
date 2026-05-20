@@ -1,16 +1,16 @@
 # Graph Report - erp-app  (2026-05-20)
 
 ## Corpus Check
-- 72 files · ~89,143 words
+- 72 files · ~89,379 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 514 nodes · 812 edges · 48 communities (41 shown, 7 thin omitted)
+- 515 nodes · 813 edges · 47 communities (40 shown, 7 thin omitted)
 - Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 22 edges (avg confidence: 0.86)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `e8e7c9bb`
+- Built from commit: `916998fb`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -55,7 +55,6 @@
 - [[_COMMUNITY_Community 40|Community 40]]
 - [[_COMMUNITY_Community 41|Community 41]]
 - [[_COMMUNITY_Community 42|Community 42]]
-- [[_COMMUNITY_Community 43|Community 43]]
 - [[_COMMUNITY_Community 44|Community 44]]
 - [[_COMMUNITY_Community 45|Community 45]]
 - [[_COMMUNITY_Community 46|Community 46]]
@@ -93,7 +92,7 @@
 - **Theme System Integration** — themed_text_themedtext, themed_view_themedview, use_theme_usetheme, themecontext_themeprovider [INFERRED 0.95]
 - **User Entry and Redirection Flow** — onboarding_index_onboardingscreen, login_loginscreen, register_registerscreen [INFERRED 0.85]
 
-## Communities (48 total, 7 thin omitted)
+## Communities (47 total, 7 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.2
@@ -124,8 +123,8 @@ Cohesion: 0.15
 Nodes (12): files, code, document, image, paper, video, graphifyignore_patterns, needs_graph (+4 more)
 
 ### Community 8 - "Community 8"
-Cohesion: 0.19
-Nodes (10): RegisterScreen(), useAuth(), ChatScreen(), Message, styles, DashboardStats, styles, WorkspaceDashboard() (+2 more)
+Cohesion: 0.21
+Nodes (9): useAuth(), ChatScreen(), Message, styles, LoanRecord, LoansScreen(), styles, ProfileScreen() (+1 more)
 
 ### Community 9 - "Community 9"
 Cohesion: 0.25
@@ -192,12 +191,12 @@ Cohesion: 0.29
 Nodes (6): ApiMessage, DepartmentResource, GroupedThread, MessagesScreen(), StaffResource, styles
 
 ### Community 34 - "Community 34"
-Cohesion: 0.09
-Nodes (28): EntryScreen(), ERPButtonProps, ERPInputProps, Design System Master, ERPButton, ERPInput, Expo Router Type Declarations, FleetVehicles() (+20 more)
+Cohesion: 0.11
+Nodes (20): EntryScreen(), ERPButtonProps, ERPInputProps, Design System Master, ERPButton, ERPInput, FleetVehicles(), styles (+12 more)
 
 ### Community 35 - "Community 35"
-Cohesion: 0.15
-Nodes (12): AppLayout(), LoginScreen(), FleetLayout(), useTheme(), AnnouncementItem, AnnouncementsScreen(), styles, styles (+4 more)
+Cohesion: 0.14
+Nodes (16): AppLayout(), FleetLayout(), useTheme(), AnnouncementItem, AnnouncementsScreen(), styles, styles, WorkspaceLayout() (+8 more)
 
 ### Community 36 - "Community 36"
 Cohesion: 0.4
@@ -205,11 +204,11 @@ Nodes (4): DocumentItem, DocumentsScreen(), StaffDocument, styles
 
 ### Community 37 - "Community 37"
 Cohesion: 0.22
-Nodes (7): AuthContext, AuthContextType, Staff, User, PermissionRecord, PermissionsScreen(), styles
+Nodes (7): AuthContext, AuthContextType, Staff, User, MovementRecord, MovementsScreen(), styles
 
 ### Community 38 - "Community 38"
-Cohesion: 0.33
-Nodes (6): styles, styles, ERPButton(), styles, ERPInput(), styles
+Cohesion: 0.24
+Nodes (8): LoginScreen(), styles, RegisterScreen(), styles, ERPButton(), styles, ERPInput(), styles
 
 ### Community 39 - "Community 39"
 Cohesion: 0.33
@@ -220,16 +219,12 @@ Cohesion: 0.4
 Nodes (4): AttendanceLog, CorrectionRequest, CorrectionsScreen(), styles
 
 ### Community 41 - "Community 41"
-Cohesion: 0.5
-Nodes (3): MovementRecord, MovementsScreen(), styles
+Cohesion: 0.25
+Nodes (11): Expo Router Type Declarations, Fleet Inventory Screen, Fleet Navigation Tabs, GPS Tracking Map, Entry Screen, App Navigation Layout, Root Layout, Reset Project Utility (+3 more)
 
 ### Community 42 - "Community 42"
 Cohesion: 0.5
-Nodes (3): LoanRecord, LoansScreen(), styles
-
-### Community 43 - "Community 43"
-Cohesion: 0.33
-Nodes (5): styles, Task, TaskRecord, TasksScreen(), WorkspaceTasks()
+Nodes (3): PermissionRecord, PermissionsScreen(), styles
 
 ### Community 44 - "Community 44"
 Cohesion: 0.5
@@ -256,10 +251,10 @@ Nodes (3): ICTTicket, styles, TicketsScreen()
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `scripts` connect `Community 27` to `Community 0`, `Community 28`, `Community 29`, `Community 6`?**
-  _High betweenness centrality (0.198) - this node is a cross-community bridge._
+  _High betweenness centrality (0.197) - this node is a cross-community bridge._
 - **Why does `path` connect `Community 4` to `Community 6`?**
   _High betweenness centrality (0.146) - this node is a cross-community bridge._
-- **Why does `useTheme()` connect `Community 35` to `Community 32`, `Community 34`, `Community 3`, `Community 36`, `Community 37`, `Community 38`, `Community 39`, `Community 8`, `Community 40`, `Community 42`, `Community 41`, `Community 43`, `Community 45`, `Community 44`, `Community 47`, `Community 24`, `Community 30`?**
+- **Why does `useTheme()` connect `Community 35` to `Community 32`, `Community 34`, `Community 3`, `Community 36`, `Community 37`, `Community 38`, `Community 39`, `Community 8`, `Community 40`, `Community 42`, `Community 44`, `Community 45`, `Community 47`, `Community 24`, `Community 30`?**
   _High betweenness centrality (0.132) - this node is a cross-community bridge._
 - **What connects `name`, `slug`, `version` to the rest of the system?**
   _252 weakly-connected nodes found - possible documentation gaps or missing edges._

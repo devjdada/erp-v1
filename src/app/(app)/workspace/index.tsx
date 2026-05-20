@@ -9,6 +9,7 @@ import {
   ActivityIndicator,
   RefreshControl,
   Alert,
+  Platform,
 } from 'react-native';
 import { useTheme } from '@/hooks/use-theme';
 import { useNavigation, useRouter } from 'expo-router';
@@ -68,6 +69,14 @@ const getFriendlyErrorMessage = (message: string, action: 'in' | 'out') => {
   return message;
 };
 
+const showAlert = (title: string, message: string) => {
+  if (Platform.OS === 'web') {
+    window.alert(`${title}: ${message}`);
+  } else {
+    Alert.alert(title, message);
+  }
+};
+
 interface DashboardStats {
   attendance: {
     present: number;
@@ -95,6 +104,8 @@ export default function WorkspaceDashboard() {
   const [currentTime, setCurrentTime] = useState(new Date());
   const [shiftSeconds, setShiftSeconds] = useState(0);
   const [clockActionLoading, setClockActionLoading] = useState(false);
+  const [attendanceError, setAttendanceError] = useState<string | null>(null);
+  const [attendanceSuccess, setAttendanceSuccess] = useState<string | null>(null);
 
   // Digital clock ticking
   useEffect(() => {
@@ -170,6 +181,8 @@ export default function WorkspaceDashboard() {
   const handleClockInOut = async () => {
     if (!authToken) return;
     setClockActionLoading(true);
+    setAttendanceError(null);
+    setAttendanceSuccess(null);
     const endpoint = isClockedIn ? 'clock-out' : 'clock-in';
 
     let latitude: number | null = null;
@@ -179,11 +192,9 @@ export default function WorkspaceDashboard() {
       // 1. Request foreground location permission
       const { status } = await Location.requestForegroundPermissionsAsync();
       if (status !== 'granted') {
-        Alert.alert(
-          'Location Permission Required',
-          'Permission to access your location is required to verify your workspace proximity for attendance. Please enable location permissions for OKI App in your device settings.',
-          [{ text: 'OK' }]
-        );
+        const msg = 'Permission to access your location is required to verify your workspace proximity for attendance. Please enable location permissions for OKI App in your device settings.';
+        setAttendanceError(msg);
+        showAlert('Location Permission Required', msg);
         setClockActionLoading(false);
         return;
       }
@@ -196,16 +207,13 @@ export default function WorkspaceDashboard() {
         });
       } catch (locError) {
         console.warn('getCurrentPositionAsync failed, attempting last known location:', locError);
-        // Fallback to last known position if current position times out or fails
         location = await Location.getLastKnownPositionAsync({});
       }
 
       if (!location || !location.coords) {
-        Alert.alert(
-          'GPS Signal Error',
-          'Unable to retrieve your current location. Please verify that GPS/Location services are enabled on your device and that you have a clear signal.',
-          [{ text: 'OK' }]
-        );
+        const msg = 'Unable to retrieve your current location. Please verify that GPS/Location services are enabled on your device and that you have a clear signal.';
+        setAttendanceError(msg);
+        showAlert('GPS Signal Error', msg);
         setClockActionLoading(false);
         return;
       }
@@ -215,10 +223,9 @@ export default function WorkspaceDashboard() {
 
     } catch (gpsError: any) {
       console.error('GPS/Location error:', gpsError);
-      Alert.alert(
-        'GPS Error',
-        `An error occurred while retrieving your location: ${gpsError?.message || 'Unknown GPS error'}. Please ensure location services are enabled and try again.`
-      );
+      const msg = `An error occurred while retrieving your location: ${gpsError?.message || 'Unknown GPS error'}. Please ensure location services are enabled and try again.`;
+      setAttendanceError(msg);
+      showAlert('GPS Error', msg);
       setClockActionLoading(false);
       return;
     }
@@ -237,31 +244,39 @@ export default function WorkspaceDashboard() {
         }),
       });
 
-      const result = await response.json().catch(() => null);
+      let result: any = null;
+      let responseText = '';
+      try {
+        responseText = await response.text();
+        result = JSON.parse(responseText);
+      } catch (err) {
+        console.warn('Failed to parse response as JSON:', err);
+      }
 
       if (response.status === 401) {
-        Alert.alert(
-          'Session Expired',
-          'Your login session has expired or is invalid. Please sign out and log back in to mark your attendance.',
-          [{ text: 'OK' }]
-        );
+        const msg = 'Your login session has expired or is invalid. Please sign out and log back in to mark your attendance.';
+        setAttendanceError(msg);
+        showAlert('Session Expired', msg);
+        setClockActionLoading(false);
         return;
       }
 
       if (response.ok && result?.success) {
-        Alert.alert('Success', result.message || `Successfully clocked ${isClockedIn ? 'out' : 'in'}.`);
+        const successMsg = result.message || `Successfully clocked ${isClockedIn ? 'out' : 'in'}.`;
+        setAttendanceSuccess(successMsg);
+        showAlert('Success', successMsg);
         fetchDashboardStats(false);
       } else {
-        const serverMessage = result?.message || `Failed to clock ${isClockedIn ? 'out' : 'in'}.`;
+        const serverMessage = result?.message || (responseText.length < 200 && !responseText.includes('<!DOCTYPE html>') ? responseText : null) || `Failed to clock ${isClockedIn ? 'out' : 'in'}.`;
         const friendlyMessage = getFriendlyErrorMessage(serverMessage, isClockedIn ? 'out' : 'in');
-        Alert.alert('Attendance Error', friendlyMessage);
+        setAttendanceError(friendlyMessage);
+        showAlert('Attendance Error', friendlyMessage);
       }
     } catch (error) {
       console.error(`Error during clock-${isClockedIn ? 'out' : 'in'}:`, error);
-      Alert.alert(
-        'Network Error',
-        'Could not connect to the attendance server. Please check your internet connection and try again.'
-      );
+      const networkMsg = 'Could not connect to the attendance server. Please check your internet connection and try again.';
+      setAttendanceError(networkMsg);
+      showAlert('Network Error', networkMsg);
     } finally {
       setClockActionLoading(false);
     }
@@ -429,6 +444,30 @@ export default function WorkspaceDashboard() {
                 <Text style={[styles.activeShiftText, { color: '#10B981' }]}>
                   Shift Active: {formatShiftDuration(shiftSeconds)}
                 </Text>
+              </View>
+            )}
+
+            {attendanceError && (
+              <View style={[styles.inlineErrorContainer, { backgroundColor: 'rgba(239, 68, 68, 0.1)', borderColor: 'rgba(239, 68, 68, 0.2)' }]}>
+                <View style={styles.errorIconTitleRow}>
+                  <Text style={styles.inlineErrorTitle}>ATTENDANCE ERROR</Text>
+                  <Pressable onPress={() => setAttendanceError(null)} style={styles.closeErrorButton}>
+                    <Text style={{ color: '#EF4444', fontWeight: 'bold', fontSize: 12 }}>✕</Text>
+                  </Pressable>
+                </View>
+                <Text style={styles.inlineErrorText}>{attendanceError}</Text>
+              </View>
+            )}
+
+            {attendanceSuccess && (
+              <View style={[styles.inlineSuccessContainer, { backgroundColor: 'rgba(16, 185, 129, 0.1)', borderColor: 'rgba(16, 185, 129, 0.2)' }]}>
+                <View style={styles.errorIconTitleRow}>
+                  <Text style={styles.inlineSuccessTitle}>SUCCESS</Text>
+                  <Pressable onPress={() => setAttendanceSuccess(null)} style={styles.closeErrorButton}>
+                    <Text style={{ color: '#10B981', fontWeight: 'bold', fontSize: 12 }}>✕</Text>
+                  </Pressable>
+                </View>
+                <Text style={styles.inlineSuccessText}>{attendanceSuccess}</Text>
               </View>
             )}
 
@@ -740,5 +779,50 @@ const styles = StyleSheet.create({
     position: 'absolute',
     right: 12,
     top: 12,
+  },
+  inlineErrorContainer: {
+    borderWidth: 1,
+    borderRadius: 12,
+    padding: 12,
+    marginBottom: 16,
+  },
+  errorIconTitleRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 4,
+  },
+  inlineErrorTitle: {
+    fontFamily: 'PlusJakartaSans_700Bold',
+    fontSize: 11,
+    color: '#EF4444',
+    letterSpacing: 0.5,
+  },
+  inlineErrorText: {
+    fontFamily: 'PlusJakartaSans_500Medium',
+    fontSize: 12,
+    color: '#EF4444',
+    lineHeight: 16,
+  },
+  inlineSuccessContainer: {
+    borderWidth: 1,
+    borderRadius: 12,
+    padding: 12,
+    marginBottom: 16,
+  },
+  inlineSuccessTitle: {
+    fontFamily: 'PlusJakartaSans_700Bold',
+    fontSize: 11,
+    color: '#10B981',
+    letterSpacing: 0.5,
+  },
+  inlineSuccessText: {
+    fontFamily: 'PlusJakartaSans_500Medium',
+    fontSize: 12,
+    color: '#10B981',
+    lineHeight: 16,
+  },
+  closeErrorButton: {
+    padding: 4,
   },
 });
