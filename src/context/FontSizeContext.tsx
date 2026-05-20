@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useRef } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 type FontSizeContextType = {
@@ -28,13 +28,24 @@ export const FontSizeProvider = ({ children }: { children: React.ReactNode }) =>
     load();
   }, []);
 
+  const saveTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
   const setFontScale = async (scale: number) => {
-    try {
-      setFontScaleState(scale);
-      await AsyncStorage.setItem(FONT_SIZE_KEY, scale.toString());
-    } catch (e) {
-      console.error('Failed to save font scale', e);
+    // Update the react state immediately so UI updates in real-time
+    setFontScaleState(scale);
+
+    // Debounce the AsyncStorage filesystem write to prevent UI thread lag
+    if (saveTimeoutRef.current) {
+      clearTimeout(saveTimeoutRef.current);
     }
+
+    saveTimeoutRef.current = setTimeout(async () => {
+      try {
+        await AsyncStorage.setItem(FONT_SIZE_KEY, scale.toString());
+      } catch (e) {
+        console.error('Failed to save font scale', e);
+      }
+    }, 250); // 250ms debounce
   };
 
   return (

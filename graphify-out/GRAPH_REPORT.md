@@ -1,7 +1,7 @@
 # Graph Report - erp-app  (2026-05-20)
 
 ## Corpus Check
-- 72 files · ~88,630 words
+- 72 files · ~88,675 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `2dc5987f`
+- Built from commit: `21883a63`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -184,12 +184,12 @@ Cohesion: 0.21
 Nodes (6): AnnouncementItem, AnnouncementsScreen(), styles, styles, TabType, WorkOrderScreen()
 
 ### Community 36 - "Community 36"
-Cohesion: 0.15
-Nodes (13): useTheme(), Collapsible(), ChatScreen(), Message, styles, PermissionRecord, PermissionsScreen(), styles (+5 more)
+Cohesion: 0.16
+Nodes (12): CustomDrawerContent(), styles, useAuth(), ChatScreen(), Message, styles, LoanRecord, LoansScreen() (+4 more)
 
 ### Community 37 - "Community 37"
 Cohesion: 0.14
-Nodes (11): AuthContext, AuthContextType, Staff, User, LoanRecord, LoansScreen(), styles, styles (+3 more)
+Nodes (11): AuthContext, AuthContextType, Staff, User, PermissionRecord, PermissionsScreen(), styles, styles (+3 more)
 
 ### Community 38 - "Community 38"
 Cohesion: 0.21
@@ -204,8 +204,8 @@ Cohesion: 0.4
 Nodes (4): AttendanceLog, CorrectionRequest, CorrectionsScreen(), styles
 
 ### Community 41 - "Community 41"
-Cohesion: 0.16
-Nodes (12): CustomDrawerContent(), styles, useAuth(), MovementRecord, MovementsScreen(), styles, ICTTicket, styles (+4 more)
+Cohesion: 0.15
+Nodes (13): useTheme(), Collapsible(), MovementRecord, MovementsScreen(), styles, ProfileScreen(), styles, ICTTicket (+5 more)
 
 ## Knowledge Gaps
 - **248 isolated node(s):** `name`, `slug`, `version`, `orientation`, `icon` (+243 more)
@@ -219,7 +219,7 @@ _Questions this graph is uniquely positioned to answer:_
   _High betweenness centrality (0.198) - this node is a cross-community bridge._
 - **Why does `path` connect `Community 4` to `Community 27`?**
   _High betweenness centrality (0.147) - this node is a cross-community bridge._
-- **Why does `useTheme()` connect `Community 36` to `Community 32`, `Community 34`, `Community 35`, `Community 3`, `Community 37`, `Community 38`, `Community 39`, `Community 8`, `Community 40`, `Community 41`, `Community 24`?**
+- **Why does `useTheme()` connect `Community 41` to `Community 32`, `Community 34`, `Community 35`, `Community 36`, `Community 37`, `Community 38`, `Community 39`, `Community 40`, `Community 8`, `Community 3`, `Community 24`?**
   _High betweenness centrality (0.131) - this node is a cross-community bridge._
 - **What connects `name`, `slug`, `version` to the rest of the system?**
   _248 weakly-connected nodes found - possible documentation gaps or missing edges._

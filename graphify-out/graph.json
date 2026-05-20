@@ -2054,7 +2054,7 @@
       "source_file": "src/app/(app)/workspace/loans.tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_loans_tsx",
-      "community": 37,
+      "community": 36,
       "norm_label": "loans.tsx"
     },
     {
@@ -2063,7 +2063,7 @@
       "source_file": "src/app/(app)/workspace/loans.tsx",
       "source_location": "L20",
       "id": "workspace_loans_loanrecord",
-      "community": 37,
+      "community": 36,
       "norm_label": "loanrecord"
     },
     {
@@ -2072,7 +2072,7 @@
       "source_file": "src/app/(app)/workspace/loans.tsx",
       "source_location": "L33",
       "id": "workspace_loans_loansscreen",
-      "community": 37,
+      "community": 36,
       "norm_label": "loansscreen()"
     },
     {
@@ -2081,7 +2081,7 @@
       "source_file": "src/app/(app)/workspace/loans.tsx",
       "source_location": "L242",
       "id": "workspace_loans_styles",
-      "community": 37,
+      "community": 36,
       "norm_label": "styles"
     },
     {
@@ -2207,7 +2207,7 @@
       "source_file": "src/app/(app)/workspace/permissions.tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_permissions_tsx",
-      "community": 36,
+      "community": 37,
       "norm_label": "permissions.tsx"
     },
     {
@@ -2216,7 +2216,7 @@
       "source_file": "src/app/(app)/workspace/permissions.tsx",
       "source_location": "L19",
       "id": "workspace_permissions_permissionrecord",
-      "community": 36,
+      "community": 37,
       "norm_label": "permissionrecord"
     },
     {
@@ -2225,7 +2225,7 @@
       "source_file": "src/app/(app)/workspace/permissions.tsx",
       "source_location": "L32",
       "id": "workspace_permissions_permissionsscreen",
-      "community": 36,
+      "community": 37,
       "norm_label": "permissionsscreen()"
     },
     {
@@ -2234,7 +2234,7 @@
       "source_file": "src/app/(app)/workspace/permissions.tsx",
       "source_location": "L185",
       "id": "workspace_permissions_styles",
-      "community": 36,
+      "community": 37,
       "norm_label": "styles"
     },
     {
@@ -2243,7 +2243,7 @@
       "source_file": "src/app/(app)/workspace/profile.tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_profile_tsx",
-      "community": 36,
+      "community": 41,
       "norm_label": "profile.tsx"
     },
     {
@@ -2252,7 +2252,7 @@
       "source_file": "src/app/(app)/workspace/profile.tsx",
       "source_location": "L10",
       "id": "workspace_profile_profilescreen",
-      "community": 36,
+      "community": 41,
       "norm_label": "profilescreen()"
     },
     {
@@ -2261,7 +2261,7 @@
       "source_file": "src/app/(app)/workspace/profile.tsx",
       "source_location": "L280",
       "id": "workspace_profile_styles",
-      "community": 36,
+      "community": 41,
       "norm_label": "styles"
     },
     {
@@ -2765,7 +2765,7 @@
       "source_file": "src/components/CustomDrawerContent.tsx",
       "source_location": "L1",
       "id": "src_components_customdrawercontent_tsx",
-      "community": 41,
+      "community": 36,
       "norm_label": "customdrawercontent.tsx"
     },
     {
@@ -2774,7 +2774,7 @@
       "source_file": "src/components/CustomDrawerContent.tsx",
       "source_location": "L9",
       "id": "components_customdrawercontent_customdrawercontent",
-      "community": 41,
+      "community": 36,
       "norm_label": "customdrawercontent()"
     },
     {
@@ -2783,7 +2783,7 @@
       "source_file": "src/components/CustomDrawerContent.tsx",
       "source_location": "L124",
       "id": "components_customdrawercontent_styles",
-      "community": 41,
+      "community": 36,
       "norm_label": "styles"
     },
     {
@@ -3026,7 +3026,7 @@
       "source_file": "src/components/ui/collapsible.tsx",
       "source_location": "L11",
       "id": "ui_collapsible_collapsible",
-      "community": 36,
+      "community": 41,
       "norm_label": "collapsible()"
     },
     {
@@ -3143,7 +3143,7 @@
       "source_file": "src/context/AuthContext.tsx",
       "source_location": "L226",
       "id": "context_authcontext_useauth",
-      "community": 41,
+      "community": 36,
       "norm_label": "useauth()"
     },
     {
@@ -3186,7 +3186,7 @@
       "label": "useFontScale()",
       "file_type": "code",
       "source_file": "src/context/FontSizeContext.tsx",
-      "source_location": "L47",
+      "source_location": "L58",
       "id": "context_fontsizecontext_usefontscale",
       "community": 24,
       "norm_label": "usefontscale()"
@@ -3195,7 +3195,7 @@
       "label": "{ Text: RNText, StyleSheet: RNStyleSheet }",
       "file_type": "code",
       "source_file": "src/context/FontSizeContext.tsx",
-      "source_location": "L57",
+      "source_location": "L68",
       "id": "context_fontsizecontext_text_rntext_stylesheet_rnstylesheet",
       "community": 24,
       "norm_label": "{ text: rntext, stylesheet: rnstylesheet }"
@@ -3204,7 +3204,7 @@
       "label": "PatchedText",
       "file_type": "code",
       "source_file": "src/context/FontSizeContext.tsx",
-      "source_location": "L62",
+      "source_location": "L73",
       "id": "context_fontsizecontext_patchedtext",
       "community": 24,
       "norm_label": "patchedtext"
@@ -3213,7 +3213,7 @@
       "label": "RNModule",
       "file_type": "code",
       "source_file": "src/context/FontSizeContext.tsx",
-      "source_location": "L93",
+      "source_location": "L104",
       "id": "context_fontsizecontext_rnmodule",
       "community": 24,
       "norm_label": "rnmodule"
@@ -3314,7 +3314,7 @@
       "source_file": "src/hooks/use-theme.ts",
       "source_location": "L3",
       "id": "hooks_use_theme_usetheme",
-      "community": 36,
+      "community": 41,
       "norm_label": "usetheme()"
     },
     {
@@ -5635,9 +5635,9 @@
       "source_file": "package.json",
       "source_location": "L43",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "erp_app_package_dependencies",
-      "target": "erp_app_package_dependencies_react_native_community_slider",
-      "confidence_score": 1.0
+      "target": "erp_app_package_dependencies_react_native_community_slider"
     },
     {
       "relation": "contains",
@@ -7440,9 +7440,9 @@
       "source_file": "src/app/(app)/settings.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_app_settings_tsx",
-      "target": "src_context_fontsizecontext_tsx",
-      "confidence_score": 1.0
+      "target": "src_context_fontsizecontext_tsx"
     },
     {
       "relation": "imports",
@@ -7451,9 +7451,9 @@
       "source_file": "src/app/(app)/settings.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_app_settings_tsx",
-      "target": "context_fontsizecontext_usefontscale",
-      "confidence_score": 1.0
+      "target": "context_fontsizecontext_usefontscale"
     },
     {
       "relation": "contains",
@@ -10756,9 +10756,9 @@
       "source_file": "src/components/themed-text.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_themed_text_tsx",
-      "target": "src_context_fontsizecontext_tsx",
-      "confidence_score": 1.0
+      "target": "src_context_fontsizecontext_tsx"
     },
     {
       "relation": "imports",
@@ -10767,9 +10767,9 @@
       "source_file": "src/components/themed-text.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_themed_text_tsx",
-      "target": "context_fontsizecontext_usefontscale",
-      "confidence_score": 1.0
+      "target": "context_fontsizecontext_usefontscale"
     },
     {
       "relation": "contains",
@@ -11402,9 +11402,9 @@
       "source_file": "src/context/FontSizeContext.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_context_fontsizecontext_tsx",
-      "target": "context_fontsizecontext_fontsizecontexttype",
-      "confidence_score": 1.0
+      "target": "context_fontsizecontext_fontsizecontexttype"
     },
     {
       "relation": "contains",
@@ -11412,9 +11412,9 @@
       "source_file": "src/context/FontSizeContext.tsx",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_context_fontsizecontext_tsx",
-      "target": "context_fontsizecontext_fontsizecontext",
-      "confidence_score": 1.0
+      "target": "context_fontsizecontext_fontsizecontext"
     },
     {
       "relation": "contains",
@@ -11422,9 +11422,9 @@
       "source_file": "src/context/FontSizeContext.tsx",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_context_fontsizecontext_tsx",
-      "target": "context_fontsizecontext_fontsizeprovider",
-      "confidence_score": 1.0
+      "target": "context_fontsizecontext_fontsizeprovider"
     },
     {
       "relation": "contains",
@@ -11432,9 +11432,9 @@
       "source_file": "src/context/FontSizeContext.tsx",
       "source_location": "L47",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_context_fontsizecontext_tsx",
-      "target": "context_fontsizecontext_usefontscale",
-      "confidence_score": 1.0
+      "target": "context_fontsizecontext_usefontscale"
     },
     {
       "relation": "contains",
@@ -11442,9 +11442,9 @@
       "source_file": "src/context/FontSizeContext.tsx",
       "source_location": "L57",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_context_fontsizecontext_tsx",
-      "target": "context_fontsizecontext_text_rntext_stylesheet_rnstylesheet",
-      "confidence_score": 1.0
+      "target": "context_fontsizecontext_text_rntext_stylesheet_rnstylesheet"
     },
     {
       "relation": "contains",
@@ -11452,9 +11452,9 @@
       "source_file": "src/context/FontSizeContext.tsx",
       "source_location": "L62",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_context_fontsizecontext_tsx",
-      "target": "context_fontsizecontext_patchedtext",
-      "confidence_score": 1.0
+      "target": "context_fontsizecontext_patchedtext"
     },
     {
       "relation": "contains",
@@ -11462,9 +11462,9 @@
       "source_file": "src/context/FontSizeContext.tsx",
       "source_location": "L93",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_context_fontsizecontext_tsx",
-      "target": "context_fontsizecontext_rnmodule",
-      "confidence_score": 1.0
+      "target": "context_fontsizecontext_rnmodule"
     },
     {
       "relation": "imports_from",
@@ -11473,9 +11473,9 @@
       "source_file": "src/context/ThemeContext.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_context_themecontext_tsx",
-      "target": "src_context_fontsizecontext_tsx",
-      "confidence_score": 1.0
+      "target": "src_context_fontsizecontext_tsx"
     },
     {
       "relation": "imports",
@@ -11484,9 +11484,9 @@
       "source_file": "src/context/ThemeContext.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_context_themecontext_tsx",
-      "target": "context_fontsizecontext_fontsizeprovider",
-      "confidence_score": 1.0
+      "target": "context_fontsizecontext_fontsizeprovider"
     },
     {
       "relation": "contains",
@@ -13261,5 +13261,5 @@
       "source_file": "src/app/(onboarding)/index.tsx"
     }
   ],
-  "built_at_commit": "2dc5987f965fa3204ae922aaebec48704202e7de"
+  "built_at_commit": "21883a6341a185dab2f3a8ce85ea6604cd87bcae"
 }
