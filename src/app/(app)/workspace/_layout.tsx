@@ -117,6 +117,60 @@ export default function WorkspaceLayout() {
             href: null,
           }}
         />
+        <Tabs.Screen
+          name="tickets"
+          options={{
+            href: null,
+          }}
+        />
+        <Tabs.Screen
+          name="visitors"
+          options={{
+            href: null,
+          }}
+        />
+        <Tabs.Screen
+          name="corrections"
+          options={{
+            href: null,
+          }}
+        />
+        <Tabs.Screen
+          name="loans"
+          options={{
+            href: null,
+          }}
+        />
+        <Tabs.Screen
+          name="permissions"
+          options={{
+            href: null,
+          }}
+        />
+        <Tabs.Screen
+          name="movements"
+          options={{
+            href: null,
+          }}
+        />
+        <Tabs.Screen
+          name="requisitions"
+          options={{
+            href: null,
+          }}
+        />
+        <Tabs.Screen
+          name="tools"
+          options={{
+            href: null,
+          }}
+        />
+        <Tabs.Screen
+          name="tasks"
+          options={{
+            href: null,
+          }}
+        />
       </Tabs>
 
       {isMenuOpen && (

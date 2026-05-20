@@ -1,24 +1,70 @@
-import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, Text, SafeAreaView, ScrollView, Pressable } from 'react-native';
+import React, { useState, useEffect, useCallback } from 'react';
+import {
+  StyleSheet,
+  View,
+  Text,
+  SafeAreaView,
+  ScrollView,
+  Pressable,
+  ActivityIndicator,
+  RefreshControl,
+  Alert,
+} from 'react-native';
 import { useTheme } from '@/hooks/use-theme';
 import { useNavigation, useRouter } from 'expo-router';
 import { DrawerActions } from '@react-navigation/native';
-import { Menu, Users, CheckCircle, Clock, MessageSquare, Play, Square } from 'lucide-react-native';
 import { useAuth } from '@/context/AuthContext';
+import {
+  Menu,
+  User,
+  Ticket,
+  Users,
+  Calendar,
+  ClipboardEdit,
+  FileText,
+  Coins,
+  ShieldCheck,
+  Compass,
+  ShoppingBag,
+  Wrench,
+  MessageSquare,
+  CheckSquare,
+  Play,
+  Square,
+  Clock,
+  ChevronRight,
+  Sparkles,
+} from 'lucide-react-native';
+
+const API_BASE_URL = 'https://oki.wchapel.com/api/v1';
+
+interface DashboardStats {
+  attendance: {
+    present: number;
+    late: number;
+  };
+  unread_messages: number;
+  today_attendance: {
+    id: number;
+    status: string;
+    clock_in_time: string;
+    clock_out_time: string | null;
+  } | null;
+}
 
 export default function WorkspaceDashboard() {
   const theme = useTheme();
   const navigation = useNavigation();
   const router = useRouter();
-  const { user } = useAuth();
+  const { authToken, user, refreshProfile } = useAuth();
 
-
-  // Time & Date State
+  // State
+  const [stats, setStats] = useState<DashboardStats | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [refreshing, setRefreshing] = useState(false);
   const [currentTime, setCurrentTime] = useState(new Date());
-
-  // Clock-in State
-  const [isClockedIn, setIsClockedIn] = useState(false);
   const [shiftSeconds, setShiftSeconds] = useState(0);
+  const [clockActionLoading, setClockActionLoading] = useState(false);
 
   // Digital clock ticking
   useEffect(() => {
@@ -26,35 +72,115 @@ export default function WorkspaceDashboard() {
     return () => clearInterval(timer);
   }, []);
 
-  // Shift duration counter ticking
+  // Fetch stats from API
+  const fetchDashboardStats = useCallback(async (showLoader = false) => {
+    if (!authToken) {
+      setLoading(false);
+      return;
+    }
+    if (showLoader) setLoading(true);
+
+    try {
+      const response = await fetch(`${API_BASE_URL}/staff/dashboard`, {
+        method: 'GET',
+        headers: {
+          'Accept': 'application/json',
+          'Authorization': `Bearer ${authToken}`,
+        },
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        if (result.success && result.data) {
+          setStats(result.data);
+        }
+      }
+    } catch (error) {
+      console.error('Error fetching dashboard stats:', error);
+    } finally {
+      setLoading(false);
+      setRefreshing(false);
+    }
+  }, [authToken]);
+
+  useEffect(() => {
+    fetchDashboardStats(true);
+  }, [fetchDashboardStats]);
+
+  const onRefresh = () => {
+    setRefreshing(true);
+    refreshProfile();
+    fetchDashboardStats(false);
+  };
+
+  const isClockedIn = !!(stats?.today_attendance && !stats.today_attendance.clock_out_time);
+
+  // Calculate shift duration
   useEffect(() => {
     let timer: NodeJS.Timeout;
-    if (isClockedIn) {
-      timer = setInterval(() => {
-        setShiftSeconds(prev => prev + 1);
-      }, 1000);
+    if (isClockedIn && stats?.today_attendance?.clock_in_time) {
+      const clockInDate = new Date(stats.today_attendance.clock_in_time);
+      const updateSeconds = () => {
+        const diffMs = new Date().getTime() - clockInDate.getTime();
+        setShiftSeconds(Math.max(0, Math.floor(diffMs / 1000)));
+      };
+      updateSeconds();
+      timer = setInterval(updateSeconds, 1000);
     } else {
       setShiftSeconds(0);
     }
     return () => clearInterval(timer);
-  }, [isClockedIn]);
+  }, [isClockedIn, stats?.today_attendance]);
 
   const handleToggleDrawer = () => {
     navigation.dispatch(DrawerActions.toggleDrawer());
   };
 
-  const handleClockInOut = () => {
-    setIsClockedIn(prev => !prev);
+  // Clock In/Out API Call
+  const handleClockInOut = async () => {
+    if (!authToken) return;
+    setClockActionLoading(true);
+    const endpoint = isClockedIn ? 'clock-out' : 'clock-in';
+    
+    // Default mock coordinates (Lagos)
+    const latitude = 6.5244;
+    const longitude = 3.3792;
+
+    try {
+      const response = await fetch(`${API_BASE_URL}/attendance/${endpoint}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'Authorization': `Bearer ${authToken}`,
+        },
+        body: JSON.stringify({
+          latitude,
+          longitude,
+        }),
+      });
+
+      const result = await response.json();
+      if (response.ok && result.success) {
+        Alert.alert('Success', result.message || `Successfully clocked ${isClockedIn ? 'out' : 'in'}.`);
+        fetchDashboardStats(false);
+      } else {
+        Alert.alert('Error', result.message || `Failed to clock ${isClockedIn ? 'out' : 'in'}.`);
+      }
+    } catch (error) {
+      console.error(`Error during clock-${isClockedIn ? 'out' : 'in'}:`, error);
+      Alert.alert('Error', 'A network error occurred. Please try again.');
+    } finally {
+      setClockActionLoading(false);
+    }
   };
 
-  // Time formatting
+  // Time and Date formatting
   const formattedTime = currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true });
-  // Split the time and AM/PM
   const timeParts = formattedTime.split(' ');
   const timeStr = timeParts[0];
   const ampmStr = timeParts[1] || '';
 
-  // Custom date formatting (e.g. Tuesday, May 19th)
   const getFormattedDate = (date: Date) => {
     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -71,12 +197,10 @@ export default function WorkspaceDashboard() {
     return `${dayName}, ${monthName} ${dayNum}${suffix}`;
   };
 
-  // Shift duration formatting (MM:SS or HH:MM:SS)
   const formatShiftDuration = (totalSeconds: number) => {
     const hours = Math.floor(totalSeconds / 3600);
     const minutes = Math.floor((totalSeconds % 3600) / 60);
     const seconds = totalSeconds % 60;
-
     const pad = (num: number) => String(num).padStart(2, '0');
 
     if (hours > 0) {
@@ -85,6 +209,23 @@ export default function WorkspaceDashboard() {
     return `${pad(minutes)}:${pad(seconds)}`;
   };
 
+  // Applications Grid configuration
+  const tools = [
+    { name: 'Profile', icon: User, route: '/(app)/workspace/profile', color: '#3B82F6', desc: 'View details' },
+    { name: 'Leave', icon: Calendar, route: '/(app)/workspace/leave', color: '#10B981', desc: 'Request leave' },
+    { name: 'Documents', icon: FileText, route: '/(app)/workspace/documents', color: '#8B5CF6', desc: 'Forms & Policies' },
+    { name: 'Messages', icon: MessageSquare, route: '/(app)/workspace/messages', color: '#128C7E', desc: 'Staff Chat' },
+    { name: 'Tickets', icon: Ticket, route: '/(app)/workspace/tickets', color: '#EC4899', desc: 'Helpdesk' },
+    { name: 'Tasks', icon: CheckSquare, route: '/(app)/workspace/tasks', color: '#F59E0B', desc: 'Assigned jobs' },
+    { name: 'Corrections', icon: ClipboardEdit, route: '/(app)/workspace/corrections', color: '#EF4444', desc: 'Attendance fix' },
+    { name: 'Visitors', icon: Users, route: '/(app)/workspace/visitors', color: '#06B6D4', desc: 'Visitor logs' },
+    { name: 'Loans', icon: Coins, route: '/(app)/workspace/loans', color: '#FBBF24', desc: 'Salary advances' },
+    { name: 'Permissions', icon: ShieldCheck, route: '/(app)/workspace/permissions', color: '#14B8A6', desc: 'Security access' },
+    { name: 'Movements', icon: Compass, route: '/(app)/workspace/movements', color: '#6366F1', desc: 'Logs' },
+    { name: 'Requisitions', icon: ShoppingBag, route: '/(app)/workspace/requisitions', color: '#84CC16', desc: 'PRs & RFQs' },
+    { name: 'Tools Request', icon: Wrench, route: '/(app)/workspace/tools', color: '#64748B', desc: 'Inventory' },
+  ];
+
   return (
     <SafeAreaView style={[styles.safeArea, { backgroundColor: theme.background }]}>
       {/* Top Header Bar */}
@@ -92,122 +233,150 @@ export default function WorkspaceDashboard() {
         <Pressable onPress={handleToggleDrawer} style={styles.headerButton}>
           <Menu color={theme.text} size={24} />
         </Pressable>
-        <Text style={[styles.headerTitle, { color: theme.text }]}>OKI APP</Text>
+        <Text style={[styles.headerTitle, { color: theme.text }]}>OKI Mobile Portal</Text>
         <View style={{ width: 40 }} />
       </View>
 
-      <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
-        
-        {/* Logo and Identity Toggle Row */}
-        <View style={styles.identityRow}>
-          {/* Stylized custom overlapping O.K. logo */}
-          <View style={styles.logoContainer}>
-            <Text style={styles.logoLetterO}>O</Text>
-            <Text style={styles.logoLetterK}>K</Text>
-          </View>
-
-          <Pressable 
-            onPress={() => router.push('/(app)/workspace/profile')}
-            style={[styles.profileToggleBtn, { backgroundColor: theme.backgroundSelected, borderColor: theme.border }]}
-          >
-            <Users color={theme.primary} size={20} />
-          </Pressable>
+      {loading ? (
+        <View style={styles.centered}>
+          <ActivityIndicator size="large" color={theme.primary} />
         </View>
-
-        {/* Welcome Section */}
-        <View style={styles.welcomeSection}>
-          <Text style={[styles.welcomeText, { color: theme.text }]}>
-            Welcome, <Text style={{ color: theme.primary }}>{user?.staff?.first_name || user?.name?.split(' ')[0] || 'User'}</Text>
-          </Text>
-          <Text style={[styles.welcomeSubtitle, { color: theme.textSecondary }]}>
-            {user?.staff?.designation || user?.role || 'Staff Member'}{user?.staff?.surname ? ` • ${user.staff.surname}` : ''}
-          </Text>
-        </View>
-
-        {/* Three Columns Metrics Row */}
-        <View style={styles.metricsRow}>
-          {/* Card 1: PRESENT */}
-          <View style={[styles.metricCard, { backgroundColor: theme.backgroundElement, borderColor: theme.border }]}>
-            <View style={[styles.metricIconBox, { backgroundColor: 'rgba(16, 185, 129, 0.12)' }]}>
-              <CheckCircle color="#10B981" size={16} />
-            </View>
-            <Text style={[styles.metricLabel, { color: theme.textSecondary }]}>PRESENT</Text>
-            <Text style={[styles.metricValue, { color: theme.text }]}>
-              {isClockedIn ? '1' : '0'}
-            </Text>
-          </View>
-
-          {/* Card 2: LATE */}
-          <View style={[styles.metricCard, { backgroundColor: theme.backgroundElement, borderColor: theme.border }]}>
-            <View style={[styles.metricIconBox, { backgroundColor: 'rgba(245, 158, 11, 0.12)' }]}>
-              <Clock color="#F59E0B" size={16} />
-            </View>
-            <Text style={[styles.metricLabel, { color: theme.textSecondary }]}>LATE</Text>
-            <Text style={[styles.metricValue, { color: theme.text }]}>0</Text>
-          </View>
-
-          {/* Card 3: MESSAGES */}
-          <View style={[styles.metricCard, { backgroundColor: theme.backgroundElement, borderColor: theme.border }]}>
-            <View style={[styles.metricIconBox, { backgroundColor: 'rgba(30, 111, 253, 0.12)' }]}>
-              <MessageSquare color={theme.primary} size={16} />
-            </View>
-            <Text style={[styles.metricLabel, { color: theme.textSecondary }]}>MESSAGES</Text>
-            <Text style={[styles.metricValue, { color: theme.text }]}>0</Text>
-          </View>
-        </View>
-
-        {/* Time Clock Card */}
-        <View style={[styles.timeClockCard, { backgroundColor: theme.backgroundElement, borderColor: theme.border }]}>
-          {/* Clock Header */}
-          <View style={styles.clockHeader}>
-            <View style={styles.clockHeaderLeft}>
-              <Clock color={theme.primary} size={16} />
-              <Text style={[styles.clockTitle, { color: theme.text }]}>TIME CLOCK</Text>
-            </View>
-            <Text style={[styles.clockDate, { color: theme.textSecondary }]}>
-              {getFormattedDate(currentTime)}
-            </Text>
-          </View>
-
-          {/* Large Clock Display */}
-          <View style={styles.clockDisplayContainer}>
-            <Text style={[styles.clockTimeText, { color: theme.text }]}>{timeStr}</Text>
-            <Text style={[styles.clockAmpmText, { color: theme.textSecondary }]}>{ampmStr}</Text>
-          </View>
-
-          {/* Active Shift status if clocked in */}
-          {isClockedIn && (
-            <View style={styles.activeShiftRow}>
-              <View style={[styles.pulseDot, { backgroundColor: '#10B981' }]} />
-              <Text style={[styles.activeShiftText, { color: '#10B981' }]}>
-                Shift Active: {formatShiftDuration(shiftSeconds)}
+      ) : (
+        <ScrollView
+          contentContainerStyle={styles.scrollContent}
+          showsVerticalScrollIndicator={false}
+          refreshControl={
+            <RefreshControl refreshing={refreshing} onRefresh={onRefresh} colors={[theme.primary]} />
+          }
+        >
+          {/* Welcome Banner */}
+          <View style={[styles.welcomeBanner, { backgroundColor: theme.backgroundElement, borderColor: theme.border }]}>
+            <View style={styles.welcomeInfo}>
+              <Text style={[styles.welcomeText, { color: theme.text }]}>
+                Welcome, <Text style={{ color: theme.primary, fontFamily: 'PlusJakartaSans_800ExtraBold' }}>{user?.staff?.first_name || user?.name?.split(' ')[0] || 'User'}</Text>
+              </Text>
+              <Text style={[styles.welcomeSubtitle, { color: theme.textSecondary }]}>
+                {user?.staff?.designation || user?.role || 'Staff Member'}
               </Text>
             </View>
-          )}
+            <View style={[styles.sparkleBadge, { backgroundColor: `${theme.primary}12` }]}>
+              <Sparkles color={theme.primary} size={18} />
+            </View>
+          </View>
 
-          {/* Clock In/Out Action Button */}
-          <Pressable 
-            onPress={handleClockInOut}
-            style={[
-              styles.clockButton, 
-              { backgroundColor: isClockedIn ? '#EF4444' : theme.primary }
-            ]}
-          >
-            {isClockedIn ? (
-              <>
-                <Square color="#FFFFFF" size={16} fill="#FFFFFF" style={{ marginRight: 8 }} />
-                <Text style={styles.clockButtonText}>CLOCK OUT NOW</Text>
-              </>
-            ) : (
-              <>
-                <Play color="#FFFFFF" size={16} fill="#FFFFFF" style={{ marginRight: 8 }} />
-                <Text style={styles.clockButtonText}>CLOCK IN NOW</Text>
-              </>
+          {/* Quick Stats Columns */}
+          <View style={styles.metricsRow}>
+            {/* PRESENT */}
+            <View style={[styles.metricCard, { backgroundColor: theme.backgroundElement, borderColor: theme.border }]}>
+              <Text style={[styles.metricLabel, { color: theme.textSecondary }]}>MONTHLY PRESENT</Text>
+              <Text style={[styles.metricValue, { color: theme.text }]}>
+                {stats?.attendance?.present ?? 0}
+              </Text>
+            </View>
+
+            {/* LATE */}
+            <View style={[styles.metricCard, { backgroundColor: theme.backgroundElement, borderColor: theme.border }]}>
+              <Text style={[styles.metricLabel, { color: '#F59E0B' }]}>MONTHLY LATE</Text>
+              <Text style={[styles.metricValue, { color: '#F59E0B' }]}>
+                {stats?.attendance?.late ?? 0}
+              </Text>
+            </View>
+
+            {/* UNREAD MESSAGES */}
+            <View style={[styles.metricCard, { backgroundColor: theme.backgroundElement, borderColor: theme.border }]}>
+              <Text style={[styles.metricLabel, { color: theme.primary }]}>UNREAD CHATS</Text>
+              <Text style={[styles.metricValue, { color: theme.primary }]}>
+                {stats?.unread_messages ?? 0}
+              </Text>
+            </View>
+          </View>
+
+          {/* Clock In/Out card */}
+          <View style={[styles.timeClockCard, { backgroundColor: theme.backgroundElement, borderColor: theme.border }]}>
+            <View style={styles.clockHeader}>
+              <View style={styles.clockHeaderLeft}>
+                <Clock color={theme.primary} size={16} />
+                <Text style={[styles.clockTitle, { color: theme.text }]}>TIME CLOCK</Text>
+              </View>
+              <Text style={[styles.clockDate, { color: theme.textSecondary }]}>
+                {getFormattedDate(currentTime)}
+              </Text>
+            </View>
+
+            <View style={styles.clockDisplayContainer}>
+              <Text style={[styles.clockTimeText, { color: theme.text }]}>{timeStr}</Text>
+              <Text style={[styles.clockAmpmText, { color: theme.textSecondary }]}>{ampmStr}</Text>
+            </View>
+
+            {isClockedIn && (
+              <View style={styles.activeShiftRow}>
+                <View style={[styles.pulseDot, { backgroundColor: '#10B981' }]} />
+                <Text style={[styles.activeShiftText, { color: '#10B981' }]}>
+                  Shift Active: {formatShiftDuration(shiftSeconds)}
+                </Text>
+              </View>
             )}
-          </Pressable>
-        </View>
 
-      </ScrollView>
+            <Pressable
+              onPress={handleClockInOut}
+              disabled={clockActionLoading}
+              style={({ pressed }) => [
+                styles.clockButton,
+                { backgroundColor: isClockedIn ? '#EF4444' : theme.primary },
+                pressed && { opacity: 0.85 }
+              ]}
+            >
+              {clockActionLoading ? (
+                <ActivityIndicator color="#FFFFFF" size="small" />
+              ) : isClockedIn ? (
+                <>
+                  <Square color="#FFFFFF" size={14} fill="#FFFFFF" style={{ marginRight: 8 }} />
+                  <Text style={styles.clockButtonText}>CLOCK OUT NOW</Text>
+                </>
+              ) : (
+                <>
+                  <Play color="#FFFFFF" size={14} fill="#FFFFFF" style={{ marginRight: 8 }} />
+                  <Text style={styles.clockButtonText}>CLOCK IN NOW</Text>
+                </>
+              )}
+            </Pressable>
+          </View>
+
+          {/* Applications Grid Section */}
+          <Text style={[styles.sectionTitle, { color: theme.text }]}>Workspace Applications</Text>
+          
+          <View style={styles.gridContainer}>
+            {tools.map((tool, idx) => {
+              const ToolIcon = tool.icon;
+              return (
+                <Pressable
+                  key={idx}
+                  onPress={() => router.push(tool.route as any)}
+                  style={({ pressed }) => [
+                    styles.gridCard,
+                    {
+                      backgroundColor: theme.backgroundElement,
+                      borderColor: theme.border,
+                    },
+                    pressed && { backgroundColor: theme.backgroundSelected }
+                  ]}
+                >
+                  <View style={[styles.iconContainer, { backgroundColor: `${tool.color}15` }]}>
+                    <ToolIcon color={tool.color} size={22} />
+                  </View>
+                  <Text style={[styles.gridCardTitle, { color: theme.text }]} numberOfLines={1}>
+                    {tool.name}
+                  </Text>
+                  <Text style={[styles.gridCardDesc, { color: theme.textSecondary }]} numberOfLines={1}>
+                    {tool.desc}
+                  </Text>
+                  <ChevronRight size={14} color={theme.border} style={styles.chevron} />
+                </Pressable>
+              );
+            })}
+          </View>
+        </ScrollView>
+      )}
     </SafeAreaView>
   );
 }
@@ -232,128 +401,90 @@ const styles = StyleSheet.create({
     fontFamily: 'PlusJakartaSans_700Bold',
     fontSize: 18,
   },
-  scrollContent: {
-    padding: 20,
-    paddingBottom: 40,
-  },
-  identityRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: 28,
-    marginTop: 4,
-  },
-  logoContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    position: 'relative',
-    height: 38,
-    width: 60,
-  },
-  logoLetterO: {
-    fontFamily: 'PlusJakartaSans_700Bold',
-    fontSize: 34,
-    color: '#1E6FFD',
-    position: 'absolute',
-    left: 0,
-    top: -6,
-  },
-  logoLetterK: {
-    fontFamily: 'PlusJakartaSans_800ExtraBold',
-    fontSize: 26,
-    color: '#EF4444',
-    position: 'absolute',
-    left: 18,
-    bottom: -6,
-  },
-  profileToggleBtn: {
-    width: 42,
-    height: 42,
-    borderRadius: 12,
-    borderWidth: 1,
+  centered: {
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    elevation: 2,
-    shadowColor: '#000',
-    shadowOpacity: 0.04,
-    shadowOffset: { width: 0, height: 2 },
-    shadowRadius: 4,
   },
-  welcomeSection: {
-    marginBottom: 28,
+  scrollContent: {
+    padding: 16,
+    paddingBottom: 40,
+  },
+  welcomeBanner: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: 18,
+    borderRadius: 20,
+    borderWidth: 1,
+    marginBottom: 16,
+  },
+  welcomeInfo: {
+    flex: 1,
   },
   welcomeText: {
     fontFamily: 'PlusJakartaSans_700Bold',
-    fontSize: 30,
-    lineHeight: 38,
-    marginBottom: 6,
+    fontSize: 20,
+    marginBottom: 4,
   },
   welcomeSubtitle: {
     fontFamily: 'PlusJakartaSans_600SemiBold',
-    fontSize: 15,
+    fontSize: 13,
+  },
+  sparkleBadge: {
+    width: 38,
+    height: 38,
+    borderRadius: 12,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   metricsRow: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    gap: 10,
-    marginBottom: 24,
+    gap: 8,
+    marginBottom: 16,
   },
   metricCard: {
     flex: 1,
     borderRadius: 16,
     borderWidth: 1,
-    paddingVertical: 18,
-    paddingHorizontal: 12,
+    padding: 12,
     alignItems: 'flex-start',
-    elevation: 1,
-    shadowColor: '#000',
-    shadowOpacity: 0.01,
-    shadowOffset: { width: 0, height: 1 },
-    shadowRadius: 2,
-  },
-  metricIconBox: {
-    width: 32,
-    height: 32,
-    borderRadius: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 14,
   },
   metricLabel: {
     fontFamily: 'PlusJakartaSans_700Bold',
-    fontSize: 10,
-    letterSpacing: 0.8,
-    marginBottom: 6,
+    fontSize: 9,
+    letterSpacing: 0.5,
+    marginBottom: 4,
   },
   metricValue: {
-    fontFamily: 'PlusJakartaSans_700Bold',
-    fontSize: 26,
-    lineHeight: 30,
+    fontFamily: 'PlusJakartaSans_800ExtraBold',
+    fontSize: 20,
   },
   timeClockCard: {
     borderRadius: 20,
     borderWidth: 1,
-    padding: 20,
-    elevation: 3,
+    padding: 18,
+    marginBottom: 24,
+    elevation: 2,
     shadowColor: '#000',
-    shadowOpacity: 0.05,
-    shadowOffset: { width: 0, height: 4 },
-    shadowRadius: 8,
+    shadowOpacity: 0.02,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 4,
   },
   clockHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 20,
+    marginBottom: 14,
   },
   clockHeaderLeft: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 8,
+    gap: 6,
   },
   clockTitle: {
     fontFamily: 'PlusJakartaSans_700Bold',
-    fontSize: 12,
+    fontSize: 11,
     letterSpacing: 0.8,
   },
   clockDate: {
@@ -364,51 +495,87 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'baseline',
     justifyContent: 'center',
-    marginBottom: 16,
+    marginBottom: 12,
   },
   clockTimeText: {
-    fontFamily: 'PlusJakartaSans_700Bold',
-    fontSize: 54,
-    lineHeight: 60,
+    fontFamily: 'PlusJakartaSans_800ExtraBold',
+    fontSize: 44,
+    lineHeight: 48,
   },
   clockAmpmText: {
     fontFamily: 'PlusJakartaSans_700Bold',
-    fontSize: 22,
-    marginLeft: 6,
+    fontSize: 18,
+    marginLeft: 4,
   },
   activeShiftRow: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: 8,
-    marginBottom: 16,
+    gap: 6,
+    marginBottom: 12,
   },
   pulseDot: {
-    width: 8,
-    height: 8,
-    borderRadius: 4,
+    width: 6,
+    height: 6,
+    borderRadius: 3,
   },
   activeShiftText: {
     fontFamily: 'PlusJakartaSans_600SemiBold',
-    fontSize: 13,
+    fontSize: 12,
   },
   clockButton: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    height: 48,
-    borderRadius: 14,
-    elevation: 2,
-    shadowColor: '#000',
-    shadowOpacity: 0.1,
-    shadowOffset: { width: 0, height: 2 },
-    shadowRadius: 4,
+    height: 44,
+    borderRadius: 12,
   },
   clockButtonText: {
     fontFamily: 'PlusJakartaSans_700Bold',
-    fontSize: 14,
+    fontSize: 13,
     color: '#FFFFFF',
     letterSpacing: 0.5,
   },
-
+  sectionTitle: {
+    fontFamily: 'PlusJakartaSans_700Bold',
+    fontSize: 15,
+    marginBottom: 12,
+    marginTop: 4,
+    textTransform: 'uppercase',
+    letterSpacing: 0.5,
+  },
+  gridContainer: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 10,
+  },
+  gridCard: {
+    width: '48.5%',
+    borderWidth: 1,
+    borderRadius: 16,
+    padding: 14,
+    position: 'relative',
+  },
+  iconContainer: {
+    width: 38,
+    height: 38,
+    borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  gridCardTitle: {
+    fontFamily: 'PlusJakartaSans_700Bold',
+    fontSize: 13.5,
+    marginBottom: 2,
+  },
+  gridCardDesc: {
+    fontFamily: 'PlusJakartaSans_500Medium',
+    fontSize: 10.5,
+  },
+  chevron: {
+    position: 'absolute',
+    right: 12,
+    top: 12,
+  },
 });

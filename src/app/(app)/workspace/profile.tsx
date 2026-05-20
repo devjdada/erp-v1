@@ -1,9 +1,9 @@
-import React from 'react';
-import { StyleSheet, View, Text, SafeAreaView, ScrollView, Pressable, Alert } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { StyleSheet, View, Text, SafeAreaView, ScrollView, Pressable, Alert, RefreshControl } from 'react-native';
 import { useTheme } from '@/hooks/use-theme';
 import { useNavigation, useRouter } from 'expo-router';
 import { DrawerActions } from '@react-navigation/native';
-import { Menu, User, Mail, Phone, Shield, Settings, HelpCircle, LogOut } from 'lucide-react-native';
+import { Menu, User, Mail, Phone, Shield, Settings, HelpCircle, LogOut, CreditCard, Heart } from 'lucide-react-native';
 import { Image } from 'expo-image';
 import { useAuth } from '@/context/AuthContext';
 
@@ -11,10 +11,21 @@ export default function ProfileScreen() {
   const theme = useTheme();
   const navigation = useNavigation();
   const router = useRouter();
-  const { user, logout } = useAuth();
+  const { user, logout, refreshProfile } = useAuth();
+  const [refreshing, setRefreshing] = useState(false);
+
+  useEffect(() => {
+    refreshProfile();
+  }, []);
 
   const handleToggleDrawer = () => {
     navigation.dispatch(DrawerActions.toggleDrawer());
+  };
+
+  const onRefresh = async () => {
+    setRefreshing(true);
+    await refreshProfile();
+    setRefreshing(false);
   };
 
   const handleLogout = () => {
@@ -64,6 +75,21 @@ export default function ProfileScreen() {
 
   const avatarSource = getAvatarSource();
 
+  // Expanded fields
+  const gender = user?.staff?.gender || 'N/A';
+  const maritalStatus = user?.staff?.marital_status || 'N/A';
+  const religion = user?.staff?.religion || 'N/A';
+  const department = user?.staff?.department?.name || 'N/A';
+
+  const bankName = user?.staff?.bank_name || 'N/A';
+  const accountNo = user?.staff?.account_number || 'N/A';
+  const accountName = user?.staff?.account_name || 'N/A';
+
+  const nokName = user?.staff?.next_of_kin_name || 'N/A';
+  const nokRelationship = user?.staff?.next_of_kin_relationship || 'N/A';
+  const nokPhone = user?.staff?.next_of_kin_phone || 'N/A';
+  const nokAddress = user?.staff?.next_of_kin_address || 'N/A';
+
   return (
     <SafeAreaView style={[styles.safeArea, { backgroundColor: theme.background }]}>
       {/* Top Header Bar */}
@@ -75,7 +101,13 @@ export default function ProfileScreen() {
         <View style={{ width: 40 }} />
       </View>
 
-      <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
+      <ScrollView 
+        contentContainerStyle={styles.scrollContent} 
+        showsVerticalScrollIndicator={false}
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} colors={[theme.primary]} />
+        }
+      >
         {/* Profile Card */}
         <View style={[styles.profileCard, { backgroundColor: theme.backgroundElement, borderColor: theme.border }]}>
           <Image
@@ -122,15 +154,98 @@ export default function ProfileScreen() {
           <View style={styles.detailRow}>
             <User size={18} color={theme.textSecondary} />
             <View style={styles.detailTextContainer}>
-              <Text style={[styles.detailLabel, { color: theme.textSecondary }]}>EMPLOYEE ID</Text>
+              <Text style={[styles.detailLabel, { color: theme.textSecondary }]}>EMPLOYEE ID • DEPT</Text>
               <Text style={[styles.detailValue, { color: theme.text }]} numberOfLines={1}>
-                {employeeId}
+                {employeeId} • {department}
+              </Text>
+            </View>
+          </View>
+          <View style={[styles.divider, { backgroundColor: theme.border }]} />
+
+          <View style={styles.detailRow}>
+            <User size={18} color={theme.textSecondary} />
+            <View style={styles.detailTextContainer}>
+              <Text style={[styles.detailLabel, { color: theme.textSecondary }]}>GENDER • MARITAL STATUS</Text>
+              <Text style={[styles.detailValue, { color: theme.text }]} numberOfLines={1}>
+                {gender} • {maritalStatus}
               </Text>
             </View>
           </View>
         </View>
 
-        {/* Quick Settings Links */}
+        {/* Bank details */}
+        <Text style={[styles.sectionTitle, { color: theme.text }]}>Bank Details</Text>
+        <View style={[styles.detailsContainer, { backgroundColor: theme.backgroundElement, borderColor: theme.border }]}>
+          <View style={styles.detailRow}>
+            <CreditCard size={18} color={theme.textSecondary} />
+            <View style={styles.detailTextContainer}>
+              <Text style={[styles.detailLabel, { color: theme.textSecondary }]}>BANK NAME</Text>
+              <Text style={[styles.detailValue, { color: theme.text }]}>
+                {bankName}
+              </Text>
+            </View>
+          </View>
+          <View style={[styles.divider, { backgroundColor: theme.border }]} />
+
+          <View style={styles.detailRow}>
+            <CreditCard size={18} color={theme.textSecondary} />
+            <View style={styles.detailTextContainer}>
+              <Text style={[styles.detailLabel, { color: theme.textSecondary }]}>ACCOUNT NUMBER</Text>
+              <Text style={[styles.detailValue, { color: theme.text }]}>
+                {accountNo}
+              </Text>
+            </View>
+          </View>
+          <View style={[styles.divider, { backgroundColor: theme.border }]} />
+
+          <View style={styles.detailRow}>
+            <User size={18} color={theme.textSecondary} />
+            <View style={styles.detailTextContainer}>
+              <Text style={[styles.detailLabel, { color: theme.textSecondary }]}>ACCOUNT NAME</Text>
+              <Text style={[styles.detailValue, { color: theme.text }]}>
+                {accountName}
+              </Text>
+            </View>
+          </View>
+        </View>
+
+        {/* Next of Kin Details */}
+        <Text style={[styles.sectionTitle, { color: theme.text }]}>Next of Kin Details</Text>
+        <View style={[styles.detailsContainer, { backgroundColor: theme.backgroundElement, borderColor: theme.border }]}>
+          <View style={styles.detailRow}>
+            <Heart size={18} color={theme.textSecondary} />
+            <View style={styles.detailTextContainer}>
+              <Text style={[styles.detailLabel, { color: theme.textSecondary }]}>NAME • RELATIONSHIP</Text>
+              <Text style={[styles.detailValue, { color: theme.text }]}>
+                {nokName} ({nokRelationship})
+              </Text>
+            </View>
+          </View>
+          <View style={[styles.divider, { backgroundColor: theme.border }]} />
+
+          <View style={styles.detailRow}>
+            <Phone size={18} color={theme.textSecondary} />
+            <View style={styles.detailTextContainer}>
+              <Text style={[styles.detailLabel, { color: theme.textSecondary }]}>NOK PHONE NUMBER</Text>
+              <Text style={[styles.detailValue, { color: theme.text }]}>
+                {nokPhone}
+              </Text>
+            </View>
+          </View>
+          <View style={[styles.divider, { backgroundColor: theme.border }]} />
+
+          <View style={styles.detailRow}>
+            <Mail size={18} color={theme.textSecondary} />
+            <View style={styles.detailTextContainer}>
+              <Text style={[styles.detailLabel, { color: theme.textSecondary }]}>NOK ADDRESS</Text>
+              <Text style={[styles.detailValue, { color: theme.text }]} numberOfLines={2}>
+                {nokAddress}
+              </Text>
+            </View>
+          </View>
+        </View>
+
+        {/* Preferences */}
         <Text style={[styles.sectionTitle, { color: theme.text }]}>Preferences</Text>
         <View style={[styles.detailsContainer, { backgroundColor: theme.backgroundElement, borderColor: theme.border }]}>
           <Pressable 
@@ -225,7 +340,7 @@ const styles = StyleSheet.create({
   },
   sectionTitle: {
     fontFamily: 'PlusJakartaSans_700Bold',
-    fontSize: 14,
+    fontSize: 12,
     letterSpacing: 0.5,
     textTransform: 'uppercase',
     marginBottom: 12,
@@ -244,10 +359,11 @@ const styles = StyleSheet.create({
     gap: 14,
   },
   detailTextContainer: {
+    flex: 1,
     gap: 2,
   },
   detailLabel: {
-    fontFamily: 'PlusJakartaSans_600SemiBold',
+    fontFamily: 'PlusJakartaSans_700Bold',
     fontSize: 9,
     letterSpacing: 0.8,
   },

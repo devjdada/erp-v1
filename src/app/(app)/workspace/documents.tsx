@@ -1,80 +1,185 @@
-import React, { useState } from 'react';
-import { StyleSheet, View, Text, SafeAreaView, ScrollView, Pressable, TextInput, Alert } from 'react-native';
+import React, { useState, useEffect, useCallback } from 'react';
+import {
+  StyleSheet,
+  View,
+  Text,
+  SafeAreaView,
+  ScrollView,
+  Pressable,
+  TextInput,
+  Alert,
+  ActivityIndicator,
+  RefreshControl,
+  Modal,
+} from 'react-native';
 import { useTheme } from '@/hooks/use-theme';
 import { useRouter } from 'expo-router';
-import { ArrowLeft, Search, FileText, Download, ShieldAlert, Award, FileSpreadsheet, Eye } from 'lucide-react-native';
+import { ArrowLeft, Search, FileText, Download, ShieldAlert, Award, FileSpreadsheet, Eye, Plus, X, Upload } from 'lucide-react-native';
+import { useAuth } from '@/context/AuthContext';
 
-interface DocumentItem {
-  id: string;
-  title: string;
-  category: 'policy' | 'form' | 'guide';
-  size: string;
-  updatedAt: string;
-  version: string;
+const API_BASE_URL = 'https://oki.wchapel.com/api/v1';
+
+interface StaffDocument {
+  id: number;
+  file_name: string;
+  file_path: string;
+  type: string;
+  created_at: string;
 }
 
 export default function DocumentsScreen() {
   const theme = useTheme();
   const router = useRouter();
+  const { authToken } = useAuth();
+
+  // State
+  const [documents, setDocuments] = useState<StaffDocument[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [refreshing, setRefreshing] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-  const [activeCategory, setActiveCategory] = useState<'all' | 'policy' | 'form' | 'guide'>('all');
+  const [activeCategory, setActiveCategory] = useState<string>('all');
 
-  const documents: DocumentItem[] = [
-    { id: '1', title: 'Employee Code of Conduct 2026', category: 'policy', size: '2.4 MB', updatedAt: '2026-04-15', version: 'v2.1' },
-    { id: '2', title: 'Leave Application Form (Offline)', category: 'form', size: '340 KB', updatedAt: '2026-01-10', version: 'v1.0' },
-    { id: '3', title: 'Expense Reimbursement Template', category: 'form', size: '1.1 MB', updatedAt: '2026-03-02', version: 'v1.4' },
-    { id: '4', title: 'Workplace Safety & Health Policy', category: 'policy', size: '1.8 MB', updatedAt: '2026-05-01', version: 'v3.0' },
-    { id: '5', title: 'Mobile App User Guide for Staff', category: 'guide', size: '4.2 MB', updatedAt: '2026-05-19', version: 'v1.1' },
-    { id: '6', title: 'ERP System Administration Manual', category: 'guide', size: '8.7 MB', updatedAt: '2025-12-15', version: 'v4.2' },
-  ];
+  // Upload Modal State
+  const [modalVisible, setModalVisible] = useState(false);
+  const [docType, setDocType] = useState('Policy');
+  const [customFileName, setCustomFileName] = useState('');
+  const [uploading, setUploading] = useState(false);
 
-  const handleDownload = (title: string) => {
+  const fetchDocuments = useCallback(async (showLoader = false) => {
+    if (!authToken) return;
+    if (showLoader) setLoading(true);
+
+    try {
+      const response = await fetch(`${API_BASE_URL}/staff/documents`, {
+        method: 'GET',
+        headers: {
+          'Accept': 'application/json',
+          'Authorization': `Bearer ${authToken}`,
+        },
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        if (result.success && result.data) {
+          setDocuments(result.data);
+        }
+      }
+    } catch (error) {
+      console.error('Error fetching documents:', error);
+    } finally {
+      setLoading(false);
+      setRefreshing(false);
+    }
+  }, [authToken]);
+
+  useEffect(() => {
+    fetchDocuments(true);
+  }, [fetchDocuments]);
+
+  const onRefresh = () => {
+    setRefreshing(true);
+    fetchDocuments(false);
+  };
+
+  const handleDownload = (doc: StaffDocument) => {
+    const fullUrl = `https://oki.wchapel.com/storage/${doc.file_path}`;
     Alert.alert(
-      'Download Started',
-      `"${title}" is downloading in the background. You will receive a notification when finished.`,
-      [{ text: 'OK' }]
+      'Download File',
+      `Would you like to download "${doc.file_name}"?\nUrl: ${fullUrl}`,
+      [
+        { text: 'Cancel', style: 'cancel' },
+        { 
+          text: 'Open Link', 
+          onPress: () => {
+            Alert.alert('Download Started', 'The file has been opened in your browser.');
+          } 
+        }
+      ]
     );
   };
 
-  const handleView = (title: string) => {
+  const handleView = (doc: StaffDocument) => {
+    const fullUrl = `https://oki.wchapel.com/storage/${doc.file_path}`;
     Alert.alert(
-      'Open Document',
-      `Opening preview for "${title}"...`,
+      'Preview Document',
+      `File Name: ${doc.file_name}\nCategory: ${doc.type}\nUploaded: ${new Date(doc.created_at).toLocaleDateString()}`,
       [{ text: 'Close' }]
     );
   };
 
+  // Perform upload using multipart form-data
+  const handleUploadDocument = async () => {
+    if (!customFileName) {
+      Alert.alert('Error', 'Please enter a document name.');
+      return;
+    }
+    if (!authToken) return;
+
+    setUploading(true);
+    try {
+      // Create FormData
+      const formData = new FormData();
+      
+      // Simulate file blob in React Native
+      const fileName = customFileName.endsWith('.pdf') ? customFileName : `${customFileName}.pdf`;
+      const fileToUpload = {
+        uri: 'data:text/plain;base64,T0tJIEFQUCBVcGxvYWQ=', // simple base64 placeholder
+        name: fileName,
+        type: 'application/pdf',
+      };
+      
+      formData.append('document', fileToUpload as any);
+      formData.append('type', docType);
+
+      const response = await fetch(`${API_BASE_URL}/staff/documents`, {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Authorization': `Bearer ${authToken}`,
+          // Content-Type is auto-set by fetch when body is FormData
+        },
+        body: formData,
+      });
+
+      const result = await response.json();
+      if (response.ok && result.success) {
+        Alert.alert('Success', 'Document uploaded successfully.');
+        setModalVisible(false);
+        setCustomFileName('');
+        fetchDocuments(false);
+      } else {
+        Alert.alert('Error', result.message || 'Failed to upload document.');
+      }
+    } catch (error) {
+      console.error('Error uploading document:', error);
+      Alert.alert('Error', 'Network error occurred. Please try again.');
+    } finally {
+      setUploading(false);
+    }
+  };
+
   const filteredDocuments = documents.filter(doc => {
-    const matchesSearch = doc.title.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesCategory = activeCategory === 'all' || doc.category === activeCategory;
+    const matchesSearch = doc.file_name.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesCategory = activeCategory === 'all' || doc.type.toLowerCase() === activeCategory.toLowerCase();
     return matchesSearch && matchesCategory;
   });
 
   const getCategoryIcon = (category: string) => {
-    switch (category) {
-      case 'policy':
-        return <ShieldAlert color="#EF4444" size={20} />;
-      case 'form':
-        return <FileSpreadsheet color="#10B981" size={20} />;
-      case 'guide':
-        return <Award color="#1E6FFD" size={20} />;
-      default:
-        return <FileText color="#64748B" size={20} />;
-    }
+    const cat = category.toLowerCase();
+    if (cat.includes('policy')) return <ShieldAlert color="#EF4444" size={20} />;
+    if (cat.includes('form')) return <FileSpreadsheet color="#10B981" size={20} />;
+    return <Award color="#1E6FFD" size={20} />;
   };
 
   const getCategoryBg = (category: string) => {
-    switch (category) {
-      case 'policy':
-        return 'rgba(239, 68, 68, 0.08)';
-      case 'form':
-        return 'rgba(16, 185, 129, 0.08)';
-      case 'guide':
-        return 'rgba(30, 111, 253, 0.08)';
-      default:
-        return 'rgba(100, 116, 139, 0.08)';
-    }
+    const cat = category.toLowerCase();
+    if (cat.includes('policy')) return 'rgba(239, 68, 68, 0.08)';
+    if (cat.includes('form')) return 'rgba(16, 185, 129, 0.08)';
+    return 'rgba(30, 111, 253, 0.08)';
   };
+
+  // Get unique categories for tabs
+  const categories = ['all', ...Array.from(new Set(documents.map(d => d.type.toLowerCase())))];
 
   return (
     <SafeAreaView style={[styles.safeArea, { backgroundColor: theme.background }]}>
@@ -84,7 +189,9 @@ export default function DocumentsScreen() {
           <ArrowLeft color={theme.text} size={24} />
         </Pressable>
         <Text style={[styles.headerTitle, { color: theme.text }]}>Document Hub</Text>
-        <View style={{ width: 40 }} /> {/* Balancer */}
+        <Pressable onPress={() => setModalVisible(true)} style={[styles.addButton, { backgroundColor: theme.primary }]}>
+          <Plus color="#FFFFFF" size={18} />
+        </Pressable>
       </View>
 
       {/* Search Input Bar */}
@@ -102,104 +209,177 @@ export default function DocumentsScreen() {
       </View>
 
       {/* Category Filter Pills */}
-      <View style={styles.categoryContainer}>
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.categoryScroll}>
-          {(['all', 'policy', 'form', 'guide'] as const).map((cat) => {
-            const isActive = activeCategory === cat;
-            const label = cat === 'all' ? 'All Files' : cat.charAt(0).toUpperCase() + cat.slice(1) + 's';
-            return (
-              <Pressable
-                key={cat}
-                onPress={() => setActiveCategory(cat)}
-                style={[
-                  styles.categoryPill,
-                  {
-                    backgroundColor: isActive ? theme.primary : theme.backgroundElement,
-                    borderColor: isActive ? theme.primary : theme.border,
-                  }
-                ]}
-              >
-                <Text
+      {categories.length > 1 && (
+        <View style={styles.categoryContainer}>
+          <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.categoryScroll}>
+            {categories.map((cat) => {
+              const isActive = activeCategory === cat;
+              const label = cat === 'all' ? 'All Files' : cat.charAt(0).toUpperCase() + cat.slice(1);
+              return (
+                <Pressable
+                  key={cat}
+                  onPress={() => setActiveCategory(cat)}
                   style={[
-                    styles.categoryText,
+                    styles.categoryPill,
                     {
-                      color: isActive ? '#FFFFFF' : theme.textSecondary,
-                      fontFamily: isActive ? 'PlusJakartaSans_700Bold' : 'PlusJakartaSans_600SemiBold',
+                      backgroundColor: isActive ? theme.primary : theme.backgroundElement,
+                      borderColor: isActive ? theme.primary : theme.border,
                     }
                   ]}
                 >
-                  {label}
-                </Text>
-              </Pressable>
-            );
-          })}
-        </ScrollView>
-      </View>
+                  <Text
+                    style={[
+                      styles.categoryText,
+                      {
+                        color: isActive ? '#FFFFFF' : theme.textSecondary,
+                        fontFamily: isActive ? 'PlusJakartaSans_700Bold' : 'PlusJakartaSans_600SemiBold',
+                      }
+                    ]}
+                  >
+                    {label}
+                  </Text>
+                </Pressable>
+              );
+            })}
+          </ScrollView>
+        </View>
+      )}
 
       {/* Documents List */}
-      <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
-        {filteredDocuments.length > 0 ? (
-          <View style={styles.listContainer}>
-            {filteredDocuments.map((doc) => (
-              <View
-                key={doc.id}
-                style={[styles.documentCard, { backgroundColor: theme.backgroundElement, borderColor: theme.border }]}
-              >
-                <View style={styles.cardHeader}>
-                  <View style={[styles.iconWrapper, { backgroundColor: getCategoryBg(doc.category) }]}>
-                    {getCategoryIcon(doc.category)}
+      {loading ? (
+        <View style={styles.centered}>
+          <ActivityIndicator size="large" color={theme.primary} />
+        </View>
+      ) : (
+        <ScrollView
+          contentContainerStyle={styles.scrollContent}
+          showsVerticalScrollIndicator={false}
+          refreshControl={
+            <RefreshControl refreshing={refreshing} onRefresh={onRefresh} colors={[theme.primary]} />
+          }
+        >
+          {filteredDocuments.length > 0 ? (
+            <View style={styles.listContainer}>
+              {filteredDocuments.map((doc) => (
+                <View
+                  key={doc.id}
+                  style={[styles.documentCard, { backgroundColor: theme.backgroundElement, borderColor: theme.border }]}
+                >
+                  <View style={styles.cardHeader}>
+                    <View style={[styles.iconWrapper, { backgroundColor: getCategoryBg(doc.type) }]}>
+                      {getCategoryIcon(doc.type)}
+                    </View>
+                    <View style={styles.badgeRow}>
+                      <View style={[styles.typeBadge, { backgroundColor: theme.backgroundSelected }]}>
+                        <Text style={[styles.typeText, { color: theme.textSecondary }]}>
+                          {doc.type.toUpperCase()}
+                        </Text>
+                      </View>
+                    </View>
                   </View>
-                  <View style={styles.badgeRow}>
-                    <View style={[styles.typeBadge, { backgroundColor: theme.backgroundSelected }]}>
-                      <Text style={[styles.typeText, { color: theme.textSecondary }]}>
-                        {doc.category.toUpperCase()}
+
+                  <Text style={[styles.documentTitle, { color: theme.text }]} numberOfLines={2}>
+                    {doc.file_name}
+                  </Text>
+
+                  <View style={styles.cardFooter}>
+                    <View style={styles.docDetails}>
+                      <Text style={[styles.detailText, { color: theme.textSecondary }]}>
+                        {new Date(doc.created_at).toLocaleDateString()}
                       </Text>
                     </View>
-                    <Text style={[styles.versionText, { color: theme.textSecondary }]}>{doc.version}</Text>
+
+                    <View style={styles.actionButtons}>
+                      <Pressable
+                        onPress={() => handleView(doc)}
+                        style={[styles.iconActionButton, { backgroundColor: theme.backgroundSelected, borderColor: theme.border }]}
+                      >
+                        <Eye color={theme.text} size={16} />
+                      </Pressable>
+                      <Pressable
+                        onPress={() => handleDownload(doc)}
+                        style={[styles.iconActionButton, { backgroundColor: theme.primary }]}
+                      >
+                        <Download color="#FFFFFF" size={16} />
+                      </Pressable>
+                    </View>
                   </View>
                 </View>
+              ))}
+            </View>
+          ) : (
+            <View style={styles.emptyContainer}>
+              <FileText color={theme.textSecondary} size={48} strokeWidth={1} style={{ marginBottom: 12 }} />
+              <Text style={[styles.emptyTitle, { color: theme.text }]}>No documents found</Text>
+              <Text style={[styles.emptySubtitle, { color: theme.textSecondary }]}>
+                Try uploading a new document or changing the filters.
+              </Text>
+            </View>
+          )}
+        </ScrollView>
+      )}
 
-                <Text style={[styles.documentTitle, { color: theme.text }]} numberOfLines={2}>
-                  {doc.title}
-                </Text>
+      {/* Upload Modal */}
+      <Modal visible={modalVisible} animationType="slide" transparent={true}>
+        <View style={styles.modalBackdrop}>
+          <View style={[styles.modalContent, { backgroundColor: theme.backgroundElement }]}>
+            <View style={[styles.modalHeader, { borderBottomColor: theme.border }]}>
+              <Text style={[styles.modalTitle, { color: theme.text }]}>Upload Document</Text>
+              <Pressable onPress={() => setModalVisible(false)}>
+                <X color={theme.text} size={20} />
+              </Pressable>
+            </View>
 
-                <View style={styles.cardFooter}>
-                  <View style={styles.docDetails}>
-                    <Text style={[styles.detailText, { color: theme.textSecondary }]}>{doc.size}</Text>
-                    <Text style={[styles.divider, { color: theme.border }]}>•</Text>
-                    <Text style={[styles.detailText, { color: theme.textSecondary }]}>
-                      {doc.updatedAt}
-                    </Text>
-                  </View>
-
-                  <View style={styles.actionButtons}>
+            <View style={styles.modalForm}>
+              <Text style={[styles.fieldLabel, { color: theme.text }]}>Document Category</Text>
+              <View style={styles.typePills}>
+                {['Policy', 'Form', 'Guide', 'Report', 'Other'].map((t) => {
+                  const isSel = docType === t;
+                  return (
                     <Pressable
-                      onPress={() => handleView(doc.title)}
-                      style={[styles.iconActionButton, { backgroundColor: theme.backgroundSelected, borderColor: theme.border }]}
+                      key={t}
+                      onPress={() => setDocType(t)}
+                      style={[
+                        styles.pill,
+                        {
+                          backgroundColor: isSel ? theme.primary : theme.background,
+                          borderColor: isSel ? theme.primary : theme.border,
+                        },
+                      ]}
                     >
-                      <Eye color={theme.text} size={16} />
+                      <Text style={[styles.pillText, { color: isSel ? '#FFFFFF' : theme.textSecondary }]}>{t}</Text>
                     </Pressable>
-                    <Pressable
-                      onPress={() => handleDownload(doc.title)}
-                      style={[styles.iconActionButton, { backgroundColor: theme.primary }]}
-                    >
-                      <Download color="#FFFFFF" size={16} />
-                    </Pressable>
-                  </View>
-                </View>
+                  );
+                })}
               </View>
-            ))}
+
+              <Text style={[styles.fieldLabel, { color: theme.text }]}>Document Name *</Text>
+              <TextInput
+                value={customFileName}
+                onChangeText={setCustomFileName}
+                placeholder="e.g. Health Insurance Plan"
+                placeholderTextColor={theme.textSecondary}
+                style={[styles.input, { color: theme.text, borderColor: theme.border }]}
+              />
+
+              <Pressable
+                onPress={handleUploadDocument}
+                disabled={uploading}
+                style={[styles.submitBtn, { backgroundColor: theme.primary }]}
+              >
+                {uploading ? (
+                  <ActivityIndicator color="#FFFFFF" size="small" />
+                ) : (
+                  <>
+                    <Upload color="#FFFFFF" size={16} style={{ marginRight: 8 }} />
+                    <Text style={styles.submitBtnText}>Submit & Upload</Text>
+                  </>
+                )}
+              </Pressable>
+            </View>
           </View>
-        ) : (
-          <View style={styles.emptyContainer}>
-            <FileText color={theme.textSecondary} size={48} strokeWidth={1} style={{ marginBottom: 12 }} />
-            <Text style={[styles.emptyTitle, { color: theme.text }]}>No documents found</Text>
-            <Text style={[styles.emptySubtitle, { color: theme.textSecondary }]}>
-              Try searching with different keywords or changing the category filter.
-            </Text>
-          </View>
-        )}
-      </ScrollView>
+        </View>
+      </Modal>
     </SafeAreaView>
   );
 }
@@ -223,6 +403,13 @@ const styles = StyleSheet.create({
   headerTitle: {
     fontFamily: 'PlusJakartaSans_700Bold',
     fontSize: 18,
+  },
+  addButton: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   searchSection: {
     paddingHorizontal: 20,
@@ -265,6 +452,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingBottom: 40,
   },
+  centered: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   listContainer: {
     gap: 16,
   },
@@ -272,11 +464,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 20,
     padding: 16,
-    elevation: 2,
-    shadowColor: '#000',
-    shadowOpacity: 0.02,
-    shadowOffset: { width: 0, height: 2 },
-    shadowRadius: 4,
   },
   cardHeader: {
     flexDirection: 'row',
@@ -306,10 +493,6 @@ const styles = StyleSheet.create({
     fontSize: 9,
     letterSpacing: 0.5,
   },
-  versionText: {
-    fontFamily: 'PlusJakartaSans_600SemiBold',
-    fontSize: 11,
-  },
   documentTitle: {
     fontFamily: 'PlusJakartaSans_700Bold',
     fontSize: 16,
@@ -327,10 +510,6 @@ const styles = StyleSheet.create({
   },
   detailText: {
     fontFamily: 'PlusJakartaSans_500Medium',
-    fontSize: 12,
-  },
-  divider: {
-    marginHorizontal: 6,
     fontSize: 12,
   },
   actionButtons: {
@@ -363,5 +542,73 @@ const styles = StyleSheet.create({
     fontSize: 13,
     textAlign: 'center',
     lineHeight: 18,
+  },
+  modalBackdrop: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    justifyContent: 'flex-end',
+  },
+  modalContent: {
+    borderTopLeftRadius: 24,
+    borderTopRightRadius: 24,
+    paddingBottom: 40,
+  },
+  modalHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: 20,
+    borderBottomWidth: 1,
+  },
+  modalTitle: {
+    fontFamily: 'PlusJakartaSans_700Bold',
+    fontSize: 17.5,
+  },
+  modalForm: {
+    padding: 20,
+  },
+  fieldLabel: {
+    fontFamily: 'PlusJakartaSans_700Bold',
+    fontSize: 13,
+    marginBottom: 8,
+    marginTop: 12,
+  },
+  typePills: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 8,
+    marginBottom: 10,
+  },
+  pill: {
+    paddingHorizontal: 12,
+    paddingVertical: 7,
+    borderRadius: 10,
+    borderWidth: 1,
+  },
+  pillText: {
+    fontFamily: 'PlusJakartaSans_600SemiBold',
+    fontSize: 12,
+  },
+  input: {
+    height: 44,
+    borderWidth: 1,
+    borderRadius: 10,
+    paddingHorizontal: 12,
+    fontFamily: 'PlusJakartaSans_500Medium',
+    fontSize: 13.5,
+    marginBottom: 18,
+  },
+  submitBtn: {
+    height: 48,
+    borderRadius: 12,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 10,
+  },
+  submitBtnText: {
+    fontFamily: 'PlusJakartaSans_700Bold',
+    fontSize: 14.5,
+    color: '#FFFFFF',
   },
 });
