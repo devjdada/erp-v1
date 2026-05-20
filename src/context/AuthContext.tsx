@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useRouter } from 'expo-router';
+import { authService } from '../services/authService';
 
 export interface Staff {
   id: number;
@@ -37,8 +38,6 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-const API_BASE_URL = 'https://oki.wchapel.com/api/v1';
-
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [authToken, setAuthToken] = useState<string | null>(null);
   const [user, setUser] = useState<User | null>(null);
@@ -59,23 +58,18 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           }
 
           // Verify token by fetching user profile from hosted backend
-          const response = await fetch(`${API_BASE_URL}/user`, {
-            method: 'GET',
-            headers: {
-              'Accept': 'application/json',
-              'Authorization': `Bearer ${storedToken}`,
-            },
-          });
-
-          if (response.ok) {
-            const result = await response.json();
+          try {
+            const result = await authService.getProfile();
             if (result.success && result.data) {
               setUser(result.data);
               await AsyncStorage.setItem('@auth_user', JSON.stringify(result.data));
             }
-          } else if (response.status === 401) {
-            // Token is invalid/expired
-            await clearSession();
+          } catch (error: any) {
+            // Interceptor handles 401 and clears session, so we can just ignore here
+            // or clear session if needed
+            if (error.response && error.response.status === 401) {
+              await clearSession();
+            }
           }
         }
       } catch (error) {
@@ -97,22 +91,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const login = async (email: string, password: string) => {
     try {
-      const response = await fetch(`${API_BASE_URL}/login`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        },
-        body: JSON.stringify({
-          email,
-          password,
-          device_name: 'mobile_app',
-        }),
-      });
+      const result = await authService.login(email, password);
 
-      const result = await response.json();
-
-      if (response.ok && result.success && result.data) {
+      if (result.success && result.data) {
         const { token, user: loggedInUser } = result.data;
         setAuthToken(token);
         setUser(loggedInUser);
@@ -125,29 +106,16 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         return { success: false, message: result.message || 'Invalid credentials' };
       }
     } catch (error: any) {
-      return { success: false, message: error.message || 'Network error occurred. Please try again.' };
+      const message = error.response?.data?.message || error.message || 'Network error occurred. Please try again.';
+      return { success: false, message };
     }
   };
 
   const register = async (name: string, email: string, password: string) => {
     try {
-      const response = await fetch(`${API_BASE_URL}/register`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        },
-        body: JSON.stringify({
-          name,
-          email,
-          password,
-          password_confirmation: password,
-        }),
-      });
+      const result = await authService.register(name, email, password);
 
-      const result = await response.json();
-
-      if (response.ok && result.success && result.data) {
+      if (result.success && result.data) {
         const { token, user: registeredUser } = result.data;
         setAuthToken(token);
         setUser(registeredUser);
@@ -160,20 +128,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         return { success: false, message: result.message || 'Registration failed' };
       }
     } catch (error: any) {
-      return { success: false, message: error.message || 'Network error occurred. Please try again.' };
+      const message = error.response?.data?.message || error.message || 'Network error occurred. Please try again.';
+      return { success: false, message };
     }
   };
 
   const logout = async () => {
     try {
       if (authToken) {
-        await fetch(`${API_BASE_URL}/logout`, {
-          method: 'POST',
-          headers: {
-            'Accept': 'application/json',
-            'Authorization': `Bearer ${authToken}`,
-          },
-        });
+        await authService.logout();
       }
     } catch (error) {
       console.error('Logout API request error:', error);
@@ -186,20 +149,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const refreshProfile = async () => {
     if (!authToken) return;
     try {
-      const response = await fetch(`${API_BASE_URL}/user`, {
-        method: 'GET',
-        headers: {
-          'Accept': 'application/json',
-          'Authorization': `Bearer ${authToken}`,
-        },
-      });
+      const result = await authService.getProfile();
 
-      if (response.ok) {
-        const result = await response.json();
-        if (result.success && result.data) {
-          setUser(result.data);
-          await AsyncStorage.setItem('@auth_user', JSON.stringify(result.data));
-        }
+      if (result.success && result.data) {
+        setUser(result.data);
+        await AsyncStorage.setItem('@auth_user', JSON.stringify(result.data));
       }
     } catch (error) {
       console.error('Error refreshing profile:', error);

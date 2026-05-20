@@ -34,8 +34,7 @@ import {
   CheckSquare,
 } from 'lucide-react-native';
 import { ChatThread, StaffResource, DepartmentResource } from './types';
-
-const API_BASE_URL = 'https://oki.wchapel.com/api/v1';
+import { messageService } from '@/services/messageService';
 
 export default function MessagesScreen() {
   const theme = useTheme();
@@ -85,19 +84,9 @@ export default function MessagesScreen() {
 
     if (showLoader) setLoading(true);
     try {
-      const response = await fetch(`${API_BASE_URL}/messages`, {
-        method: 'GET',
-        headers: {
-          'Accept': 'application/json',
-          'Authorization': `Bearer ${authToken}`,
-        },
-      });
-
-      if (response.ok) {
-        const result = await response.json();
-        if (result.success && result.data) {
-          setThreads(result.data as ChatThread[]);
-        }
+      const result = await messageService.getMessages();
+      if (result.success && result.data) {
+        setThreads(result.data as ChatThread[]);
       }
     } catch (error) {
       console.error('Error fetching messaging threads:', error);
@@ -112,20 +101,10 @@ export default function MessagesScreen() {
     if (!authToken) return;
     setLoadingContacts(true);
     try {
-      const response = await fetch(`${API_BASE_URL}/messages/resources`, {
-        method: 'GET',
-        headers: {
-          'Accept': 'application/json',
-          'Authorization': `Bearer ${authToken}`,
-        },
-      });
-
-      if (response.ok) {
-        const result = await response.json();
-        if (result.success && result.data) {
-          setStaffList(result.data.staff || []);
-          setDepartmentsList(result.data.departments || []);
-        }
+      const result = await messageService.getResources();
+      if (result.success && result.data) {
+        setStaffList(result.data.staff || []);
+        setDepartmentsList(result.data.departments || []);
       }
     } catch (error) {
       console.error('Error fetching messaging resources:', error);
@@ -251,18 +230,9 @@ export default function MessagesScreen() {
 
     setSubmittingChat(true);
     try {
-      const response = await fetch(`${API_BASE_URL}/messages`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-          'Authorization': `Bearer ${authToken}`,
-        },
-        body: JSON.stringify(payload),
-      });
+      const result = await messageService.createChat(payload);
 
-      const result = await response.json();
-      if (response.ok && result.success && result.data) {
+      if (result.success && result.data) {
         const newThread: ChatThread = result.data.thread;
         setModalVisible(false);
         // Refresh local threads list

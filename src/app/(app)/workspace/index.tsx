@@ -15,6 +15,8 @@ import { DrawerActions } from '@react-navigation/native';
 import { useAuth } from '@/context/AuthContext';
 import { useAlert } from '@/context/AlertContext';
 import * as Location from 'expo-location';
+import { workspaceService } from '@/services/workspaceService';
+import { attendanceService } from '@/services/attendanceService';
 import {
   Menu,
   User,
@@ -38,7 +40,6 @@ import {
   Check,
 } from 'lucide-react-native';
 
-const API_BASE_URL = 'https://oki.wchapel.com/api/v1';
 
 const getFriendlyErrorMessage = (message: string, action: 'in' | 'out') => {
   if (!message) return `Failed to clock ${action}.`;
@@ -114,19 +115,9 @@ export default function WorkspaceDashboard() {
     if (showLoader) setLoading(true);
 
     try {
-      const response = await fetch(`${API_BASE_URL}/staff/dashboard`, {
-        method: 'GET',
-        headers: {
-          'Accept': 'application/json',
-          'Authorization': `Bearer ${authToken}`,
-        },
-      });
-
-      if (response.ok) {
-        const result = await response.json();
-        if (result.success && result.data) {
-          setStats(result.data);
-        }
+      const result = await workspaceService.getDashboard();
+      if (result.success && result.data) {
+        setStats(result.data);
       }
     } catch (error) {
       console.error('Error fetching dashboard stats:', error);
@@ -223,52 +214,41 @@ export default function WorkspaceDashboard() {
     }
 
     try {
-      const response = await fetch(`${API_BASE_URL}/attendance/${endpoint}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-          'Authorization': `Bearer ${authToken}`,
-        },
-        body: JSON.stringify({
-          latitude,
-          longitude,
-        }),
-      });
+      const result = await attendanceService.clockInOut(endpoint, latitude, longitude);
 
-      let result: any = null;
-      let responseText = '';
-      try {
-        responseText = await response.text();
-        result = JSON.parse(responseText);
-      } catch (err) {
-        console.warn('Failed to parse response as JSON:', err);
+      if (result?.success) {
+        const successMsg = result.message || `Successfully clocked ${isClockedIn ? 'out' : 'in'}.`;
+        setAttendanceSuccess(successMsg);
+        showAlert({ title: 'Success', message: successMsg, type: 'success' });
+        fetchDashboardStats(false);
+      } else {
+        const serverMessage = result?.message || `Failed to clock ${isClockedIn ? 'out' : 'in'}.`;
+        const friendlyMessage = getFriendlyErrorMessage(serverMessage, isClockedIn ? 'out' : 'in');
+        setAttendanceError(friendlyMessage);
+        showAlert({ title: 'Attendance Error', message: friendlyMessage, type: 'error' });
       }
-
-      if (response.status === 401) {
+    } catch (error: any) {
+      if (error.response && error.response.status === 401) {
         const msg = 'Your login session has expired or is invalid. Please sign out and log back in to mark your attendance.';
         setAttendanceError(msg);
         showAlert({ title: 'Session Expired', message: msg, type: 'warning' });
         setClockActionLoading(false);
         return;
       }
-
-      if (response.ok && result?.success) {
-        const successMsg = result.message || `Successfully clocked ${isClockedIn ? 'out' : 'in'}.`;
-        setAttendanceSuccess(successMsg);
-        showAlert({ title: 'Success', message: successMsg, type: 'success' });
-        fetchDashboardStats(false);
-      } else {
-        const serverMessage = result?.message || (responseText.length < 200 && !responseText.includes('<!DOCTYPE html>') ? responseText : null) || `Failed to clock ${isClockedIn ? 'out' : 'in'}.`;
+      
+      console.error(`Error during clock-${isClockedIn ? 'out' : 'in'}:`, error);
+      
+      const responseData = error.response?.data;
+      if (responseData && !responseData.success) {
+        const serverMessage = responseData.message || `Failed to clock ${isClockedIn ? 'out' : 'in'}.`;
         const friendlyMessage = getFriendlyErrorMessage(serverMessage, isClockedIn ? 'out' : 'in');
         setAttendanceError(friendlyMessage);
         showAlert({ title: 'Attendance Error', message: friendlyMessage, type: 'error' });
+      } else {
+        const networkMsg = 'Could not connect to the attendance server. Please check your internet connection and try again.';
+        setAttendanceError(networkMsg);
+        showAlert({ title: 'Network Error', message: networkMsg, type: 'error' });
       }
-    } catch (error) {
-      console.error(`Error during clock-${isClockedIn ? 'out' : 'in'}:`, error);
-      const networkMsg = 'Could not connect to the attendance server. Please check your internet connection and try again.';
-      setAttendanceError(networkMsg);
-      showAlert({ title: 'Network Error', message: networkMsg, type: 'error' });
     } finally {
       setClockActionLoading(false);
     }

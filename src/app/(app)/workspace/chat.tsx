@@ -34,8 +34,7 @@ import {
   FileCode,
 } from 'lucide-react-native';
 import { ChatMessage, ChatThread, ChatAttachment, EntityLink } from './types';
-
-const API_BASE_URL = 'https://oki.wchapel.com/api/v1';
+import { messageService } from '@/services/messageService';
 
 export default function ChatScreen() {
   const params = useLocalSearchParams();
@@ -94,13 +93,7 @@ export default function ChatScreen() {
   const markThreadAsRead = useCallback(async () => {
     if (!authToken || !threadId) return;
     try {
-      await fetch(`${API_BASE_URL}/messages/${threadId}/read`, {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Authorization': `Bearer ${authToken}`,
-        },
-      });
+      await messageService.markThreadRead(threadId);
     } catch (error) {
       console.error(`Error marking thread ${threadId} as read:`, error);
     }
@@ -115,25 +108,16 @@ export default function ChatScreen() {
 
     if (showLoader) setLoading(true);
     try {
-      const response = await fetch(`${API_BASE_URL}/messages/thread/${threadId}`, {
-        method: 'GET',
-        headers: {
-          'Accept': 'application/json',
-          'Authorization': `Bearer ${authToken}`,
-        },
-      });
+      const result = await messageService.getThread(threadId);
 
-      if (response.ok) {
-        const result = await response.json();
-        if (result.success && result.data) {
-          setThread(result.data.thread);
-          const fetchedMsgs: ChatMessage[] = result.data.messages || [];
-          setMessages(fetchedMsgs);
-          
-          // Mark thread as read if there are unread messages
-          if (result.data.thread?.unread_count > 0) {
-            markThreadAsRead();
-          }
+      if (result.success && result.data) {
+        setThread(result.data.thread);
+        const fetchedMsgs: ChatMessage[] = result.data.messages || [];
+        setMessages(fetchedMsgs);
+        
+        // Mark thread as read if there are unread messages
+        if (result.data.thread?.unread_count > 0) {
+          markThreadAsRead();
         }
       }
     } catch (error) {
@@ -204,11 +188,12 @@ export default function ChatScreen() {
 
       // Attachments appending
       selectedAttachments.forEach((file, index) => {
-        formData.append(`attachments[${index}]`, {
+        const fileObj: any = {
           uri: file.uri,
           name: file.name,
           type: file.type,
-        } as any);
+        };
+        formData.append(`attachments[${index}]`, fileObj);
       });
 
       // Links metadata appending
@@ -217,19 +202,13 @@ export default function ChatScreen() {
         formData.append(`metadata[links][${idx}][label]`, link.label);
       });
 
-      const response = await fetch(`${API_BASE_URL}/messages`, {
-        method: 'POST',
+      const result = await messageService.sendMessage(formData, {
         headers: {
-          'Accept': 'application/json',
-          'Authorization': `Bearer ${authToken}`,
-          // Content-Type should not be set manually for FormData to let the browser configure bounds
+          'Content-Type': 'multipart/form-data',
         },
-        body: formData,
       });
 
-      if (response.ok) {
-        const result = await response.json();
-        if (result.success && result.data) {
+      if (result.success && result.data) {
           const newMsg: ChatMessage = result.data.message;
           
           if (!threadId && result.data.thread?.id) {
@@ -252,14 +231,13 @@ export default function ChatScreen() {
           setTimeout(() => {
             flatListRef.current?.scrollToEnd({ animated: true });
           }, 100);
-        }
       } else {
-        const errResult = await response.json();
-        Alert.alert('Send Error', errResult.message || 'Failed to send message.');
+        Alert.alert('Send Error', result.message || 'Failed to send message.');
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error sending message:', error);
-      Alert.alert('Network Error', 'Could not send message. Check network.');
+      const errResult = error.response?.data;
+      Alert.alert('Error', errResult?.message || 'Could not send message. Check network.');
     } finally {
       setSending(false);
     }

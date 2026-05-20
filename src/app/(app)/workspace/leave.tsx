@@ -30,8 +30,7 @@ import {
   UserCheck,
 } from 'lucide-react-native';
 import { useAuth } from '@/context/AuthContext';
-
-const API_BASE_URL = 'https://oki.wchapel.com/api/v1';
+import { leaveService } from '@/services/leaveService';
 
 /* ─── Types ─────────────────────────────────────────────────────────────── */
 
@@ -285,33 +284,41 @@ export default function LeaveScreen() {
     if (!authToken) return;
     if (showLoader) setLoading(true);
     try {
-      const response = await fetch(`${API_BASE_URL}/staff/leaves`, {
-        method: 'GET',
-        headers: { Accept: 'application/json', Authorization: `Bearer ${authToken}` },
-      });
-      if (response.ok) {
-        const result = await response.json();
-        if (result.success && result.data) {
-          const { leaves, balance: apiBalance, colleagues: apiColleagues, department_set } = result.data;
-          const leavesArray: LeaveRequestItem[] = leaves?.data || leaves || [];
-          setMyRequests(leavesArray);
-          if (apiBalance) setBalance(apiBalance);
-          if (apiColleagues) setColleagues(apiColleagues);
-          if (department_set !== undefined) setDepartmentSet(department_set);
-        }
+      const result = await leaveService.getLeaves();
+      if (result.success && result.data) {
+        const { leaves, balance: apiBalance, colleagues: apiColleagues, department_set } = result.data;
+        console.log('[Leave] API response data keys:', Object.keys(result.data));
+        console.log('[Leave] Raw colleagues:', JSON.stringify(apiColleagues));
+        console.log('[Leave] department_set:', department_set);
+        
+        // TEMP DEBUG: Show on screen what the API returned
+        Alert.alert(
+          'DEBUG: Colleagues Data',
+          `department_set: ${department_set}\n` +
+          `type: ${typeof apiColleagues}\n` +
+          `isArray: ${Array.isArray(apiColleagues)}\n` +
+          `count: ${Array.isArray(apiColleagues) ? apiColleagues.length : (apiColleagues ? Object.keys(apiColleagues).length : 'null/undefined')}\n` +
+          `raw: ${JSON.stringify(apiColleagues)?.substring(0, 300)}`
+        );
+        
+        const leavesArray: LeaveRequestItem[] = leaves?.data || leaves || [];
+        setMyRequests(leavesArray);
+        if (apiBalance) setBalance(apiBalance);
+        // Ensure colleagues is always a proper array
+        const colleaguesList = Array.isArray(apiColleagues)
+          ? apiColleagues
+          : apiColleagues && typeof apiColleagues === 'object'
+            ? Object.values(apiColleagues)
+            : [];
+        setColleagues(colleaguesList as Colleague[]);
+        if (department_set !== undefined) setDepartmentSet(department_set);
       }
 
       // Fetch vouching requests
-      const vouchRes = await fetch(`${API_BASE_URL}/staff/leaves/vouching`, {
-        method: 'GET',
-        headers: { Accept: 'application/json', Authorization: `Bearer ${authToken}` },
-      });
-      if (vouchRes.ok) {
-        const vr = await vouchRes.json();
-        if (vr.success && vr.data) {
-          setPendingVouch(vr.data.pending || []);
-          setVouchHistory(vr.data.history?.data || vr.data.history || []);
-        }
+      const vr = await leaveService.getVouchingLeaves();
+      if (vr.success && vr.data) {
+        setPendingVouch(vr.data.pending || []);
+        setVouchHistory(vr.data.history?.data || vr.data.history || []);
       }
     } catch (error) {
       console.error('Error fetching leave details:', error);
@@ -342,25 +349,16 @@ export default function LeaveScreen() {
 
     setSubmitting(true);
     try {
-      const body = JSON.stringify({
+      const payload = {
         type: leaveType,
         selected_dates: selectedDates,
         reason: reason.trim(),
         vouch_staff_id: vouchStaffId,
-      });
+      };
 
-      const response = await fetch(`${API_BASE_URL}/staff/leaves`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-          Authorization: `Bearer ${authToken}`,
-        },
-        body,
-      });
+      const result = await leaveService.submitLeaveRequest(payload);
 
-      const result = await response.json();
-      if (response.ok && result.success) {
+      if (result.success) {
         Alert.alert('Success', 'Leave request submitted. Awaiting colleague acknowledgement.');
         resetForm();
         setModalVisible(false);
@@ -369,9 +367,11 @@ export default function LeaveScreen() {
         const msg = result.message || (result.errors ? Object.values(result.errors).flat().join('\n') : 'Failed to submit.');
         Alert.alert('Error', msg);
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error submitting leave:', error);
-      Alert.alert('Error', 'Network error occurred. Please try again.');
+      const result = error.response?.data;
+      const msg = result?.message || (result?.errors ? Object.values(result.errors).flat().join('\n') : 'Network error occurred. Please try again.');
+      Alert.alert('Error', msg);
     } finally {
       setSubmitting(false);
     }
@@ -391,17 +391,10 @@ export default function LeaveScreen() {
     if (!vouchModalItem) return;
     setVouchSubmitting(true);
     try {
-      const response = await fetch(`${API_BASE_URL}/staff/leaves/${vouchModalItem.id}/vouch`, {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-          Authorization: `Bearer ${authToken}`,
-        },
-        body: JSON.stringify({ status: vouchDecision, remarks: vouchRemarks }),
-      });
-      const result = await response.json();
-      if (response.ok && result.success) {
+      const payload = { status: vouchDecision, remarks: vouchRemarks };
+      const result = await leaveService.vouchLeave(vouchModalItem.id, payload);
+      
+      if (result.success) {
         const msg = vouchDecision === 'vouched' ? 'You agreed to cover. HOD has been notified.' : 'You declined the cover request.';
         Alert.alert('Done', msg);
         setVouchModalItem(null);
@@ -411,8 +404,9 @@ export default function LeaveScreen() {
       } else {
         Alert.alert('Error', result.message || 'Failed to submit decision.');
       }
-    } catch (error) {
-      Alert.alert('Error', 'Network error. Please try again.');
+    } catch (error: any) {
+      const result = error.response?.data;
+      Alert.alert('Error', result?.message || 'Network error. Please try again.');
     } finally {
       setVouchSubmitting(false);
     }
@@ -698,7 +692,7 @@ export default function LeaveScreen() {
               </Pressable>
 
               {showColleagueDropdown && (
-                <View style={[styles.dropdown, { borderColor: theme.border, backgroundColor: theme.background }]}>
+                <View style={[styles.dropdown, { borderColor: theme.border, backgroundColor: theme.background, zIndex: 10 }]}>
                   {colleagues.length === 0 ? (
                     <Text style={[styles.dropdownEmptyText, { color: theme.textSecondary }]}>
                       {departmentSet
@@ -706,17 +700,19 @@ export default function LeaveScreen() {
                         : 'You have no department assigned — contact HR'}
                     </Text>
                   ) : (
-                    colleagues.map((col) => (
-                      <Pressable
-                        key={col.id}
-                        onPress={() => { setVouchStaffId(col.id); setShowColleagueDropdown(false); }}
-                        style={[styles.dropdownItem, { borderBottomColor: theme.border }]}
-                      >
-                        <Text style={[styles.dropdownItemText, { color: theme.text }]}>
-                          {col.first_name} {col.surname}
-                        </Text>
-                      </Pressable>
-                    ))
+                    <ScrollView style={{ maxHeight: 200 }} nestedScrollEnabled>
+                      {colleagues.map((col) => (
+                        <Pressable
+                          key={col.id}
+                          onPress={() => { setVouchStaffId(col.id); setShowColleagueDropdown(false); }}
+                          style={[styles.dropdownItem, { borderBottomColor: theme.border }]}
+                        >
+                          <Text style={[styles.dropdownItemText, { color: theme.text }]}>
+                            {col.first_name} {col.surname}
+                          </Text>
+                        </Pressable>
+                      ))}
+                    </ScrollView>
                   )}
                 </View>
               )}

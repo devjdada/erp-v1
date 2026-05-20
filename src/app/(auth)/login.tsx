@@ -26,7 +26,7 @@ export default function LoginScreen() {
     try {
       const response = await login(email.trim(), password);
       if (response.success) {
-        router.replace('/(app)/workspace/index');
+        router.replace('/(app)/workspace');
       } else {
         Alert.alert('Login Failed', response.message);
       }
