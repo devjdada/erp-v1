@@ -866,7 +866,7 @@
       "source_file": ".agent/skills/ui-ux-pro-max/scripts/core.py",
       "source_location": "L99",
       "id": "scripts_core_bm25_init",
-      "community": 4,
+      "community": 1,
       "norm_label": ".__init__()"
     },
     {
@@ -1721,7 +1721,7 @@
       "source_file": "src/app/(app)/fleet/index.tsx",
       "source_location": "L1",
       "id": "src_app_app_fleet_index_tsx",
-      "community": 3,
+      "community": 32,
       "norm_label": "index.tsx"
     },
     {
@@ -1739,7 +1739,7 @@
       "source_file": "src/app/(app)/fleet/index.tsx",
       "source_location": "L15",
       "id": "fleet_index_fleetvehicles",
-      "community": 3,
+      "community": 32,
       "norm_label": "fleetvehicles()"
     },
     {
@@ -1748,7 +1748,7 @@
       "source_file": "src/app/(app)/fleet/index.tsx",
       "source_location": "L101",
       "id": "fleet_index_styles",
-      "community": 3,
+      "community": 32,
       "norm_label": "styles"
     },
     {
@@ -1917,7 +1917,7 @@
       "label": "WorkspaceDashboard()",
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/index.tsx",
-      "source_location": "L10",
+      "source_location": "L9",
       "id": "workspace_index_workspacedashboard",
       "community": 32,
       "norm_label": "workspacedashboard()"
@@ -1926,7 +1926,7 @@
       "label": "styles",
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/index.tsx",
-      "source_location": "L319",
+      "source_location": "L215",
       "id": "workspace_index_styles",
       "community": 32,
       "norm_label": "styles"
@@ -2022,6 +2022,24 @@
       "norm_label": "styles"
     },
     {
+      "label": "more.tsx",
+      "file_type": "code",
+      "source_file": "src/app/(app)/workspace/more.tsx",
+      "source_location": "L1",
+      "id": "src_app_app_workspace_more_tsx",
+      "community": 5,
+      "norm_label": "more.tsx"
+    },
+    {
+      "label": "MorePlaceholderScreen()",
+      "file_type": "code",
+      "source_file": "src/app/(app)/workspace/more.tsx",
+      "source_location": "L4",
+      "id": "workspace_more_moreplaceholderscreen",
+      "community": 5,
+      "norm_label": "moreplaceholderscreen()"
+    },
+    {
       "label": "profile.tsx",
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/profile.tsx",
@@ -2097,10 +2115,19 @@
       "label": "WorkspaceLayout()",
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/_layout.tsx",
-      "source_location": "L6",
+      "source_location": "L9",
       "id": "workspace_layout_workspacelayout",
       "community": 3,
       "norm_label": "workspacelayout()"
+    },
+    {
+      "label": "styles",
+      "file_type": "code",
+      "source_file": "src/app/(app)/workspace/_layout.tsx",
+      "source_location": "L219",
+      "id": "workspace_layout_styles",
+      "community": 3,
+      "norm_label": "styles"
     },
     {
       "label": "login.tsx",
@@ -2189,7 +2216,7 @@
       "source_file": "src/app/(onboarding)/index.tsx",
       "source_location": "L9",
       "id": "onboarding_index_onboardingscreen",
-      "community": 32,
+      "community": 34,
       "norm_label": "onboardingscreen()"
     },
     {
@@ -2477,7 +2504,7 @@
       "source_file": "src/components/hint-row.tsx",
       "source_location": "L1",
       "id": "src_components_hint_row_tsx",
-      "community": 5,
+      "community": 3,
       "norm_label": "hint-row.tsx"
     },
     {
@@ -2486,7 +2513,7 @@
       "source_file": "src/components/hint-row.tsx",
       "source_location": "L9",
       "id": "components_hint_row_hintrowprops",
-      "community": 5,
+      "community": 3,
       "norm_label": "hintrowprops"
     },
     {
@@ -2495,7 +2522,7 @@
       "source_file": "src/components/hint-row.tsx",
       "source_location": "L14",
       "id": "components_hint_row_hintrow",
-      "community": 5,
+      "community": 3,
       "norm_label": "hintrow()"
     },
     {
@@ -2504,7 +2531,7 @@
       "source_file": "src/components/hint-row.tsx",
       "source_location": "L25",
       "id": "components_hint_row_styles",
-      "community": 5,
+      "community": 3,
       "norm_label": "styles"
     },
     {
@@ -2513,7 +2540,7 @@
       "source_file": "src/components/themed-text.tsx",
       "source_location": "L1",
       "id": "src_components_themed_text_tsx",
-      "community": 5,
+      "community": 3,
       "norm_label": "themed-text.tsx"
     },
     {
@@ -2522,7 +2549,7 @@
       "source_file": "src/components/themed-text.tsx",
       "source_location": "L6",
       "id": "components_themed_text_themedtextprops",
-      "community": 5,
+      "community": 3,
       "norm_label": "themedtextprops"
     },
     {
@@ -2531,7 +2558,7 @@
       "source_file": "src/components/themed-text.tsx",
       "source_location": "L11",
       "id": "components_themed_text_themedtext",
-      "community": 5,
+      "community": 3,
       "norm_label": "themedtext()"
     },
     {
@@ -2540,7 +2567,7 @@
       "source_file": "src/components/themed-text.tsx",
       "source_location": "L33",
       "id": "components_themed_text_styles",
-      "community": 5,
+      "community": 3,
       "norm_label": "styles"
     },
     {
@@ -2549,7 +2576,7 @@
       "source_file": "src/components/themed-view.tsx",
       "source_location": "L1",
       "id": "src_components_themed_view_tsx",
-      "community": 5,
+      "community": 3,
       "norm_label": "themed-view.tsx"
     },
     {
@@ -2558,7 +2585,7 @@
       "source_file": "src/components/themed-view.tsx",
       "source_location": "L6",
       "id": "components_themed_view_themedviewprops",
-      "community": 5,
+      "community": 3,
       "norm_label": "themedviewprops"
     },
     {
@@ -2567,7 +2594,7 @@
       "source_file": "src/components/themed-view.tsx",
       "source_location": "L12",
       "id": "components_themed_view_themedview",
-      "community": 5,
+      "community": 3,
       "norm_label": "themedview()"
     },
     {
@@ -2576,7 +2603,7 @@
       "source_file": "src/components/web-badge.tsx",
       "source_location": "L1",
       "id": "src_components_web_badge_tsx",
-      "community": 5,
+      "community": 3,
       "norm_label": "web-badge.tsx"
     },
     {
@@ -2585,7 +2612,7 @@
       "source_file": "src/components/web-badge.tsx",
       "source_location": "L11",
       "id": "components_web_badge_webbadge",
-      "community": 5,
+      "community": 3,
       "norm_label": "webbadge()"
     },
     {
@@ -2594,7 +2621,7 @@
       "source_file": "src/components/web-badge.tsx",
       "source_location": "L31",
       "id": "components_web_badge_styles",
-      "community": 5,
+      "community": 3,
       "norm_label": "styles"
     },
     {
@@ -2603,7 +2630,7 @@
       "source_file": "src/components/ui/collapsible.tsx",
       "source_location": "L1",
       "id": "src_components_ui_collapsible_tsx",
-      "community": 5,
+      "community": 3,
       "norm_label": "collapsible.tsx"
     },
     {
@@ -2612,7 +2639,7 @@
       "source_file": "src/components/ui/collapsible.tsx",
       "source_location": "L11",
       "id": "ui_collapsible_collapsible",
-      "community": 5,
+      "community": 3,
       "norm_label": "collapsible()"
     },
     {
@@ -2621,7 +2648,7 @@
       "source_file": "src/components/ui/collapsible.tsx",
       "source_location": "L43",
       "id": "ui_collapsible_styles",
-      "community": 5,
+      "community": 3,
       "norm_label": "styles"
     },
     {
@@ -2630,7 +2657,7 @@
       "source_file": "src/constants/theme.ts",
       "source_location": "L1",
       "id": "src_constants_theme_ts",
-      "community": 5,
+      "community": 3,
       "norm_label": "theme.ts"
     },
     {
@@ -2648,7 +2675,7 @@
       "source_file": "src/constants/theme.ts",
       "source_location": "L31",
       "id": "constants_theme_themecolor",
-      "community": 5,
+      "community": 3,
       "norm_label": "themecolor"
     },
     {
@@ -2657,7 +2684,7 @@
       "source_file": "src/constants/theme.ts",
       "source_location": "L33",
       "id": "constants_theme_fonts",
-      "community": 5,
+      "community": 3,
       "norm_label": "fonts"
     },
     {
@@ -2666,7 +2693,7 @@
       "source_file": "src/constants/theme.ts",
       "source_location": "L58",
       "id": "constants_theme_spacing",
-      "community": 5,
+      "community": 3,
       "norm_label": "spacing"
     },
     {
@@ -2720,7 +2747,7 @@
       "source_file": "src/context/AuthContext.tsx",
       "source_location": "L42",
       "id": "context_authcontext_authprovider",
-      "community": 32,
+      "community": 3,
       "norm_label": "authprovider()"
     },
     {
@@ -2774,7 +2801,7 @@
       "source_file": "src/context/ThemeContext.tsx",
       "source_location": "L19",
       "id": "context_themecontext_themeprovider",
-      "community": 5,
+      "community": 3,
       "norm_label": "themeprovider()"
     },
     {
@@ -2792,7 +2819,7 @@
       "source_file": "src/hooks/use-color-scheme.ts",
       "source_location": "L1",
       "id": "src_hooks_use_color_scheme_ts",
-      "community": 5,
+      "community": 3,
       "norm_label": "use-color-scheme.ts"
     },
     {
@@ -2801,7 +2828,7 @@
       "source_file": "src/hooks/use-color-scheme.web.ts",
       "source_location": "L1",
       "id": "src_hooks_use_color_scheme_web_ts",
-      "community": 5,
+      "community": 3,
       "norm_label": "use-color-scheme.web.ts"
     },
     {
@@ -2810,7 +2837,7 @@
       "source_file": "src/hooks/use-color-scheme.web.ts",
       "source_location": "L7",
       "id": "hooks_use_color_scheme_web_usecolorscheme",
-      "community": 5,
+      "community": 3,
       "norm_label": "usecolorscheme()"
     },
     {
@@ -4154,7 +4181,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 3,
       "norm_label": "hintrow",
       "id": "hint_row_hintrow"
     },
@@ -4167,7 +4194,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 3,
       "norm_label": "themedtext",
       "id": "themed_text_themedtext"
     },
@@ -4180,7 +4207,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 3,
       "norm_label": "themedview",
       "id": "themed_view_themedview"
     },
@@ -4193,7 +4220,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 3,
       "norm_label": "webbadge",
       "id": "web_badge_webbadge"
     },
@@ -4206,7 +4233,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 3,
       "norm_label": "collapsible",
       "id": "collapsible_collapsible"
     },
@@ -4219,7 +4246,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 3,
       "norm_label": "theme colors",
       "id": "theme_colors"
     },
@@ -4285,7 +4312,7 @@
       "author": null,
       "contributor": null,
       "rationale": "Re-calculates color scheme on client-side for web to prevent hydration mismatch errors during static rendering.",
-      "community": 5,
+      "community": 3,
       "norm_label": "static hydration support for web",
       "id": "mechanism_static_hydration_web"
     },
@@ -7867,6 +7894,16 @@
       "target": "context_authcontext_useauth"
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/more.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_app_app_workspace_more_tsx",
+      "target": "workspace_more_moreplaceholderscreen",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -8046,6 +8083,16 @@
       "confidence_score": 1.0,
       "source": "src_app_app_workspace_layout_tsx",
       "target": "workspace_layout_workspacelayout"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/_layout.tsx",
+      "source_location": "L219",
+      "weight": 1.0,
+      "source": "src_app_app_workspace_layout_tsx",
+      "target": "workspace_layout_styles",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -11505,5 +11552,5 @@
       "source_file": "src/app/(onboarding)/index.tsx"
     }
   ],
-  "built_at_commit": "8c1fbd5c9dcbc723fd7dd77a56ea21879e6a487b"
+  "built_at_commit": "6c3c38b7cf19acc68d3f83bd9437b898c1678165"
 }
