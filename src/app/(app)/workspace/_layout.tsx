@@ -67,6 +67,18 @@ export default function WorkspaceLayout() {
         }}
       />
       <Tabs.Screen
+        name="documents"
+        options={{
+          href: null,
+        }}
+      />
+      <Tabs.Screen
+        name="announcements"
+        options={{
+          href: null,
+        }}
+      />
+      <Tabs.Screen
         name="profile"
         options={{
           title: 'PROFILE',

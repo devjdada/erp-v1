@@ -866,7 +866,7 @@
       "source_file": ".agent/skills/ui-ux-pro-max/scripts/core.py",
       "source_location": "L99",
       "id": "scripts_core_bm25_init",
-      "community": 1,
+      "community": 4,
       "norm_label": ".__init__()"
     },
     {
@@ -1631,7 +1631,7 @@
       "source_file": "src/app/index.tsx",
       "source_location": "L1",
       "id": "src_app_index_tsx",
-      "community": 3,
+      "community": 32,
       "norm_label": "index.tsx"
     },
     {
@@ -1640,7 +1640,7 @@
       "source_file": "src/app/index.tsx",
       "source_location": "L7",
       "id": "app_index_entryscreen",
-      "community": 3,
+      "community": 32,
       "norm_label": "entryscreen()"
     },
     {
@@ -1730,7 +1730,7 @@
       "source_file": "src/app/(app)/fleet/index.tsx",
       "source_location": "L6",
       "id": "fleet_index_vehicle",
-      "community": 3,
+      "community": 32,
       "norm_label": "vehicle"
     },
     {
@@ -1775,7 +1775,7 @@
       "source_file": "src/app/(app)/fleet/map.tsx",
       "source_location": "L84",
       "id": "fleet_map_styles",
-      "community": 3,
+      "community": 34,
       "norm_label": "styles"
     },
     {
@@ -1797,30 +1797,138 @@
       "norm_label": "fleetlayout()"
     },
     {
+      "label": "announcements.tsx",
+      "file_type": "code",
+      "source_file": "src/app/(app)/workspace/announcements.tsx",
+      "source_location": "L1",
+      "id": "src_app_app_workspace_announcements_tsx",
+      "community": 3,
+      "norm_label": "announcements.tsx"
+    },
+    {
+      "label": "AnnouncementItem",
+      "file_type": "code",
+      "source_file": "src/app/(app)/workspace/announcements.tsx",
+      "source_location": "L7",
+      "id": "workspace_announcements_announcementitem",
+      "community": 3,
+      "norm_label": "announcementitem"
+    },
+    {
+      "label": "AnnouncementsScreen()",
+      "file_type": "code",
+      "source_file": "src/app/(app)/workspace/announcements.tsx",
+      "source_location": "L19",
+      "id": "workspace_announcements_announcementsscreen",
+      "community": 3,
+      "norm_label": "announcementsscreen()"
+    },
+    {
+      "label": "styles",
+      "file_type": "code",
+      "source_file": "src/app/(app)/workspace/announcements.tsx",
+      "source_location": "L214",
+      "id": "workspace_announcements_styles",
+      "community": 3,
+      "norm_label": "styles"
+    },
+    {
+      "label": "chat.tsx",
+      "file_type": "code",
+      "source_file": "src/app/(app)/workspace/chat.tsx",
+      "source_location": "L1",
+      "id": "src_app_app_workspace_chat_tsx",
+      "community": 32,
+      "norm_label": "chat.tsx"
+    },
+    {
+      "label": "Message",
+      "file_type": "code",
+      "source_file": "src/app/(app)/workspace/chat.tsx",
+      "source_location": "L22",
+      "id": "workspace_chat_message",
+      "community": 32,
+      "norm_label": "message"
+    },
+    {
+      "label": "ChatScreen()",
+      "file_type": "code",
+      "source_file": "src/app/(app)/workspace/chat.tsx",
+      "source_location": "L38",
+      "id": "workspace_chat_chatscreen",
+      "community": 32,
+      "norm_label": "chatscreen()"
+    },
+    {
+      "label": "styles",
+      "file_type": "code",
+      "source_file": "src/app/(app)/workspace/chat.tsx",
+      "source_location": "L362",
+      "id": "workspace_chat_styles",
+      "community": 32,
+      "norm_label": "styles"
+    },
+    {
+      "label": "documents.tsx",
+      "file_type": "code",
+      "source_file": "src/app/(app)/workspace/documents.tsx",
+      "source_location": "L1",
+      "id": "src_app_app_workspace_documents_tsx",
+      "community": 3,
+      "norm_label": "documents.tsx"
+    },
+    {
+      "label": "DocumentItem",
+      "file_type": "code",
+      "source_file": "src/app/(app)/workspace/documents.tsx",
+      "source_location": "L7",
+      "id": "workspace_documents_documentitem",
+      "community": 3,
+      "norm_label": "documentitem"
+    },
+    {
+      "label": "DocumentsScreen()",
+      "file_type": "code",
+      "source_file": "src/app/(app)/workspace/documents.tsx",
+      "source_location": "L16",
+      "id": "workspace_documents_documentsscreen",
+      "community": 3,
+      "norm_label": "documentsscreen()"
+    },
+    {
+      "label": "styles",
+      "file_type": "code",
+      "source_file": "src/app/(app)/workspace/documents.tsx",
+      "source_location": "L207",
+      "id": "workspace_documents_styles",
+      "community": 3,
+      "norm_label": "styles"
+    },
+    {
       "label": "index.tsx",
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/index.tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_index_tsx",
-      "community": 3,
+      "community": 32,
       "norm_label": "index.tsx"
     },
     {
       "label": "WorkspaceDashboard()",
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/index.tsx",
-      "source_location": "L9",
+      "source_location": "L10",
       "id": "workspace_index_workspacedashboard",
-      "community": 3,
+      "community": 32,
       "norm_label": "workspacedashboard()"
     },
     {
       "label": "styles",
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/index.tsx",
-      "source_location": "L214",
+      "source_location": "L333",
       "id": "workspace_index_styles",
-      "community": 3,
+      "community": 32,
       "norm_label": "styles"
     },
     {
@@ -1856,25 +1964,61 @@
       "source_file": "src/app/(app)/workspace/messages.tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_messages_tsx",
-      "community": 3,
+      "community": 32,
       "norm_label": "messages.tsx"
+    },
+    {
+      "label": "ApiMessage",
+      "file_type": "code",
+      "source_file": "src/app/(app)/workspace/messages.tsx",
+      "source_location": "L33",
+      "id": "workspace_messages_apimessage",
+      "community": 32,
+      "norm_label": "apimessage"
+    },
+    {
+      "label": "GroupedThread",
+      "file_type": "code",
+      "source_file": "src/app/(app)/workspace/messages.tsx",
+      "source_location": "L55",
+      "id": "workspace_messages_groupedthread",
+      "community": 32,
+      "norm_label": "groupedthread"
+    },
+    {
+      "label": "StaffResource",
+      "file_type": "code",
+      "source_file": "src/app/(app)/workspace/messages.tsx",
+      "source_location": "L65",
+      "id": "workspace_messages_staffresource",
+      "community": 32,
+      "norm_label": "staffresource"
+    },
+    {
+      "label": "DepartmentResource",
+      "file_type": "code",
+      "source_file": "src/app/(app)/workspace/messages.tsx",
+      "source_location": "L72",
+      "id": "workspace_messages_departmentresource",
+      "community": 32,
+      "norm_label": "departmentresource"
     },
     {
       "label": "MessagesScreen()",
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/messages.tsx",
-      "source_location": "L9",
+      "source_location": "L77",
       "id": "workspace_messages_messagesscreen",
-      "community": 3,
+      "community": 32,
       "norm_label": "messagesscreen()"
     },
     {
       "label": "styles",
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/messages.tsx",
-      "source_location": "L128",
+      "source_location": "L588",
       "id": "workspace_messages_styles",
-      "community": 3,
+      "community": 32,
       "norm_label": "styles"
     },
     {
@@ -1883,7 +2027,7 @@
       "source_file": "src/app/(app)/workspace/profile.tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_profile_tsx",
-      "community": 3,
+      "community": 32,
       "norm_label": "profile.tsx"
     },
     {
@@ -1892,7 +2036,7 @@
       "source_file": "src/app/(app)/workspace/profile.tsx",
       "source_location": "L10",
       "id": "workspace_profile_profilescreen",
-      "community": 3,
+      "community": 32,
       "norm_label": "profilescreen()"
     },
     {
@@ -1901,7 +2045,7 @@
       "source_file": "src/app/(app)/workspace/profile.tsx",
       "source_location": "L165",
       "id": "workspace_profile_styles",
-      "community": 3,
+      "community": 32,
       "norm_label": "styles"
     },
     {
@@ -1935,7 +2079,7 @@
       "label": "styles",
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/work-order.tsx",
-      "source_location": "L111",
+      "source_location": "L108",
       "id": "workspace_work_order_styles",
       "community": 3,
       "norm_label": "styles"
@@ -1964,7 +2108,7 @@
       "source_file": "src/app/(auth)/login.tsx",
       "source_location": "L1",
       "id": "src_app_auth_login_tsx",
-      "community": 3,
+      "community": 34,
       "norm_label": "login.tsx"
     },
     {
@@ -1973,7 +2117,7 @@
       "source_file": "src/app/(auth)/login.tsx",
       "source_location": "L11",
       "id": "auth_login_loginscreen",
-      "community": 3,
+      "community": 32,
       "norm_label": "loginscreen()"
     },
     {
@@ -1982,7 +2126,7 @@
       "source_file": "src/app/(auth)/login.tsx",
       "source_location": "L96",
       "id": "auth_login_styles",
-      "community": 3,
+      "community": 34,
       "norm_label": "styles"
     },
     {
@@ -1991,7 +2135,7 @@
       "source_file": "src/app/(auth)/register.tsx",
       "source_location": "L1",
       "id": "src_app_auth_register_tsx",
-      "community": 3,
+      "community": 34,
       "norm_label": "register.tsx"
     },
     {
@@ -2000,7 +2144,7 @@
       "source_file": "src/app/(auth)/register.tsx",
       "source_location": "L11",
       "id": "auth_register_registerscreen",
-      "community": 3,
+      "community": 32,
       "norm_label": "registerscreen()"
     },
     {
@@ -2009,7 +2153,7 @@
       "source_file": "src/app/(auth)/register.tsx",
       "source_location": "L104",
       "id": "auth_register_styles",
-      "community": 3,
+      "community": 34,
       "norm_label": "styles"
     },
     {
@@ -2036,7 +2180,7 @@
       "source_file": "src/app/(onboarding)/index.tsx",
       "source_location": "L1",
       "id": "src_app_onboarding_index_tsx",
-      "community": 3,
+      "community": 34,
       "norm_label": "index.tsx"
     },
     {
@@ -2045,7 +2189,7 @@
       "source_file": "src/app/(onboarding)/index.tsx",
       "source_location": "L9",
       "id": "onboarding_index_onboardingscreen",
-      "community": 3,
+      "community": 32,
       "norm_label": "onboardingscreen()"
     },
     {
@@ -2054,7 +2198,7 @@
       "source_file": "src/app/(onboarding)/index.tsx",
       "source_location": "L44",
       "id": "onboarding_index_styles",
-      "community": 3,
+      "community": 34,
       "norm_label": "styles"
     },
     {
@@ -2207,7 +2351,7 @@
       "source_file": "src/components/CustomDrawerContent.tsx",
       "source_location": "L1",
       "id": "src_components_customdrawercontent_tsx",
-      "community": 3,
+      "community": 32,
       "norm_label": "customdrawercontent.tsx"
     },
     {
@@ -2216,7 +2360,7 @@
       "source_file": "src/components/CustomDrawerContent.tsx",
       "source_location": "L9",
       "id": "components_customdrawercontent_customdrawercontent",
-      "community": 3,
+      "community": 32,
       "norm_label": "customdrawercontent()"
     },
     {
@@ -2225,7 +2369,7 @@
       "source_file": "src/components/CustomDrawerContent.tsx",
       "source_location": "L124",
       "id": "components_customdrawercontent_styles",
-      "community": 3,
+      "community": 32,
       "norm_label": "styles"
     },
     {
@@ -2234,7 +2378,7 @@
       "source_file": "src/components/ERPButton.tsx",
       "source_location": "L1",
       "id": "src_components_erpbutton_tsx",
-      "community": 3,
+      "community": 34,
       "norm_label": "erpbutton.tsx"
     },
     {
@@ -2243,7 +2387,7 @@
       "source_file": "src/components/ERPButton.tsx",
       "source_location": "L5",
       "id": "components_erpbutton_erpbuttonprops",
-      "community": 3,
+      "community": 34,
       "norm_label": "erpbuttonprops"
     },
     {
@@ -2252,7 +2396,7 @@
       "source_file": "src/components/ERPButton.tsx",
       "source_location": "L14",
       "id": "components_erpbutton_erpbutton",
-      "community": 3,
+      "community": 34,
       "norm_label": "erpbutton()"
     },
     {
@@ -2261,7 +2405,7 @@
       "source_file": "src/components/ERPButton.tsx",
       "source_location": "L51",
       "id": "components_erpbutton_styles",
-      "community": 3,
+      "community": 34,
       "norm_label": "styles"
     },
     {
@@ -2270,7 +2414,7 @@
       "source_file": "src/components/ERPInput.tsx",
       "source_location": "L1",
       "id": "src_components_erpinput_tsx",
-      "community": 3,
+      "community": 34,
       "norm_label": "erpinput.tsx"
     },
     {
@@ -2279,7 +2423,7 @@
       "source_file": "src/components/ERPInput.tsx",
       "source_location": "L5",
       "id": "components_erpinput_erpinputprops",
-      "community": 3,
+      "community": 34,
       "norm_label": "erpinputprops"
     },
     {
@@ -2288,7 +2432,7 @@
       "source_file": "src/components/ERPInput.tsx",
       "source_location": "L10",
       "id": "components_erpinput_erpinput",
-      "community": 3,
+      "community": 34,
       "norm_label": "erpinput()"
     },
     {
@@ -2297,7 +2441,7 @@
       "source_file": "src/components/ERPInput.tsx",
       "source_location": "L35",
       "id": "components_erpinput_styles",
-      "community": 3,
+      "community": 34,
       "norm_label": "styles"
     },
     {
@@ -2495,7 +2639,7 @@
       "source_file": "src/constants/theme.ts",
       "source_location": "L10",
       "id": "constants_theme_colors",
-      "community": 5,
+      "community": 3,
       "norm_label": "colors"
     },
     {
@@ -2531,7 +2675,7 @@
       "source_file": "src/context/AuthContext.tsx",
       "source_location": "L1",
       "id": "src_context_authcontext_tsx",
-      "community": 3,
+      "community": 32,
       "norm_label": "authcontext.tsx"
     },
     {
@@ -2540,7 +2684,7 @@
       "source_file": "src/context/AuthContext.tsx",
       "source_location": "L5",
       "id": "context_authcontext_staff",
-      "community": 3,
+      "community": 32,
       "norm_label": "staff"
     },
     {
@@ -2549,7 +2693,7 @@
       "source_file": "src/context/AuthContext.tsx",
       "source_location": "L17",
       "id": "context_authcontext_user",
-      "community": 3,
+      "community": 32,
       "norm_label": "user"
     },
     {
@@ -2558,7 +2702,7 @@
       "source_file": "src/context/AuthContext.tsx",
       "source_location": "L28",
       "id": "context_authcontext_authcontexttype",
-      "community": 3,
+      "community": 32,
       "norm_label": "authcontexttype"
     },
     {
@@ -2567,7 +2711,7 @@
       "source_file": "src/context/AuthContext.tsx",
       "source_location": "L38",
       "id": "context_authcontext_authcontext",
-      "community": 3,
+      "community": 32,
       "norm_label": "authcontext"
     },
     {
@@ -2576,7 +2720,7 @@
       "source_file": "src/context/AuthContext.tsx",
       "source_location": "L42",
       "id": "context_authcontext_authprovider",
-      "community": 3,
+      "community": 32,
       "norm_label": "authprovider()"
     },
     {
@@ -2585,7 +2729,7 @@
       "source_file": "src/context/AuthContext.tsx",
       "source_location": "L226",
       "id": "context_authcontext_useauth",
-      "community": 3,
+      "community": 32,
       "norm_label": "useauth()"
     },
     {
@@ -2594,7 +2738,7 @@
       "source_file": "src/context/ThemeContext.tsx",
       "source_location": "L1",
       "id": "src_context_themecontext_tsx",
-      "community": 5,
+      "community": 3,
       "norm_label": "themecontext.tsx"
     },
     {
@@ -2603,7 +2747,7 @@
       "source_file": "src/context/ThemeContext.tsx",
       "source_location": "L6",
       "id": "context_themecontext_themepreference",
-      "community": 5,
+      "community": 3,
       "norm_label": "themepreference"
     },
     {
@@ -2612,7 +2756,7 @@
       "source_file": "src/context/ThemeContext.tsx",
       "source_location": "L8",
       "id": "context_themecontext_themecontexttype",
-      "community": 5,
+      "community": 3,
       "norm_label": "themecontexttype"
     },
     {
@@ -2621,7 +2765,7 @@
       "source_file": "src/context/ThemeContext.tsx",
       "source_location": "L15",
       "id": "context_themecontext_themecontext",
-      "community": 5,
+      "community": 3,
       "norm_label": "themecontext"
     },
     {
@@ -3484,7 +3628,7 @@
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/index.tsx",
       "source_location": "L61",
-      "community": 3,
+      "community": 32,
       "norm_label": "metriccard()",
       "id": "workspace_index_metriccard"
     },
@@ -3493,7 +3637,7 @@
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/index.tsx",
       "source_location": "L74",
-      "community": 3,
+      "community": 32,
       "norm_label": "activityrow()",
       "id": "workspace_index_activityrow"
     },
@@ -3919,7 +4063,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 34,
       "norm_label": "loginscreen",
       "id": "login_loginscreen"
     },
@@ -3932,7 +4076,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 34,
       "norm_label": "registerscreen",
       "id": "register_registerscreen"
     },
@@ -3971,7 +4115,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 34,
       "norm_label": "erpbutton",
       "id": "erpbutton_erpbutton"
     },
@@ -3984,7 +4128,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 34,
       "norm_label": "erpinput",
       "id": "erpinput_erpinput"
     },
@@ -4088,7 +4232,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 3,
       "norm_label": "themeprovider",
       "id": "themecontext_themeprovider"
     },
@@ -4114,7 +4258,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 34,
       "norm_label": "ui-ux-pro-max skill.md",
       "id": "ui_ux_pro_max_skill_md"
     },
@@ -4127,7 +4271,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 34,
       "norm_label": "design system master",
       "id": "design_system_master_md"
     },
@@ -4155,7 +4299,7 @@
       "author": null,
       "contributor": null,
       "rationale": "Supports persistent theme preferences (light, dark, system) saved via AsyncStorage and evaluated based on React Native's useColorScheme.",
-      "community": 5,
+      "community": 3,
       "norm_label": "theme preference mechanism",
       "id": "mechanism_theme_preference"
     },
@@ -7219,6 +7363,228 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/announcements.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_app_app_workspace_announcements_tsx",
+      "target": "src_hooks_use_theme_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/announcements.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_app_app_workspace_announcements_tsx",
+      "target": "hooks_use_theme_usetheme",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/announcements.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "src_app_app_workspace_announcements_tsx",
+      "target": "workspace_announcements_announcementitem",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/announcements.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "src_app_app_workspace_announcements_tsx",
+      "target": "workspace_announcements_announcementsscreen",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/announcements.tsx",
+      "source_location": "L214",
+      "weight": 1.0,
+      "source": "src_app_app_workspace_announcements_tsx",
+      "target": "workspace_announcements_styles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/(app)/workspace/announcements.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "workspace_announcements_announcementsscreen",
+      "target": "hooks_use_theme_usetheme"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/chat.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "src_app_app_workspace_chat_tsx",
+      "target": "src_hooks_use_theme_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/chat.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "src_app_app_workspace_chat_tsx",
+      "target": "hooks_use_theme_usetheme",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/chat.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "src_app_app_workspace_chat_tsx",
+      "target": "src_context_authcontext_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/chat.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "src_app_app_workspace_chat_tsx",
+      "target": "context_authcontext_useauth",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/chat.tsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "src_app_app_workspace_chat_tsx",
+      "target": "workspace_chat_message",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/chat.tsx",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "src_app_app_workspace_chat_tsx",
+      "target": "workspace_chat_chatscreen",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/chat.tsx",
+      "source_location": "L362",
+      "weight": 1.0,
+      "source": "src_app_app_workspace_chat_tsx",
+      "target": "workspace_chat_styles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/(app)/workspace/chat.tsx",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "workspace_chat_chatscreen",
+      "target": "hooks_use_theme_usetheme"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/(app)/workspace/chat.tsx",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "workspace_chat_chatscreen",
+      "target": "context_authcontext_useauth"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/documents.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_app_app_workspace_documents_tsx",
+      "target": "src_hooks_use_theme_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/documents.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_app_app_workspace_documents_tsx",
+      "target": "hooks_use_theme_usetheme",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/documents.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "src_app_app_workspace_documents_tsx",
+      "target": "workspace_documents_documentitem",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/documents.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "src_app_app_workspace_documents_tsx",
+      "target": "workspace_documents_documentsscreen",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/documents.tsx",
+      "source_location": "L207",
+      "weight": 1.0,
+      "source": "src_app_app_workspace_documents_tsx",
+      "target": "workspace_documents_styles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/(app)/workspace/documents.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "workspace_documents_documentsscreen",
+      "target": "hooks_use_theme_usetheme"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "src/app/(app)/workspace/index.tsx",
       "source_location": "L4",
       "weight": 1.0,
@@ -7244,9 +7610,9 @@
       "source_file": "src/app/(app)/workspace/index.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_app_workspace_index_tsx",
-      "target": "src_context_authcontext_tsx",
-      "confidence_score": 1.0
+      "target": "src_context_authcontext_tsx"
     },
     {
       "relation": "imports",
@@ -7255,9 +7621,9 @@
       "source_file": "src/app/(app)/workspace/index.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_app_workspace_index_tsx",
-      "target": "context_authcontext_useauth",
-      "confidence_score": 1.0
+      "target": "context_authcontext_useauth"
     },
     {
       "relation": "contains",
@@ -7397,6 +7763,68 @@
       "target": "hooks_use_theme_usetheme"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/messages.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "src_app_app_workspace_messages_tsx",
+      "target": "src_context_authcontext_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/messages.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "src_app_app_workspace_messages_tsx",
+      "target": "context_authcontext_useauth",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/messages.tsx",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "src_app_app_workspace_messages_tsx",
+      "target": "workspace_messages_apimessage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/messages.tsx",
+      "source_location": "L55",
+      "weight": 1.0,
+      "source": "src_app_app_workspace_messages_tsx",
+      "target": "workspace_messages_groupedthread",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/messages.tsx",
+      "source_location": "L65",
+      "weight": 1.0,
+      "source": "src_app_app_workspace_messages_tsx",
+      "target": "workspace_messages_staffresource",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/messages.tsx",
+      "source_location": "L72",
+      "weight": 1.0,
+      "source": "src_app_app_workspace_messages_tsx",
+      "target": "workspace_messages_departmentresource",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/(app)/workspace/messages.tsx",
@@ -7428,6 +7856,17 @@
       "target": "hooks_use_theme_usetheme"
     },
     {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/(app)/workspace/messages.tsx",
+      "source_location": "L81",
+      "weight": 1.0,
+      "source": "workspace_messages_messagesscreen",
+      "target": "context_authcontext_useauth"
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -7456,9 +7895,9 @@
       "source_file": "src/app/(app)/workspace/profile.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_app_workspace_profile_tsx",
-      "target": "src_context_authcontext_tsx",
-      "confidence_score": 1.0
+      "target": "src_context_authcontext_tsx"
     },
     {
       "relation": "imports",
@@ -7467,9 +7906,9 @@
       "source_file": "src/app/(app)/workspace/profile.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_app_workspace_profile_tsx",
-      "target": "context_authcontext_useauth",
-      "confidence_score": 1.0
+      "target": "context_authcontext_useauth"
     },
     {
       "relation": "contains",
@@ -11066,5 +11505,5 @@
       "source_file": "src/app/(onboarding)/index.tsx"
     }
   ],
-  "built_at_commit": "19d473b3da4107aa60006fc543ef7ae1df8b25cc"
+  "built_at_commit": "5d58b9ac46c1c14d42de8f47a0fe9f4fad2eaa67"
 }

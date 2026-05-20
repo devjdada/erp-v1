@@ -3,14 +3,29 @@ import { StyleSheet, View, Text, SafeAreaView, ScrollView, Pressable } from 'rea
 import { useTheme } from '@/hooks/use-theme';
 import { useNavigation, useRouter } from 'expo-router';
 import { DrawerActions } from '@react-navigation/native';
-import { Menu, Users, CheckCircle, Clock, MessageSquare, Play, Square } from 'lucide-react-native';
+import { Menu, Users, CheckCircle, Clock, MessageSquare, Play, Square, Plus, FileText, Megaphone, User as UserIcon } from 'lucide-react-native';
 import { useAuth } from '@/context/AuthContext';
+import Animated, { useSharedValue, useAnimatedStyle, withSpring, FadeIn, FadeOut } from 'react-native-reanimated';
 
 export default function WorkspaceDashboard() {
   const theme = useTheme();
   const navigation = useNavigation();
   const router = useRouter();
   const { user } = useAuth();
+
+  // FAB Speed Dial State
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const rotation = useSharedValue(0);
+
+  useEffect(() => {
+    rotation.value = withSpring(isMenuOpen ? 135 : 0);
+  }, [isMenuOpen, rotation]);
+
+  const animatedFabStyle = useAnimatedStyle(() => {
+    return {
+      transform: [{ rotate: `${rotation.value}deg` }],
+    };
+  });
 
   // Time & Date State
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -207,6 +222,110 @@ export default function WorkspaceDashboard() {
         </View>
 
       </ScrollView>
+
+      {/* FAB Backdrop overlay */}
+      {isMenuOpen && (
+        <Pressable
+          style={StyleSheet.absoluteFill}
+          onPress={() => setIsMenuOpen(false)}
+        >
+          <Animated.View
+            entering={FadeIn.duration(200)}
+            exiting={FadeOut.duration(200)}
+            style={styles.backdrop}
+          />
+        </Pressable>
+      )}
+
+      {/* FAB Container */}
+      <View style={styles.fabContainer}>
+        {/* Speed Dial Actions */}
+        {isMenuOpen && (
+          <View style={styles.speedDial}>
+            {/* Documents Option */}
+            <Animated.View entering={FadeIn.delay(50)} exiting={FadeOut}>
+              <Pressable
+                onPress={() => {
+                  setIsMenuOpen(false);
+                  router.push('/(app)/workspace/documents');
+                }}
+                style={styles.speedDialItem}
+              >
+                <View style={[styles.speedDialLabelWrapper, { backgroundColor: theme.backgroundElement, borderColor: theme.border }]}>
+                  <Text style={[styles.speedDialLabel, { color: theme.text }]}>Documents</Text>
+                </View>
+                <View style={[styles.speedDialButton, { backgroundColor: theme.primary }]}>
+                  <FileText color="#FFFFFF" size={18} />
+                </View>
+              </Pressable>
+            </Animated.View>
+
+            {/* Announcements Option */}
+            <Animated.View entering={FadeIn.delay(100)} exiting={FadeOut}>
+              <Pressable
+                onPress={() => {
+                  setIsMenuOpen(false);
+                  router.push('/(app)/workspace/announcements');
+                }}
+                style={styles.speedDialItem}
+              >
+                <View style={[styles.speedDialLabelWrapper, { backgroundColor: theme.backgroundElement, borderColor: theme.border }]}>
+                  <Text style={[styles.speedDialLabel, { color: theme.text }]}>Bulletins</Text>
+                </View>
+                <View style={[styles.speedDialButton, { backgroundColor: '#F59E0B' }]}>
+                  <Megaphone color="#FFFFFF" size={18} />
+                </View>
+              </Pressable>
+            </Animated.View>
+
+            {/* Support Chat Option */}
+            <Animated.View entering={FadeIn.delay(150)} exiting={FadeOut}>
+              <Pressable
+                onPress={() => {
+                  setIsMenuOpen(false);
+                  router.push('/(app)/workspace/chat');
+                }}
+                style={styles.speedDialItem}
+              >
+                <View style={[styles.speedDialLabelWrapper, { backgroundColor: theme.backgroundElement, borderColor: theme.border }]}>
+                  <Text style={[styles.speedDialLabel, { color: theme.text }]}>Support Chat</Text>
+                </View>
+                <View style={[styles.speedDialButton, { backgroundColor: '#10B981' }]}>
+                  <MessageSquare color="#FFFFFF" size={18} />
+                </View>
+              </Pressable>
+            </Animated.View>
+
+            {/* Profile Option */}
+            <Animated.View entering={FadeIn.delay(200)} exiting={FadeOut}>
+              <Pressable
+                onPress={() => {
+                  setIsMenuOpen(false);
+                  router.push('/(app)/workspace/profile');
+                }}
+                style={styles.speedDialItem}
+              >
+                <View style={[styles.speedDialLabelWrapper, { backgroundColor: theme.backgroundElement, borderColor: theme.border }]}>
+                  <Text style={[styles.speedDialLabel, { color: theme.text }]}>My Profile</Text>
+                </View>
+                <View style={[styles.speedDialButton, { backgroundColor: '#64748B' }]}>
+                  <UserIcon color="#FFFFFF" size={18} />
+                </View>
+              </Pressable>
+            </Animated.View>
+          </View>
+        )}
+
+        {/* Primary FAB */}
+        <Pressable
+          onPress={() => setIsMenuOpen(!isMenuOpen)}
+          style={[styles.mainFab, { backgroundColor: theme.primary }]}
+        >
+          <Animated.View style={animatedFabStyle}>
+            <Plus color="#FFFFFF" size={24} />
+          </Animated.View>
+        </Pressable>
+      </View>
     </SafeAreaView>
   );
 }
@@ -408,5 +527,67 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#FFFFFF',
     letterSpacing: 0.5,
+  },
+  backdrop: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(0, 0, 0, 0.4)',
+  },
+  fabContainer: {
+    position: 'absolute',
+    bottom: 24,
+    right: 24,
+    alignItems: 'flex-end',
+    gap: 16,
+    zIndex: 1000,
+  },
+  mainFab: {
+    width: 56,
+    height: 56,
+    borderRadius: 28,
+    justifyContent: 'center',
+    alignItems: 'center',
+    elevation: 6,
+    shadowColor: '#000',
+    shadowOpacity: 0.2,
+    shadowOffset: { width: 0, height: 3 },
+    shadowRadius: 6,
+  },
+  speedDial: {
+    alignItems: 'flex-end',
+    gap: 12,
+    marginBottom: 8,
+  },
+  speedDialItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 12,
+  },
+  speedDialLabelWrapper: {
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 8,
+    borderWidth: 1,
+    elevation: 3,
+    shadowColor: '#000',
+    shadowOpacity: 0.05,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 4,
+  },
+  speedDialLabel: {
+    fontFamily: 'PlusJakartaSans_700Bold',
+    fontSize: 12,
+    letterSpacing: 0.3,
+  },
+  speedDialButton: {
+    width: 42,
+    height: 42,
+    borderRadius: 21,
+    justifyContent: 'center',
+    alignItems: 'center',
+    elevation: 4,
+    shadowColor: '#000',
+    shadowOpacity: 0.15,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 4,
   },
 });
