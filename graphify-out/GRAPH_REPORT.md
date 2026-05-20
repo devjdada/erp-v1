@@ -1,16 +1,16 @@
 # Graph Report - erp-app  (2026-05-20)
 
 ## Corpus Check
-- 72 files · ~88,675 words
+- 72 files · ~88,711 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 508 nodes · 806 edges · 40 communities (33 shown, 7 thin omitted)
+- 509 nodes · 807 edges · 47 communities (40 shown, 7 thin omitted)
 - Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 22 edges (avg confidence: 0.86)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `21883a63`
+- Built from commit: `6724e1a5`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -40,7 +40,9 @@
 - [[_COMMUNITY_Community 25|Community 25]]
 - [[_COMMUNITY_Community 26|Community 26]]
 - [[_COMMUNITY_Community 27|Community 27]]
+- [[_COMMUNITY_Community 28|Community 28]]
 - [[_COMMUNITY_Community 29|Community 29]]
+- [[_COMMUNITY_Community 30|Community 30]]
 - [[_COMMUNITY_Community 31|Community 31]]
 - [[_COMMUNITY_Community 32|Community 32]]
 - [[_COMMUNITY_Community 33|Community 33]]
@@ -52,6 +54,11 @@
 - [[_COMMUNITY_Community 39|Community 39]]
 - [[_COMMUNITY_Community 40|Community 40]]
 - [[_COMMUNITY_Community 41|Community 41]]
+- [[_COMMUNITY_Community 42|Community 42]]
+- [[_COMMUNITY_Community 43|Community 43]]
+- [[_COMMUNITY_Community 44|Community 44]]
+- [[_COMMUNITY_Community 45|Community 45]]
+- [[_COMMUNITY_Community 46|Community 46]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `useTheme()` - 64 edges
@@ -85,14 +92,14 @@
 - **Theme System Integration** — themed_text_themedtext, themed_view_themedview, use_theme_usetheme, themecontext_themeprovider [INFERRED 0.95]
 - **User Entry and Redirection Flow** — onboarding_index_onboardingscreen, login_loginscreen, register_registerscreen [INFERRED 0.85]
 
-## Communities (40 total, 7 thin omitted)
+## Communities (47 total, 7 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.15
-Nodes (14): reactCompiler, typedRoutes, expo, experiments, icon, ios, name, orientation (+6 more)
+Cohesion: 0.2
+Nodes (11): expo, icon, ios, name, orientation, plugins, scheme, slug (+3 more)
 
 ### Community 1 - "Community 1"
-Cohesion: 0.16
+Cohesion: 0.15
 Nodes (15): BM25, detect_domain(), _load_csv(), Lowercase, split, remove punctuation, filter short words, Build BM25 index from documents, Score all documents against query, Load CSV and return list of dicts, Core search function using BM25 (+7 more)
 
 ### Community 2 - "Community 2"
@@ -100,16 +107,16 @@ Cohesion: 0.06
 Nodes (31): dependencies, expo, expo-constants, expo-device, expo-font, expo-glass-effect, @expo-google-fonts/plus-jakarta-sans, expo-image (+23 more)
 
 ### Community 3 - "Community 3"
-Cohesion: 0.15
-Nodes (21): HintRowProps, styles, styles, ThemedText(), ThemedTextProps, ThemedView(), ThemedViewProps, styles (+13 more)
+Cohesion: 0.12
+Nodes (26): Collapsible, HintRowProps, styles, styles, ThemedText(), ThemedTextProps, ThemedView(), ThemedViewProps (+18 more)
 
 ### Community 4 - "Community 4"
-Cohesion: 0.08
+Cohesion: 0.09
 Nodes (33): BM25 Search Algorithm, UI/UX Search Function, Stack Search Function, generate_design_system Function, DesignSystemGenerator Class, persist_design_system Function, DesignSystemGenerator, _detect_page_type() (+25 more)
 
 ### Community 6 - "Community 6"
 Cohesion: 0.25
-Nodes (11): Expo Router Type Declarations, Fleet Inventory Screen, Fleet Navigation Tabs, GPS Tracking Map, Entry Screen, App Navigation Layout, Root Layout, Reset Project Utility (+3 more)
+Nodes (6): exampleDirPath, fs, oldDirs, readline, rl, root
 
 ### Community 7 - "Community 7"
 Cohesion: 0.15
@@ -157,15 +164,23 @@ Nodes (21): Additional Forbidden Patterns, Anti-Patterns (Do NOT Use), Buttons, 
 
 ### Community 24 - "Community 24"
 Cohesion: 0.07
-Nodes (35): AppContent(), AppLayout(), RootLayout(), SettingsScreen(), styles, AuthLayout(), Collapsible, Colors (+27 more)
+Nodes (34): AppContent(), RootLayout(), SettingsScreen(), styles, AuthLayout(), Colors, AuthProvider(), FontSizeContext (+26 more)
 
 ### Community 27 - "Community 27"
-Cohesion: 0.08
-Nodes (23): backgroundColor, backgroundImage, foregroundImage, monochromeImage, adaptiveIcon, predictiveBackGestureEnabled, android, web (+15 more)
+Cohesion: 0.2
+Nodes (10): web, favicon, output, scripts, android, ios, lint, reset-project (+2 more)
+
+### Community 28 - "Community 28"
+Cohesion: 0.29
+Nodes (7): backgroundColor, backgroundImage, foregroundImage, monochromeImage, adaptiveIcon, predictiveBackGestureEnabled, android
 
 ### Community 29 - "Community 29"
 Cohesion: 0.29
 Nodes (5): main, name, private, version, Expo Icon Configuration
+
+### Community 30 - "Community 30"
+Cohesion: 0.4
+Nodes (4): styles, Tool, ToolRequest, ToolsScreen()
 
 ### Community 31 - "Community 31"
 Cohesion: 0.4
@@ -176,20 +191,20 @@ Cohesion: 0.29
 Nodes (6): ApiMessage, DepartmentResource, GroupedThread, MessagesScreen(), StaffResource, styles
 
 ### Community 34 - "Community 34"
-Cohesion: 0.16
-Nodes (18): LoginScreen(), styles, RegisterScreen(), styles, ERPButton(), ERPButtonProps, styles, ERPInput() (+10 more)
+Cohesion: 0.19
+Nodes (15): RegisterScreen(), styles, ERPButton(), ERPButtonProps, styles, ERPInputProps, Design System Master, ERPButton (+7 more)
 
 ### Community 35 - "Community 35"
-Cohesion: 0.21
-Nodes (6): AnnouncementItem, AnnouncementsScreen(), styles, styles, TabType, WorkOrderScreen()
+Cohesion: 0.13
+Nodes (18): AppLayout(), LoginScreen(), styles, ERPInput(), styles, FleetLayout(), useTheme(), AnnouncementItem (+10 more)
 
 ### Community 36 - "Community 36"
-Cohesion: 0.16
-Nodes (12): CustomDrawerContent(), styles, useAuth(), ChatScreen(), Message, styles, LoanRecord, LoansScreen() (+4 more)
+Cohesion: 0.5
+Nodes (3): ChatScreen(), Message, styles
 
 ### Community 37 - "Community 37"
-Cohesion: 0.14
-Nodes (11): AuthContext, AuthContextType, Staff, User, PermissionRecord, PermissionsScreen(), styles, styles (+3 more)
+Cohesion: 0.25
+Nodes (6): AuthContext, AuthContextType, Staff, User, ProfileScreen(), styles
 
 ### Community 38 - "Community 38"
 Cohesion: 0.21
@@ -200,12 +215,32 @@ Cohesion: 0.33
 Nodes (5): Colleague, LeaveBalance, LeaveRequestItem, LeaveScreen(), styles
 
 ### Community 40 - "Community 40"
-Cohesion: 0.4
-Nodes (4): AttendanceLog, CorrectionRequest, CorrectionsScreen(), styles
+Cohesion: 0.19
+Nodes (10): CustomDrawerContent(), styles, useAuth(), AttendanceLog, CorrectionRequest, CorrectionsScreen(), styles, ICTTicket (+2 more)
 
 ### Community 41 - "Community 41"
-Cohesion: 0.15
-Nodes (13): useTheme(), Collapsible(), MovementRecord, MovementsScreen(), styles, ProfileScreen(), styles, ICTTicket (+5 more)
+Cohesion: 0.5
+Nodes (3): styles, VisitorLog, VisitorsScreen()
+
+### Community 42 - "Community 42"
+Cohesion: 0.5
+Nodes (3): LoanRecord, LoansScreen(), styles
+
+### Community 43 - "Community 43"
+Cohesion: 0.5
+Nodes (3): MovementRecord, MovementsScreen(), styles
+
+### Community 44 - "Community 44"
+Cohesion: 0.5
+Nodes (3): PermissionRecord, PermissionsScreen(), styles
+
+### Community 45 - "Community 45"
+Cohesion: 0.5
+Nodes (3): RequisitionItem, RequisitionsScreen(), styles
+
+### Community 46 - "Community 46"
+Cohesion: 0.67
+Nodes (3): reactCompiler, typedRoutes, experiments
 
 ## Knowledge Gaps
 - **248 isolated node(s):** `name`, `slug`, `version`, `orientation`, `icon` (+243 more)
@@ -215,17 +250,17 @@ Nodes (13): useTheme(), Collapsible(), MovementRecord, MovementsScreen(), styles
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `scripts` connect `Community 27` to `Community 0`, `Community 29`?**
+- **Why does `scripts` connect `Community 27` to `Community 0`, `Community 28`, `Community 29`, `Community 6`?**
   _High betweenness centrality (0.198) - this node is a cross-community bridge._
-- **Why does `path` connect `Community 4` to `Community 27`?**
+- **Why does `path` connect `Community 4` to `Community 6`?**
   _High betweenness centrality (0.147) - this node is a cross-community bridge._
-- **Why does `useTheme()` connect `Community 41` to `Community 32`, `Community 34`, `Community 35`, `Community 36`, `Community 37`, `Community 38`, `Community 39`, `Community 40`, `Community 8`, `Community 3`, `Community 24`?**
+- **Why does `useTheme()` connect `Community 35` to `Community 32`, `Community 34`, `Community 3`, `Community 36`, `Community 37`, `Community 38`, `Community 39`, `Community 40`, `Community 8`, `Community 42`, `Community 43`, `Community 44`, `Community 45`, `Community 41`, `Community 24`, `Community 30`?**
   _High betweenness centrality (0.131) - this node is a cross-community bridge._
 - **What connects `name`, `slug`, `version` to the rest of the system?**
   _248 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 2` be split into smaller, more focused modules?**
   _Cohesion score 0.06 - nodes in this community are weakly interconnected._
+- **Should `Community 3` be split into smaller, more focused modules?**
+  _Cohesion score 0.12 - nodes in this community are weakly interconnected._
 - **Should `Community 4` be split into smaller, more focused modules?**
-  _Cohesion score 0.08 - nodes in this community are weakly interconnected._
-- **Should `Community 22` be split into smaller, more focused modules?**
-  _Cohesion score 0.05 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.09 - nodes in this community are weakly interconnected._

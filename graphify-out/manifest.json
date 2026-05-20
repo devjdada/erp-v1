@@ -50,7 +50,7 @@
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\.expo\\types\\router.d.ts": {
-    "mtime": 1779252838.8362162,
+    "mtime": 1779252948.6763866,
     "ast_hash": "74cb389c18d019d160208802fa357269",
     "semantic_hash": ""
   },
@@ -295,8 +295,8 @@
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\context\\FontSizeContext.tsx": {
-    "mtime": 1779252837.7041132,
-    "ast_hash": "268f04b6401261886a87ee1fe8b6ad11",
+    "mtime": 1779252947.5521226,
+    "ast_hash": "3784de20aade94e8d9efa45a922a07ab",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\context\\ThemeContext.tsx": {

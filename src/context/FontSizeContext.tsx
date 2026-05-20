@@ -102,7 +102,21 @@ try {
     
     // Override the exported Text property on the react-native module
     const RNModule = require('react-native');
-    RNModule.Text = PatchedText;
+    try {
+      Object.defineProperty(RNModule, 'Text', {
+        get() {
+          return PatchedText;
+        },
+        configurable: true,
+        enumerable: true,
+      });
+    } catch (err) {
+      try {
+        RNModule.Text = PatchedText;
+      } catch (err2) {
+        console.error('Failed to override Text property via direct assignment', err2);
+      }
+    }
   }
 } catch (e) {
   console.error('Failed to apply global Text font scale patch', e);

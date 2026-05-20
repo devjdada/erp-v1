@@ -191,7 +191,7 @@
       "source_file": "app.json",
       "source_location": "L13",
       "id": "erp_app_app_expo_android",
-      "community": 27,
+      "community": 28,
       "norm_label": "android"
     },
     {
@@ -200,7 +200,7 @@
       "source_file": "app.json",
       "source_location": "L14",
       "id": "erp_app_app_android_adaptiveicon",
-      "community": 27,
+      "community": 28,
       "norm_label": "adaptiveicon"
     },
     {
@@ -209,7 +209,7 @@
       "source_file": "app.json",
       "source_location": "L15",
       "id": "erp_app_app_adaptiveicon_backgroundcolor",
-      "community": 27,
+      "community": 28,
       "norm_label": "backgroundcolor"
     },
     {
@@ -218,7 +218,7 @@
       "source_file": "app.json",
       "source_location": "L16",
       "id": "erp_app_app_adaptiveicon_foregroundimage",
-      "community": 27,
+      "community": 28,
       "norm_label": "foregroundimage"
     },
     {
@@ -227,7 +227,7 @@
       "source_file": "app.json",
       "source_location": "L17",
       "id": "erp_app_app_adaptiveicon_backgroundimage",
-      "community": 27,
+      "community": 28,
       "norm_label": "backgroundimage"
     },
     {
@@ -236,7 +236,7 @@
       "source_file": "app.json",
       "source_location": "L18",
       "id": "erp_app_app_adaptiveicon_monochromeimage",
-      "community": 27,
+      "community": 28,
       "norm_label": "monochromeimage"
     },
     {
@@ -245,7 +245,7 @@
       "source_file": "app.json",
       "source_location": "L20",
       "id": "erp_app_app_android_predictivebackgestureenabled",
-      "community": 27,
+      "community": 28,
       "norm_label": "predictivebackgestureenabled"
     },
     {
@@ -290,7 +290,7 @@
       "source_file": "app.json",
       "source_location": "L39",
       "id": "erp_app_app_expo_experiments",
-      "community": 0,
+      "community": 46,
       "norm_label": "experiments"
     },
     {
@@ -299,7 +299,7 @@
       "source_file": "app.json",
       "source_location": "L40",
       "id": "erp_app_app_experiments_typedroutes",
-      "community": 0,
+      "community": 46,
       "norm_label": "typedroutes"
     },
     {
@@ -308,7 +308,7 @@
       "source_file": "app.json",
       "source_location": "L41",
       "id": "erp_app_app_experiments_reactcompiler",
-      "community": 0,
+      "community": 46,
       "norm_label": "reactcompiler"
     },
     {
@@ -875,7 +875,7 @@
       "source_file": ".agent/skills/ui-ux-pro-max/scripts/core.py",
       "source_location": "L99",
       "id": "scripts_core_bm25_init",
-      "community": 4,
+      "community": 1,
       "norm_label": ".__init__()"
     },
     {
@@ -1559,7 +1559,7 @@
       "source_file": "scripts/reset-project.js",
       "source_location": "L1",
       "id": "scripts_reset_project_js",
-      "community": 27,
+      "community": 6,
       "norm_label": "reset-project.js"
     },
     {
@@ -1568,7 +1568,7 @@
       "source_file": "scripts/reset-project.js",
       "source_location": "L9",
       "id": "scripts_reset_project_fs",
-      "community": 27,
+      "community": 6,
       "norm_label": "fs"
     },
     {
@@ -1586,7 +1586,7 @@
       "source_file": "scripts/reset-project.js",
       "source_location": "L11",
       "id": "scripts_reset_project_readline",
-      "community": 27,
+      "community": 6,
       "norm_label": "readline"
     },
     {
@@ -1595,7 +1595,7 @@
       "source_file": "scripts/reset-project.js",
       "source_location": "L13",
       "id": "scripts_reset_project_root",
-      "community": 27,
+      "community": 6,
       "norm_label": "root"
     },
     {
@@ -1604,7 +1604,7 @@
       "source_file": "scripts/reset-project.js",
       "source_location": "L14",
       "id": "scripts_reset_project_olddirs",
-      "community": 27,
+      "community": 6,
       "norm_label": "olddirs"
     },
     {
@@ -1613,7 +1613,7 @@
       "source_file": "scripts/reset-project.js",
       "source_location": "L17",
       "id": "scripts_reset_project_exampledirpath",
-      "community": 27,
+      "community": 6,
       "norm_label": "exampledirpath"
     },
     {
@@ -1622,7 +1622,7 @@
       "source_file": "scripts/reset-project.js",
       "source_location": "L45",
       "id": "scripts_reset_project_rl",
-      "community": 27,
+      "community": 6,
       "norm_label": "rl"
     },
     {
@@ -1631,7 +1631,7 @@
       "source_file": "scripts/reset-project.js",
       "source_location": "L50",
       "id": "scripts_reset_project_movedirectories",
-      "community": 27,
+      "community": 6,
       "norm_label": "movedirectories()"
     },
     {
@@ -1712,7 +1712,7 @@
       "source_file": "src/app/(app)/_layout.tsx",
       "source_location": "L1",
       "id": "src_app_app_layout_tsx",
-      "community": 24,
+      "community": 35,
       "norm_label": "_layout.tsx"
     },
     {
@@ -1721,7 +1721,7 @@
       "source_file": "src/app/(app)/_layout.tsx",
       "source_location": "L8",
       "id": "app_layout_applayout",
-      "community": 24,
+      "community": 35,
       "norm_label": "applayout()"
     },
     {
@@ -1766,7 +1766,7 @@
       "source_file": "src/app/(app)/fleet/map.tsx",
       "source_location": "L1",
       "id": "src_app_app_fleet_map_tsx",
-      "community": 24,
+      "community": 3,
       "norm_label": "map.tsx"
     },
     {
@@ -1775,7 +1775,7 @@
       "source_file": "src/app/(app)/fleet/map.tsx",
       "source_location": "L6",
       "id": "fleet_map_fleetmap",
-      "community": 24,
+      "community": 3,
       "norm_label": "fleetmap()"
     },
     {
@@ -1784,7 +1784,7 @@
       "source_file": "src/app/(app)/fleet/map.tsx",
       "source_location": "L84",
       "id": "fleet_map_styles",
-      "community": 3,
+      "community": 34,
       "norm_label": "styles"
     },
     {
@@ -1793,7 +1793,7 @@
       "source_file": "src/app/(app)/fleet/_layout.tsx",
       "source_location": "L1",
       "id": "src_app_app_fleet_layout_tsx",
-      "community": 24,
+      "community": 35,
       "norm_label": "_layout.tsx"
     },
     {
@@ -1802,7 +1802,7 @@
       "source_file": "src/app/(app)/fleet/_layout.tsx",
       "source_location": "L6",
       "id": "fleet_layout_fleetlayout",
-      "community": 24,
+      "community": 35,
       "norm_label": "fleetlayout()"
     },
     {
@@ -2054,7 +2054,7 @@
       "source_file": "src/app/(app)/workspace/loans.tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_loans_tsx",
-      "community": 36,
+      "community": 42,
       "norm_label": "loans.tsx"
     },
     {
@@ -2063,7 +2063,7 @@
       "source_file": "src/app/(app)/workspace/loans.tsx",
       "source_location": "L20",
       "id": "workspace_loans_loanrecord",
-      "community": 36,
+      "community": 42,
       "norm_label": "loanrecord"
     },
     {
@@ -2072,7 +2072,7 @@
       "source_file": "src/app/(app)/workspace/loans.tsx",
       "source_location": "L33",
       "id": "workspace_loans_loansscreen",
-      "community": 36,
+      "community": 42,
       "norm_label": "loansscreen()"
     },
     {
@@ -2081,7 +2081,7 @@
       "source_file": "src/app/(app)/workspace/loans.tsx",
       "source_location": "L242",
       "id": "workspace_loans_styles",
-      "community": 36,
+      "community": 42,
       "norm_label": "styles"
     },
     {
@@ -2171,7 +2171,7 @@
       "source_file": "src/app/(app)/workspace/movements.tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_movements_tsx",
-      "community": 41,
+      "community": 43,
       "norm_label": "movements.tsx"
     },
     {
@@ -2180,7 +2180,7 @@
       "source_file": "src/app/(app)/workspace/movements.tsx",
       "source_location": "L19",
       "id": "workspace_movements_movementrecord",
-      "community": 41,
+      "community": 43,
       "norm_label": "movementrecord"
     },
     {
@@ -2189,7 +2189,7 @@
       "source_file": "src/app/(app)/workspace/movements.tsx",
       "source_location": "L32",
       "id": "workspace_movements_movementsscreen",
-      "community": 41,
+      "community": 43,
       "norm_label": "movementsscreen()"
     },
     {
@@ -2198,7 +2198,7 @@
       "source_file": "src/app/(app)/workspace/movements.tsx",
       "source_location": "L214",
       "id": "workspace_movements_styles",
-      "community": 41,
+      "community": 43,
       "norm_label": "styles"
     },
     {
@@ -2207,7 +2207,7 @@
       "source_file": "src/app/(app)/workspace/permissions.tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_permissions_tsx",
-      "community": 37,
+      "community": 44,
       "norm_label": "permissions.tsx"
     },
     {
@@ -2216,7 +2216,7 @@
       "source_file": "src/app/(app)/workspace/permissions.tsx",
       "source_location": "L19",
       "id": "workspace_permissions_permissionrecord",
-      "community": 37,
+      "community": 44,
       "norm_label": "permissionrecord"
     },
     {
@@ -2225,7 +2225,7 @@
       "source_file": "src/app/(app)/workspace/permissions.tsx",
       "source_location": "L32",
       "id": "workspace_permissions_permissionsscreen",
-      "community": 37,
+      "community": 44,
       "norm_label": "permissionsscreen()"
     },
     {
@@ -2234,7 +2234,7 @@
       "source_file": "src/app/(app)/workspace/permissions.tsx",
       "source_location": "L185",
       "id": "workspace_permissions_styles",
-      "community": 37,
+      "community": 44,
       "norm_label": "styles"
     },
     {
@@ -2243,7 +2243,7 @@
       "source_file": "src/app/(app)/workspace/profile.tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_profile_tsx",
-      "community": 41,
+      "community": 37,
       "norm_label": "profile.tsx"
     },
     {
@@ -2252,7 +2252,7 @@
       "source_file": "src/app/(app)/workspace/profile.tsx",
       "source_location": "L10",
       "id": "workspace_profile_profilescreen",
-      "community": 41,
+      "community": 37,
       "norm_label": "profilescreen()"
     },
     {
@@ -2261,7 +2261,7 @@
       "source_file": "src/app/(app)/workspace/profile.tsx",
       "source_location": "L280",
       "id": "workspace_profile_styles",
-      "community": 41,
+      "community": 37,
       "norm_label": "styles"
     },
     {
@@ -2270,7 +2270,7 @@
       "source_file": "src/app/(app)/workspace/requisitions.tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_requisitions_tsx",
-      "community": 36,
+      "community": 45,
       "norm_label": "requisitions.tsx"
     },
     {
@@ -2279,7 +2279,7 @@
       "source_file": "src/app/(app)/workspace/requisitions.tsx",
       "source_location": "L19",
       "id": "workspace_requisitions_requisitionitem",
-      "community": 36,
+      "community": 45,
       "norm_label": "requisitionitem"
     },
     {
@@ -2288,7 +2288,7 @@
       "source_file": "src/app/(app)/workspace/requisitions.tsx",
       "source_location": "L31",
       "id": "workspace_requisitions_requisitionsscreen",
-      "community": 36,
+      "community": 45,
       "norm_label": "requisitionsscreen()"
     },
     {
@@ -2297,7 +2297,7 @@
       "source_file": "src/app/(app)/workspace/requisitions.tsx",
       "source_location": "L206",
       "id": "workspace_requisitions_styles",
-      "community": 36,
+      "community": 45,
       "norm_label": "styles"
     },
     {
@@ -2306,7 +2306,7 @@
       "source_file": "src/app/(app)/workspace/tasks.tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_tasks_tsx",
-      "community": 24,
+      "community": 35,
       "norm_label": "tasks.tsx"
     },
     {
@@ -2315,7 +2315,7 @@
       "source_file": "src/app/(app)/workspace/tasks.tsx",
       "source_location": "L20",
       "id": "workspace_tasks_taskrecord",
-      "community": 24,
+      "community": 35,
       "norm_label": "taskrecord"
     },
     {
@@ -2324,7 +2324,7 @@
       "source_file": "src/app/(app)/workspace/tasks.tsx",
       "source_location": "L30",
       "id": "workspace_tasks_tasksscreen",
-      "community": 24,
+      "community": 35,
       "norm_label": "tasksscreen()"
     },
     {
@@ -2333,7 +2333,7 @@
       "source_file": "src/app/(app)/workspace/tasks.tsx",
       "source_location": "L185",
       "id": "workspace_tasks_styles",
-      "community": 24,
+      "community": 35,
       "norm_label": "styles"
     },
     {
@@ -2342,7 +2342,7 @@
       "source_file": "src/app/(app)/workspace/tickets.tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_tickets_tsx",
-      "community": 41,
+      "community": 40,
       "norm_label": "tickets.tsx"
     },
     {
@@ -2351,7 +2351,7 @@
       "source_file": "src/app/(app)/workspace/tickets.tsx",
       "source_location": "L21",
       "id": "workspace_tickets_ictticket",
-      "community": 41,
+      "community": 40,
       "norm_label": "ictticket"
     },
     {
@@ -2360,7 +2360,7 @@
       "source_file": "src/app/(app)/workspace/tickets.tsx",
       "source_location": "L37",
       "id": "workspace_tickets_ticketsscreen",
-      "community": 41,
+      "community": 40,
       "norm_label": "ticketsscreen()"
     },
     {
@@ -2369,7 +2369,7 @@
       "source_file": "src/app/(app)/workspace/tickets.tsx",
       "source_location": "L289",
       "id": "workspace_tickets_styles",
-      "community": 41,
+      "community": 40,
       "norm_label": "styles"
     },
     {
@@ -2378,7 +2378,7 @@
       "source_file": "src/app/(app)/workspace/tools.tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_tools_tsx",
-      "community": 37,
+      "community": 30,
       "norm_label": "tools.tsx"
     },
     {
@@ -2387,7 +2387,7 @@
       "source_file": "src/app/(app)/workspace/tools.tsx",
       "source_location": "L19",
       "id": "workspace_tools_tool",
-      "community": 37,
+      "community": 30,
       "norm_label": "tool"
     },
     {
@@ -2396,7 +2396,7 @@
       "source_file": "src/app/(app)/workspace/tools.tsx",
       "source_location": "L27",
       "id": "workspace_tools_toolrequest",
-      "community": 37,
+      "community": 30,
       "norm_label": "toolrequest"
     },
     {
@@ -2405,7 +2405,7 @@
       "source_file": "src/app/(app)/workspace/tools.tsx",
       "source_location": "L39",
       "id": "workspace_tools_toolsscreen",
-      "community": 37,
+      "community": 30,
       "norm_label": "toolsscreen()"
     },
     {
@@ -2414,7 +2414,7 @@
       "source_file": "src/app/(app)/workspace/tools.tsx",
       "source_location": "L279",
       "id": "workspace_tools_styles",
-      "community": 37,
+      "community": 30,
       "norm_label": "styles"
     },
     {
@@ -2522,7 +2522,7 @@
       "source_file": "src/app/(auth)/login.tsx",
       "source_location": "L1",
       "id": "src_app_auth_login_tsx",
-      "community": 34,
+      "community": 35,
       "norm_label": "login.tsx"
     },
     {
@@ -2531,7 +2531,7 @@
       "source_file": "src/app/(auth)/login.tsx",
       "source_location": "L11",
       "id": "auth_login_loginscreen",
-      "community": 34,
+      "community": 35,
       "norm_label": "loginscreen()"
     },
     {
@@ -2540,7 +2540,7 @@
       "source_file": "src/app/(auth)/login.tsx",
       "source_location": "L96",
       "id": "auth_login_styles",
-      "community": 34,
+      "community": 35,
       "norm_label": "styles"
     },
     {
@@ -2765,7 +2765,7 @@
       "source_file": "src/components/CustomDrawerContent.tsx",
       "source_location": "L1",
       "id": "src_components_customdrawercontent_tsx",
-      "community": 36,
+      "community": 40,
       "norm_label": "customdrawercontent.tsx"
     },
     {
@@ -2774,7 +2774,7 @@
       "source_file": "src/components/CustomDrawerContent.tsx",
       "source_location": "L9",
       "id": "components_customdrawercontent_customdrawercontent",
-      "community": 36,
+      "community": 40,
       "norm_label": "customdrawercontent()"
     },
     {
@@ -2783,7 +2783,7 @@
       "source_file": "src/components/CustomDrawerContent.tsx",
       "source_location": "L124",
       "id": "components_customdrawercontent_styles",
-      "community": 36,
+      "community": 40,
       "norm_label": "styles"
     },
     {
@@ -2828,7 +2828,7 @@
       "source_file": "src/components/ERPInput.tsx",
       "source_location": "L1",
       "id": "src_components_erpinput_tsx",
-      "community": 34,
+      "community": 35,
       "norm_label": "erpinput.tsx"
     },
     {
@@ -2846,7 +2846,7 @@
       "source_file": "src/components/ERPInput.tsx",
       "source_location": "L10",
       "id": "components_erpinput_erpinput",
-      "community": 34,
+      "community": 35,
       "norm_label": "erpinput()"
     },
     {
@@ -2855,7 +2855,7 @@
       "source_file": "src/components/ERPInput.tsx",
       "source_location": "L35",
       "id": "components_erpinput_styles",
-      "community": 34,
+      "community": 35,
       "norm_label": "styles"
     },
     {
@@ -3026,7 +3026,7 @@
       "source_file": "src/components/ui/collapsible.tsx",
       "source_location": "L11",
       "id": "ui_collapsible_collapsible",
-      "community": 41,
+      "community": 3,
       "norm_label": "collapsible()"
     },
     {
@@ -3143,7 +3143,7 @@
       "source_file": "src/context/AuthContext.tsx",
       "source_location": "L226",
       "id": "context_authcontext_useauth",
-      "community": 36,
+      "community": 40,
       "norm_label": "useauth()"
     },
     {
@@ -3217,6 +3217,15 @@
       "id": "context_fontsizecontext_rnmodule",
       "community": 24,
       "norm_label": "rnmodule"
+    },
+    {
+      "label": "get()",
+      "file_type": "code",
+      "source_file": "src/context/FontSizeContext.tsx",
+      "source_location": "L107",
+      "id": "context_fontsizecontext_get",
+      "community": 24,
+      "norm_label": "get()"
     },
     {
       "label": "ThemeContext.tsx",
@@ -3305,7 +3314,7 @@
       "source_file": "src/hooks/use-theme.ts",
       "source_location": "L1",
       "id": "src_hooks_use_theme_ts",
-      "community": 24,
+      "community": 35,
       "norm_label": "use-theme.ts"
     },
     {
@@ -3314,7 +3323,7 @@
       "source_file": "src/hooks/use-theme.ts",
       "source_location": "L3",
       "id": "hooks_use_theme_usetheme",
-      "community": 41,
+      "community": 35,
       "norm_label": "usetheme()"
     },
     {
@@ -4159,7 +4168,7 @@
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/tasks.tsx",
       "source_location": "L6",
-      "community": 24,
+      "community": 35,
       "norm_label": "task",
       "id": "workspace_tasks_task"
     },
@@ -4168,7 +4177,7 @@
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/tasks.tsx",
       "source_location": "L13",
-      "community": 24,
+      "community": 35,
       "norm_label": "workspacetasks()",
       "id": "workspace_tasks_workspacetasks"
     },
@@ -4298,7 +4307,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 24,
       "norm_label": "reset project utility",
       "id": "reset_project_js"
     },
@@ -4402,7 +4411,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 24,
       "norm_label": "entry screen",
       "id": "index_tsx_entry"
     },
@@ -4415,7 +4424,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 24,
       "norm_label": "root layout",
       "id": "layout_tsx_root"
     },
@@ -4441,7 +4450,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 24,
       "norm_label": "app navigation layout",
       "id": "layout_tsx_app"
     },
@@ -4454,7 +4463,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 24,
       "norm_label": "fleet inventory screen",
       "id": "fleet_index_tsx_vehicles"
     },
@@ -4467,7 +4476,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 24,
       "norm_label": "gps tracking map",
       "id": "fleet_map_tsx_map"
     },
@@ -4480,7 +4489,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 24,
       "norm_label": "fleet navigation tabs",
       "id": "fleet_layout_tsx_layout"
     },
@@ -4493,7 +4502,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 24,
       "norm_label": "workspace dashboard",
       "id": "workspace_index_tsx_dashboard"
     },
@@ -4506,7 +4515,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 24,
       "norm_label": "workspace tasks list",
       "id": "workspace_tasks_tsx_tasks"
     },
@@ -4519,7 +4528,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 24,
       "norm_label": "workspace navigation tabs",
       "id": "workspace_layout_tsx_layout"
     },
@@ -4532,7 +4541,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 24,
       "norm_label": "expo router type declarations",
       "id": "expo_router_types"
     },
@@ -4701,7 +4710,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 24,
+      "community": 3,
       "norm_label": "collapsible",
       "id": "collapsible_collapsible"
     },
@@ -4727,7 +4736,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 24,
+      "community": 3,
       "norm_label": "themeprovider",
       "id": "themecontext_themeprovider"
     },
@@ -4740,7 +4749,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 24,
+      "community": 3,
       "norm_label": "usetheme",
       "id": "use_theme_usetheme"
     },
@@ -4794,7 +4803,7 @@
       "author": null,
       "contributor": null,
       "rationale": "Supports persistent theme preferences (light, dark, system) saved via AsyncStorage and evaluated based on React Native's useColorScheme.",
-      "community": 24,
+      "community": 3,
       "norm_label": "theme preference mechanism",
       "id": "mechanism_theme_preference"
     },
@@ -11467,6 +11476,16 @@
       "target": "context_fontsizecontext_rnmodule"
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/context/FontSizeContext.tsx",
+      "source_location": "L107",
+      "weight": 1.0,
+      "source": "src_context_fontsizecontext_tsx",
+      "target": "context_fontsizecontext_get",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -13261,5 +13280,5 @@
       "source_file": "src/app/(onboarding)/index.tsx"
     }
   ],
-  "built_at_commit": "21883a6341a185dab2f3a8ce85ea6604cd87bcae"
+  "built_at_commit": "6724e1a5bc70fb98040a80bf2cfc4e64031af501"
 }
