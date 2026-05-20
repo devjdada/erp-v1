@@ -1,16 +1,16 @@
 # Graph Report - erp-app  (2026-05-20)
 
 ## Corpus Check
-- 76 files · ~97,054 words
+- 83 files · ~98,212 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 587 nodes · 898 edges · 46 communities (39 shown, 7 thin omitted)
+- 604 nodes · 925 edges · 40 communities (32 shown, 8 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 22 edges (avg confidence: 0.86)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `033e94f1`
+- Built from commit: `04b5368f`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -36,7 +36,6 @@
 - [[_COMMUNITY_Community 20|Community 20]]
 - [[_COMMUNITY_Community 22|Community 22]]
 - [[_COMMUNITY_Community 23|Community 23]]
-- [[_COMMUNITY_Community 24|Community 24]]
 - [[_COMMUNITY_Community 25|Community 25]]
 - [[_COMMUNITY_Community 26|Community 26]]
 - [[_COMMUNITY_Community 27|Community 27]]
@@ -47,22 +46,17 @@
 - [[_COMMUNITY_Community 32|Community 32]]
 - [[_COMMUNITY_Community 33|Community 33]]
 - [[_COMMUNITY_Community 34|Community 34]]
-- [[_COMMUNITY_Community 35|Community 35]]
-- [[_COMMUNITY_Community 36|Community 36]]
 - [[_COMMUNITY_Community 37|Community 37]]
 - [[_COMMUNITY_Community 38|Community 38]]
 - [[_COMMUNITY_Community 39|Community 39]]
-- [[_COMMUNITY_Community 40|Community 40]]
 - [[_COMMUNITY_Community 41|Community 41]]
 - [[_COMMUNITY_Community 43|Community 43]]
-- [[_COMMUNITY_Community 45|Community 45]]
 - [[_COMMUNITY_Community 46|Community 46]]
-- [[_COMMUNITY_Community 47|Community 47]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `useTheme()` - 66 edges
 2. `useAuth()` - 40 edges
-3. `dependencies` - 33 edges
+3. `dependencies` - 34 edges
 4. `useTheme` - 21 edges
 5. `expo` - 17 edges
 6. `styles` - 14 edges
@@ -91,7 +85,7 @@
 - **Theme System Integration** — themed_text_themedtext, themed_view_themedview, use_theme_usetheme, themecontext_themeprovider [INFERRED 0.95]
 - **User Entry and Redirection Flow** — onboarding_index_onboardingscreen, login_loginscreen, register_registerscreen [INFERRED 0.85]
 
-## Communities (46 total, 7 thin omitted)
+## Communities (40 total, 8 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.2
@@ -103,11 +97,11 @@ Nodes (15): BM25, detect_domain(), _load_csv(), Lowercase, split, remove punctua
 
 ### Community 2 - "Community 2"
 Cohesion: 0.06
-Nodes (32): dependencies, expo, expo-constants, expo-device, expo-font, expo-glass-effect, @expo-google-fonts/plus-jakarta-sans, expo-image (+24 more)
+Nodes (33): dependencies, axios, expo, expo-constants, expo-device, expo-font, expo-glass-effect, @expo-google-fonts/plus-jakarta-sans (+25 more)
 
 ### Community 3 - "Community 3"
-Cohesion: 0.11
-Nodes (27): SettingsScreen(), Collapsible, HintRowProps, styles, styles, ThemedText(), ThemedTextProps, ThemedView() (+19 more)
+Cohesion: 0.05
+Nodes (54): AppContent(), AppLayout(), RootLayout(), SettingsScreen(), styles, AuthLayout(), Collapsible, CustomDrawerContent() (+46 more)
 
 ### Community 4 - "Community 4"
 Cohesion: 0.09
@@ -120,10 +114,6 @@ Nodes (6): exampleDirPath, fs, oldDirs, readline, rl, root
 ### Community 7 - "Community 7"
 Cohesion: 0.15
 Nodes (12): files, code, document, image, paper, video, graphifyignore_patterns, needs_graph (+4 more)
-
-### Community 8 - "Community 8"
-Cohesion: 0.4
-Nodes (4): styles, Tool, ToolRequest, ToolsScreen()
 
 ### Community 9 - "Community 9"
 Cohesion: 0.25
@@ -161,10 +151,6 @@ Nodes (43): Accessibility, Available Domains, Available Stacks, code:bash (pytho
 Cohesion: 0.09
 Nodes (21): Additional Forbidden Patterns, Anti-Patterns (Do NOT Use), Buttons, Cards, code:css (@import url('https://fonts.googleapis.com/css2?family=Plus+J), code:css (/* Primary Button */), code:css (.card {), code:css (.input {) (+13 more)
 
-### Community 24 - "Community 24"
-Cohesion: 0.09
-Nodes (24): AppContent(), AppLayout(), RootLayout(), styles, AuthLayout(), CustomDrawerContent(), styles, AuthProvider() (+16 more)
-
 ### Community 27 - "Community 27"
 Cohesion: 0.2
 Nodes (10): web, favicon, output, scripts, android, ios, lint, reset-project (+2 more)
@@ -186,76 +172,56 @@ Cohesion: 0.4
 Nodes (5): devDependencies, eslint, eslint-config-expo, @types/react, typescript
 
 ### Community 32 - "Community 32"
-Cohesion: 0.14
-Nodes (17): ChatScreen(), Message, styles, ApiMessage, DepartmentResource, GroupedThread, MessagesScreen(), StaffResource (+9 more)
+Cohesion: 0.13
+Nodes (18): messageService, ChatScreen(), Message, styles, ApiMessage, DepartmentResource, GroupedThread, MessagesScreen() (+10 more)
 
 ### Community 34 - "Community 34"
-Cohesion: 0.17
-Nodes (18): styles, RegisterScreen(), styles, ERPButton(), ERPButtonProps, styles, ERPInput(), ERPInputProps (+10 more)
-
-### Community 35 - "Community 35"
-Cohesion: 0.16
-Nodes (12): FleetLayout(), useTheme(), AnnouncementItem, AnnouncementsScreen(), styles, AttendanceLog, CorrectionRequest, CorrectionsScreen() (+4 more)
-
-### Community 36 - "Community 36"
-Cohesion: 0.4
-Nodes (4): DocumentItem, DocumentsScreen(), StaffDocument, styles
+Cohesion: 0.12
+Nodes (23): EntryScreen(), styles, styles, ERPButton(), ERPButtonProps, styles, ERPInput(), ERPInputProps (+15 more)
 
 ### Community 37 - "Community 37"
-Cohesion: 0.09
-Nodes (23): LoginScreen(), AuthContext, AuthContextType, Staff, useAuth(), User, LoanRecord, LoansScreen() (+15 more)
+Cohesion: 0.05
+Nodes (54): LoginScreen(), RegisterScreen(), AuthContext, AuthContextType, Staff, useAuth(), User, useTheme() (+46 more)
 
 ### Community 38 - "Community 38"
-Cohesion: 0.14
-Nodes (13): AlertButton, AlertContext, AlertContextType, AlertOptions, AlertProvider(), AlertType, styles, useAlert() (+5 more)
+Cohesion: 0.12
+Nodes (14): AlertButton, AlertContext, AlertContextType, AlertOptions, AlertProvider(), AlertType, styles, useAlert() (+6 more)
 
 ### Community 39 - "Community 39"
-Cohesion: 0.13
-Nodes (8): Colleague, LeaveBalance, LeaveRequestItem, LeaveScreen(), MultiDatePickerProps, pickerStyles, styles, TODAY_STR
-
-### Community 40 - "Community 40"
-Cohesion: 0.33
-Nodes (5): styles, Task, TaskRecord, TasksScreen(), WorkspaceTasks()
+Cohesion: 0.12
+Nodes (9): leaveService, Colleague, LeaveBalance, LeaveRequestItem, LeaveScreen(), MultiDatePickerProps, pickerStyles, styles (+1 more)
 
 ### Community 41 - "Community 41"
-Cohesion: 0.29
-Nodes (10): Expo Router Type Declarations, Fleet Inventory Screen, Fleet Navigation Tabs, GPS Tracking Map, Entry Screen, App Navigation Layout, Root Layout, Reset Project Utility (+2 more)
+Cohesion: 0.23
+Nodes (12): Expo Router Type Declarations, Fleet Inventory Screen, Fleet Navigation Tabs, GPS Tracking Map, Entry Screen, App Navigation Layout, Root Layout, Reset Project Utility (+4 more)
 
 ### Community 43 - "Community 43"
 Cohesion: 0.1
 Nodes (20): Additional Forbidden Patterns, Anti-Patterns (Do NOT Use), Buttons, Cards, code:css (/* Primary Button */), code:css (.card {), code:css (.input {), code:css (.modal-overlay {) (+12 more)
 
-### Community 45 - "Community 45"
-Cohesion: 0.23
-Nodes (9): EntryScreen(), FleetVehicles(), styles, Vehicle, FleetMap(), useTheme, Workspace Dashboard, styles (+1 more)
-
 ### Community 46 - "Community 46"
 Cohesion: 0.67
 Nodes (3): reactCompiler, typedRoutes, experiments
 
-### Community 47 - "Community 47"
-Cohesion: 0.5
-Nodes (3): styles, VisitorLog, VisitorsScreen()
-
 ## Knowledge Gaps
-- **287 isolated node(s):** `1. Color Palette`, `2. Typography & Iconography`, `code:block1 (┌────────────────────────┐      ┌────────────────────────┐  )`, `Screen 1: Thread List`, `Screen 2: Active Chat Feed` (+282 more)
+- **292 isolated node(s):** `{ getDefaultConfig }`, `config`, `main`, `start`, `reset-project` (+287 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **8 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `scripts` connect `Community 27` to `Community 0`, `Community 28`, `Community 29`, `Community 6`?**
-  _High betweenness centrality (0.166) - this node is a cross-community bridge._
-- **Why does `useTheme()` connect `Community 35` to `Community 32`, `Community 34`, `Community 3`, `Community 36`, `Community 37`, `Community 38`, `Community 39`, `Community 40`, `Community 8`, `Community 45`, `Community 47`, `Community 24`?**
-  _High betweenness centrality (0.130) - this node is a cross-community bridge._
+  _High betweenness centrality (0.163) - this node is a cross-community bridge._
+- **Why does `useTheme()` connect `Community 37` to `Community 32`, `Community 34`, `Community 3`, `Community 38`, `Community 39`?**
+  _High betweenness centrality (0.132) - this node is a cross-community bridge._
 - **Why does `path` connect `Community 4` to `Community 6`?**
-  _High betweenness centrality (0.122) - this node is a cross-community bridge._
-- **What connects `1. Color Palette`, `2. Typography & Iconography`, `code:block1 (┌────────────────────────┐      ┌────────────────────────┐  )` to the rest of the system?**
-  _287 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _High betweenness centrality (0.120) - this node is a cross-community bridge._
+- **What connects `{ getDefaultConfig }`, `config`, `main` to the rest of the system?**
+  _292 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 2` be split into smaller, more focused modules?**
   _Cohesion score 0.06 - nodes in this community are weakly interconnected._
 - **Should `Community 3` be split into smaller, more focused modules?**
-  _Cohesion score 0.11 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.05 - nodes in this community are weakly interconnected._
 - **Should `Community 4` be split into smaller, more focused modules?**
   _Cohesion score 0.09 - nodes in this community are weakly interconnected._
