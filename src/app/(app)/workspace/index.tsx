@@ -8,13 +8,12 @@ import {
   Pressable,
   ActivityIndicator,
   RefreshControl,
-  Alert,
-  Platform,
 } from 'react-native';
 import { useTheme } from '@/hooks/use-theme';
 import { useNavigation, useRouter } from 'expo-router';
 import { DrawerActions } from '@react-navigation/native';
 import { useAuth } from '@/context/AuthContext';
+import { useAlert } from '@/context/AlertContext';
 import * as Location from 'expo-location';
 import {
   Menu,
@@ -69,14 +68,6 @@ const getFriendlyErrorMessage = (message: string, action: 'in' | 'out') => {
   return message;
 };
 
-const showAlert = (title: string, message: string) => {
-  if (Platform.OS === 'web') {
-    window.alert(`${title}: ${message}`);
-  } else {
-    Alert.alert(title, message);
-  }
-};
-
 interface DashboardStats {
   attendance: {
     present: number;
@@ -96,6 +87,7 @@ export default function WorkspaceDashboard() {
   const navigation = useNavigation();
   const router = useRouter();
   const { authToken, user, refreshProfile } = useAuth();
+  const { showAlert } = useAlert();
 
   // State
   const [stats, setStats] = useState<DashboardStats | null>(null);
@@ -194,7 +186,7 @@ export default function WorkspaceDashboard() {
       if (status !== 'granted') {
         const msg = 'Permission to access your location is required to verify your workspace proximity for attendance. Please enable location permissions for OKI App in your device settings.';
         setAttendanceError(msg);
-        showAlert('Location Permission Required', msg);
+        showAlert({ title: 'Location Permission Required', message: msg, type: 'warning' });
         setClockActionLoading(false);
         return;
       }
@@ -213,7 +205,7 @@ export default function WorkspaceDashboard() {
       if (!location || !location.coords) {
         const msg = 'Unable to retrieve your current location. Please verify that GPS/Location services are enabled on your device and that you have a clear signal.';
         setAttendanceError(msg);
-        showAlert('GPS Signal Error', msg);
+        showAlert({ title: 'GPS Signal Error', message: msg, type: 'error' });
         setClockActionLoading(false);
         return;
       }
@@ -225,7 +217,7 @@ export default function WorkspaceDashboard() {
       console.error('GPS/Location error:', gpsError);
       const msg = `An error occurred while retrieving your location: ${gpsError?.message || 'Unknown GPS error'}. Please ensure location services are enabled and try again.`;
       setAttendanceError(msg);
-      showAlert('GPS Error', msg);
+      showAlert({ title: 'GPS Error', message: msg, type: 'error' });
       setClockActionLoading(false);
       return;
     }
@@ -256,7 +248,7 @@ export default function WorkspaceDashboard() {
       if (response.status === 401) {
         const msg = 'Your login session has expired or is invalid. Please sign out and log back in to mark your attendance.';
         setAttendanceError(msg);
-        showAlert('Session Expired', msg);
+        showAlert({ title: 'Session Expired', message: msg, type: 'warning' });
         setClockActionLoading(false);
         return;
       }
@@ -264,19 +256,19 @@ export default function WorkspaceDashboard() {
       if (response.ok && result?.success) {
         const successMsg = result.message || `Successfully clocked ${isClockedIn ? 'out' : 'in'}.`;
         setAttendanceSuccess(successMsg);
-        showAlert('Success', successMsg);
+        showAlert({ title: 'Success', message: successMsg, type: 'success' });
         fetchDashboardStats(false);
       } else {
         const serverMessage = result?.message || (responseText.length < 200 && !responseText.includes('<!DOCTYPE html>') ? responseText : null) || `Failed to clock ${isClockedIn ? 'out' : 'in'}.`;
         const friendlyMessage = getFriendlyErrorMessage(serverMessage, isClockedIn ? 'out' : 'in');
         setAttendanceError(friendlyMessage);
-        showAlert('Attendance Error', friendlyMessage);
+        showAlert({ title: 'Attendance Error', message: friendlyMessage, type: 'error' });
       }
     } catch (error) {
       console.error(`Error during clock-${isClockedIn ? 'out' : 'in'}:`, error);
       const networkMsg = 'Could not connect to the attendance server. Please check your internet connection and try again.';
       setAttendanceError(networkMsg);
-      showAlert('Network Error', networkMsg);
+      showAlert({ title: 'Network Error', message: networkMsg, type: 'error' });
     } finally {
       setClockActionLoading(false);
     }

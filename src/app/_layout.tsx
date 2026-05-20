@@ -6,6 +6,7 @@ import React, { useEffect } from 'react';
 
 import { ThemeProvider, useThemeContext } from '@/context/ThemeContext';
 import { AuthProvider } from '@/context/AuthContext';
+import { AlertProvider } from '@/context/AlertContext';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -75,7 +76,9 @@ export default function RootLayout() {
   return (
     <ThemeProvider>
       <AuthProvider>
-        <AppContent />
+        <AlertProvider>
+          <AppContent />
+        </AlertProvider>
       </AuthProvider>
     </ThemeProvider>
   );
