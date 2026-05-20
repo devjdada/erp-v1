@@ -107,7 +107,7 @@ export default function WorkspaceDashboard() {
           <Menu color={theme.text} size={24} />
         </Pressable>
         <Text style={[styles.headerTitle, { color: theme.text }]}>OKI APP</Text>
-        <View style={{ width: 40 }} /> {/* Layout balance */}
+        <View style={{ width: 40 }} />
       </View>
 
       <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
@@ -222,8 +222,6 @@ export default function WorkspaceDashboard() {
         </View>
 
       </ScrollView>
-
-      {/* FAB Backdrop overlay */}
       {isMenuOpen && (
         <Pressable
           style={StyleSheet.absoluteFill}
@@ -236,13 +234,9 @@ export default function WorkspaceDashboard() {
           />
         </Pressable>
       )}
-
-      {/* FAB Container */}
       <View style={styles.fabContainer}>
-        {/* Speed Dial Actions */}
         {isMenuOpen && (
           <View style={styles.speedDial}>
-            {/* Documents Option */}
             <Animated.View entering={FadeIn.delay(50)} exiting={FadeOut}>
               <Pressable
                 onPress={() => {
@@ -259,8 +253,6 @@ export default function WorkspaceDashboard() {
                 </View>
               </Pressable>
             </Animated.View>
-
-            {/* Announcements Option */}
             <Animated.View entering={FadeIn.delay(100)} exiting={FadeOut}>
               <Pressable
                 onPress={() => {
@@ -277,8 +269,6 @@ export default function WorkspaceDashboard() {
                 </View>
               </Pressable>
             </Animated.View>
-
-            {/* Support Chat Option */}
             <Animated.View entering={FadeIn.delay(150)} exiting={FadeOut}>
               <Pressable
                 onPress={() => {
@@ -295,8 +285,6 @@ export default function WorkspaceDashboard() {
                 </View>
               </Pressable>
             </Animated.View>
-
-            {/* Profile Option */}
             <Animated.View entering={FadeIn.delay(200)} exiting={FadeOut}>
               <Pressable
                 onPress={() => {
@@ -315,8 +303,6 @@ export default function WorkspaceDashboard() {
             </Animated.View>
           </View>
         )}
-
-        {/* Primary FAB */}
         <Pressable
           onPress={() => setIsMenuOpen(!isMenuOpen)}
           style={[styles.mainFab, { backgroundColor: theme.primary }]}

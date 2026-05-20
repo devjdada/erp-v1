@@ -1,7 +1,7 @@
 # Graph Report - erp-app  (2026-05-20)
 
 ## Corpus Check
-- 61 files · ~76,136 words
+- 61 files · ~76,097 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `5d58b9ac`
+- Built from commit: `8c1fbd5c`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 

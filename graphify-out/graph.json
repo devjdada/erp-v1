@@ -1926,7 +1926,7 @@
       "label": "styles",
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/index.tsx",
-      "source_location": "L333",
+      "source_location": "L319",
       "id": "workspace_index_styles",
       "community": 32,
       "norm_label": "styles"
@@ -7366,9 +7366,9 @@
       "source_file": "src/app/(app)/workspace/announcements.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_app_workspace_announcements_tsx",
-      "target": "src_hooks_use_theme_ts",
-      "confidence_score": 1.0
+      "target": "src_hooks_use_theme_ts"
     },
     {
       "relation": "imports",
@@ -7377,9 +7377,9 @@
       "source_file": "src/app/(app)/workspace/announcements.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_app_workspace_announcements_tsx",
-      "target": "hooks_use_theme_usetheme",
-      "confidence_score": 1.0
+      "target": "hooks_use_theme_usetheme"
     },
     {
       "relation": "contains",
@@ -7387,9 +7387,9 @@
       "source_file": "src/app/(app)/workspace/announcements.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_app_workspace_announcements_tsx",
-      "target": "workspace_announcements_announcementitem",
-      "confidence_score": 1.0
+      "target": "workspace_announcements_announcementitem"
     },
     {
       "relation": "contains",
@@ -7397,9 +7397,9 @@
       "source_file": "src/app/(app)/workspace/announcements.tsx",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_app_workspace_announcements_tsx",
-      "target": "workspace_announcements_announcementsscreen",
-      "confidence_score": 1.0
+      "target": "workspace_announcements_announcementsscreen"
     },
     {
       "relation": "contains",
@@ -7407,9 +7407,9 @@
       "source_file": "src/app/(app)/workspace/announcements.tsx",
       "source_location": "L214",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_app_workspace_announcements_tsx",
-      "target": "workspace_announcements_styles",
-      "confidence_score": 1.0
+      "target": "workspace_announcements_styles"
     },
     {
       "relation": "calls",
@@ -7429,9 +7429,9 @@
       "source_file": "src/app/(app)/workspace/chat.tsx",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_app_workspace_chat_tsx",
-      "target": "src_hooks_use_theme_ts",
-      "confidence_score": 1.0
+      "target": "src_hooks_use_theme_ts"
     },
     {
       "relation": "imports",
@@ -7440,9 +7440,9 @@
       "source_file": "src/app/(app)/workspace/chat.tsx",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_app_workspace_chat_tsx",
-      "target": "hooks_use_theme_usetheme",
-      "confidence_score": 1.0
+      "target": "hooks_use_theme_usetheme"
     },
     {
       "relation": "imports_from",
@@ -7451,9 +7451,9 @@
       "source_file": "src/app/(app)/workspace/chat.tsx",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_app_workspace_chat_tsx",
-      "target": "src_context_authcontext_tsx",
-      "confidence_score": 1.0
+      "target": "src_context_authcontext_tsx"
     },
     {
       "relation": "imports",
@@ -7462,9 +7462,9 @@
       "source_file": "src/app/(app)/workspace/chat.tsx",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_app_workspace_chat_tsx",
-      "target": "context_authcontext_useauth",
-      "confidence_score": 1.0
+      "target": "context_authcontext_useauth"
     },
     {
       "relation": "contains",
@@ -7472,9 +7472,9 @@
       "source_file": "src/app/(app)/workspace/chat.tsx",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_app_workspace_chat_tsx",
-      "target": "workspace_chat_message",
-      "confidence_score": 1.0
+      "target": "workspace_chat_message"
     },
     {
       "relation": "contains",
@@ -7482,9 +7482,9 @@
       "source_file": "src/app/(app)/workspace/chat.tsx",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_app_workspace_chat_tsx",
-      "target": "workspace_chat_chatscreen",
-      "confidence_score": 1.0
+      "target": "workspace_chat_chatscreen"
     },
     {
       "relation": "contains",
@@ -7492,9 +7492,9 @@
       "source_file": "src/app/(app)/workspace/chat.tsx",
       "source_location": "L362",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_app_workspace_chat_tsx",
-      "target": "workspace_chat_styles",
-      "confidence_score": 1.0
+      "target": "workspace_chat_styles"
     },
     {
       "relation": "calls",
@@ -7525,9 +7525,9 @@
       "source_file": "src/app/(app)/workspace/documents.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_app_workspace_documents_tsx",
-      "target": "src_hooks_use_theme_ts",
-      "confidence_score": 1.0
+      "target": "src_hooks_use_theme_ts"
     },
     {
       "relation": "imports",
@@ -7536,9 +7536,9 @@
       "source_file": "src/app/(app)/workspace/documents.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_app_workspace_documents_tsx",
-      "target": "hooks_use_theme_usetheme",
-      "confidence_score": 1.0
+      "target": "hooks_use_theme_usetheme"
     },
     {
       "relation": "contains",
@@ -7546,9 +7546,9 @@
       "source_file": "src/app/(app)/workspace/documents.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_app_workspace_documents_tsx",
-      "target": "workspace_documents_documentitem",
-      "confidence_score": 1.0
+      "target": "workspace_documents_documentitem"
     },
     {
       "relation": "contains",
@@ -7556,9 +7556,9 @@
       "source_file": "src/app/(app)/workspace/documents.tsx",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_app_workspace_documents_tsx",
-      "target": "workspace_documents_documentsscreen",
-      "confidence_score": 1.0
+      "target": "workspace_documents_documentsscreen"
     },
     {
       "relation": "contains",
@@ -7566,9 +7566,9 @@
       "source_file": "src/app/(app)/workspace/documents.tsx",
       "source_location": "L207",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_app_workspace_documents_tsx",
-      "target": "workspace_documents_styles",
-      "confidence_score": 1.0
+      "target": "workspace_documents_styles"
     },
     {
       "relation": "calls",
@@ -7769,9 +7769,9 @@
       "source_file": "src/app/(app)/workspace/messages.tsx",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_app_workspace_messages_tsx",
-      "target": "src_context_authcontext_tsx",
-      "confidence_score": 1.0
+      "target": "src_context_authcontext_tsx"
     },
     {
       "relation": "imports",
@@ -7780,9 +7780,9 @@
       "source_file": "src/app/(app)/workspace/messages.tsx",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_app_workspace_messages_tsx",
-      "target": "context_authcontext_useauth",
-      "confidence_score": 1.0
+      "target": "context_authcontext_useauth"
     },
     {
       "relation": "contains",
@@ -7790,9 +7790,9 @@
       "source_file": "src/app/(app)/workspace/messages.tsx",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_app_workspace_messages_tsx",
-      "target": "workspace_messages_apimessage",
-      "confidence_score": 1.0
+      "target": "workspace_messages_apimessage"
     },
     {
       "relation": "contains",
@@ -7800,9 +7800,9 @@
       "source_file": "src/app/(app)/workspace/messages.tsx",
       "source_location": "L55",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_app_workspace_messages_tsx",
-      "target": "workspace_messages_groupedthread",
-      "confidence_score": 1.0
+      "target": "workspace_messages_groupedthread"
     },
     {
       "relation": "contains",
@@ -7810,9 +7810,9 @@
       "source_file": "src/app/(app)/workspace/messages.tsx",
       "source_location": "L65",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_app_workspace_messages_tsx",
-      "target": "workspace_messages_staffresource",
-      "confidence_score": 1.0
+      "target": "workspace_messages_staffresource"
     },
     {
       "relation": "contains",
@@ -7820,9 +7820,9 @@
       "source_file": "src/app/(app)/workspace/messages.tsx",
       "source_location": "L72",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_app_workspace_messages_tsx",
-      "target": "workspace_messages_departmentresource",
-      "confidence_score": 1.0
+      "target": "workspace_messages_departmentresource"
     },
     {
       "relation": "contains",
@@ -11505,5 +11505,5 @@
       "source_file": "src/app/(onboarding)/index.tsx"
     }
   ],
-  "built_at_commit": "5d58b9ac46c1c14d42de8f47a0fe9f4fad2eaa67"
+  "built_at_commit": "8c1fbd5c9dcbc723fd7dd77a56ea21879e6a487b"
 }
