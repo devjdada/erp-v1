@@ -133,7 +133,7 @@ export default function WorkspaceLayout() {
       )}
 
       {isMenuOpen && (
-        <View style={[styles.speedDial, { bottom: 104 + insets.bottom }]}>
+        <View style={[styles.speedDial, { bottom: 84 + insets.bottom }]}>
           <Animated.View entering={FadeIn.delay(50)} exiting={FadeOut} style={styles.speedDialItem}>
             <Pressable
               onPress={() => {
@@ -206,7 +206,7 @@ export default function WorkspaceLayout() {
 
       <Pressable
         onPress={() => setIsMenuOpen(!isMenuOpen)}
-        style={[styles.mainFab, { backgroundColor: theme.primary }]}
+        style={[styles.mainFab, { backgroundColor: theme.primary, bottom: 12 + insets.bottom }]}
       >
         <Animated.View style={animatedFabStyle}>
           <Plus color="#FFFFFF" size={26} />
