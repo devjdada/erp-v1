@@ -68,54 +68,35 @@ try {
   const { Text: RNText, StyleSheet: RNStyleSheet } = require('react-native');
   
   if (RNText && !RNText.__patched) {
-    const OriginalText = RNText;
-    
-    const PatchedText = React.forwardRef((props: any, ref: any) => {
-      let scaledStyle = props.style;
-      try {
-        const { fontScale } = useFontScale();
-        if (fontScale !== 1) {
-          const flat = RNStyleSheet.flatten(props.style || {});
-          const newStyle = { ...flat };
-          
-          const baseFontSize = newStyle.fontSize ?? 14;
-          newStyle.fontSize = baseFontSize * fontScale;
-          
-          if (typeof newStyle.lineHeight === 'number') {
-            newStyle.lineHeight = newStyle.lineHeight * fontScale;
-          }
-          scaledStyle = newStyle;
-        }
-      } catch (e) {
-        // Fallback if context is not available (e.g. rendered outside provider)
-      }
+    if (RNText.render) {
+      const originalTextRender = RNText.render;
       
-      return <OriginalText {...props} style={scaledStyle} ref={ref} />;
-    });
-    
-    (PatchedText as any).__patched = true;
-    
-    // Copy all static properties of the original component
-    Object.keys(OriginalText).forEach((key) => {
-      (PatchedText as any)[key] = (OriginalText as any)[key];
-    });
-    
-    // Override the exported Text property on the react-native module
-    const RNModule = require('react-native');
-    try {
-      Object.defineProperty(RNModule, 'Text', {
-        get() {
-          return PatchedText;
-        },
-        configurable: true,
-        enumerable: true,
-      });
-    } catch (err) {
-      try {
-        RNModule.Text = PatchedText;
-      } catch (err2) {
-        console.error('Failed to override Text property via direct assignment', err2);
-      }
+      RNText.render = function (props: any, ref: any) {
+        let scaledStyle = props.style;
+        try {
+          const { fontScale } = useFontScale();
+          if (fontScale !== 1) {
+            const flat = RNStyleSheet.flatten(props.style || {});
+            const newStyle = { ...flat };
+            
+            const baseFontSize = newStyle.fontSize ?? 14;
+            newStyle.fontSize = baseFontSize * fontScale;
+            
+            if (typeof newStyle.lineHeight === 'number') {
+              newStyle.lineHeight = newStyle.lineHeight * fontScale;
+            }
+            scaledStyle = newStyle;
+          }
+        } catch (e) {
+          // Fallback if context is not available (e.g. rendered outside provider)
+        }
+        
+        return originalTextRender.call(this, { ...props, style: scaledStyle }, ref);
+      };
+      
+      RNText.__patched = true;
+    } else {
+      console.warn('React Native Text component does not have a render method to patch.');
     }
   }
 } catch (e) {
