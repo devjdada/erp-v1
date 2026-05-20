@@ -1,8 +1,8 @@
-import { Redirect } from 'expo-router';
-import React, { useState, useEffect } from 'react';
-import { View, ActivityIndicator } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useAuth } from '@/context/AuthContext';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Redirect } from 'expo-router';
+import React, { useEffect, useState } from 'react';
+import { ActivityIndicator, View } from 'react-native';
 
 export default function EntryScreen() {
   const [isFirstLaunch, setIsFirstLaunch] = useState<boolean | null>(null);
@@ -39,7 +39,7 @@ export default function EntryScreen() {
 
   // Redirect based on whether the user has a valid authenticated session
   if (authToken) {
-    return <Redirect href="/(app)/workspace/index" />;
+    return <Redirect href="/(app)/workspace" />;
   }
 
   return <Redirect href="/(auth)/login" />;

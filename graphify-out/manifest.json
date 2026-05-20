@@ -10,7 +10,7 @@
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\expo-env.d.ts": {
-    "mtime": 1779227332.3460655,
+    "mtime": 1779258129.1028807,
     "ast_hash": "0dd9dccdb4b08595bc83df70d6a154d3",
     "semantic_hash": ""
   },
@@ -50,8 +50,8 @@
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\.expo\\types\\router.d.ts": {
-    "mtime": 1779255402.8465922,
-    "ast_hash": "c1abbb7b042723bbd3630e8054ae0c09",
+    "mtime": 1779267986.9585042,
+    "ast_hash": "6de08e86231f547424a051756b8f682b",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\.vscode\\extensions.json": {
@@ -75,8 +75,8 @@
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\app\\index.tsx": {
-    "mtime": 1779234935.3919396,
-    "ast_hash": "8fc400f7d8a610f8111b779ba43518b0",
+    "mtime": 1779258208.1757812,
+    "ast_hash": "35634f3ed6eddcd1ee3da95dfab13688",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\app\\_layout.tsx": {
@@ -115,8 +115,8 @@
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\app\\(app)\\workspace\\chat.tsx": {
-    "mtime": 1779234986.5323522,
-    "ast_hash": "64b10cbaaa9191fa8d6702a7b134ea35",
+    "mtime": 1779269919.5598772,
+    "ast_hash": "96e633038f976781f4fde9be5a9a408d",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\app\\(app)\\workspace\\corrections.tsx": {
@@ -145,8 +145,8 @@
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\app\\(app)\\workspace\\messages.tsx": {
-    "mtime": 1779234989.7444797,
-    "ast_hash": "eb87907e6d42c1caf3013185c3786e5f",
+    "mtime": 1779269765.0338023,
+    "ast_hash": "2b81c47a4dc24a2e0b9083c20b425ab7",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\app\\(app)\\workspace\\more.tsx": {
@@ -187,6 +187,11 @@
   "C:\\erp\\erp-app\\src\\app\\(app)\\workspace\\tools.tsx": {
     "mtime": 1779236426.4230587,
     "ast_hash": "84890cacb94631bb6757fc629524e001",
+    "semantic_hash": ""
+  },
+  "C:\\erp\\erp-app\\src\\app\\(app)\\workspace\\types.ts": {
+    "mtime": 1779262415.761515,
+    "ast_hash": "d30b753f1466f06c31b6629630d6cf2e",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\app\\(app)\\workspace\\visitors.tsx": {
@@ -344,6 +349,11 @@
     "ast_hash": "b33a6a2bede0b68b6919ec33248476f8",
     "semantic_hash": ""
   },
+  "C:\\erp\\erp-app\\.agent\\skills\\ui-ux-pro-max\\md\\mobile_chats_design_spec.md": {
+    "mtime": 1779261711.52328,
+    "ast_hash": "fc57075505497e4d21d4252cd7307832",
+    "semantic_hash": ""
+  },
   "C:\\erp\\erp-app\\.agents\\rules\\graphify.md": {
     "mtime": 1779228208.0399876,
     "ast_hash": "56d322bc02e948acf8a5abc7fd5d20ff",
@@ -362,6 +372,11 @@
   "C:\\erp\\erp-app\\design-system\\erp-app\\MASTER.md": {
     "mtime": 1779221364.2742946,
     "ast_hash": "ad08813b6a2f1797d88ff735fec64619",
+    "semantic_hash": ""
+  },
+  "C:\\erp\\erp-app\\design-system\\isokariari-chats\\MASTER.md": {
+    "mtime": 1779262375.236917,
+    "ast_hash": "ff859119c2ce82f683169683d0ac0c13",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\.expo\\web\\cache\\production\\images\\favicon\\favicon-a4e030697a7571b3e95d31860e4da55d2f98e5e861e2b55e414f45a8556828ba-contain-transparent\\favicon-48.png": {

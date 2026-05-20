@@ -1649,7 +1649,7 @@
       "source_file": "src/app/index.tsx",
       "source_location": "L1",
       "id": "src_app_index_tsx",
-      "community": 41,
+      "community": 45,
       "norm_label": "index.tsx"
     },
     {
@@ -1658,7 +1658,7 @@
       "source_file": "src/app/index.tsx",
       "source_location": "L7",
       "id": "app_index_entryscreen",
-      "community": 41,
+      "community": 45,
       "norm_label": "entryscreen()"
     },
     {
@@ -1721,7 +1721,7 @@
       "source_file": "src/app/(app)/_layout.tsx",
       "source_location": "L1",
       "id": "src_app_app_layout_tsx",
-      "community": 24,
+      "community": 35,
       "norm_label": "_layout.tsx"
     },
     {
@@ -1730,7 +1730,7 @@
       "source_file": "src/app/(app)/_layout.tsx",
       "source_location": "L8",
       "id": "app_layout_applayout",
-      "community": 24,
+      "community": 35,
       "norm_label": "applayout()"
     },
     {
@@ -1739,7 +1739,7 @@
       "source_file": "src/app/(app)/fleet/index.tsx",
       "source_location": "L1",
       "id": "src_app_app_fleet_index_tsx",
-      "community": 41,
+      "community": 45,
       "norm_label": "index.tsx"
     },
     {
@@ -1748,7 +1748,7 @@
       "source_file": "src/app/(app)/fleet/index.tsx",
       "source_location": "L6",
       "id": "fleet_index_vehicle",
-      "community": 41,
+      "community": 45,
       "norm_label": "vehicle"
     },
     {
@@ -1757,7 +1757,7 @@
       "source_file": "src/app/(app)/fleet/index.tsx",
       "source_location": "L15",
       "id": "fleet_index_fleetvehicles",
-      "community": 41,
+      "community": 45,
       "norm_label": "fleetvehicles()"
     },
     {
@@ -1766,7 +1766,7 @@
       "source_file": "src/app/(app)/fleet/index.tsx",
       "source_location": "L101",
       "id": "fleet_index_styles",
-      "community": 41,
+      "community": 45,
       "norm_label": "styles"
     },
     {
@@ -1775,7 +1775,7 @@
       "source_file": "src/app/(app)/fleet/map.tsx",
       "source_location": "L1",
       "id": "src_app_app_fleet_map_tsx",
-      "community": 3,
+      "community": 45,
       "norm_label": "map.tsx"
     },
     {
@@ -1784,7 +1784,7 @@
       "source_file": "src/app/(app)/fleet/map.tsx",
       "source_location": "L6",
       "id": "fleet_map_fleetmap",
-      "community": 3,
+      "community": 45,
       "norm_label": "fleetmap()"
     },
     {
@@ -1802,7 +1802,7 @@
       "source_file": "src/app/(app)/fleet/_layout.tsx",
       "source_location": "L1",
       "id": "src_app_app_fleet_layout_tsx",
-      "community": 3,
+      "community": 45,
       "norm_label": "_layout.tsx"
     },
     {
@@ -1811,7 +1811,7 @@
       "source_file": "src/app/(app)/fleet/_layout.tsx",
       "source_location": "L6",
       "id": "fleet_layout_fleetlayout",
-      "community": 3,
+      "community": 45,
       "norm_label": "fleetlayout()"
     },
     {
@@ -1856,34 +1856,25 @@
       "source_file": "src/app/(app)/workspace/chat.tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_chat_tsx",
-      "community": 8,
+      "community": 32,
       "norm_label": "chat.tsx"
-    },
-    {
-      "label": "Message",
-      "file_type": "code",
-      "source_file": "src/app/(app)/workspace/chat.tsx",
-      "source_location": "L22",
-      "id": "workspace_chat_message",
-      "community": 8,
-      "norm_label": "message"
     },
     {
       "label": "ChatScreen()",
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/chat.tsx",
-      "source_location": "L38",
+      "source_location": "L40",
       "id": "workspace_chat_chatscreen",
-      "community": 8,
+      "community": 32,
       "norm_label": "chatscreen()"
     },
     {
       "label": "styles",
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/chat.tsx",
-      "source_location": "L362",
+      "source_location": "L761",
       "id": "workspace_chat_styles",
-      "community": 8,
+      "community": 32,
       "norm_label": "styles"
     },
     {
@@ -2112,46 +2103,10 @@
       "norm_label": "messages.tsx"
     },
     {
-      "label": "ApiMessage",
-      "file_type": "code",
-      "source_file": "src/app/(app)/workspace/messages.tsx",
-      "source_location": "L33",
-      "id": "workspace_messages_apimessage",
-      "community": 32,
-      "norm_label": "apimessage"
-    },
-    {
-      "label": "GroupedThread",
-      "file_type": "code",
-      "source_file": "src/app/(app)/workspace/messages.tsx",
-      "source_location": "L55",
-      "id": "workspace_messages_groupedthread",
-      "community": 32,
-      "norm_label": "groupedthread"
-    },
-    {
-      "label": "StaffResource",
-      "file_type": "code",
-      "source_file": "src/app/(app)/workspace/messages.tsx",
-      "source_location": "L65",
-      "id": "workspace_messages_staffresource",
-      "community": 32,
-      "norm_label": "staffresource"
-    },
-    {
-      "label": "DepartmentResource",
-      "file_type": "code",
-      "source_file": "src/app/(app)/workspace/messages.tsx",
-      "source_location": "L72",
-      "id": "workspace_messages_departmentresource",
-      "community": 32,
-      "norm_label": "departmentresource"
-    },
-    {
       "label": "MessagesScreen()",
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/messages.tsx",
-      "source_location": "L77",
+      "source_location": "L40",
       "id": "workspace_messages_messagesscreen",
       "community": 32,
       "norm_label": "messagesscreen()"
@@ -2160,7 +2115,7 @@
       "label": "styles",
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/messages.tsx",
-      "source_location": "L588",
+      "source_location": "L781",
       "id": "workspace_messages_styles",
       "community": 32,
       "norm_label": "styles"
@@ -2261,7 +2216,7 @@
       "source_file": "src/app/(app)/workspace/profile.tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_profile_tsx",
-      "community": 8,
+      "community": 37,
       "norm_label": "profile.tsx"
     },
     {
@@ -2270,7 +2225,7 @@
       "source_file": "src/app/(app)/workspace/profile.tsx",
       "source_location": "L10",
       "id": "workspace_profile_profilescreen",
-      "community": 8,
+      "community": 37,
       "norm_label": "profilescreen()"
     },
     {
@@ -2279,7 +2234,7 @@
       "source_file": "src/app/(app)/workspace/profile.tsx",
       "source_location": "L280",
       "id": "workspace_profile_styles",
-      "community": 8,
+      "community": 37,
       "norm_label": "styles"
     },
     {
@@ -2288,7 +2243,7 @@
       "source_file": "src/app/(app)/workspace/requisitions.tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_requisitions_tsx",
-      "community": 45,
+      "community": 8,
       "norm_label": "requisitions.tsx"
     },
     {
@@ -2297,7 +2252,7 @@
       "source_file": "src/app/(app)/workspace/requisitions.tsx",
       "source_location": "L19",
       "id": "workspace_requisitions_requisitionitem",
-      "community": 45,
+      "community": 8,
       "norm_label": "requisitionitem"
     },
     {
@@ -2306,7 +2261,7 @@
       "source_file": "src/app/(app)/workspace/requisitions.tsx",
       "source_location": "L31",
       "id": "workspace_requisitions_requisitionsscreen",
-      "community": 45,
+      "community": 8,
       "norm_label": "requisitionsscreen()"
     },
     {
@@ -2315,7 +2270,7 @@
       "source_file": "src/app/(app)/workspace/requisitions.tsx",
       "source_location": "L206",
       "id": "workspace_requisitions_styles",
-      "community": 45,
+      "community": 8,
       "norm_label": "styles"
     },
     {
@@ -2360,7 +2315,7 @@
       "source_file": "src/app/(app)/workspace/tickets.tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_tickets_tsx",
-      "community": 47,
+      "community": 44,
       "norm_label": "tickets.tsx"
     },
     {
@@ -2369,7 +2324,7 @@
       "source_file": "src/app/(app)/workspace/tickets.tsx",
       "source_location": "L21",
       "id": "workspace_tickets_ictticket",
-      "community": 47,
+      "community": 44,
       "norm_label": "ictticket"
     },
     {
@@ -2378,7 +2333,7 @@
       "source_file": "src/app/(app)/workspace/tickets.tsx",
       "source_location": "L37",
       "id": "workspace_tickets_ticketsscreen",
-      "community": 47,
+      "community": 44,
       "norm_label": "ticketsscreen()"
     },
     {
@@ -2387,7 +2342,7 @@
       "source_file": "src/app/(app)/workspace/tickets.tsx",
       "source_location": "L289",
       "id": "workspace_tickets_styles",
-      "community": 47,
+      "community": 44,
       "norm_label": "styles"
     },
     {
@@ -2396,7 +2351,7 @@
       "source_file": "src/app/(app)/workspace/tools.tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_tools_tsx",
-      "community": 30,
+      "community": 8,
       "norm_label": "tools.tsx"
     },
     {
@@ -2405,7 +2360,7 @@
       "source_file": "src/app/(app)/workspace/tools.tsx",
       "source_location": "L19",
       "id": "workspace_tools_tool",
-      "community": 30,
+      "community": 8,
       "norm_label": "tool"
     },
     {
@@ -2414,7 +2369,7 @@
       "source_file": "src/app/(app)/workspace/tools.tsx",
       "source_location": "L27",
       "id": "workspace_tools_toolrequest",
-      "community": 30,
+      "community": 8,
       "norm_label": "toolrequest"
     },
     {
@@ -2423,7 +2378,7 @@
       "source_file": "src/app/(app)/workspace/tools.tsx",
       "source_location": "L39",
       "id": "workspace_tools_toolsscreen",
-      "community": 30,
+      "community": 8,
       "norm_label": "toolsscreen()"
     },
     {
@@ -2432,8 +2387,89 @@
       "source_file": "src/app/(app)/workspace/tools.tsx",
       "source_location": "L279",
       "id": "workspace_tools_styles",
-      "community": 30,
+      "community": 8,
       "norm_label": "styles"
+    },
+    {
+      "label": "types.ts",
+      "file_type": "code",
+      "source_file": "src/app/(app)/workspace/types.ts",
+      "source_location": "L1",
+      "id": "src_app_app_workspace_types_ts",
+      "community": 32,
+      "norm_label": "types.ts"
+    },
+    {
+      "label": "ChatAttachment",
+      "file_type": "code",
+      "source_file": "src/app/(app)/workspace/types.ts",
+      "source_location": "L1",
+      "id": "workspace_types_chatattachment",
+      "community": 32,
+      "norm_label": "chatattachment"
+    },
+    {
+      "label": "EntityLink",
+      "file_type": "code",
+      "source_file": "src/app/(app)/workspace/types.ts",
+      "source_location": "L7",
+      "id": "workspace_types_entitylink",
+      "community": 32,
+      "norm_label": "entitylink"
+    },
+    {
+      "label": "ChatMessageMetadata",
+      "file_type": "code",
+      "source_file": "src/app/(app)/workspace/types.ts",
+      "source_location": "L13",
+      "id": "workspace_types_chatmessagemetadata",
+      "community": 32,
+      "norm_label": "chatmessagemetadata"
+    },
+    {
+      "label": "ChatMessage",
+      "file_type": "code",
+      "source_file": "src/app/(app)/workspace/types.ts",
+      "source_location": "L17",
+      "id": "workspace_types_chatmessage",
+      "community": 32,
+      "norm_label": "chatmessage"
+    },
+    {
+      "label": "ChatParticipant",
+      "file_type": "code",
+      "source_file": "src/app/(app)/workspace/types.ts",
+      "source_location": "L35",
+      "id": "workspace_types_chatparticipant",
+      "community": 32,
+      "norm_label": "chatparticipant"
+    },
+    {
+      "label": "ChatThread",
+      "file_type": "code",
+      "source_file": "src/app/(app)/workspace/types.ts",
+      "source_location": "L50",
+      "id": "workspace_types_chatthread",
+      "community": 32,
+      "norm_label": "chatthread"
+    },
+    {
+      "label": "StaffResource",
+      "file_type": "code",
+      "source_file": "src/app/(app)/workspace/types.ts",
+      "source_location": "L70",
+      "id": "workspace_types_staffresource",
+      "community": 32,
+      "norm_label": "staffresource"
+    },
+    {
+      "label": "DepartmentResource",
+      "file_type": "code",
+      "source_file": "src/app/(app)/workspace/types.ts",
+      "source_location": "L77",
+      "id": "workspace_types_departmentresource",
+      "community": 32,
+      "norm_label": "departmentresource"
     },
     {
       "label": "visitors.tsx",
@@ -2441,7 +2477,7 @@
       "source_file": "src/app/(app)/workspace/visitors.tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_visitors_tsx",
-      "community": 44,
+      "community": 47,
       "norm_label": "visitors.tsx"
     },
     {
@@ -2450,7 +2486,7 @@
       "source_file": "src/app/(app)/workspace/visitors.tsx",
       "source_location": "L19",
       "id": "workspace_visitors_visitorlog",
-      "community": 44,
+      "community": 47,
       "norm_label": "visitorlog"
     },
     {
@@ -2459,7 +2495,7 @@
       "source_file": "src/app/(app)/workspace/visitors.tsx",
       "source_location": "L34",
       "id": "workspace_visitors_visitorsscreen",
-      "community": 44,
+      "community": 47,
       "norm_label": "visitorsscreen()"
     },
     {
@@ -2468,7 +2504,7 @@
       "source_file": "src/app/(app)/workspace/visitors.tsx",
       "source_location": "L212",
       "id": "workspace_visitors_styles",
-      "community": 44,
+      "community": 47,
       "norm_label": "styles"
     },
     {
@@ -2513,7 +2549,7 @@
       "source_file": "src/app/(app)/workspace/_layout.tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_layout_tsx",
-      "community": 3,
+      "community": 45,
       "norm_label": "_layout.tsx"
     },
     {
@@ -2522,7 +2558,7 @@
       "source_file": "src/app/(app)/workspace/_layout.tsx",
       "source_location": "L9",
       "id": "workspace_layout_workspacelayout",
-      "community": 3,
+      "community": 45,
       "norm_label": "workspacelayout()"
     },
     {
@@ -2531,7 +2567,7 @@
       "source_file": "src/app/(app)/workspace/_layout.tsx",
       "source_location": "L273",
       "id": "workspace_layout_styles",
-      "community": 3,
+      "community": 45,
       "norm_label": "styles"
     },
     {
@@ -2549,7 +2585,7 @@
       "source_file": "src/app/(auth)/login.tsx",
       "source_location": "L11",
       "id": "auth_login_loginscreen",
-      "community": 35,
+      "community": 8,
       "norm_label": "loginscreen()"
     },
     {
@@ -2576,7 +2612,7 @@
       "source_file": "src/app/(auth)/register.tsx",
       "source_location": "L11",
       "id": "auth_register_registerscreen",
-      "community": 35,
+      "community": 8,
       "norm_label": "registerscreen()"
     },
     {
@@ -2621,7 +2657,7 @@
       "source_file": "src/app/(onboarding)/index.tsx",
       "source_location": "L9",
       "id": "onboarding_index_onboardingscreen",
-      "community": 34,
+      "community": 45,
       "norm_label": "onboardingscreen()"
     },
     {
@@ -3017,7 +3053,7 @@
       "source_file": "src/components/web-badge.tsx",
       "source_location": "L11",
       "id": "components_web_badge_webbadge",
-      "community": 24,
+      "community": 3,
       "norm_label": "webbadge()"
     },
     {
@@ -3386,7 +3422,7 @@
       "source_file": "src/hooks/use-color-scheme.ts",
       "source_location": "L1",
       "id": "src_hooks_use_color_scheme_ts",
-      "community": 24,
+      "community": 3,
       "norm_label": "use-color-scheme.ts"
     },
     {
@@ -3395,7 +3431,7 @@
       "source_file": "src/hooks/use-color-scheme.web.ts",
       "source_location": "L1",
       "id": "src_hooks_use_color_scheme_web_ts",
-      "community": 24,
+      "community": 3,
       "norm_label": "use-color-scheme.web.ts"
     },
     {
@@ -3404,7 +3440,7 @@
       "source_file": "src/hooks/use-color-scheme.web.ts",
       "source_location": "L7",
       "id": "hooks_use_color_scheme_web_usecolorscheme",
-      "community": 24,
+      "community": 3,
       "norm_label": "usecolorscheme()"
     },
     {
@@ -3413,7 +3449,7 @@
       "source_file": "src/hooks/use-theme.ts",
       "source_location": "L1",
       "id": "src_hooks_use_theme_ts",
-      "community": 3,
+      "community": 45,
       "norm_label": "use-theme.ts"
     },
     {
@@ -3975,6 +4011,222 @@
       "norm_label": "accessibility"
     },
     {
+      "label": "mobile_chats_design_spec.md",
+      "file_type": "document",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L1",
+      "id": "agent_skills_ui_ux_pro_max_md_mobile_chats_design_spec_md",
+      "community": 30,
+      "norm_label": "mobile_chats_design_spec.md"
+    },
+    {
+      "label": "Mobile Chats: UI/UX Design Specification & Implementation Guide",
+      "file_type": "document",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L1",
+      "id": "md_mobile_chats_design_spec_mobile_chats_ui_ux_design_specification_implementation_guide",
+      "community": 30,
+      "norm_label": "mobile chats: ui/ux design specification & implementation guide"
+    },
+    {
+      "label": "\ud83c\udfa8 Design System & Visual Aesthetics",
+      "file_type": "document",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L7",
+      "id": "md_mobile_chats_design_spec_design_system_visual_aesthetics",
+      "community": 30,
+      "norm_label": "\ud83c\udfa8 design system & visual aesthetics"
+    },
+    {
+      "label": "1. Color Palette",
+      "file_type": "document",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L11",
+      "id": "md_mobile_chats_design_spec_1_color_palette",
+      "community": 30,
+      "norm_label": "1. color palette"
+    },
+    {
+      "label": "2. Typography & Iconography",
+      "file_type": "document",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L24",
+      "id": "md_mobile_chats_design_spec_2_typography_iconography",
+      "community": 30,
+      "norm_label": "2. typography & iconography"
+    },
+    {
+      "label": "\ud83d\udcf1 Layout & Screen Flows",
+      "file_type": "document",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L38",
+      "id": "md_mobile_chats_design_spec_layout_screen_flows",
+      "community": 30,
+      "norm_label": "\ud83d\udcf1 layout & screen flows"
+    },
+    {
+      "label": "code:block1 (\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510      \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510  )",
+      "file_type": "document",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L40",
+      "id": "md_mobile_chats_design_spec_codeblock_1",
+      "community": 30,
+      "norm_label": "code:block1 (\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510      \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510  )"
+    },
+    {
+      "label": "Screen 1: Thread List",
+      "file_type": "document",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L57",
+      "id": "md_mobile_chats_design_spec_screen_1_thread_list",
+      "community": 30,
+      "norm_label": "screen 1: thread list"
+    },
+    {
+      "label": "Screen 2: Active Chat Feed",
+      "file_type": "document",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L65",
+      "id": "md_mobile_chats_design_spec_screen_2_active_chat_feed",
+      "community": 30,
+      "norm_label": "screen 2: active chat feed"
+    },
+    {
+      "label": "Screen 3: Start New Chat (Compose Modal)",
+      "file_type": "document",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L82",
+      "id": "md_mobile_chats_design_spec_screen_3_start_new_chat_compose_modal",
+      "community": 30,
+      "norm_label": "screen 3: start new chat (compose modal)"
+    },
+    {
+      "label": "\ud83d\udd0c API Integration Interface",
+      "file_type": "document",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L96",
+      "id": "md_mobile_chats_design_spec_api_integration_interface",
+      "community": 30,
+      "norm_label": "\ud83d\udd0c api integration interface"
+    },
+    {
+      "label": "1. Get Chat Threads",
+      "file_type": "document",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L100",
+      "id": "md_mobile_chats_design_spec_1_get_chat_threads",
+      "community": 30,
+      "norm_label": "1. get chat threads"
+    },
+    {
+      "label": "code:json ({)",
+      "file_type": "document",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L103",
+      "id": "md_mobile_chats_design_spec_codeblock_2",
+      "community": 30,
+      "norm_label": "code:json ({)"
+    },
+    {
+      "label": "2. Get Thread Messages",
+      "file_type": "document",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L158",
+      "id": "md_mobile_chats_design_spec_2_get_thread_messages",
+      "community": 30,
+      "norm_label": "2. get thread messages"
+    },
+    {
+      "label": "code:json ({)",
+      "file_type": "document",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L161",
+      "id": "md_mobile_chats_design_spec_codeblock_3",
+      "community": 30,
+      "norm_label": "code:json ({)"
+    },
+    {
+      "label": "3. Send Message / Create Thread",
+      "file_type": "document",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L201",
+      "id": "md_mobile_chats_design_spec_3_send_message_create_thread",
+      "community": 30,
+      "norm_label": "3. send message / create thread"
+    },
+    {
+      "label": "code:json ([)",
+      "file_type": "document",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L214",
+      "id": "md_mobile_chats_design_spec_codeblock_4",
+      "community": 30,
+      "norm_label": "code:json ([)"
+    },
+    {
+      "label": "code:json ({)",
+      "file_type": "document",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L221",
+      "id": "md_mobile_chats_design_spec_codeblock_5",
+      "community": 30,
+      "norm_label": "code:json ({)"
+    },
+    {
+      "label": "4. Mark Thread as Read",
+      "file_type": "document",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L255",
+      "id": "md_mobile_chats_design_spec_4_mark_thread_as_read",
+      "community": 30,
+      "norm_label": "4. mark thread as read"
+    },
+    {
+      "label": "code:json ({)",
+      "file_type": "document",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L258",
+      "id": "md_mobile_chats_design_spec_codeblock_6",
+      "community": 30,
+      "norm_label": "code:json ({)"
+    },
+    {
+      "label": "5. Compose Resources (Staff/Departments)",
+      "file_type": "document",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L266",
+      "id": "md_mobile_chats_design_spec_5_compose_resources_staff_departments",
+      "community": 30,
+      "norm_label": "5. compose resources (staff/departments)"
+    },
+    {
+      "label": "code:json ({)",
+      "file_type": "document",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L269",
+      "id": "md_mobile_chats_design_spec_codeblock_7",
+      "community": 30,
+      "norm_label": "code:json ({)"
+    },
+    {
+      "label": "\ud83d\udee0\ufe0f Prompt for Mobile Workspace / AI Developer Assistant",
+      "file_type": "document",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L286",
+      "id": "md_mobile_chats_design_spec_prompt_for_mobile_workspace_ai_developer_assistant",
+      "community": 30,
+      "norm_label": "\ud83d\udee0\ufe0f prompt for mobile workspace / ai developer assistant"
+    },
+    {
+      "label": "code:text (Build a premium, high-fidelity chat feature in our mobile ap)",
+      "file_type": "document",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L290",
+      "id": "md_mobile_chats_design_spec_codeblock_8",
+      "community": 30,
+      "norm_label": "code:text (build a premium, high-fidelity chat feature in our mobile ap)"
+    },
+    {
       "label": "graphify.md",
       "file_type": "document",
       "source_file": ".agents/rules/graphify.md",
@@ -4216,6 +4468,240 @@
       "id": "erp_app_master_pre_delivery_checklist",
       "community": 23,
       "norm_label": "pre-delivery checklist"
+    },
+    {
+      "label": "MASTER.md",
+      "file_type": "document",
+      "source_file": "design-system/isokariari-chats/MASTER.md",
+      "source_location": "L1",
+      "id": "design_system_isokariari_chats_master_md",
+      "community": 43,
+      "norm_label": "master.md"
+    },
+    {
+      "label": "Design System Master File",
+      "file_type": "document",
+      "source_file": "design-system/isokariari-chats/MASTER.md",
+      "source_location": "L1",
+      "id": "isokariari_chats_master_design_system_master_file",
+      "community": 43,
+      "norm_label": "design system master file"
+    },
+    {
+      "label": "Global Rules",
+      "file_type": "document",
+      "source_file": "design-system/isokariari-chats/MASTER.md",
+      "source_location": "L15",
+      "id": "isokariari_chats_master_global_rules",
+      "community": 43,
+      "norm_label": "global rules"
+    },
+    {
+      "label": "Color Palette",
+      "file_type": "document",
+      "source_file": "design-system/isokariari-chats/MASTER.md",
+      "source_location": "L17",
+      "id": "isokariari_chats_master_color_palette",
+      "community": 43,
+      "norm_label": "color palette"
+    },
+    {
+      "label": "Typography",
+      "file_type": "document",
+      "source_file": "design-system/isokariari-chats/MASTER.md",
+      "source_location": "L27",
+      "id": "isokariari_chats_master_typography",
+      "community": 43,
+      "norm_label": "typography"
+    },
+    {
+      "label": "Spacing Variables",
+      "file_type": "document",
+      "source_file": "design-system/isokariari-chats/MASTER.md",
+      "source_location": "L33",
+      "id": "isokariari_chats_master_spacing_variables",
+      "community": 43,
+      "norm_label": "spacing variables"
+    },
+    {
+      "label": "Shadow Depths",
+      "file_type": "document",
+      "source_file": "design-system/isokariari-chats/MASTER.md",
+      "source_location": "L45",
+      "id": "isokariari_chats_master_shadow_depths",
+      "community": 43,
+      "norm_label": "shadow depths"
+    },
+    {
+      "label": "Component Specs",
+      "file_type": "document",
+      "source_file": "design-system/isokariari-chats/MASTER.md",
+      "source_location": "L56",
+      "id": "isokariari_chats_master_component_specs",
+      "community": 43,
+      "norm_label": "component specs"
+    },
+    {
+      "label": "Buttons",
+      "file_type": "document",
+      "source_file": "design-system/isokariari-chats/MASTER.md",
+      "source_location": "L58",
+      "id": "isokariari_chats_master_buttons",
+      "community": 43,
+      "norm_label": "buttons"
+    },
+    {
+      "label": "code:css (/* Primary Button */)",
+      "file_type": "document",
+      "source_file": "design-system/isokariari-chats/MASTER.md",
+      "source_location": "L60",
+      "id": "isokariari_chats_master_codeblock_1",
+      "community": 43,
+      "norm_label": "code:css (/* primary button */)"
+    },
+    {
+      "label": "Cards",
+      "file_type": "document",
+      "source_file": "design-system/isokariari-chats/MASTER.md",
+      "source_location": "L90",
+      "id": "isokariari_chats_master_cards",
+      "community": 43,
+      "norm_label": "cards"
+    },
+    {
+      "label": "code:css (.card {)",
+      "file_type": "document",
+      "source_file": "design-system/isokariari-chats/MASTER.md",
+      "source_location": "L92",
+      "id": "isokariari_chats_master_codeblock_2",
+      "community": 43,
+      "norm_label": "code:css (.card {)"
+    },
+    {
+      "label": "Inputs",
+      "file_type": "document",
+      "source_file": "design-system/isokariari-chats/MASTER.md",
+      "source_location": "L108",
+      "id": "isokariari_chats_master_inputs",
+      "community": 43,
+      "norm_label": "inputs"
+    },
+    {
+      "label": "code:css (.input {)",
+      "file_type": "document",
+      "source_file": "design-system/isokariari-chats/MASTER.md",
+      "source_location": "L110",
+      "id": "isokariari_chats_master_codeblock_3",
+      "community": 43,
+      "norm_label": "code:css (.input {)"
+    },
+    {
+      "label": "Modals",
+      "file_type": "document",
+      "source_file": "design-system/isokariari-chats/MASTER.md",
+      "source_location": "L126",
+      "id": "isokariari_chats_master_modals",
+      "community": 43,
+      "norm_label": "modals"
+    },
+    {
+      "label": "code:css (.modal-overlay {)",
+      "file_type": "document",
+      "source_file": "design-system/isokariari-chats/MASTER.md",
+      "source_location": "L128",
+      "id": "isokariari_chats_master_codeblock_4",
+      "community": 43,
+      "norm_label": "code:css (.modal-overlay {)"
+    },
+    {
+      "label": "Style Guidelines",
+      "file_type": "document",
+      "source_file": "design-system/isokariari-chats/MASTER.md",
+      "source_location": "L146",
+      "id": "isokariari_chats_master_style_guidelines",
+      "community": 43,
+      "norm_label": "style guidelines"
+    },
+    {
+      "label": "Page Pattern",
+      "file_type": "document",
+      "source_file": "design-system/isokariari-chats/MASTER.md",
+      "source_location": "L156",
+      "id": "isokariari_chats_master_page_pattern",
+      "community": 43,
+      "norm_label": "page pattern"
+    },
+    {
+      "label": "Anti-Patterns (Do NOT Use)",
+      "file_type": "document",
+      "source_file": "design-system/isokariari-chats/MASTER.md",
+      "source_location": "L166",
+      "id": "isokariari_chats_master_anti_patterns_do_not_use",
+      "community": 43,
+      "norm_label": "anti-patterns (do not use)"
+    },
+    {
+      "label": "Additional Forbidden Patterns",
+      "file_type": "document",
+      "source_file": "design-system/isokariari-chats/MASTER.md",
+      "source_location": "L172",
+      "id": "isokariari_chats_master_additional_forbidden_patterns",
+      "community": 43,
+      "norm_label": "additional forbidden patterns"
+    },
+    {
+      "label": "Pre-Delivery Checklist",
+      "file_type": "document",
+      "source_file": "design-system/isokariari-chats/MASTER.md",
+      "source_location": "L183",
+      "id": "isokariari_chats_master_pre_delivery_checklist",
+      "community": 43,
+      "norm_label": "pre-delivery checklist"
+    },
+    {
+      "label": "Message",
+      "file_type": "code",
+      "source_file": "src/app/(app)/workspace/chat.tsx",
+      "source_location": "L22",
+      "community": 32,
+      "norm_label": "message",
+      "id": "workspace_chat_message"
+    },
+    {
+      "label": "ApiMessage",
+      "file_type": "code",
+      "source_file": "src/app/(app)/workspace/messages.tsx",
+      "source_location": "L33",
+      "community": 32,
+      "norm_label": "apimessage",
+      "id": "workspace_messages_apimessage"
+    },
+    {
+      "label": "GroupedThread",
+      "file_type": "code",
+      "source_file": "src/app/(app)/workspace/messages.tsx",
+      "source_location": "L55",
+      "community": 32,
+      "norm_label": "groupedthread",
+      "id": "workspace_messages_groupedthread"
+    },
+    {
+      "label": "StaffResource",
+      "file_type": "code",
+      "source_file": "src/app/(app)/workspace/messages.tsx",
+      "source_location": "L65",
+      "community": 32,
+      "norm_label": "staffresource",
+      "id": "workspace_messages_staffresource"
+    },
+    {
+      "label": "DepartmentResource",
+      "file_type": "code",
+      "source_file": "src/app/(app)/workspace/messages.tsx",
+      "source_location": "L72",
+      "community": 32,
+      "norm_label": "departmentresource",
+      "id": "workspace_messages_departmentresource"
     },
     {
       "label": "showAlert()",
@@ -4572,7 +5058,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 41,
+      "community": 24,
       "norm_label": "settings screen",
       "id": "settings_tsx_screen"
     },
@@ -4637,7 +5123,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 41,
+      "community": 45,
       "norm_label": "workspace dashboard",
       "id": "workspace_index_tsx_dashboard"
     },
@@ -4845,7 +5331,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 45,
       "norm_label": "collapsible",
       "id": "collapsible_collapsible"
     },
@@ -4884,7 +5370,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 45,
       "norm_label": "usetheme",
       "id": "use_theme_usetheme"
     },
@@ -4924,7 +5410,7 @@
       "author": null,
       "contributor": null,
       "rationale": "Re-calculates color scheme on client-side for web to prevent hydration mismatch errors during static rendering.",
-      "community": 24,
+      "community": 3,
       "norm_label": "static hydration support for web",
       "id": "mechanism_static_hydration_web"
     },
@@ -7395,9 +7881,9 @@
       "source_file": "src/app/_layout.tsx",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_layout_tsx",
-      "target": "src_context_alertcontext_tsx",
-      "confidence_score": 1.0
+      "target": "src_context_alertcontext_tsx"
     },
     {
       "relation": "imports",
@@ -7406,9 +7892,9 @@
       "source_file": "src/app/_layout.tsx",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_layout_tsx",
-      "target": "context_alertcontext_alertprovider",
-      "confidence_score": 1.0
+      "target": "context_alertcontext_alertprovider"
     },
     {
       "relation": "contains",
@@ -8201,14 +8687,59 @@
       "target": "context_authcontext_useauth"
     },
     {
-      "relation": "contains",
+      "relation": "imports_from",
+      "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/app/(app)/workspace/chat.tsx",
-      "source_location": "L22",
+      "source_location": "L36",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "src_app_app_workspace_chat_tsx",
-      "target": "workspace_chat_message"
+      "target": "src_app_app_workspace_types_ts"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/chat.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_chat_tsx",
+      "target": "workspace_types_chatmessage"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/chat.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_chat_tsx",
+      "target": "workspace_types_chatthread"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/chat.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_chat_tsx",
+      "target": "workspace_types_chatattachment"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/chat.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_chat_tsx",
+      "target": "workspace_types_entitylink"
     },
     {
       "relation": "contains",
@@ -8229,6 +8760,16 @@
       "confidence_score": 1.0,
       "source": "src_app_app_workspace_chat_tsx",
       "target": "workspace_chat_styles"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/chat.tsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_chat_tsx",
+      "target": "workspace_chat_message"
     },
     {
       "relation": "calls",
@@ -8515,9 +9056,9 @@
       "source_file": "src/app/(app)/workspace/index.tsx",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_app_workspace_index_tsx",
-      "target": "src_context_alertcontext_tsx",
-      "confidence_score": 1.0
+      "target": "src_context_alertcontext_tsx"
     },
     {
       "relation": "imports",
@@ -8526,9 +9067,9 @@
       "source_file": "src/app/(app)/workspace/index.tsx",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_app_workspace_index_tsx",
-      "target": "context_alertcontext_usealert",
-      "confidence_score": 1.0
+      "target": "context_alertcontext_usealert"
     },
     {
       "relation": "contains",
@@ -8920,6 +9461,70 @@
       "target": "context_authcontext_useauth"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/messages.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_messages_tsx",
+      "target": "src_app_app_workspace_types_ts"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/messages.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_messages_tsx",
+      "target": "workspace_types_chatthread"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/messages.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_messages_tsx",
+      "target": "workspace_types_staffresource"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/messages.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_messages_tsx",
+      "target": "workspace_types_departmentresource"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/messages.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_messages_tsx",
+      "target": "workspace_messages_messagesscreen"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/messages.tsx",
+      "source_location": "L128",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_messages_tsx",
+      "target": "workspace_messages_styles"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/(app)/workspace/messages.tsx",
@@ -8958,26 +9563,6 @@
       "confidence_score": 1.0,
       "source": "src_app_app_workspace_messages_tsx",
       "target": "workspace_messages_departmentresource"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/messages.tsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_workspace_messages_tsx",
-      "target": "workspace_messages_messagesscreen"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/messages.tsx",
-      "source_location": "L128",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_workspace_messages_tsx",
-      "target": "workspace_messages_styles"
     },
     {
       "relation": "calls",
@@ -9713,6 +10298,86 @@
       "weight": 1.0,
       "source": "workspace_tools_toolsscreen",
       "target": "context_authcontext_useauth"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/types.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_types_ts",
+      "target": "workspace_types_chatattachment"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/types.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_types_ts",
+      "target": "workspace_types_entitylink"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/types.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_types_ts",
+      "target": "workspace_types_chatmessagemetadata"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/types.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_types_ts",
+      "target": "workspace_types_chatmessage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/types.ts",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_types_ts",
+      "target": "workspace_types_chatparticipant"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/types.ts",
+      "source_location": "L50",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_types_ts",
+      "target": "workspace_types_chatthread"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/types.ts",
+      "source_location": "L70",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_types_ts",
+      "target": "workspace_types_staffresource"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/types.ts",
+      "source_location": "L77",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_types_ts",
+      "target": "workspace_types_departmentresource"
     },
     {
       "relation": "imports_from",
@@ -11550,9 +12215,9 @@
       "source_file": "src/context/AlertContext.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_context_alertcontext_tsx",
-      "target": "src_hooks_use_theme_ts",
-      "confidence_score": 1.0
+      "target": "src_hooks_use_theme_ts"
     },
     {
       "relation": "imports",
@@ -11561,9 +12226,9 @@
       "source_file": "src/context/AlertContext.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_context_alertcontext_tsx",
-      "target": "hooks_use_theme_usetheme",
-      "confidence_score": 1.0
+      "target": "hooks_use_theme_usetheme"
     },
     {
       "relation": "contains",
@@ -11571,9 +12236,9 @@
       "source_file": "src/context/AlertContext.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_context_alertcontext_tsx",
-      "target": "context_alertcontext_alerttype",
-      "confidence_score": 1.0
+      "target": "context_alertcontext_alerttype"
     },
     {
       "relation": "contains",
@@ -11581,9 +12246,9 @@
       "source_file": "src/context/AlertContext.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_context_alertcontext_tsx",
-      "target": "context_alertcontext_alertbutton",
-      "confidence_score": 1.0
+      "target": "context_alertcontext_alertbutton"
     },
     {
       "relation": "contains",
@@ -11591,9 +12256,9 @@
       "source_file": "src/context/AlertContext.tsx",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_context_alertcontext_tsx",
-      "target": "context_alertcontext_alertoptions",
-      "confidence_score": 1.0
+      "target": "context_alertcontext_alertoptions"
     },
     {
       "relation": "contains",
@@ -11601,9 +12266,9 @@
       "source_file": "src/context/AlertContext.tsx",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_context_alertcontext_tsx",
-      "target": "context_alertcontext_alertcontexttype",
-      "confidence_score": 1.0
+      "target": "context_alertcontext_alertcontexttype"
     },
     {
       "relation": "contains",
@@ -11611,9 +12276,9 @@
       "source_file": "src/context/AlertContext.tsx",
       "source_location": "L26",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_context_alertcontext_tsx",
-      "target": "context_alertcontext_alertcontext",
-      "confidence_score": 1.0
+      "target": "context_alertcontext_alertcontext"
     },
     {
       "relation": "contains",
@@ -11621,9 +12286,9 @@
       "source_file": "src/context/AlertContext.tsx",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_context_alertcontext_tsx",
-      "target": "context_alertcontext_alertprovider",
-      "confidence_score": 1.0
+      "target": "context_alertcontext_alertprovider"
     },
     {
       "relation": "contains",
@@ -11631,9 +12296,9 @@
       "source_file": "src/context/AlertContext.tsx",
       "source_location": "L249",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_context_alertcontext_tsx",
-      "target": "context_alertcontext_usealert",
-      "confidence_score": 1.0
+      "target": "context_alertcontext_usealert"
     },
     {
       "relation": "contains",
@@ -11641,9 +12306,9 @@
       "source_file": "src/context/AlertContext.tsx",
       "source_location": "L257",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_context_alertcontext_tsx",
-      "target": "context_alertcontext_styles",
-      "confidence_score": 1.0
+      "target": "context_alertcontext_styles"
     },
     {
       "relation": "calls",
@@ -12716,6 +13381,236 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "agent_skills_ui_ux_pro_max_md_mobile_chats_design_spec_md",
+      "target": "md_mobile_chats_design_spec_mobile_chats_ui_ux_design_specification_implementation_guide"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "md_mobile_chats_design_spec_mobile_chats_ui_ux_design_specification_implementation_guide",
+      "target": "md_mobile_chats_design_spec_design_system_visual_aesthetics"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L38",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "md_mobile_chats_design_spec_mobile_chats_ui_ux_design_specification_implementation_guide",
+      "target": "md_mobile_chats_design_spec_layout_screen_flows"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L96",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "md_mobile_chats_design_spec_mobile_chats_ui_ux_design_specification_implementation_guide",
+      "target": "md_mobile_chats_design_spec_api_integration_interface"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L286",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "md_mobile_chats_design_spec_mobile_chats_ui_ux_design_specification_implementation_guide",
+      "target": "md_mobile_chats_design_spec_prompt_for_mobile_workspace_ai_developer_assistant"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "md_mobile_chats_design_spec_design_system_visual_aesthetics",
+      "target": "md_mobile_chats_design_spec_1_color_palette"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "md_mobile_chats_design_spec_design_system_visual_aesthetics",
+      "target": "md_mobile_chats_design_spec_2_typography_iconography"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L40",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "md_mobile_chats_design_spec_layout_screen_flows",
+      "target": "md_mobile_chats_design_spec_codeblock_1"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L57",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "md_mobile_chats_design_spec_layout_screen_flows",
+      "target": "md_mobile_chats_design_spec_screen_1_thread_list"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L65",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "md_mobile_chats_design_spec_layout_screen_flows",
+      "target": "md_mobile_chats_design_spec_screen_2_active_chat_feed"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L82",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "md_mobile_chats_design_spec_layout_screen_flows",
+      "target": "md_mobile_chats_design_spec_screen_3_start_new_chat_compose_modal"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L100",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "md_mobile_chats_design_spec_api_integration_interface",
+      "target": "md_mobile_chats_design_spec_1_get_chat_threads"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L158",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "md_mobile_chats_design_spec_api_integration_interface",
+      "target": "md_mobile_chats_design_spec_2_get_thread_messages"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L201",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "md_mobile_chats_design_spec_api_integration_interface",
+      "target": "md_mobile_chats_design_spec_3_send_message_create_thread"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L255",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "md_mobile_chats_design_spec_api_integration_interface",
+      "target": "md_mobile_chats_design_spec_4_mark_thread_as_read"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L266",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "md_mobile_chats_design_spec_api_integration_interface",
+      "target": "md_mobile_chats_design_spec_5_compose_resources_staff_departments"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L103",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "md_mobile_chats_design_spec_1_get_chat_threads",
+      "target": "md_mobile_chats_design_spec_codeblock_2"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L161",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "md_mobile_chats_design_spec_2_get_thread_messages",
+      "target": "md_mobile_chats_design_spec_codeblock_3"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L214",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "md_mobile_chats_design_spec_3_send_message_create_thread",
+      "target": "md_mobile_chats_design_spec_codeblock_4"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L221",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "md_mobile_chats_design_spec_3_send_message_create_thread",
+      "target": "md_mobile_chats_design_spec_codeblock_5"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L258",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "md_mobile_chats_design_spec_4_mark_thread_as_read",
+      "target": "md_mobile_chats_design_spec_codeblock_6"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L269",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "md_mobile_chats_design_spec_5_compose_resources_staff_departments",
+      "target": "md_mobile_chats_design_spec_codeblock_7"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".agent/skills/ui-ux-pro-max/md/mobile_chats_design_spec.md",
+      "source_location": "L290",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "md_mobile_chats_design_spec_prompt_for_mobile_workspace_ai_developer_assistant",
+      "target": "md_mobile_chats_design_spec_codeblock_8"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": ".agents/rules/graphify.md",
       "source_location": "L6",
       "weight": 1.0,
@@ -12942,6 +13837,206 @@
       "confidence_score": 1.0,
       "source": "erp_app_master_anti_patterns_do_not_use",
       "target": "erp_app_master_additional_forbidden_patterns"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "design-system/isokariari-chats/MASTER.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "design_system_isokariari_chats_master_md",
+      "target": "isokariari_chats_master_design_system_master_file"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "design-system/isokariari-chats/MASTER.md",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "isokariari_chats_master_design_system_master_file",
+      "target": "isokariari_chats_master_global_rules"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "design-system/isokariari-chats/MASTER.md",
+      "source_location": "L56",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "isokariari_chats_master_design_system_master_file",
+      "target": "isokariari_chats_master_component_specs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "design-system/isokariari-chats/MASTER.md",
+      "source_location": "L146",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "isokariari_chats_master_design_system_master_file",
+      "target": "isokariari_chats_master_style_guidelines"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "design-system/isokariari-chats/MASTER.md",
+      "source_location": "L166",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "isokariari_chats_master_design_system_master_file",
+      "target": "isokariari_chats_master_anti_patterns_do_not_use"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "design-system/isokariari-chats/MASTER.md",
+      "source_location": "L183",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "isokariari_chats_master_design_system_master_file",
+      "target": "isokariari_chats_master_pre_delivery_checklist"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "design-system/isokariari-chats/MASTER.md",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "isokariari_chats_master_global_rules",
+      "target": "isokariari_chats_master_color_palette"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "design-system/isokariari-chats/MASTER.md",
+      "source_location": "L27",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "isokariari_chats_master_global_rules",
+      "target": "isokariari_chats_master_typography"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "design-system/isokariari-chats/MASTER.md",
+      "source_location": "L33",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "isokariari_chats_master_global_rules",
+      "target": "isokariari_chats_master_spacing_variables"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "design-system/isokariari-chats/MASTER.md",
+      "source_location": "L45",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "isokariari_chats_master_global_rules",
+      "target": "isokariari_chats_master_shadow_depths"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "design-system/isokariari-chats/MASTER.md",
+      "source_location": "L58",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "isokariari_chats_master_component_specs",
+      "target": "isokariari_chats_master_buttons"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "design-system/isokariari-chats/MASTER.md",
+      "source_location": "L90",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "isokariari_chats_master_component_specs",
+      "target": "isokariari_chats_master_cards"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "design-system/isokariari-chats/MASTER.md",
+      "source_location": "L108",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "isokariari_chats_master_component_specs",
+      "target": "isokariari_chats_master_inputs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "design-system/isokariari-chats/MASTER.md",
+      "source_location": "L126",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "isokariari_chats_master_component_specs",
+      "target": "isokariari_chats_master_modals"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "design-system/isokariari-chats/MASTER.md",
+      "source_location": "L60",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "isokariari_chats_master_buttons",
+      "target": "isokariari_chats_master_codeblock_1"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "design-system/isokariari-chats/MASTER.md",
+      "source_location": "L92",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "isokariari_chats_master_cards",
+      "target": "isokariari_chats_master_codeblock_2"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "design-system/isokariari-chats/MASTER.md",
+      "source_location": "L110",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "isokariari_chats_master_inputs",
+      "target": "isokariari_chats_master_codeblock_3"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "design-system/isokariari-chats/MASTER.md",
+      "source_location": "L128",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "isokariari_chats_master_modals",
+      "target": "isokariari_chats_master_codeblock_4"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "design-system/isokariari-chats/MASTER.md",
+      "source_location": "L156",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "isokariari_chats_master_style_guidelines",
+      "target": "isokariari_chats_master_page_pattern"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "design-system/isokariari-chats/MASTER.md",
+      "source_location": "L172",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "isokariari_chats_master_anti_patterns_do_not_use",
+      "target": "isokariari_chats_master_additional_forbidden_patterns"
     },
     {
       "relation": "calls",
@@ -13643,5 +14738,5 @@
       "source_file": "src/app/(onboarding)/index.tsx"
     }
   ],
-  "built_at_commit": "c4cb79f95627d5881012d9dbdfc9afeb40d35ff0"
+  "built_at_commit": "28d4c37ce73bd9b97d92e0ac178aeffabc088b82"
 }
