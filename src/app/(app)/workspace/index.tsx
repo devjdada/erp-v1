@@ -14,6 +14,7 @@ import { useTheme } from '@/hooks/use-theme';
 import { useNavigation, useRouter } from 'expo-router';
 import { DrawerActions } from '@react-navigation/native';
 import { useAuth } from '@/context/AuthContext';
+import * as Location from 'expo-location';
 import {
   Menu,
   User,
@@ -38,6 +39,34 @@ import {
 } from 'lucide-react-native';
 
 const API_BASE_URL = 'https://oki.wchapel.com/api/v1';
+
+const getFriendlyErrorMessage = (message: string, action: 'in' | 'out') => {
+  if (!message) return `Failed to clock ${action}.`;
+  
+  if (message.includes('No active attendance locations are defined')) {
+    return 'No active attendance locations are configured on the server. Please contact HR or your system administrator to define the office geofence.';
+  }
+  if (message.includes('outside the allowed radius')) {
+    return 'You are outside the allowed radius to mark attendance. Please make sure you are physically present at the office or worksite and try again.';
+  }
+  if (message.includes('restricted location') && message.includes('not assigned to')) {
+    return 'You are at a restricted location that has not been assigned to you. Please contact your supervisor to assign you to this work site.';
+  }
+  if (message.includes('must be at the same location')) {
+    return 'You must be at the same office location where you clocked in to clock out.';
+  }
+  if (message.includes('Location access is required')) {
+    return 'GPS location access is required. Please ensure location services are enabled on your device.';
+  }
+  if (message.includes('No active clock-in found')) {
+    return 'No active clock-in found for today. You must clock in before you can clock out.';
+  }
+  if (message.includes('Staff profile not found')) {
+    return 'Your staff profile was not found on the system. Please verify your login credentials or contact IT support.';
+  }
+
+  return message;
+};
 
 interface DashboardStats {
   attendance: {
@@ -142,10 +171,57 @@ export default function WorkspaceDashboard() {
     if (!authToken) return;
     setClockActionLoading(true);
     const endpoint = isClockedIn ? 'clock-out' : 'clock-in';
-    
-    // Default mock coordinates (Lagos)
-    const latitude = 6.5244;
-    const longitude = 3.3792;
+
+    let latitude: number | null = null;
+    let longitude: number | null = null;
+
+    try {
+      // 1. Request foreground location permission
+      const { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== 'granted') {
+        Alert.alert(
+          'Location Permission Required',
+          'Permission to access your location is required to verify your workspace proximity for attendance. Please enable location permissions for OKI App in your device settings.',
+          [{ text: 'OK' }]
+        );
+        setClockActionLoading(false);
+        return;
+      }
+
+      // 2. Retrieve current GPS position
+      let location = null;
+      try {
+        location = await Location.getCurrentPositionAsync({
+          accuracy: Location.Accuracy.Balanced,
+        });
+      } catch (locError) {
+        console.warn('getCurrentPositionAsync failed, attempting last known location:', locError);
+        // Fallback to last known position if current position times out or fails
+        location = await Location.getLastKnownPositionAsync({});
+      }
+
+      if (!location || !location.coords) {
+        Alert.alert(
+          'GPS Signal Error',
+          'Unable to retrieve your current location. Please verify that GPS/Location services are enabled on your device and that you have a clear signal.',
+          [{ text: 'OK' }]
+        );
+        setClockActionLoading(false);
+        return;
+      }
+
+      latitude = location.coords.latitude;
+      longitude = location.coords.longitude;
+
+    } catch (gpsError: any) {
+      console.error('GPS/Location error:', gpsError);
+      Alert.alert(
+        'GPS Error',
+        `An error occurred while retrieving your location: ${gpsError?.message || 'Unknown GPS error'}. Please ensure location services are enabled and try again.`
+      );
+      setClockActionLoading(false);
+      return;
+    }
 
     try {
       const response = await fetch(`${API_BASE_URL}/attendance/${endpoint}`, {
@@ -161,16 +237,31 @@ export default function WorkspaceDashboard() {
         }),
       });
 
-      const result = await response.json();
-      if (response.ok && result.success) {
+      const result = await response.json().catch(() => null);
+
+      if (response.status === 401) {
+        Alert.alert(
+          'Session Expired',
+          'Your login session has expired or is invalid. Please sign out and log back in to mark your attendance.',
+          [{ text: 'OK' }]
+        );
+        return;
+      }
+
+      if (response.ok && result?.success) {
         Alert.alert('Success', result.message || `Successfully clocked ${isClockedIn ? 'out' : 'in'}.`);
         fetchDashboardStats(false);
       } else {
-        Alert.alert('Error', result.message || `Failed to clock ${isClockedIn ? 'out' : 'in'}.`);
+        const serverMessage = result?.message || `Failed to clock ${isClockedIn ? 'out' : 'in'}.`;
+        const friendlyMessage = getFriendlyErrorMessage(serverMessage, isClockedIn ? 'out' : 'in');
+        Alert.alert('Attendance Error', friendlyMessage);
       }
     } catch (error) {
       console.error(`Error during clock-${isClockedIn ? 'out' : 'in'}:`, error);
-      Alert.alert('Error', 'A network error occurred. Please try again.');
+      Alert.alert(
+        'Network Error',
+        'Could not connect to the attendance server. Please check your internet connection and try again.'
+      );
     } finally {
       setClockActionLoading(false);
     }

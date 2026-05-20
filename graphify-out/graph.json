@@ -288,7 +288,7 @@
       "label": "experiments",
       "file_type": "code",
       "source_file": "app.json",
-      "source_location": "L39",
+      "source_location": "L45",
       "id": "erp_app_app_expo_experiments",
       "community": 46,
       "norm_label": "experiments"
@@ -297,7 +297,7 @@
       "label": "typedRoutes",
       "file_type": "code",
       "source_file": "app.json",
-      "source_location": "L40",
+      "source_location": "L46",
       "id": "erp_app_app_experiments_typedroutes",
       "community": 46,
       "norm_label": "typedroutes"
@@ -306,7 +306,7 @@
       "label": "reactCompiler",
       "file_type": "code",
       "source_file": "app.json",
-      "source_location": "L41",
+      "source_location": "L47",
       "id": "erp_app_app_experiments_reactcompiler",
       "community": 46,
       "norm_label": "reactcompiler"
@@ -474,10 +474,19 @@
       "norm_label": "@react-native-async-storage/async-storage"
     },
     {
-      "label": "@react-navigation/bottom-tabs",
+      "label": "@react-native-community/slider",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L16",
+      "id": "erp_app_package_dependencies_react_native_community_slider",
+      "community": 2,
+      "norm_label": "@react-native-community/slider"
+    },
+    {
+      "label": "@react-navigation/bottom-tabs",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L17",
       "id": "erp_app_package_dependencies_react_navigation_bottom_tabs",
       "community": 2,
       "norm_label": "@react-navigation/bottom-tabs"
@@ -486,7 +495,7 @@
       "label": "@react-navigation/drawer",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L17",
+      "source_location": "L18",
       "id": "erp_app_package_dependencies_react_navigation_drawer",
       "community": 2,
       "norm_label": "@react-navigation/drawer"
@@ -495,7 +504,7 @@
       "label": "@react-navigation/elements",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L18",
+      "source_location": "L19",
       "id": "erp_app_package_dependencies_react_navigation_elements",
       "community": 2,
       "norm_label": "@react-navigation/elements"
@@ -504,7 +513,7 @@
       "label": "@react-navigation/native",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L19",
+      "source_location": "L20",
       "id": "erp_app_package_dependencies_react_navigation_native",
       "community": 2,
       "norm_label": "@react-navigation/native"
@@ -513,7 +522,7 @@
       "label": "expo",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L20",
+      "source_location": "L21",
       "id": "erp_app_package_dependencies_expo",
       "community": 2,
       "norm_label": "expo"
@@ -522,7 +531,7 @@
       "label": "expo-constants",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L21",
+      "source_location": "L22",
       "id": "erp_app_package_dependencies_expo_constants",
       "community": 2,
       "norm_label": "expo-constants"
@@ -531,7 +540,7 @@
       "label": "expo-device",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L22",
+      "source_location": "L23",
       "id": "erp_app_package_dependencies_expo_device",
       "community": 2,
       "norm_label": "expo-device"
@@ -540,7 +549,7 @@
       "label": "expo-font",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L23",
+      "source_location": "L24",
       "id": "erp_app_package_dependencies_expo_font",
       "community": 2,
       "norm_label": "expo-font"
@@ -549,7 +558,7 @@
       "label": "expo-glass-effect",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L24",
+      "source_location": "L25",
       "id": "erp_app_package_dependencies_expo_glass_effect",
       "community": 2,
       "norm_label": "expo-glass-effect"
@@ -558,7 +567,7 @@
       "label": "expo-image",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L25",
+      "source_location": "L26",
       "id": "erp_app_package_dependencies_expo_image",
       "community": 2,
       "norm_label": "expo-image"
@@ -567,16 +576,25 @@
       "label": "expo-linking",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L26",
+      "source_location": "L27",
       "id": "erp_app_package_dependencies_expo_linking",
       "community": 2,
       "norm_label": "expo-linking"
     },
     {
+      "label": "expo-location",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L28",
+      "id": "erp_app_package_dependencies_expo_location",
+      "community": 2,
+      "norm_label": "expo-location"
+    },
+    {
       "label": "expo-router",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L27",
+      "source_location": "L29",
       "id": "erp_app_package_dependencies_expo_router",
       "community": 2,
       "norm_label": "expo-router"
@@ -585,7 +603,7 @@
       "label": "expo-splash-screen",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L28",
+      "source_location": "L30",
       "id": "erp_app_package_dependencies_expo_splash_screen",
       "community": 2,
       "norm_label": "expo-splash-screen"
@@ -594,7 +612,7 @@
       "label": "expo-status-bar",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L29",
+      "source_location": "L31",
       "id": "erp_app_package_dependencies_expo_status_bar",
       "community": 2,
       "norm_label": "expo-status-bar"
@@ -603,7 +621,7 @@
       "label": "expo-symbols",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L30",
+      "source_location": "L32",
       "id": "erp_app_package_dependencies_expo_symbols",
       "community": 2,
       "norm_label": "expo-symbols"
@@ -612,7 +630,7 @@
       "label": "expo-system-ui",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L31",
+      "source_location": "L33",
       "id": "erp_app_package_dependencies_expo_system_ui",
       "community": 2,
       "norm_label": "expo-system-ui"
@@ -621,7 +639,7 @@
       "label": "expo-web-browser",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L32",
+      "source_location": "L34",
       "id": "erp_app_package_dependencies_expo_web_browser",
       "community": 2,
       "norm_label": "expo-web-browser"
@@ -630,7 +648,7 @@
       "label": "lucide-react-native",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L33",
+      "source_location": "L35",
       "id": "erp_app_package_dependencies_lucide_react_native",
       "community": 2,
       "norm_label": "lucide-react-native"
@@ -639,7 +657,7 @@
       "label": "react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L34",
+      "source_location": "L36",
       "id": "erp_app_package_dependencies_react",
       "community": 2,
       "norm_label": "react"
@@ -648,7 +666,7 @@
       "label": "react-dom",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L35",
+      "source_location": "L37",
       "id": "erp_app_package_dependencies_react_dom",
       "community": 2,
       "norm_label": "react-dom"
@@ -657,7 +675,7 @@
       "label": "react-native",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L36",
+      "source_location": "L38",
       "id": "erp_app_package_dependencies_react_native",
       "community": 2,
       "norm_label": "react-native"
@@ -666,7 +684,7 @@
       "label": "react-native-gesture-handler",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L37",
+      "source_location": "L39",
       "id": "erp_app_package_dependencies_react_native_gesture_handler",
       "community": 2,
       "norm_label": "react-native-gesture-handler"
@@ -675,7 +693,7 @@
       "label": "react-native-reanimated",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L38",
+      "source_location": "L40",
       "id": "erp_app_package_dependencies_react_native_reanimated",
       "community": 2,
       "norm_label": "react-native-reanimated"
@@ -684,7 +702,7 @@
       "label": "react-native-safe-area-context",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L39",
+      "source_location": "L41",
       "id": "erp_app_package_dependencies_react_native_safe_area_context",
       "community": 2,
       "norm_label": "react-native-safe-area-context"
@@ -693,7 +711,7 @@
       "label": "react-native-screens",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L40",
+      "source_location": "L42",
       "id": "erp_app_package_dependencies_react_native_screens",
       "community": 2,
       "norm_label": "react-native-screens"
@@ -702,7 +720,7 @@
       "label": "react-native-web",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L41",
+      "source_location": "L43",
       "id": "erp_app_package_dependencies_react_native_web",
       "community": 2,
       "norm_label": "react-native-web"
@@ -711,25 +729,16 @@
       "label": "react-native-worklets",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L42",
+      "source_location": "L44",
       "id": "erp_app_package_dependencies_react_native_worklets",
       "community": 2,
       "norm_label": "react-native-worklets"
     },
     {
-      "label": "@react-native-community/slider",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L43",
-      "id": "erp_app_package_dependencies_react_native_community_slider",
-      "community": 2,
-      "norm_label": "@react-native-community/slider"
-    },
-    {
       "label": "devDependencies",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L45",
+      "source_location": "L46",
       "id": "erp_app_package_devdependencies",
       "community": 31,
       "norm_label": "devdependencies"
@@ -738,7 +747,7 @@
       "label": "@types/react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L46",
+      "source_location": "L47",
       "id": "erp_app_package_devdependencies_types_react",
       "community": 31,
       "norm_label": "@types/react"
@@ -747,7 +756,7 @@
       "label": "eslint",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L47",
+      "source_location": "L48",
       "id": "erp_app_package_devdependencies_eslint",
       "community": 31,
       "norm_label": "eslint"
@@ -756,7 +765,7 @@
       "label": "eslint-config-expo",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L48",
+      "source_location": "L49",
       "id": "erp_app_package_devdependencies_eslint_config_expo",
       "community": 31,
       "norm_label": "eslint-config-expo"
@@ -765,7 +774,7 @@
       "label": "typescript",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L49",
+      "source_location": "L50",
       "id": "erp_app_package_devdependencies_typescript",
       "community": 31,
       "norm_label": "typescript"
@@ -774,7 +783,7 @@
       "label": "private",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L51",
+      "source_location": "L52",
       "id": "erp_app_package_private",
       "community": 29,
       "norm_label": "private"
@@ -875,7 +884,7 @@
       "source_file": ".agent/skills/ui-ux-pro-max/scripts/core.py",
       "source_location": "L99",
       "id": "scripts_core_bm25_init",
-      "community": 1,
+      "community": 4,
       "norm_label": ".__init__()"
     },
     {
@@ -1640,7 +1649,7 @@
       "source_file": "src/app/index.tsx",
       "source_location": "L1",
       "id": "src_app_index_tsx",
-      "community": 38,
+      "community": 34,
       "norm_label": "index.tsx"
     },
     {
@@ -1649,7 +1658,7 @@
       "source_file": "src/app/index.tsx",
       "source_location": "L7",
       "id": "app_index_entryscreen",
-      "community": 38,
+      "community": 34,
       "norm_label": "entryscreen()"
     },
     {
@@ -1694,7 +1703,7 @@
       "source_file": "src/app/(app)/settings.tsx",
       "source_location": "L8",
       "id": "app_settings_settingsscreen",
-      "community": 24,
+      "community": 3,
       "norm_label": "settingsscreen()"
     },
     {
@@ -1730,7 +1739,7 @@
       "source_file": "src/app/(app)/fleet/index.tsx",
       "source_location": "L1",
       "id": "src_app_app_fleet_index_tsx",
-      "community": 38,
+      "community": 34,
       "norm_label": "index.tsx"
     },
     {
@@ -1739,7 +1748,7 @@
       "source_file": "src/app/(app)/fleet/index.tsx",
       "source_location": "L6",
       "id": "fleet_index_vehicle",
-      "community": 38,
+      "community": 34,
       "norm_label": "vehicle"
     },
     {
@@ -1748,7 +1757,7 @@
       "source_file": "src/app/(app)/fleet/index.tsx",
       "source_location": "L15",
       "id": "fleet_index_fleetvehicles",
-      "community": 38,
+      "community": 34,
       "norm_label": "fleetvehicles()"
     },
     {
@@ -1757,7 +1766,7 @@
       "source_file": "src/app/(app)/fleet/index.tsx",
       "source_location": "L101",
       "id": "fleet_index_styles",
-      "community": 38,
+      "community": 34,
       "norm_label": "styles"
     },
     {
@@ -1766,7 +1775,7 @@
       "source_file": "src/app/(app)/fleet/map.tsx",
       "source_location": "L1",
       "id": "src_app_app_fleet_map_tsx",
-      "community": 38,
+      "community": 3,
       "norm_label": "map.tsx"
     },
     {
@@ -1775,7 +1784,7 @@
       "source_file": "src/app/(app)/fleet/map.tsx",
       "source_location": "L6",
       "id": "fleet_map_fleetmap",
-      "community": 38,
+      "community": 3,
       "norm_label": "fleetmap()"
     },
     {
@@ -1928,7 +1937,7 @@
       "source_file": "src/app/(app)/workspace/documents.tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_documents_tsx",
-      "community": 8,
+      "community": 36,
       "norm_label": "documents.tsx"
     },
     {
@@ -1937,7 +1946,7 @@
       "source_file": "src/app/(app)/workspace/documents.tsx",
       "source_location": "L22",
       "id": "workspace_documents_staffdocument",
-      "community": 8,
+      "community": 36,
       "norm_label": "staffdocument"
     },
     {
@@ -1946,7 +1955,7 @@
       "source_file": "src/app/(app)/workspace/documents.tsx",
       "source_location": "L30",
       "id": "workspace_documents_documentsscreen",
-      "community": 8,
+      "community": 36,
       "norm_label": "documentsscreen()"
     },
     {
@@ -1955,7 +1964,7 @@
       "source_file": "src/app/(app)/workspace/documents.tsx",
       "source_location": "L387",
       "id": "workspace_documents_styles",
-      "community": 8,
+      "community": 36,
       "norm_label": "styles"
     },
     {
@@ -1964,34 +1973,43 @@
       "source_file": "src/app/(app)/workspace/index.tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_index_tsx",
-      "community": 41,
+      "community": 8,
       "norm_label": "index.tsx"
+    },
+    {
+      "label": "getFriendlyErrorMessage()",
+      "file_type": "code",
+      "source_file": "src/app/(app)/workspace/index.tsx",
+      "source_location": "L43",
+      "id": "workspace_index_getfriendlyerrormessage",
+      "community": 8,
+      "norm_label": "getfriendlyerrormessage()"
     },
     {
       "label": "DashboardStats",
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/index.tsx",
-      "source_location": "L42",
+      "source_location": "L71",
       "id": "workspace_index_dashboardstats",
-      "community": 41,
+      "community": 8,
       "norm_label": "dashboardstats"
     },
     {
       "label": "WorkspaceDashboard()",
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/index.tsx",
-      "source_location": "L56",
+      "source_location": "L85",
       "id": "workspace_index_workspacedashboard",
-      "community": 41,
+      "community": 8,
       "norm_label": "workspacedashboard()"
     },
     {
       "label": "styles",
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/index.tsx",
-      "source_location": "L408",
+      "source_location": "L499",
       "id": "workspace_index_styles",
-      "community": 41,
+      "community": 8,
       "norm_label": "styles"
     },
     {
@@ -2171,7 +2189,7 @@
       "source_file": "src/app/(app)/workspace/movements.tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_movements_tsx",
-      "community": 37,
+      "community": 41,
       "norm_label": "movements.tsx"
     },
     {
@@ -2180,7 +2198,7 @@
       "source_file": "src/app/(app)/workspace/movements.tsx",
       "source_location": "L19",
       "id": "workspace_movements_movementrecord",
-      "community": 37,
+      "community": 41,
       "norm_label": "movementrecord"
     },
     {
@@ -2189,7 +2207,7 @@
       "source_file": "src/app/(app)/workspace/movements.tsx",
       "source_location": "L32",
       "id": "workspace_movements_movementsscreen",
-      "community": 37,
+      "community": 41,
       "norm_label": "movementsscreen()"
     },
     {
@@ -2198,7 +2216,7 @@
       "source_file": "src/app/(app)/workspace/movements.tsx",
       "source_location": "L214",
       "id": "workspace_movements_styles",
-      "community": 37,
+      "community": 41,
       "norm_label": "styles"
     },
     {
@@ -2207,7 +2225,7 @@
       "source_file": "src/app/(app)/workspace/permissions.tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_permissions_tsx",
-      "community": 44,
+      "community": 37,
       "norm_label": "permissions.tsx"
     },
     {
@@ -2216,7 +2234,7 @@
       "source_file": "src/app/(app)/workspace/permissions.tsx",
       "source_location": "L19",
       "id": "workspace_permissions_permissionrecord",
-      "community": 44,
+      "community": 37,
       "norm_label": "permissionrecord"
     },
     {
@@ -2225,7 +2243,7 @@
       "source_file": "src/app/(app)/workspace/permissions.tsx",
       "source_location": "L32",
       "id": "workspace_permissions_permissionsscreen",
-      "community": 44,
+      "community": 37,
       "norm_label": "permissionsscreen()"
     },
     {
@@ -2234,7 +2252,7 @@
       "source_file": "src/app/(app)/workspace/permissions.tsx",
       "source_location": "L185",
       "id": "workspace_permissions_styles",
-      "community": 44,
+      "community": 37,
       "norm_label": "styles"
     },
     {
@@ -2423,7 +2441,7 @@
       "source_file": "src/app/(app)/workspace/visitors.tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_visitors_tsx",
-      "community": 37,
+      "community": 44,
       "norm_label": "visitors.tsx"
     },
     {
@@ -2432,7 +2450,7 @@
       "source_file": "src/app/(app)/workspace/visitors.tsx",
       "source_location": "L19",
       "id": "workspace_visitors_visitorlog",
-      "community": 37,
+      "community": 44,
       "norm_label": "visitorlog"
     },
     {
@@ -2441,7 +2459,7 @@
       "source_file": "src/app/(app)/workspace/visitors.tsx",
       "source_location": "L34",
       "id": "workspace_visitors_visitorsscreen",
-      "community": 37,
+      "community": 44,
       "norm_label": "visitorsscreen()"
     },
     {
@@ -2450,7 +2468,7 @@
       "source_file": "src/app/(app)/workspace/visitors.tsx",
       "source_location": "L212",
       "id": "workspace_visitors_styles",
-      "community": 37,
+      "community": 44,
       "norm_label": "styles"
     },
     {
@@ -2495,7 +2513,7 @@
       "source_file": "src/app/(app)/workspace/_layout.tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_layout_tsx",
-      "community": 38,
+      "community": 35,
       "norm_label": "_layout.tsx"
     },
     {
@@ -2504,7 +2522,7 @@
       "source_file": "src/app/(app)/workspace/_layout.tsx",
       "source_location": "L9",
       "id": "workspace_layout_workspacelayout",
-      "community": 38,
+      "community": 35,
       "norm_label": "workspacelayout()"
     },
     {
@@ -2513,7 +2531,7 @@
       "source_file": "src/app/(app)/workspace/_layout.tsx",
       "source_location": "L273",
       "id": "workspace_layout_styles",
-      "community": 38,
+      "community": 35,
       "norm_label": "styles"
     },
     {
@@ -2522,7 +2540,7 @@
       "source_file": "src/app/(auth)/login.tsx",
       "source_location": "L1",
       "id": "src_app_auth_login_tsx",
-      "community": 34,
+      "community": 38,
       "norm_label": "login.tsx"
     },
     {
@@ -2531,7 +2549,7 @@
       "source_file": "src/app/(auth)/login.tsx",
       "source_location": "L11",
       "id": "auth_login_loginscreen",
-      "community": 8,
+      "community": 35,
       "norm_label": "loginscreen()"
     },
     {
@@ -2540,7 +2558,7 @@
       "source_file": "src/app/(auth)/login.tsx",
       "source_location": "L96",
       "id": "auth_login_styles",
-      "community": 34,
+      "community": 38,
       "norm_label": "styles"
     },
     {
@@ -2549,7 +2567,7 @@
       "source_file": "src/app/(auth)/register.tsx",
       "source_location": "L1",
       "id": "src_app_auth_register_tsx",
-      "community": 34,
+      "community": 38,
       "norm_label": "register.tsx"
     },
     {
@@ -2567,7 +2585,7 @@
       "source_file": "src/app/(auth)/register.tsx",
       "source_location": "L104",
       "id": "auth_register_styles",
-      "community": 34,
+      "community": 38,
       "norm_label": "styles"
     },
     {
@@ -2792,7 +2810,7 @@
       "source_file": "src/components/ERPButton.tsx",
       "source_location": "L1",
       "id": "src_components_erpbutton_tsx",
-      "community": 34,
+      "community": 38,
       "norm_label": "erpbutton.tsx"
     },
     {
@@ -2810,7 +2828,7 @@
       "source_file": "src/components/ERPButton.tsx",
       "source_location": "L14",
       "id": "components_erpbutton_erpbutton",
-      "community": 34,
+      "community": 38,
       "norm_label": "erpbutton()"
     },
     {
@@ -2819,7 +2837,7 @@
       "source_file": "src/components/ERPButton.tsx",
       "source_location": "L51",
       "id": "components_erpbutton_styles",
-      "community": 34,
+      "community": 38,
       "norm_label": "styles"
     },
     {
@@ -2828,7 +2846,7 @@
       "source_file": "src/components/ERPInput.tsx",
       "source_location": "L1",
       "id": "src_components_erpinput_tsx",
-      "community": 34,
+      "community": 38,
       "norm_label": "erpinput.tsx"
     },
     {
@@ -2846,7 +2864,7 @@
       "source_file": "src/components/ERPInput.tsx",
       "source_location": "L10",
       "id": "components_erpinput_erpinput",
-      "community": 34,
+      "community": 38,
       "norm_label": "erpinput()"
     },
     {
@@ -2855,7 +2873,7 @@
       "source_file": "src/components/ERPInput.tsx",
       "source_location": "L35",
       "id": "components_erpinput_styles",
-      "community": 34,
+      "community": 38,
       "norm_label": "styles"
     },
     {
@@ -3026,7 +3044,7 @@
       "source_file": "src/components/ui/collapsible.tsx",
       "source_location": "L11",
       "id": "ui_collapsible_collapsible",
-      "community": 35,
+      "community": 3,
       "norm_label": "collapsible()"
     },
     {
@@ -3053,7 +3071,7 @@
       "source_file": "src/constants/theme.ts",
       "source_location": "L10",
       "id": "constants_theme_colors",
-      "community": 24,
+      "community": 3,
       "norm_label": "colors"
     },
     {
@@ -3188,7 +3206,7 @@
       "source_file": "src/context/FontSizeContext.tsx",
       "source_location": "L58",
       "id": "context_fontsizecontext_usefontscale",
-      "community": 24,
+      "community": 3,
       "norm_label": "usefontscale()"
     },
     {
@@ -4150,7 +4168,7 @@
       "file_type": "code",
       "source_file": "(app)/workspace/index.tsx",
       "source_location": "L1",
-      "community": 41,
+      "community": 8,
       "norm_label": "index.tsx",
       "id": "app_workspace_index_tsx"
     },
@@ -4168,7 +4186,7 @@
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/documents.tsx",
       "source_location": "L7",
-      "community": 8,
+      "community": 36,
       "norm_label": "documentitem",
       "id": "workspace_documents_documentitem"
     },
@@ -4177,7 +4195,7 @@
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/index.tsx",
       "source_location": "L61",
-      "community": 38,
+      "community": 34,
       "norm_label": "metriccard()",
       "id": "workspace_index_metriccard"
     },
@@ -4186,7 +4204,7 @@
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/index.tsx",
       "source_location": "L74",
-      "community": 41,
+      "community": 34,
       "norm_label": "activityrow()",
       "id": "workspace_index_activityrow"
     },
@@ -4334,7 +4352,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 36,
+      "community": 34,
       "norm_label": "reset project utility",
       "id": "reset_project_js"
     },
@@ -4438,7 +4456,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 36,
+      "community": 34,
       "norm_label": "entry screen",
       "id": "index_tsx_entry"
     },
@@ -4451,7 +4469,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 36,
+      "community": 34,
       "norm_label": "root layout",
       "id": "layout_tsx_root"
     },
@@ -4477,7 +4495,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 36,
+      "community": 34,
       "norm_label": "app navigation layout",
       "id": "layout_tsx_app"
     },
@@ -4490,7 +4508,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 36,
+      "community": 34,
       "norm_label": "fleet inventory screen",
       "id": "fleet_index_tsx_vehicles"
     },
@@ -4503,7 +4521,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 36,
+      "community": 34,
       "norm_label": "gps tracking map",
       "id": "fleet_map_tsx_map"
     },
@@ -4516,7 +4534,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 36,
+      "community": 34,
       "norm_label": "fleet navigation tabs",
       "id": "fleet_layout_tsx_layout"
     },
@@ -4529,7 +4547,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 36,
+      "community": 34,
       "norm_label": "workspace dashboard",
       "id": "workspace_index_tsx_dashboard"
     },
@@ -4542,7 +4560,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 36,
+      "community": 34,
       "norm_label": "workspace tasks list",
       "id": "workspace_tasks_tsx_tasks"
     },
@@ -4555,7 +4573,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 36,
+      "community": 34,
       "norm_label": "workspace navigation tabs",
       "id": "workspace_layout_tsx_layout"
     },
@@ -4568,7 +4586,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 36,
+      "community": 34,
       "norm_label": "expo router type declarations",
       "id": "expo_router_types"
     },
@@ -4737,7 +4755,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 38,
+      "community": 3,
       "norm_label": "collapsible",
       "id": "collapsible_collapsible"
     },
@@ -4763,7 +4781,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 24,
+      "community": 3,
       "norm_label": "themeprovider",
       "id": "themecontext_themeprovider"
     },
@@ -4776,7 +4794,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 38,
+      "community": 3,
       "norm_label": "usetheme",
       "id": "use_theme_usetheme"
     },
@@ -4830,7 +4848,7 @@
       "author": null,
       "contributor": null,
       "rationale": "Supports persistent theme preferences (light, dark, system) saved via AsyncStorage and evaluated based on React Native's useColorScheme.",
-      "community": 24,
+      "community": 3,
       "norm_label": "theme preference mechanism",
       "id": "mechanism_theme_preference"
     },
@@ -5399,6 +5417,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
+      "source_location": "L43",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_dependencies",
+      "target": "erp_app_package_dependencies_react_native_community_slider"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
       "source_location": "L16",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -5504,6 +5532,16 @@
       "confidence_score": 1.0,
       "source": "erp_app_package_dependencies",
       "target": "erp_app_package_dependencies_expo_linking"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "erp_app_package_dependencies",
+      "target": "erp_app_package_dependencies_expo_location",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -5664,16 +5702,6 @@
       "confidence_score": 1.0,
       "source": "erp_app_package_dependencies",
       "target": "erp_app_package_dependencies_react_native_worklets"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L43",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_dependencies",
-      "target": "erp_app_package_dependencies_react_native_community_slider"
     },
     {
       "relation": "contains",
@@ -8367,6 +8395,16 @@
       "confidence_score": 1.0,
       "source": "src_app_app_workspace_index_tsx",
       "target": "context_authcontext_useauth"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/index.tsx",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "src_app_app_workspace_index_tsx",
+      "target": "workspace_index_getfriendlyerrormessage",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -11488,9 +11526,9 @@
       "source_file": "src/context/FontSizeContext.tsx",
       "source_location": "L77",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_context_fontsizecontext_tsx",
-      "target": "context_fontsizecontext_fontscale",
-      "confidence_score": 1.0
+      "target": "context_fontsizecontext_fontscale"
     },
     {
       "relation": "contains",
@@ -11498,9 +11536,9 @@
       "source_file": "src/context/FontSizeContext.tsx",
       "source_location": "L79",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_context_fontsizecontext_tsx",
-      "target": "context_fontsizecontext_flat",
-      "confidence_score": 1.0
+      "target": "context_fontsizecontext_flat"
     },
     {
       "relation": "contains",
@@ -11508,9 +11546,9 @@
       "source_file": "src/context/FontSizeContext.tsx",
       "source_location": "L80",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_context_fontsizecontext_tsx",
-      "target": "context_fontsizecontext_newstyle",
-      "confidence_score": 1.0
+      "target": "context_fontsizecontext_newstyle"
     },
     {
       "relation": "imports_from",
@@ -13337,5 +13375,5 @@
       "source_file": "src/app/(onboarding)/index.tsx"
     }
   ],
-  "built_at_commit": "066272c8c16a52924a2d2b2bd15d2360dc735bb5"
+  "built_at_commit": "e8e7c9bb608ad72c5d9a0dde48a87a26e2254211"
 }
