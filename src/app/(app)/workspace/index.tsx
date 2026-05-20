@@ -33,7 +33,8 @@ import {
   Square,
   Clock,
   ChevronRight,
-  Sparkles,
+  Fingerprint,
+  Check,
 } from 'lucide-react-native';
 
 const API_BASE_URL = 'https://oki.wchapel.com/api/v1';
@@ -176,10 +177,12 @@ export default function WorkspaceDashboard() {
   };
 
   // Time and Date formatting
-  const formattedTime = currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true });
-  const timeParts = formattedTime.split(' ');
-  const timeStr = timeParts[0];
-  const ampmStr = timeParts[1] || '';
+  const hours = currentTime.getHours();
+  const minutes = currentTime.getMinutes();
+  const ampmStr = hours >= 12 ? 'PM' : 'AM';
+  const displayHours = hours % 12 || 12;
+  const displayMinutes = String(minutes).padStart(2, '0');
+  const timeStr = `${displayHours}:${displayMinutes}`;
 
   const getFormattedDate = (date: Date) => {
     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -209,6 +212,9 @@ export default function WorkspaceDashboard() {
     return `${pad(minutes)}:${pad(seconds)}`;
   };
 
+  const designation = user?.staff?.designation || user?.role || 'admin';
+  const lastName = user?.staff?.surname || user?.name?.split(' ').slice(1).join(' ') || 'Isokariari';
+
   // Applications Grid configuration
   const tools = [
     { name: 'Profile', icon: User, route: '/(app)/workspace/profile', color: '#3B82F6', desc: 'View details' },
@@ -229,12 +235,11 @@ export default function WorkspaceDashboard() {
   return (
     <SafeAreaView style={[styles.safeArea, { backgroundColor: theme.background }]}>
       {/* Top Header Bar */}
-      <View style={[styles.headerBar, { backgroundColor: theme.backgroundElement, borderBottomColor: theme.border }]}>
+      <View style={[styles.headerBar, { backgroundColor: theme.backgroundElement }]}>
         <Pressable onPress={handleToggleDrawer} style={styles.headerButton}>
           <Menu color={theme.text} size={24} />
         </Pressable>
-        <Text style={[styles.headerTitle, { color: theme.text }]}>OKI Mobile Portal</Text>
-        <View style={{ width: 40 }} />
+        <Text style={[styles.headerTitle, { color: theme.text }]}>OKI APP</Text>
       </View>
 
       {loading ? (
@@ -250,25 +255,38 @@ export default function WorkspaceDashboard() {
           }
         >
           {/* Welcome Banner */}
-          <View style={[styles.welcomeBanner, { backgroundColor: theme.backgroundElement, borderColor: theme.border }]}>
-            <View style={styles.welcomeInfo}>
-              <Text style={[styles.welcomeText, { color: theme.text }]}>
-                Welcome, <Text style={{ color: theme.primary, fontFamily: 'PlusJakartaSans_800ExtraBold' }}>{user?.staff?.first_name || user?.name?.split(' ')[0] || 'User'}</Text>
-              </Text>
-              <Text style={[styles.welcomeSubtitle, { color: theme.textSecondary }]}>
-                {user?.staff?.designation || user?.role || 'Staff Member'}
-              </Text>
+          <View style={[styles.welcomeSection, { backgroundColor: theme.backgroundElement }]}>
+            <View style={styles.welcomeHeaderRow}>
+              {/* Custom OK Logo */}
+              <View style={styles.logoContainer}>
+                <View style={styles.logoCircle}>
+                  <Fingerprint color="#3B82F6" size={14} />
+                </View>
+                <Text style={styles.logoKText}>K</Text>
+              </View>
+
+              {/* Header User Icon Button */}
+              <Pressable style={[styles.headerUserButton, { backgroundColor: theme.backgroundSelected, borderColor: theme.border }]}>
+                <Users color="#94A3B8" size={18} />
+              </Pressable>
             </View>
-            <View style={[styles.sparkleBadge, { backgroundColor: `${theme.primary}12` }]}>
-              <Sparkles color={theme.primary} size={18} />
-            </View>
+
+            <Text style={styles.welcomeText}>
+              Welcome, <Text style={styles.welcomeNameText}>{user?.staff?.first_name || user?.name?.split(' ')[0] || 'O.K.I'}</Text>
+            </Text>
+            <Text style={[styles.welcomeSubtitle, { color: theme.textSecondary }]}>
+              {designation} • {lastName}
+            </Text>
           </View>
 
           {/* Quick Stats Columns */}
           <View style={styles.metricsRow}>
             {/* PRESENT */}
             <View style={[styles.metricCard, { backgroundColor: theme.backgroundElement, borderColor: theme.border }]}>
-              <Text style={[styles.metricLabel, { color: theme.textSecondary }]}>MONTHLY PRESENT</Text>
+              <View style={[styles.metricIconContainer, { backgroundColor: 'rgba(16, 185, 129, 0.1)', borderColor: 'rgba(16, 185, 129, 0.2)' }]}>
+                <Check color="#10B981" size={16} strokeWidth={3} />
+              </View>
+              <Text style={styles.metricLabel}>PRESENT</Text>
               <Text style={[styles.metricValue, { color: theme.text }]}>
                 {stats?.attendance?.present ?? 0}
               </Text>
@@ -276,16 +294,22 @@ export default function WorkspaceDashboard() {
 
             {/* LATE */}
             <View style={[styles.metricCard, { backgroundColor: theme.backgroundElement, borderColor: theme.border }]}>
-              <Text style={[styles.metricLabel, { color: '#F59E0B' }]}>MONTHLY LATE</Text>
-              <Text style={[styles.metricValue, { color: '#F59E0B' }]}>
+              <View style={[styles.metricIconContainer, { backgroundColor: 'rgba(245, 158, 11, 0.1)', borderColor: 'rgba(245, 158, 11, 0.2)' }]}>
+                <Clock color="#F59E0B" size={16} strokeWidth={3} />
+              </View>
+              <Text style={styles.metricLabel}>LATE</Text>
+              <Text style={[styles.metricValue, { color: theme.text }]}>
                 {stats?.attendance?.late ?? 0}
               </Text>
             </View>
 
-            {/* UNREAD MESSAGES */}
+            {/* MESSAGES */}
             <View style={[styles.metricCard, { backgroundColor: theme.backgroundElement, borderColor: theme.border }]}>
-              <Text style={[styles.metricLabel, { color: theme.primary }]}>UNREAD CHATS</Text>
-              <Text style={[styles.metricValue, { color: theme.primary }]}>
+              <View style={[styles.metricIconContainer, { backgroundColor: 'rgba(59, 130, 246, 0.1)', borderColor: 'rgba(59, 130, 246, 0.2)' }]}>
+                <MessageSquare color="#3B82F6" size={16} strokeWidth={2.5} />
+              </View>
+              <Text style={styles.metricLabel}>MESSAGES</Text>
+              <Text style={[styles.metricValue, { color: theme.text }]}>
                 {stats?.unread_messages ?? 0}
               </Text>
             </View>
@@ -388,18 +412,19 @@ const styles = StyleSheet.create({
   headerBar: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-start',
     paddingHorizontal: 16,
     height: 56,
-    borderBottomWidth: 1,
   },
   headerButton: {
     padding: 8,
     marginRight: -8,
   },
   headerTitle: {
-    fontFamily: 'PlusJakartaSans_700Bold',
+    fontFamily: 'PlusJakartaSans_800ExtraBold',
     fontSize: 18,
+    marginLeft: 12,
+    letterSpacing: 0.5,
   },
   centered: {
     flex: 1,
@@ -407,63 +432,108 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   scrollContent: {
-    padding: 16,
     paddingBottom: 40,
   },
-  welcomeBanner: {
+  welcomeSection: {
+    paddingHorizontal: 24,
+    paddingBottom: 32,
+    paddingTop: 12,
+    borderBottomLeftRadius: 36,
+    borderBottomRightRadius: 36,
+    marginBottom: 20,
+  },
+  welcomeHeaderRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 24,
+  },
+  logoContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
-    padding: 18,
-    borderRadius: 20,
-    borderWidth: 1,
-    marginBottom: 16,
+    position: 'relative',
+    width: 60,
+    height: 36,
   },
-  welcomeInfo: {
-    flex: 1,
+  logoCircle: {
+    width: 28,
+    height: 28,
+    borderRadius: 14,
+    borderWidth: 4,
+    borderColor: '#3B82F6',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'transparent',
   },
-  welcomeText: {
-    fontFamily: 'PlusJakartaSans_700Bold',
-    fontSize: 20,
-    marginBottom: 4,
+  logoKText: {
+    fontSize: 30,
+    fontFamily: 'PlusJakartaSans_800ExtraBold',
+    color: '#EF4444',
+    position: 'absolute',
+    left: 20,
+    top: -4,
   },
-  welcomeSubtitle: {
-    fontFamily: 'PlusJakartaSans_600SemiBold',
-    fontSize: 13,
-  },
-  sparkleBadge: {
+  headerUserButton: {
     width: 38,
     height: 38,
     borderRadius: 12,
+    borderWidth: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  welcomeText: {
+    fontFamily: 'PlusJakartaSans_800ExtraBold',
+    fontSize: 30,
+    color: '#FFFFFF',
+    lineHeight: 36,
+  },
+  welcomeNameText: {
+    color: '#3B82F6',
+    fontFamily: 'PlusJakartaSans_800ExtraBold',
+  },
+  welcomeSubtitle: {
+    fontFamily: 'PlusJakartaSans_600SemiBold',
+    fontSize: 14,
+    marginTop: 6,
   },
   metricsRow: {
     flexDirection: 'row',
     gap: 8,
-    marginBottom: 16,
+    paddingHorizontal: 16,
+    marginBottom: 20,
   },
   metricCard: {
     flex: 1,
+    borderRadius: 20,
+    borderWidth: 1,
+    padding: 14,
+    alignItems: 'flex-start',
+  },
+  metricIconContainer: {
+    width: 32,
+    height: 32,
     borderRadius: 16,
     borderWidth: 1,
-    padding: 12,
-    alignItems: 'flex-start',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 10,
   },
   metricLabel: {
     fontFamily: 'PlusJakartaSans_700Bold',
-    fontSize: 9,
+    fontSize: 10,
     letterSpacing: 0.5,
+    color: '#94A3B8',
     marginBottom: 4,
   },
   metricValue: {
     fontFamily: 'PlusJakartaSans_800ExtraBold',
-    fontSize: 20,
+    fontSize: 32,
   },
   timeClockCard: {
     borderRadius: 20,
     borderWidth: 1,
     padding: 18,
+    marginHorizontal: 16,
     marginBottom: 24,
     elevation: 2,
     shadowColor: '#000',
@@ -475,7 +545,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 14,
+    marginBottom: 16,
   },
   clockHeaderLeft: {
     flexDirection: 'row',
@@ -495,17 +565,17 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'baseline',
     justifyContent: 'center',
-    marginBottom: 12,
+    marginBottom: 16,
   },
   clockTimeText: {
     fontFamily: 'PlusJakartaSans_800ExtraBold',
-    fontSize: 44,
-    lineHeight: 48,
+    fontSize: 56,
+    lineHeight: 60,
   },
   clockAmpmText: {
     fontFamily: 'PlusJakartaSans_700Bold',
-    fontSize: 18,
-    marginLeft: 4,
+    fontSize: 22,
+    marginLeft: 6,
   },
   activeShiftRow: {
     flexDirection: 'row',
@@ -527,8 +597,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    height: 44,
-    borderRadius: 12,
+    height: 48,
+    borderRadius: 16,
   },
   clockButtonText: {
     fontFamily: 'PlusJakartaSans_700Bold',
@@ -543,11 +613,13 @@ const styles = StyleSheet.create({
     marginTop: 4,
     textTransform: 'uppercase',
     letterSpacing: 0.5,
+    marginHorizontal: 16,
   },
   gridContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     gap: 10,
+    paddingHorizontal: 16,
   },
   gridCard: {
     width: '48.5%',
