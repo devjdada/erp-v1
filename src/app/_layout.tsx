@@ -75,11 +75,11 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider>
-      <AuthProvider>
-        <AlertProvider>
+      <AlertProvider>
+        <AuthProvider>
           <AppContent />
-        </AlertProvider>
-      </AuthProvider>
+        </AuthProvider>
+      </AlertProvider>
     </ThemeProvider>
   );
 }

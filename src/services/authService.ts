@@ -29,4 +29,10 @@ export const authService = {
     const response = await api.get('/user');
     return response.data;
   },
+
+  refreshToken: async () => {
+    const response = await api.post('/refresh-token');
+    return response.data;
+  },
 };
+
