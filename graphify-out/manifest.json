@@ -1,7 +1,7 @@
 {
   "C:\\erp\\erp-app\\app.json": {
-    "mtime": 1779254636.1644692,
-    "ast_hash": "b209e8c6d22f93de2a1afec100e8bc23",
+    "mtime": 1779307748.9492376,
+    "ast_hash": "210428a0e4fbf71792e8a9011bed5af9",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\eslint.config.js": {
@@ -20,8 +20,8 @@
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\package.json": {
-    "mtime": 1779305247.5288966,
-    "ast_hash": "a88f8ae1da0359c3b58bc8ff1b55779c",
+    "mtime": 1779307739.5178611,
+    "ast_hash": "1509c888cd4a8fee5c96d3746d9b10a1",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\tsconfig.json": {
@@ -180,8 +180,8 @@
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\app\\(app)\\workspace\\tasks.tsx": {
-    "mtime": 1779306682.508585,
-    "ast_hash": "337dde1852ccdc33e52f90fce2eea66b",
+    "mtime": 1779307774.3657813,
+    "ast_hash": "f46a727dadf1daa9245823e145f6a78a",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\app\\(app)\\workspace\\tickets.tsx": {

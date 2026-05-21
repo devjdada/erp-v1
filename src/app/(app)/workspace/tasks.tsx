@@ -72,6 +72,7 @@ export default function TasksScreen() {
   const [createModalVisible, setCreateModalVisible] = useState(false);
   const [isCreating, setIsCreating] = useState(false);
   const [showDatePicker, setShowDatePicker] = useState(false);
+  const [pickerMode, setPickerMode] = useState<'date' | 'time'>('date');
   const [dateValue, setDateValue] = useState(new Date());
   const [formData, setFormData] = useState({
     title: '',
@@ -145,10 +146,35 @@ export default function TasksScreen() {
   };
 
   const onDateChange = (event: any, selectedDate?: Date) => {
+    if (event.type === 'dismissed') {
+      setShowDatePicker(false);
+      setPickerMode('date');
+      return;
+    }
+
     const currentDate = selectedDate || dateValue;
-    setShowDatePicker(Platform.OS === 'ios');
     setDateValue(currentDate);
-    setFormData(prev => ({...prev, due_date: currentDate.toISOString().split('T')[0]}));
+
+    if (Platform.OS === 'android') {
+      if (pickerMode === 'date') {
+        setPickerMode('time');
+      } else {
+        setShowDatePicker(false);
+        setPickerMode('date');
+      }
+    } else {
+      // On iOS, datetime mode handles both at once, but if it's inline, it stays open until dismissed
+      // We'll leave it open unless we want to add a 'Done' button. Usually tapping outside dismisses it.
+    }
+
+    const pad = (n: number) => n.toString().padStart(2, '0');
+    const formatted = `${currentDate.getFullYear()}-${pad(currentDate.getMonth()+1)}-${pad(currentDate.getDate())} ${pad(currentDate.getHours())}:${pad(currentDate.getMinutes())}`;
+
+    setFormData(prev => ({
+      ...prev, 
+      due_date: formatted,
+      goal_time_bound: formatted
+    }));
   };
 
   const handleCreateTask = async () => {
@@ -926,19 +952,22 @@ export default function TasksScreen() {
             </View>
 
             <View style={styles.formGroup}>
-              <Text style={styles.formLabel}>Due Date</Text>
+              <Text style={styles.formLabel}>Due Date & Time</Text>
               <Pressable 
                 style={styles.formInput} 
-                onPress={() => setShowDatePicker(true)}
+                onPress={() => {
+                  setPickerMode('date');
+                  setShowDatePicker(true);
+                }}
               >
                 <Text style={{ color: formData.due_date ? theme.text : theme.textSecondary, fontFamily: 'PlusJakartaSans_500Medium', fontSize: 15 }}>
-                  {formData.due_date || "Select Due Date"}
+                  {formData.due_date || "Select Date & Time"}
                 </Text>
               </Pressable>
               {showDatePicker && (
                 <DateTimePicker
                   value={dateValue}
-                  mode="date"
+                  mode={Platform.OS === 'ios' ? 'datetime' : pickerMode}
                   display="default"
                   onChange={onDateChange}
                 />
@@ -1017,10 +1046,11 @@ export default function TasksScreen() {
               <View style={styles.formGroup}>
                 <Text style={styles.formLabel}>Time-bound (What is the hard deadline?)</Text>
                 <TextInput
-                  style={styles.formInput}
+                  style={[styles.formInput, { backgroundColor: theme.backgroundSelected, color: theme.textSecondary }]}
                   value={formData.goal_time_bound}
-                  onChangeText={(t) => setFormData(prev => ({...prev, goal_time_bound: t}))}
-                  multiline
+                  editable={false}
+                  placeholder="Auto-filled from Due Date"
+                  placeholderTextColor={theme.textSecondary}
                 />
               </View>
             </View>

@@ -8,19 +8,25 @@ import {
   Pressable,
   ActivityIndicator,
   RefreshControl,
+  Animated,
+  Modal,
+  TextInput,
+  Alert
 } from 'react-native';
 import { useTheme } from '@/hooks/use-theme';
 import { useRouter } from 'expo-router';
-import { ArrowLeft, Hammer, Calendar, ClipboardList, Info, ShieldCheck } from 'lucide-react-native';
+import { ArrowLeft, Hammer, Calendar, ClipboardList, PackageOpen, Wrench, Clock, Plus, X, Info, Hand } from 'lucide-react-native';
 import { useAuth } from '@/context/AuthContext';
 
 const API_BASE_URL = 'https://oki.wchapel.com/api/v1';
 
 interface Tool {
   id: number;
+  tool_id: string;
   name: string;
-  code: string;
-  category: string;
+  type: string;
+  model: string | null;
+  serial_number: string | null;
   status: 'available' | 'in-use' | 'maintenance' | string;
 }
 
@@ -28,11 +34,11 @@ interface ToolRequest {
   id: number;
   tool: {
     name: string;
-    code: string;
+    tool_id: string;
   };
-  start_date: string;
-  end_date: string;
+  request_type: string;
   status: 'pending' | 'approved' | 'rejected' | 'returned' | string;
+  notes: string;
   created_at: string;
 }
 
@@ -47,6 +53,17 @@ export default function ToolsScreen() {
   const [requests, setRequests] = useState<ToolRequest[]>([]);
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
+
+  // Request Modal State
+  const [requestModalVisible, setRequestModalVisible] = useState(false);
+  const [selectedToolId, setSelectedToolId] = useState<number | null>(null);
+  const [requestNotes, setRequestNotes] = useState('');
+  const [submitting, setSubmitting] = useState(false);
+
+  // Add Tool Modal State
+  const [addToolModalVisible, setAddToolModalVisible] = useState(false);
+  const [newTool, setNewTool] = useState({ name: '', tool_id: '', type: 'Work Tool', model: '', serial_number: '' });
+  const [addingTool, setAddingTool] = useState(false);
 
   const fetchToolsData = useCallback(async (showLoader = false) => {
     if (!authToken) return;
@@ -99,179 +116,407 @@ export default function ToolsScreen() {
     fetchToolsData(false);
   };
 
-  const getToolStatusColor = (status: string) => {
-    const s = status?.toLowerCase();
-    if (s === 'available') return '#10B981';
-    if (s === 'in-use') return '#3B82F6';
-    return '#F59E0B';
+  const handleRequestSubmit = async () => {
+    if (!selectedToolId) {
+        Alert.alert('Error', 'Please select a tool to request.');
+        return;
+    }
+    
+    setSubmitting(true);
+    try {
+        const response = await fetch(`${API_BASE_URL}/tools/requests`, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${authToken}`
+            },
+            body: JSON.stringify({
+                tool_id: selectedToolId,
+                notes: requestNotes
+            })
+        });
+        
+        const result = await response.json();
+        if (response.ok && result.success) {
+            Alert.alert('Success', 'Tool request submitted successfully.');
+            setRequestModalVisible(false);
+            setSelectedToolId(null);
+            setRequestNotes('');
+            setActiveTab('requests');
+            fetchToolsData(true);
+        } else {
+            Alert.alert('Error', result.message || 'Failed to submit request');
+        }
+    } catch (err) {
+        Alert.alert('Error', 'An unexpected error occurred.');
+    } finally {
+        setSubmitting(false);
+    }
   };
 
-  const getRequestStatusColor = (status: string) => {
-    const s = status?.toLowerCase();
-    if (s === 'approved' || s === 'returned') return '#10B981';
-    if (s === 'rejected') return '#EF4444';
-    return '#F59E0B';
+  const handleAddToolSubmit = async () => {
+    if (!newTool.name || !newTool.tool_id) {
+        Alert.alert('Error', 'Item Name and Tool ID are required.');
+        return;
+    }
+    
+    setAddingTool(true);
+    try {
+        const response = await fetch(`${API_BASE_URL}/tools`, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${authToken}`
+            },
+            body: JSON.stringify(newTool)
+        });
+        
+        const result = await response.json();
+        if (response.ok && result.success) {
+            Alert.alert('Success', 'Tool added to inventory.');
+            setAddToolModalVisible(false);
+            setNewTool({ name: '', tool_id: '', type: 'Work Tool', model: '', serial_number: '' });
+            setActiveTab('inventory');
+            fetchToolsData(true);
+        } else {
+            Alert.alert('Error', result.message || 'Failed to add tool. ' + (result.errors ? JSON.stringify(result.errors) : ''));
+        }
+    } catch (err) {
+        Alert.alert('Error', 'An unexpected error occurred.');
+    } finally {
+        setAddingTool(false);
+    }
   };
+
+  const getStatusConfig = (status: string) => {
+    const s = status?.toLowerCase();
+    if (s === 'available' || s === 'approved' || s === 'returned') return { bg: '#E0F2FE', text: '#0284C7', label: s };
+    if (s === 'in-use' || s === 'pending') return { bg: '#FEF3C7', text: '#D97706', label: s };
+    if (s === 'maintenance' || s === 'rejected') return { bg: '#FEE2E2', text: '#DC2626', label: s };
+    return { bg: '#F1F5F9', text: '#475569', label: s || 'unknown' };
+  };
+
+  const availableTools = tools.filter(t => t.status?.toLowerCase() === 'available');
 
   return (
     <SafeAreaView style={[styles.safeArea, { backgroundColor: theme.background }]}>
       {/* Header */}
-      <View style={[styles.headerBar, { backgroundColor: theme.backgroundElement, borderBottomColor: theme.border }]}>
-        <Pressable onPress={() => router.back()} style={styles.backButton}>
+      <View style={[styles.headerBar, { backgroundColor: theme.background }]}>
+        <Pressable onPress={() => router.back()} style={({ pressed }) => [styles.backButton, pressed && { opacity: 0.7 }]}>
           <ArrowLeft color={theme.text} size={24} />
         </Pressable>
-        <Text style={[styles.headerTitle, { color: theme.text }]}>Tools & Equipment</Text>
-        <View style={{ width: 40 }} />
+        <Text style={[styles.headerTitle, { color: theme.text }]}>Tools</Text>
+        <View style={{ flexDirection: 'row', gap: 4 }}>
+          <Pressable onPress={() => setRequestModalVisible(true)} style={({ pressed }) => [styles.headerRightButton, pressed && { opacity: 0.7 }]}>
+            <Hand color={theme.primary} size={24} />
+          </Pressable>
+          <Pressable onPress={() => setAddToolModalVisible(true)} style={({ pressed }) => [styles.headerRightButton, pressed && { opacity: 0.7 }]}>
+            <Plus color={theme.primary} size={24} />
+          </Pressable>
+        </View>
       </View>
 
-      {/* Tabs */}
-      <View style={[styles.tabBar, { borderBottomColor: theme.border }]}>
-        <Pressable
-          onPress={() => setActiveTab('inventory')}
-          style={[styles.tabItem, activeTab === 'inventory' && { borderBottomColor: theme.primary }]}
-        >
-          <Text
+      {/* Segmented Control Tabs */}
+      <View style={styles.tabContainer}>
+        <View style={[styles.segmentedControl, { backgroundColor: theme.backgroundElement, borderColor: theme.border }]}>
+          <Pressable
+            onPress={() => setActiveTab('inventory')}
             style={[
-              styles.tabText,
-              {
-                color: activeTab === 'inventory' ? theme.primary : theme.textSecondary,
-                fontFamily: activeTab === 'inventory' ? 'PlusJakartaSans_700Bold' : 'PlusJakartaSans_600SemiBold',
-              },
+              styles.segment,
+              activeTab === 'inventory' && [styles.segmentActive, { backgroundColor: theme.text }]
             ]}
           >
-            Inventory List
-          </Text>
-        </Pressable>
-        <Pressable
-          onPress={() => setActiveTab('requests')}
-          style={[styles.tabItem, activeTab === 'requests' && { borderBottomColor: theme.primary }]}
-        >
-          <Text
+            <Wrench size={16} color={activeTab === 'inventory' ? theme.background : theme.textSecondary} />
+            <Text
+              style={[
+                styles.segmentText,
+                { color: activeTab === 'inventory' ? theme.background : theme.textSecondary }
+              ]}
+            >
+              Inventory
+            </Text>
+          </Pressable>
+          <Pressable
+            onPress={() => setActiveTab('requests')}
             style={[
-              styles.tabText,
-              {
-                color: activeTab === 'requests' ? theme.primary : theme.textSecondary,
-                fontFamily: activeTab === 'requests' ? 'PlusJakartaSans_700Bold' : 'PlusJakartaSans_600SemiBold',
-              },
+              styles.segment,
+              activeTab === 'requests' && [styles.segmentActive, { backgroundColor: theme.text }]
             ]}
           >
-            My Requests
-          </Text>
-        </Pressable>
+            <Clock size={16} color={activeTab === 'requests' ? theme.background : theme.textSecondary} />
+            <Text
+              style={[
+                styles.segmentText,
+                { color: activeTab === 'requests' ? theme.background : theme.textSecondary }
+              ]}
+            >
+              My Requests
+            </Text>
+          </Pressable>
+        </View>
       </View>
 
       {loading ? (
         <View style={styles.centered}>
           <ActivityIndicator size="large" color={theme.primary} />
+          <Text style={[styles.loadingText, { color: theme.textSecondary }]}>Loading tools...</Text>
         </View>
       ) : (
         <ScrollView
           contentContainerStyle={styles.scrollContent}
           showsVerticalScrollIndicator={false}
           refreshControl={
-            <RefreshControl refreshing={refreshing} onRefresh={onRefresh} colors={[theme.primary]} />
+            <RefreshControl refreshing={refreshing} onRefresh={onRefresh} tintColor={theme.primary} colors={[theme.primary]} />
           }
         >
           {activeTab === 'inventory' ? (
             tools.length > 0 ? (
               <View style={styles.listContainer}>
-                {tools.map((tool) => (
-                  <View
-                    key={tool.id}
-                    style={[styles.toolCard, { backgroundColor: theme.backgroundElement, borderColor: theme.border }]}
-                  >
-                    <View style={styles.cardHeader}>
-                      <View style={styles.toolIdentity}>
-                        <View style={[styles.avatarBox, { backgroundColor: 'rgba(30, 111, 253, 0.08)' }]}>
-                          <Hammer color={theme.primary} size={18} />
+                {tools.map((tool) => {
+                  const status = getStatusConfig(tool.status);
+                  return (
+                    <Pressable
+                      key={tool.id}
+                      style={({ pressed }) => [
+                        styles.toolCard,
+                        { backgroundColor: theme.backgroundElement, borderColor: theme.border },
+                        pressed && { opacity: 0.8, transform: [{ scale: 0.98 }] }
+                      ]}
+                    >
+                      <View style={styles.cardHeader}>
+                        <View style={styles.toolIdentity}>
+                          <View style={[styles.avatarBox, { backgroundColor: theme.background }]}>
+                            <Hammer color={theme.text} size={20} />
+                          </View>
+                          <View style={styles.toolInfo}>
+                            <Text style={[styles.toolName, { color: theme.text }]}>{tool.name}</Text>
+                            <Text style={[styles.toolCode, { color: theme.textSecondary }]}>
+                              {tool.tool_id} • {tool.type}
+                            </Text>
+                          </View>
                         </View>
-                        <View>
-                          <Text style={[styles.toolName, { color: theme.text }]}>{tool.name}</Text>
-                          <Text style={[styles.toolCode, { color: theme.textSecondary }]}>
-                            Code: {tool.code} • Category: {tool.category}
+                        <View style={[styles.statusBadge, { backgroundColor: status.bg }]}>
+                          <Text style={[styles.statusText, { color: status.text }]}>
+                            {status.label.toUpperCase()}
                           </Text>
                         </View>
                       </View>
-                      <View style={[styles.statusBadge, { backgroundColor: `${getToolStatusColor(tool.status)}15` }]}>
-                        <Text style={[styles.statusText, { color: getToolStatusColor(tool.status) }]}>
-                          {tool.status?.toUpperCase()}
-                        </Text>
-                      </View>
-                    </View>
-                  </View>
-                ))}
+                    </Pressable>
+                  );
+                })}
               </View>
             ) : (
               <View style={styles.emptyContainer}>
-                <Hammer color={theme.textSecondary} size={48} strokeWidth={1} style={{ marginBottom: 12 }} />
+                <View style={[styles.emptyIconBox, { backgroundColor: theme.backgroundElement }]}>
+                  <PackageOpen color={theme.textSecondary} size={40} strokeWidth={1.5} />
+                </View>
                 <Text style={[styles.emptyTitle, { color: theme.text }]}>No tools found</Text>
                 <Text style={[styles.emptySubtitle, { color: theme.textSecondary }]}>
-                  Tools list in the central store is currently empty.
+                  The tool inventory is currently empty or unavailable.
                 </Text>
               </View>
             )
           ) : requests.length > 0 ? (
             <View style={styles.listContainer}>
               {requests.map((req) => {
-                const statusColor = getRequestStatusColor(req.status);
-
+                const status = getStatusConfig(req.status);
                 return (
-                  <View
+                  <Pressable
                     key={req.id}
-                    style={[styles.toolCard, { backgroundColor: theme.backgroundElement, borderColor: theme.border }]}
+                    style={({ pressed }) => [
+                      styles.toolCard,
+                      { backgroundColor: theme.backgroundElement, borderColor: theme.border },
+                      pressed && { opacity: 0.8, transform: [{ scale: 0.98 }] }
+                    ]}
                   >
                     <View style={styles.cardHeader}>
                       <View style={styles.toolIdentity}>
-                        <View style={[styles.avatarBox, { backgroundColor: 'rgba(16, 185, 129, 0.08)' }]}>
-                          <ClipboardList color="#10B981" size={18} />
+                        <View style={[styles.avatarBox, { backgroundColor: theme.background }]}>
+                          <ClipboardList color={theme.text} size={20} />
                         </View>
-                        <View style={{ flex: 1 }}>
+                        <View style={styles.toolInfo}>
                           <Text style={[styles.toolName, { color: theme.text }]} numberOfLines={1}>
                             {req.tool?.name || 'Unknown Tool'}
                           </Text>
                           <Text style={[styles.toolCode, { color: theme.textSecondary }]}>
-                            Code: {req.tool?.code || 'N/A'}
+                            Ref: {req.tool?.tool_id || 'N/A'}
                           </Text>
                         </View>
                       </View>
-                      <View style={[styles.statusBadge, { backgroundColor: `${statusColor}15` }]}>
-                        <Text style={[styles.statusText, { color: statusColor }]}>
-                          {req.status?.toUpperCase()}
+                      <View style={[styles.statusBadge, { backgroundColor: status.bg }]}>
+                        <Text style={[styles.statusText, { color: status.text }]}>
+                          {status.label.toUpperCase()}
                         </Text>
                       </View>
                     </View>
 
-                    <View style={[styles.detailsSection, { borderColor: theme.border }]}>
+                    <View style={[styles.detailsSection, { backgroundColor: theme.background, borderColor: theme.border }]}>
                       <View style={styles.detailRow}>
-                        <Calendar size={12} color={theme.textSecondary} />
-                        <Text style={[styles.detailLabel, { color: theme.textSecondary }]}>DURATION:</Text>
+                        <Info size={14} color={theme.textSecondary} />
                         <Text style={[styles.detailValue, { color: theme.text }]}>
-                          {new Date(req.start_date).toLocaleDateString()} - {new Date(req.end_date).toLocaleDateString()}
+                          Type: {req.request_type ? req.request_type.toUpperCase() : 'CHECKOUT'}
                         </Text>
                       </View>
                     </View>
 
                     <View style={styles.cardFooter}>
-                      <Calendar size={12} color={theme.textSecondary} />
                       <Text style={[styles.dateText, { color: theme.textSecondary }]}>
-                        Requested: {new Date(req.created_at).toLocaleDateString()}
+                        Requested on {new Date(req.created_at).toLocaleDateString()}
                       </Text>
                     </View>
-                  </View>
+                  </Pressable>
                 );
               })}
             </View>
           ) : (
             <View style={styles.emptyContainer}>
-              <ClipboardList color={theme.textSecondary} size={48} strokeWidth={1} style={{ marginBottom: 12 }} />
+              <View style={[styles.emptyIconBox, { backgroundColor: theme.backgroundElement }]}>
+                <ClipboardList color={theme.textSecondary} size={40} strokeWidth={1.5} />
+              </View>
               <Text style={[styles.emptyTitle, { color: theme.text }]}>No requests found</Text>
               <Text style={[styles.emptySubtitle, { color: theme.textSecondary }]}>
-                Your tool and equipment checkout requests will appear here.
+                You haven't made any tool or equipment requests yet.
               </Text>
             </View>
           )}
         </ScrollView>
       )}
+
+      {/* Request Modal */}
+      <Modal visible={requestModalVisible} animationType="slide" transparent={true}>
+        <View style={styles.modalOverlay}>
+          <View style={[styles.modalContent, { backgroundColor: theme.background }]}>
+            <View style={styles.modalHeader}>
+              <Text style={[styles.modalTitle, { color: theme.text }]}>Request a Tool</Text>
+              <Pressable onPress={() => setRequestModalVisible(false)} style={styles.closeButton}>
+                <X color={theme.text} size={24} />
+              </Pressable>
+            </View>
+            
+            <ScrollView style={styles.modalScroll} showsVerticalScrollIndicator={false}>
+              <Text style={[styles.inputLabel, { color: theme.text }]}>Select Available Tool</Text>
+              <View style={styles.toolSelector}>
+                  {availableTools.length > 0 ? availableTools.map(tool => (
+                      <Pressable 
+                          key={tool.id} 
+                          style={[styles.selectableTool, { borderColor: theme.border }, selectedToolId === tool.id && { borderColor: theme.primary, backgroundColor: theme.primary + '15' }]}
+                          onPress={() => setSelectedToolId(tool.id)}
+                      >
+                          <Text style={[styles.selectableToolName, { color: theme.text }]}>{tool.name}</Text>
+                          <Text style={[styles.selectableToolCode, { color: theme.textSecondary }]}>{tool.tool_id} • {tool.type}</Text>
+                      </Pressable>
+                  )) : <Text style={{ color: theme.textSecondary, fontFamily: 'PlusJakartaSans_500Medium', marginTop: 10 }}>No tools currently available.</Text>}
+              </View>
+
+              <Text style={[styles.inputLabel, { color: theme.text, marginTop: 24 }]}>Notes / Reason (Optional)</Text>
+              <TextInput
+                  style={[styles.textInput, { color: theme.text, borderColor: theme.border, backgroundColor: theme.backgroundElement }]}
+                  placeholder="Why do you need this tool?"
+                  placeholderTextColor={theme.textSecondary}
+                  multiline
+                  numberOfLines={4}
+                  value={requestNotes}
+                  onChangeText={setRequestNotes}
+                  textAlignVertical="top"
+              />
+            </ScrollView>
+
+            <View style={[styles.modalFooter, { borderTopColor: theme.border }]}>
+              <Pressable 
+                  style={[styles.submitButton, { backgroundColor: theme.primary }, (!selectedToolId || submitting) && { opacity: 0.5 }]}
+                  onPress={handleRequestSubmit}
+                  disabled={!selectedToolId || submitting}
+              >
+                  {submitting ? <ActivityIndicator color="#fff" /> : <Text style={styles.submitButtonText}>Submit Request</Text>}
+              </Pressable>
+            </View>
+          </View>
+        </View>
+      </Modal>
+
+      {/* Add Tool Modal */}
+      <Modal visible={addToolModalVisible} animationType="slide" transparent={true}>
+        <View style={styles.modalOverlay}>
+          <View style={[styles.modalContent, { backgroundColor: theme.background }]}>
+            <View style={styles.modalHeader}>
+              <Text style={[styles.modalTitle, { color: theme.text }]}>Add New Tool</Text>
+              <Pressable onPress={() => setAddToolModalVisible(false)} style={styles.closeButton}>
+                <X color={theme.text} size={24} />
+              </Pressable>
+            </View>
+            
+            <ScrollView style={styles.modalScroll} showsVerticalScrollIndicator={false}>
+              
+              <Text style={[styles.inputLabel, { color: theme.text, marginTop: 16 }]}>Item Name *</Text>
+              <TextInput
+                  style={[styles.textInput, { color: theme.text, borderColor: theme.border, backgroundColor: theme.backgroundElement, minHeight: 48, paddingVertical: 12 }]}
+                  placeholder="E.g. DeWalt Drill"
+                  placeholderTextColor={theme.textSecondary}
+                  value={newTool.name}
+                  onChangeText={v => setNewTool(prev => ({ ...prev, name: v }))}
+              />
+
+              <Text style={[styles.inputLabel, { color: theme.text, marginTop: 16 }]}>Tool ID / Asset # *</Text>
+              <TextInput
+                  style={[styles.textInput, { color: theme.text, borderColor: theme.border, backgroundColor: theme.backgroundElement, minHeight: 48, paddingVertical: 12 }]}
+                  placeholder="E.g. ASSET-001"
+                  placeholderTextColor={theme.textSecondary}
+                  value={newTool.tool_id}
+                  onChangeText={v => setNewTool(prev => ({ ...prev, tool_id: v }))}
+              />
+
+              <Text style={[styles.inputLabel, { color: theme.text, marginTop: 16 }]}>Type</Text>
+              <View style={styles.segmentedControlForm}>
+                <Pressable
+                    onPress={() => setNewTool(prev => ({ ...prev, type: 'Work Tool' }))}
+                    style={[styles.segment, newTool.type === 'Work Tool' && [styles.segmentActiveForm, { backgroundColor: theme.primary }]]}
+                >
+                    <Text style={[styles.segmentTextForm, { color: newTool.type === 'Work Tool' ? '#fff' : theme.textSecondary }]}>Work Tool</Text>
+                </Pressable>
+                <Pressable
+                    onPress={() => setNewTool(prev => ({ ...prev, type: 'Gadget' }))}
+                    style={[styles.segment, newTool.type === 'Gadget' && [styles.segmentActiveForm, { backgroundColor: theme.primary }]]}
+                >
+                    <Text style={[styles.segmentTextForm, { color: newTool.type === 'Gadget' ? '#fff' : theme.textSecondary }]}>Gadget</Text>
+                </Pressable>
+              </View>
+
+              <Text style={[styles.inputLabel, { color: theme.text, marginTop: 16 }]}>Model / Spec (Optional)</Text>
+              <TextInput
+                  style={[styles.textInput, { color: theme.text, borderColor: theme.border, backgroundColor: theme.backgroundElement, minHeight: 48, paddingVertical: 12 }]}
+                  placeholder="E.g. DCD771C2"
+                  placeholderTextColor={theme.textSecondary}
+                  value={newTool.model}
+                  onChangeText={v => setNewTool(prev => ({ ...prev, model: v }))}
+              />
+
+              <Text style={[styles.inputLabel, { color: theme.text, marginTop: 16 }]}>Serial Number (Optional)</Text>
+              <TextInput
+                  style={[styles.textInput, { color: theme.text, borderColor: theme.border, backgroundColor: theme.backgroundElement, minHeight: 48, paddingVertical: 12 }]}
+                  placeholder="E.g. S/N 123456"
+                  placeholderTextColor={theme.textSecondary}
+                  value={newTool.serial_number}
+                  onChangeText={v => setNewTool(prev => ({ ...prev, serial_number: v }))}
+              />
+
+              <View style={{ height: 40 }} />
+            </ScrollView>
+
+            <View style={[styles.modalFooter, { borderTopColor: theme.border }]}>
+              <Pressable 
+                  style={[styles.submitButton, { backgroundColor: theme.primary }, (!newTool.name || !newTool.tool_id || addingTool) && { opacity: 0.5 }]}
+                  onPress={handleAddToolSubmit}
+                  disabled={!newTool.name || !newTool.tool_id || addingTool}
+              >
+                  {addingTool ? <ActivityIndicator color="#fff" /> : <Text style={styles.submitButtonText}>Add to Inventory</Text>}
+              </Pressable>
+            </View>
+          </View>
+        </View>
+      </Modal>
+
     </SafeAreaView>
   );
 }
@@ -284,37 +529,78 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingHorizontal: 16,
-    height: 56,
-    borderBottomWidth: 1,
+    paddingHorizontal: 20,
+    paddingTop: 10,
+    paddingBottom: 15,
   },
   backButton: {
     padding: 8,
     marginLeft: -8,
+    borderRadius: 12,
+  },
+  headerRightButton: {
+    padding: 8,
+    borderRadius: 12,
   },
   headerTitle: {
     fontFamily: 'PlusJakartaSans_700Bold',
-    fontSize: 18,
+    fontSize: 20,
+    letterSpacing: -0.5,
   },
-  tabBar: {
+  tabContainer: {
+    paddingHorizontal: 20,
+    paddingBottom: 15,
+  },
+  segmentedControl: {
     flexDirection: 'row',
     height: 48,
-    borderBottomWidth: 1,
+    borderRadius: 24,
+    padding: 4,
+    borderWidth: 1,
   },
-  tabItem: {
+  segment: {
     flex: 1,
+    flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    borderBottomWidth: 2,
-    borderBottomColor: 'transparent',
+    borderRadius: 20,
+    gap: 8,
   },
-  tabText: {
-    fontSize: 13.5,
+  segmentActive: {
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.05,
+    shadowRadius: 4,
+    elevation: 2,
+  },
+  segmentText: {
+    fontFamily: 'PlusJakartaSans_600SemiBold',
+    fontSize: 14,
+  },
+  segmentedControlForm: {
+    flexDirection: 'row',
+    height: 44,
+    borderRadius: 12,
+    backgroundColor: 'rgba(0,0,0,0.03)',
+    borderWidth: 1,
+    borderColor: 'rgba(0,0,0,0.05)',
+  },
+  segmentActiveForm: {
+    borderRadius: 10,
+  },
+  segmentTextForm: {
+    fontFamily: 'PlusJakartaSans_600SemiBold',
+    fontSize: 13,
   },
   centered: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    gap: 12,
+  },
+  loadingText: {
+    fontFamily: 'PlusJakartaSans_500Medium',
+    fontSize: 14,
   },
   scrollContent: {
     padding: 20,
@@ -324,9 +610,9 @@ const styles = StyleSheet.create({
     gap: 16,
   },
   toolCard: {
-    borderWidth: 1,
-    borderRadius: 20,
-    padding: 16,
+    borderWidth: 1.5,
+    borderRadius: 24,
+    padding: 20,
   },
   cardHeader: {
     flexDirection: 'row',
@@ -336,81 +622,167 @@ const styles = StyleSheet.create({
   toolIdentity: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 10,
+    gap: 14,
     flex: 1,
+    paddingRight: 10,
   },
   avatarBox: {
-    width: 36,
-    height: 36,
-    borderRadius: 10,
+    width: 44,
+    height: 44,
+    borderRadius: 14,
     justifyContent: 'center',
     alignItems: 'center',
   },
+  toolInfo: {
+    flex: 1,
+    gap: 2,
+  },
   toolName: {
     fontFamily: 'PlusJakartaSans_700Bold',
-    fontSize: 15,
+    fontSize: 16,
+    letterSpacing: -0.3,
   },
   toolCode: {
     fontFamily: 'PlusJakartaSans_500Medium',
-    fontSize: 12,
+    fontSize: 13,
   },
   statusBadge: {
-    paddingHorizontal: 8,
-    paddingVertical: 3,
-    borderRadius: 8,
+    paddingHorizontal: 10,
+    paddingVertical: 6,
+    borderRadius: 12,
   },
   statusText: {
     fontFamily: 'PlusJakartaSans_700Bold',
-    fontSize: 9,
+    fontSize: 10,
+    letterSpacing: 0.5,
   },
   detailsSection: {
-    borderTopWidth: StyleSheet.hairlineWidth,
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    paddingVertical: 10,
-    marginTop: 14,
-    marginBottom: 10,
-    gap: 4,
+    marginTop: 16,
+    marginBottom: 16,
+    padding: 12,
+    borderRadius: 12,
+    borderWidth: 1,
   },
   detailRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 6,
-  },
-  detailLabel: {
-    fontFamily: 'PlusJakartaSans_700Bold',
-    fontSize: 9,
-    width: 75,
-    letterSpacing: 0.5,
+    gap: 8,
   },
   detailValue: {
-    fontFamily: 'PlusJakartaSans_500Medium',
-    fontSize: 12.5,
-    flex: 1,
+    fontFamily: 'PlusJakartaSans_600SemiBold',
+    fontSize: 13,
   },
   cardFooter: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 6,
+    justifyContent: 'space-between',
   },
   dateText: {
     fontFamily: 'PlusJakartaSans_500Medium',
-    fontSize: 11.5,
+    fontSize: 12,
   },
   emptyContainer: {
     alignItems: 'center',
     justifyContent: 'center',
     paddingVertical: 80,
     paddingHorizontal: 20,
+    gap: 12,
+  },
+  emptyIconBox: {
+    width: 80,
+    height: 80,
+    borderRadius: 40,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 8,
   },
   emptyTitle: {
     fontFamily: 'PlusJakartaSans_700Bold',
-    fontSize: 16,
-    marginBottom: 6,
+    fontSize: 18,
+    letterSpacing: -0.5,
   },
   emptySubtitle: {
     fontFamily: 'PlusJakartaSans_500Medium',
-    fontSize: 13,
+    fontSize: 14,
     textAlign: 'center',
-    lineHeight: 18,
+    lineHeight: 20,
+    paddingHorizontal: 20,
+  },
+  
+  // Modal Styles
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    justifyContent: 'flex-end',
+  },
+  modalContent: {
+    borderTopLeftRadius: 24,
+    borderTopRightRadius: 24,
+    maxHeight: '90%',
+    minHeight: '60%',
+  },
+  modalHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 24,
+    paddingTop: 24,
+    paddingBottom: 16,
+  },
+  modalTitle: {
+    fontFamily: 'PlusJakartaSans_700Bold',
+    fontSize: 20,
+    letterSpacing: -0.5,
+  },
+  closeButton: {
+    padding: 4,
+  },
+  modalScroll: {
+    paddingHorizontal: 24,
+  },
+  inputLabel: {
+    fontFamily: 'PlusJakartaSans_700Bold',
+    fontSize: 15,
+    marginBottom: 8,
+  },
+  toolSelector: {
+    gap: 10,
+  },
+  selectableTool: {
+    borderWidth: 1.5,
+    borderRadius: 16,
+    padding: 16,
+  },
+  selectableToolName: {
+    fontFamily: 'PlusJakartaSans_700Bold',
+    fontSize: 15,
+    marginBottom: 4,
+  },
+  selectableToolCode: {
+    fontFamily: 'PlusJakartaSans_500Medium',
+    fontSize: 12,
+  },
+  textInput: {
+    borderWidth: 1.5,
+    borderRadius: 16,
+    padding: 16,
+    fontFamily: 'PlusJakartaSans_500Medium',
+    fontSize: 15,
+  },
+  modalFooter: {
+    padding: 24,
+    borderTopWidth: 1,
+  },
+  submitButton: {
+    height: 56,
+    borderRadius: 16,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  submitButtonText: {
+    color: '#fff',
+    fontFamily: 'PlusJakartaSans_700Bold',
+    fontSize: 16,
   },
 });
+
