@@ -55,8 +55,8 @@
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\.expo\\types\\router.d.ts": {
-    "mtime": 1779335069.7339323,
-    "ast_hash": "b7cba89a5f025fba642ac3c643057f1d",
+    "mtime": 1779336867.2033498,
+    "ast_hash": "cbf8e78e4a39bb3146b250a118388bce",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\.vscode\\extensions.json": {
@@ -85,8 +85,8 @@
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\app\\_layout.tsx": {
-    "mtime": 1779255375.9725726,
-    "ast_hash": "902e637176a59fb6c7678ef015cc60f1",
+    "mtime": 1779336954.6997974,
+    "ast_hash": "0b19aee37395e282ababb955858f6085",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\app\\(app)\\settings.tsx": {
@@ -305,8 +305,8 @@
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\context\\AuthContext.tsx": {
-    "mtime": 1779305315.39498,
-    "ast_hash": "75a9f47cb61e28bc9eee32fa7ef0331e",
+    "mtime": 1779336969.4041271,
+    "ast_hash": "3cc6eddcf20f6f25a0b80b03c03111e5",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\context\\FontSizeContext.tsx": {
@@ -335,8 +335,8 @@
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\services\\api.ts": {
-    "mtime": 1779305252.4115417,
-    "ast_hash": "9eac14048254eb3d2c456d2bb17cf82c",
+    "mtime": 1779336894.1142683,
+    "ast_hash": "0f21b79285adb49688cb6c09dc3aad0f",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\services\\attendanceService.ts": {
@@ -344,9 +344,14 @@
     "ast_hash": "c473167f4124e42b65d76ce48d6203f6",
     "semantic_hash": ""
   },
+  "C:\\erp\\erp-app\\src\\services\\authEvents.ts": {
+    "mtime": 1779336865.4277914,
+    "ast_hash": "e284b97b6d981d43c731d20acd267a5f",
+    "semantic_hash": ""
+  },
   "C:\\erp\\erp-app\\src\\services\\authService.ts": {
-    "mtime": 1779305261.5360558,
-    "ast_hash": "477ac08f8e05749a3d2b6ff04fe22474",
+    "mtime": 1779336904.6845007,
+    "ast_hash": "17cb96b9fa62ed797bdb113e4ae67b57",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\services\\leaveService.ts": {

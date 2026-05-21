@@ -20,9 +20,10 @@ import {
   ArrowLeft, Users, Calendar, Clock, UserCheck,
   Plus, X, Car, MapPin, UserPlus, Info
 } from 'lucide-react-native';
-import { useAuth } from '@/context/AuthContext';
+import DateTimePicker from '@react-native-community/datetimepicker';
+import api from '@/services/api';
 
-const API_BASE_URL = 'https://oki.wchapel.com/api/v1';
+import { useAuth } from '@/context/AuthContext';
 
 interface VisitorLog {
   id: number;
@@ -54,6 +55,8 @@ export default function VisitorsScreen() {
   const [refreshing, setRefreshing] = useState(false);
   const [isModalVisible, setModalVisible] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showDatePicker, setShowDatePicker] = useState(false);
+  const [date, setDate] = useState(new Date());
 
   // Form State
   const [formData, setFormData] = useState({
@@ -70,19 +73,9 @@ export default function VisitorsScreen() {
     if (showLoader) setLoading(true);
 
     try {
-      const response = await fetch(`${API_BASE_URL}/security/visitors`, {
-        method: 'GET',
-        headers: {
-          'Accept': 'application/json',
-          'Authorization': `Bearer ${authToken}`,
-        },
-      });
-
-      if (response.ok) {
-        const result = await response.json();
-        if (result.success && result.data) {
-          setVisitors(result.data);
-        }
+      const response = await api.get('/security/visitors');
+      if (response.status === 200 && response.data?.success && response.data?.data) {
+        setVisitors(response.data.data);
       }
     } catch (error) {
       console.error('Error fetching visitors:', error);
@@ -102,7 +95,7 @@ export default function VisitorsScreen() {
   };
 
   const submitVisitor = async () => {
-    if (!formData.name || !formData.purpose) {
+    if (!formData.name || !formData.purpose || !formData.expected_arrival) {
       Alert.alert("Required Fields", "Please fill in the visitor's name and purpose.");
       return;
     }
@@ -110,20 +103,12 @@ export default function VisitorsScreen() {
     setIsSubmitting(true);
     try {
       // Endpoint assumption for creating a staff visitor
-      const response = await fetch(`${API_BASE_URL}/staff/visitors`, {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${authToken}`,
-        },
-        body: JSON.stringify({
-          ...formData,
-          number_of_people: parseInt(formData.number_of_people) || 1,
-        }),
+      const response = await api.post('/staff/visitors', {
+        ...formData,
+        number_of_people: parseInt(formData.number_of_people) || 1,
       });
 
-      if (response.ok) {
+      if (response.status === 200) {
         Alert.alert("Success", "Visitor registered successfully.");
         setModalVisible(false);
         setFormData({ name: '', phone: '', purpose: '', number_of_people: '1', vehicle_reg_number: '', expected_arrival: '' });
@@ -270,6 +255,20 @@ export default function VisitorsScreen() {
                   </Pressable>
                 );
               })}
+              {showDatePicker && (
+                <DateTimePicker
+                  value={date}
+                  mode="datetime"
+                  display="default"
+                  onChange={(event, selected) => {
+                    setShowDatePicker(false);
+                    if (selected) {
+                      setDate(selected);
+                      setFormData({ ...formData, expected_arrival: selected.toISOString() });
+                    }
+                  }}
+                />
+              )}
             </View>
           ) : (
             <View style={[styles.emptyContainer, { backgroundColor: theme.backgroundElement, borderColor: theme.border }]}>
@@ -369,7 +368,19 @@ export default function VisitorsScreen() {
                   onChangeText={(t) => setFormData({...formData, vehicle_reg_number: t})}
                 />
               </View>
-
+               <View style={styles.inputGroup}>
+                 <Text style={[styles.label, { color: theme.textSecondary }]}>Expected Arrival *</Text>
+                 <Pressable
+                   style={[styles.input, { justifyContent: 'center', backgroundColor: theme.background, borderColor: theme.border }]}
+                   onPress={() => setShowDatePicker(true)}
+                 >
+                   <Text style={{ color: formData.expected_arrival ? theme.text : theme.textSecondary }}>
+                     {formData.expected_arrival
+                       ? new Date(formData.expected_arrival).toLocaleString()
+                       : 'Select date & time'}
+                   </Text>
+                 </Pressable>
+               </View>
               <View style={styles.inputGroup}>
                 <Text style={[styles.label, { color: theme.textSecondary }]}>Purpose of Visit *</Text>
                 <TextInput
