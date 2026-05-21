@@ -33,7 +33,7 @@ import {
   Square,
   CheckSquare,
 } from 'lucide-react-native';
-import { ChatThread, StaffResource, DepartmentResource } from './types';
+import { ChatThread, StaffResource, DepartmentResource } from './_types';
 import { messageService } from '@/services/messageService';
 
 export default function MessagesScreen() {

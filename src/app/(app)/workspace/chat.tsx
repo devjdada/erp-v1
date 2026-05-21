@@ -33,7 +33,7 @@ import {
   X,
   FileCode,
 } from 'lucide-react-native';
-import { ChatMessage, ChatThread, ChatAttachment, EntityLink } from './types';
+import { ChatMessage, ChatThread, ChatAttachment, EntityLink } from './_types';
 import { messageService } from '@/services/messageService';
 
 export default function ChatScreen() {
