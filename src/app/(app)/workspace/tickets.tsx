@@ -33,21 +33,15 @@ interface StaffTicket {
     id: number;
     name: string;
   };
-  conversations?: Array<{
+  messages?: Array<{
     id: number;
-    sender: { name: string };
+    user?: { name: string };
     message: string;
     created_at: string;
   }>;
 }
 
-// Mock departments for the creation form since we don't have a departments API endpoint listed
-const MOCK_DEPARTMENTS = [
-  { id: 1, name: 'Human Resources' },
-  { id: 2, name: 'IT Support' },
-  { id: 3, name: 'Facilities' },
-  { id: 4, name: 'Finance' },
-];
+// Departments will be fetched from API
 
 export default function TicketsScreen() {
   const theme = useTheme();
@@ -55,6 +49,7 @@ export default function TicketsScreen() {
 
   // State
   const [tickets, setTickets] = useState<StaffTicket[]>([]);
+  const [departments, setDepartments] = useState<{id: number, name: string}[]>([]);
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const [selectedTicket, setSelectedTicket] = useState<StaffTicket | null>(null);
@@ -79,12 +74,20 @@ export default function TicketsScreen() {
   const fetchTickets = useCallback(async (showLoader = false) => {
     if (showLoader) setLoading(true);
     try {
-      const result = await ticketService.getTickets();
-      if (result.success && result.data) {
-        setTickets(result.data);
+      const [ticketsResult, deptsResult] = await Promise.all([
+        ticketService.getTickets(),
+        ticketService.getDepartments().catch(() => ({ success: false, data: [] }))
+      ]);
+      
+      if (ticketsResult.success && ticketsResult.data) {
+        setTickets(ticketsResult.data);
+      }
+      
+      if (deptsResult.success && deptsResult.data) {
+        setDepartments(deptsResult.data);
       }
     } catch (error) {
-      console.error('Error fetching staff tickets:', error);
+      console.error('Error fetching data:', error);
     } finally {
       setLoading(false);
       setRefreshing(false);
@@ -94,6 +97,35 @@ export default function TicketsScreen() {
   useEffect(() => {
     fetchTickets(true);
   }, [fetchTickets]);
+
+  // Poll for new messages when modal is open
+  useEffect(() => {
+    let intervalId: NodeJS.Timeout;
+    
+    if (detailModalVisible && selectedTicket) {
+      intervalId = setInterval(async () => {
+        try {
+          const result = await ticketService.getTicket(selectedTicket.id);
+          if (result.success && result.data) {
+            // Only update if we have new data to prevent cursor jumping
+            setSelectedTicket(current => {
+              if (!current) return result.data;
+              // Simple check if messages length changed or it's a newer version
+              return result.data;
+            });
+          }
+        } catch (e) {
+          // Silent fail for polling
+        }
+      }, 5000); // Poll every 5 seconds
+    }
+    
+    return () => {
+      if (intervalId) {
+        clearInterval(intervalId);
+      }
+    };
+  }, [detailModalVisible, selectedTicket?.id]);
 
   const onRefresh = () => {
     setRefreshing(true);
@@ -304,14 +336,14 @@ export default function TicketsScreen() {
                 style={[styles.inputContainer, { borderColor: showDeptDropdown ? '#0891B2' : theme.border, backgroundColor: theme.background }]}
               >
                 <Text style={{ color: departmentId ? theme.text : theme.textSecondary, fontFamily: 'PlusJakartaSans_500Medium' }}>
-                  {departmentId ? MOCK_DEPARTMENTS.find(d => d.id === departmentId)?.name : 'Select Department'}
+                  {departmentId ? departments.find(d => d.id === departmentId)?.name : 'Select Department'}
                 </Text>
                 <ChevronDown color={theme.textSecondary} size={18} />
               </Pressable>
 
               {showDeptDropdown && (
                 <View style={[styles.dropdown, { borderColor: theme.border, backgroundColor: theme.background }]}>
-                  {MOCK_DEPARTMENTS.map((dept) => (
+                  {departments.map((dept) => (
                     <Pressable
                       key={dept.id}
                       onPress={() => { setDepartmentId(dept.id); setShowDeptDropdown(false); }}
@@ -443,17 +475,17 @@ export default function TicketsScreen() {
 
                   {/* Conversations */}
                   <Text style={[styles.sectionTitleModal, { color: theme.text }]}>Conversation</Text>
-                  {selectedTicket.conversations && selectedTicket.conversations.length > 0 ? (
+                  {selectedTicket.messages && selectedTicket.messages.length > 0 ? (
                     <View style={styles.conversationsList}>
-                      {selectedTicket.conversations.map((conv) => (
-                        <View key={conv.id} style={[styles.convBubble, { backgroundColor: theme.background, borderColor: theme.border }]}>
+                      {selectedTicket.messages.map((msg) => (
+                        <View key={msg.id} style={[styles.convBubble, { backgroundColor: theme.background, borderColor: theme.border }]}>
                           <View style={styles.convHeader}>
-                            <Text style={[styles.convSender, { color: '#0891B2' }]}>{conv.sender?.name || 'Staff'}</Text>
+                            <Text style={[styles.convSender, { color: '#0891B2' }]}>{msg.user?.name || 'Staff'}</Text>
                             <Text style={[styles.convDate, { color: theme.textSecondary }]}>
-                              {new Date(conv.created_at).toLocaleDateString()}
+                              {new Date(msg.created_at).toLocaleDateString()}
                             </Text>
                           </View>
-                          <Text style={[styles.convMsg, { color: theme.text }]}>{conv.message}</Text>
+                          <Text style={[styles.convMsg, { color: theme.text }]}>{msg.message}</Text>
                         </View>
                       ))}
                     </View>

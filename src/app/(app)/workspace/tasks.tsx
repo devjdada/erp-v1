@@ -811,6 +811,7 @@ export default function TasksScreen() {
                   <Pressable
                     key={task.id}
                     style={styles.taskCard}
+                    onPress={() => router.push(`/workspace/task/${task.id}` as any)}
                   >
                     <View style={styles.cardHeader}>
                       <View style={[styles.priorityBadge, { backgroundColor: pStyle.bg }]}>

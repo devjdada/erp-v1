@@ -28,4 +28,9 @@ export const ticketService = {
     const response = await api.post(`/staff/tickets/${id}/message`, { message });
     return response.data;
   },
+
+  getDepartments: async () => {
+    const response = await api.get('/departments');
+    return response.data;
+  },
 };
