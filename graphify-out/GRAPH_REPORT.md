@@ -1,16 +1,16 @@
-# Graph Report - erp-app  (2026-05-21)
+# Graph Report - erp-app  (2026-05-23)
 
 ## Corpus Check
-- 85 files · ~103,395 words
+- 86 files · ~105,501 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 636 nodes · 1020 edges · 40 communities (32 shown, 8 thin omitted)
+- 642 nodes · 1034 edges · 39 communities (31 shown, 8 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 22 edges (avg confidence: 0.86)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `bf3ca983`
+- Built from commit: `07c491d3`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -18,7 +18,6 @@
 - [[_COMMUNITY_Community 0|Community 0]]
 - [[_COMMUNITY_Community 1|Community 1]]
 - [[_COMMUNITY_Community 2|Community 2]]
-- [[_COMMUNITY_Community 3|Community 3]]
 - [[_COMMUNITY_Community 4|Community 4]]
 - [[_COMMUNITY_Community 6|Community 6]]
 - [[_COMMUNITY_Community 7|Community 7]]
@@ -54,8 +53,8 @@
 - [[_COMMUNITY_Community 43|Community 43]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `useTheme()` - 73 edges
-2. `useAuth()` - 47 edges
+1. `useTheme()` - 76 edges
+2. `useAuth()` - 49 edges
 3. `dependencies` - 35 edges
 4. `useTheme` - 21 edges
 5. `expo` - 17 edges
@@ -85,31 +84,27 @@
 - **Theme System Integration** — themed_text_themedtext, themed_view_themedview, use_theme_usetheme, themecontext_themeprovider [INFERRED 0.95]
 - **User Entry and Redirection Flow** — onboarding_index_onboardingscreen, login_loginscreen, register_registerscreen [INFERRED 0.85]
 
-## Communities (40 total, 8 thin omitted)
+## Communities (39 total, 8 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.2
 Nodes (11): expo, icon, ios, name, orientation, plugins, scheme, slug (+3 more)
 
 ### Community 1 - "Community 1"
-Cohesion: 0.09
-Nodes (26): AppContent(), RootLayout(), SettingsScreen(), styles, AuthLayout(), CustomDrawerContent(), styles, Colors (+18 more)
+Cohesion: 0.06
+Nodes (55): AppContent(), AppLayout(), RootLayout(), SettingsScreen(), styles, AuthLayout(), Collapsible, CustomDrawerContent() (+47 more)
 
 ### Community 2 - "Community 2"
 Cohesion: 0.06
 Nodes (34): dependencies, axios, expo, expo-constants, expo-device, expo-font, expo-glass-effect, @expo-google-fonts/plus-jakarta-sans (+26 more)
-
-### Community 3 - "Community 3"
-Cohesion: 0.12
-Nodes (27): Collapsible, HintRowProps, styles, styles, ThemedText(), ThemedTextProps, ThemedView(), ThemedViewProps (+19 more)
 
 ### Community 4 - "Community 4"
 Cohesion: 0.06
 Nodes (48): BM25 Search Algorithm, UI/UX Search Function, Stack Search Function, generate_design_system Function, DesignSystemGenerator Class, persist_design_system Function, BM25, detect_domain() (+40 more)
 
 ### Community 6 - "Community 6"
-Cohesion: 0.38
-Nodes (5): CreateTicketPayload, ticketService, MOCK_DEPARTMENTS, StaffTicket, styles
+Cohesion: 0.27
+Nodes (7): CreateTicketPayload, ticketService, ICTTicket, MOCK_DEPARTMENTS, StaffTicket, styles, TicketsScreen()
 
 ### Community 7 - "Community 7"
 Cohesion: 0.15
@@ -173,7 +168,7 @@ Nodes (23): 1. Color Palette, 1. Get Chat Threads, 2. Get Thread Messages, 2. Ty
 
 ### Community 31 - "Community 31"
 Cohesion: 0.05
-Nodes (59): AppLayout(), LoginScreen(), styles, RegisterScreen(), styles, ERPButton(), styles, ERPInput() (+51 more)
+Nodes (49): useAuth(), useTheme(), getStyles(), SmartItem(), TaskDetailScreen(), Collapsible(), AnnouncementItem, AnnouncementsScreen() (+41 more)
 
 ### Community 32 - "Community 32"
 Cohesion: 0.18
@@ -192,12 +187,12 @@ Cohesion: 0.06
 Nodes (28): AlertButton, AlertContext, AlertContextType, AlertOptions, AlertType, styles, useAlert(), AuthContext (+20 more)
 
 ### Community 39 - "Community 39"
-Cohesion: 0.13
-Nodes (8): leaveService, Colleague, LeaveBalance, LeaveRequestItem, MultiDatePickerProps, pickerStyles, styles, TODAY_STR
+Cohesion: 0.12
+Nodes (9): leaveService, Colleague, LeaveBalance, LeaveRequestItem, LeaveScreen(), MultiDatePickerProps, pickerStyles, styles (+1 more)
 
 ### Community 42 - "Community 42"
-Cohesion: 0.1
-Nodes (26): EntryScreen(), ERPButtonProps, ERPInputProps, Design System Master, ERPButton, ERPInput, Expo Router Type Declarations, FleetVehicles() (+18 more)
+Cohesion: 0.08
+Nodes (34): EntryScreen(), LoginScreen(), styles, RegisterScreen(), styles, ERPButton(), ERPButtonProps, styles (+26 more)
 
 ### Community 43 - "Community 43"
 Cohesion: 0.1
@@ -212,16 +207,16 @@ Nodes (20): Additional Forbidden Patterns, Anti-Patterns (Do NOT Use), Buttons, 
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `scripts` connect `Community 27` to `Community 0`, `Community 24`, `Community 28`, `Community 29`?**
-  _High betweenness centrality (0.161) - this node is a cross-community bridge._
-- **Why does `useTheme()` connect `Community 31` to `Community 32`, `Community 1`, `Community 3`, `Community 38`, `Community 6`, `Community 39`, `Community 42`?**
-  _High betweenness centrality (0.150) - this node is a cross-community bridge._
+  _High betweenness centrality (0.160) - this node is a cross-community bridge._
+- **Why does `useTheme()` connect `Community 31` to `Community 32`, `Community 1`, `Community 38`, `Community 6`, `Community 39`, `Community 42`?**
+  _High betweenness centrality (0.157) - this node is a cross-community bridge._
 - **Why does `path` connect `Community 4` to `Community 24`?**
-  _High betweenness centrality (0.118) - this node is a cross-community bridge._
+  _High betweenness centrality (0.117) - this node is a cross-community bridge._
 - **What connects `StaffTicket`, `MOCK_DEPARTMENTS`, `failedQueue` to the rest of the system?**
   _285 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 1` be split into smaller, more focused modules?**
-  _Cohesion score 0.09 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
   _Cohesion score 0.06 - nodes in this community are weakly interconnected._
-- **Should `Community 3` be split into smaller, more focused modules?**
-  _Cohesion score 0.12 - nodes in this community are weakly interconnected._
+- **Should `Community 4` be split into smaller, more focused modules?**
+  _Cohesion score 0.06 - nodes in this community are weakly interconnected._

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, createElement } from 'react';
 import {
   StyleSheet,
   View,
@@ -108,7 +108,7 @@ export default function VisitorsScreen() {
         number_of_people: parseInt(formData.number_of_people) || 1,
       });
 
-      if (response.status === 200) {
+      if (response.status === 200 || response.status === 201) {
         Alert.alert("Success", "Visitor registered successfully.");
         setModalVisible(false);
         setFormData({ name: '', phone: '', purpose: '', number_of_people: '1', vehicle_reg_number: '', expected_arrival: '' });
@@ -368,19 +368,47 @@ export default function VisitorsScreen() {
                   onChangeText={(t) => setFormData({...formData, vehicle_reg_number: t})}
                 />
               </View>
-               <View style={styles.inputGroup}>
-                 <Text style={[styles.label, { color: theme.textSecondary }]}>Expected Arrival *</Text>
-                 <Pressable
-                   style={[styles.input, { justifyContent: 'center', backgroundColor: theme.background, borderColor: theme.border }]}
-                   onPress={() => setShowDatePicker(true)}
-                 >
-                   <Text style={{ color: formData.expected_arrival ? theme.text : theme.textSecondary }}>
-                     {formData.expected_arrival
-                       ? new Date(formData.expected_arrival).toLocaleString()
-                       : 'Select date & time'}
-                   </Text>
-                 </Pressable>
-               </View>
+                <View style={styles.inputGroup}>
+                  <Text style={[styles.label, { color: theme.textSecondary }]}>Expected Arrival *</Text>
+                  {Platform.OS === 'web' ? (
+                    createElement('input', {
+                      type: 'datetime-local',
+                      value: formData.expected_arrival ? new Date(new Date(formData.expected_arrival).getTime() - (new Date().getTimezoneOffset() * 60000)).toISOString().slice(0, 16) : '',
+                      style: {
+                        backgroundColor: theme.background,
+                        color: theme.text,
+                        borderColor: theme.border,
+                        borderWidth: 1,
+                        borderRadius: 12,
+                        padding: 16,
+                        fontFamily: 'PlusJakartaSans_600SemiBold',
+                        fontSize: 15,
+                        width: '100%',
+                        boxSizing: 'border-box'
+                      },
+                      onChange: (e: any) => {
+                        if (e.target.value) {
+                          const selected = new Date(e.target.value);
+                          setDate(selected);
+                          setFormData({ ...formData, expected_arrival: selected.toISOString() });
+                        } else {
+                          setFormData({ ...formData, expected_arrival: '' });
+                        }
+                      }
+                    })
+                  ) : (
+                    <Pressable
+                      style={[styles.input, { justifyContent: 'center', backgroundColor: theme.background, borderColor: theme.border }]}
+                      onPress={() => setShowDatePicker(true)}
+                    >
+                      <Text style={{ color: formData.expected_arrival ? theme.text : theme.textSecondary }}>
+                        {formData.expected_arrival
+                          ? new Date(formData.expected_arrival).toLocaleString()
+                          : 'Select date & time'}
+                      </Text>
+                    </Pressable>
+                  )}
+                </View>
               <View style={styles.inputGroup}>
                 <Text style={[styles.label, { color: theme.textSecondary }]}>Purpose of Visit *</Text>
                 <TextInput

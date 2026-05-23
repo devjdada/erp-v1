@@ -9,23 +9,28 @@ import {
   ActivityIndicator,
   RefreshControl,
   Alert,
+  Modal,
+  TextInput,
 } from 'react-native';
 import { useTheme } from '@/hooks/use-theme';
 import { useRouter } from 'expo-router';
-import { ArrowLeft, Wallet, ShieldAlert, BadgeDollarSign, Calendar, TrendingUp } from 'lucide-react-native';
+import { ArrowLeft, Wallet, ShieldAlert, BadgeDollarSign, Calendar, TrendingUp, Plus, X } from 'lucide-react-native';
 import { useAuth } from '@/context/AuthContext';
-
-const API_BASE_URL = 'https://oki.wchapel.com/api/v1';
+import { loanService } from '@/services/loanService';
 
 interface LoanRecord {
   id: number;
   amount: number;
   interest_rate: number;
-  repayment_term: number; // months
-  purpose: string;
+  tenure_months?: number;
+  repayment_term?: number; // months
+  purpose?: string;
+  reason?: string;
   status: 'pending' | 'approved' | 'rejected' | 'completed' | string;
   monthly_deduction?: number;
+  monthly_installment?: number;
   paid_amount?: number;
+  remaining_balance?: number;
   balance_amount?: number;
   created_at: string;
 }
@@ -33,31 +38,31 @@ interface LoanRecord {
 export default function LoansScreen() {
   const theme = useTheme();
   const router = useRouter();
-  const { authToken } = useAuth();
 
   // State
   const [loans, setLoans] = useState<LoanRecord[]>([]);
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
 
+  // Modal State
+  const [showModal, setShowModal] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [amount, setAmount] = useState('');
+  const [tenure, setTenure] = useState('');
+  const [reason, setReason] = useState('');
+
   const fetchLoans = useCallback(async (showLoader = false) => {
-    if (!authToken) return;
     if (showLoader) setLoading(true);
 
     try {
-      const response = await fetch(`${API_BASE_URL}/loans`, {
-        method: 'GET',
-        headers: {
-          'Accept': 'application/json',
-          'Authorization': `Bearer ${authToken}`,
-        },
-      });
-
-      if (response.ok) {
-        const result = await response.json();
-        if (result.success && result.data) {
-          setLoans(result.data);
-        }
+      const result = await loanService.getLoans();
+      if (result.success && result.data) {
+        setLoans(result.data);
+      } else if (Array.isArray(result)) {
+        // Fallback if the API returns an array directly
+        setLoans(result);
+      } else if (result.data) {
+        setLoans(result.data);
       }
     } catch (error) {
       console.error('Error fetching loans:', error);
@@ -65,7 +70,7 @@ export default function LoansScreen() {
       setLoading(false);
       setRefreshing(false);
     }
-  }, [authToken]);
+  }, []);
 
   useEffect(() => {
     fetchLoans(true);
@@ -95,14 +100,40 @@ export default function LoansScreen() {
     return new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(amount);
   };
 
+  const handleApply = async () => {
+    if (!amount || !tenure) {
+      Alert.alert('Error', 'Please fill in all required fields.');
+      return;
+    }
+
+    setSubmitting(true);
+    try {
+      await loanService.applyForLoan({
+        amount: Number(amount),
+        tenure_months: Number(tenure),
+        reason: reason,
+      });
+      Alert.alert('Success', 'Loan request submitted successfully.');
+      setShowModal(false);
+      setAmount('');
+      setTenure('');
+      setReason('');
+      fetchLoans(true);
+    } catch (error: any) {
+      Alert.alert('Error', error?.response?.data?.message || 'Failed to submit loan request.');
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   // Compute summary stats
   const totalLoanAmount = loans
     .filter((l) => l.status === 'approved' || l.status === 'completed')
-    .reduce((sum, l) => sum + l.amount, 0);
+    .reduce((sum, l) => sum + Number(l.amount || 0), 0);
 
   const totalBalance = loans
     .filter((l) => l.status === 'approved')
-    .reduce((sum, l) => sum + (l.balance_amount !== undefined ? l.balance_amount : l.amount), 0);
+    .reduce((sum, l) => sum + Number(l.remaining_balance !== undefined ? l.remaining_balance : (l.balance_amount !== undefined ? l.balance_amount : l.amount)), 0);
 
   return (
     <SafeAreaView style={[styles.safeArea, { backgroundColor: theme.background }]}>
@@ -112,7 +143,9 @@ export default function LoansScreen() {
           <ArrowLeft color={theme.text} size={24} />
         </Pressable>
         <Text style={[styles.headerTitle, { color: theme.text }]}>Loans & Advances</Text>
-        <View style={{ width: 40 }} />
+        <Pressable onPress={() => setShowModal(true)} style={styles.addButton}>
+          <Plus color={theme.primary} size={24} />
+        </Pressable>
       </View>
 
       {loading ? (
@@ -148,8 +181,12 @@ export default function LoansScreen() {
                 const statusColor = getStatusColor(loan.status);
                 const statusBg = getStatusBg(loan.status);
                 const paid = loan.paid_amount || 0;
-                const outstanding = loan.balance_amount !== undefined ? loan.balance_amount : loan.amount - paid;
-                const progress = loan.amount > 0 ? paid / loan.amount : 0;
+                const outstanding = loan.remaining_balance !== undefined ? loan.remaining_balance : (loan.balance_amount !== undefined ? loan.balance_amount : loan.amount - paid);
+                const progress = loan.amount > 0 ? ((loan.amount - outstanding) / loan.amount) : 0;
+
+                const tenureValue = loan.tenure_months || loan.repayment_term;
+                const purposeValue = loan.reason || loan.purpose || 'Loan request';
+                const monthlyInstallment = loan.monthly_installment || loan.monthly_deduction || (loan.amount / (tenureValue || 1));
 
                 return (
                   <View
@@ -162,7 +199,7 @@ export default function LoansScreen() {
                           {formatCurrency(loan.amount)}
                         </Text>
                         <Text style={[styles.loanPurpose, { color: theme.textSecondary }]}>
-                          {loan.purpose}
+                          {purposeValue}
                         </Text>
                       </View>
                       <View style={[styles.statusBadge, { backgroundColor: statusBg }]}>
@@ -173,22 +210,24 @@ export default function LoansScreen() {
                     </View>
 
                     <View style={[styles.detailsSection, { borderColor: theme.border }]}>
-                      <View style={styles.detailRow}>
-                        <Text style={[styles.detailLabel, { color: theme.textSecondary }]}>INTEREST RATE:</Text>
-                        <Text style={[styles.detailValue, { color: theme.text }]}>
-                          {loan.interest_rate}%
-                        </Text>
-                      </View>
+                      {loan.interest_rate !== undefined && (
+                        <View style={styles.detailRow}>
+                          <Text style={[styles.detailLabel, { color: theme.textSecondary }]}>INTEREST RATE:</Text>
+                          <Text style={[styles.detailValue, { color: theme.text }]}>
+                            {loan.interest_rate}%
+                          </Text>
+                        </View>
+                      )}
                       <View style={styles.detailRow}>
                         <Text style={[styles.detailLabel, { color: theme.textSecondary }]}>REPAYMENT TERM:</Text>
                         <Text style={[styles.detailValue, { color: theme.text }]}>
-                          {loan.repayment_term} Months
+                          {tenureValue} Months
                         </Text>
                       </View>
                       <View style={styles.detailRow}>
                         <Text style={[styles.detailLabel, { color: theme.textSecondary }]}>MONTHLY DEDUCTION:</Text>
                         <Text style={[styles.detailValue, { color: theme.text }]}>
-                          {formatCurrency(loan.monthly_deduction || (loan.amount * (1 + loan.interest_rate / 100)) / loan.repayment_term)}
+                          {formatCurrency(monthlyInstallment)}
                         </Text>
                       </View>
                     </View>
@@ -197,7 +236,7 @@ export default function LoansScreen() {
                       <View style={styles.progressContainer}>
                         <View style={styles.progressHeader}>
                           <Text style={[styles.progressText, { color: theme.textSecondary }]}>
-                            Paid: {formatCurrency(paid)}
+                            Paid: {formatCurrency(loan.amount - outstanding)}
                           </Text>
                           <Text style={[styles.progressText, { color: theme.textSecondary }]}>
                             Left: {formatCurrency(outstanding)}
@@ -207,7 +246,7 @@ export default function LoansScreen() {
                           <View
                             style={[
                               styles.progressBarFill,
-                              { backgroundColor: theme.primary, width: `${Math.min(100, progress * 100)}%` },
+                              { backgroundColor: theme.primary, width: `${Math.min(100, Math.max(0, progress * 100))}%` },
                             ]}
                           />
                         </View>
@@ -235,6 +274,103 @@ export default function LoansScreen() {
           )}
         </ScrollView>
       )}
+
+      {/* Apply Modal */}
+      <Modal visible={showModal} animationType="slide" transparent={true}>
+        <View style={styles.modalOverlay}>
+          <View style={[styles.modalContent, { backgroundColor: theme.backgroundElement }]}>
+            <View style={styles.modalHeader}>
+              <Text style={[styles.modalTitle, { color: theme.text }]}>Request Facility</Text>
+              <Pressable onPress={() => setShowModal(false)} style={styles.closeButton}>
+                <X color={theme.text} size={24} />
+              </Pressable>
+            </View>
+            <Text style={[styles.modalSubtitle, { color: theme.textSecondary }]}>
+              Submit a request for a financial loan facility.
+            </Text>
+
+            <ScrollView contentContainerStyle={styles.modalScroll}>
+              <View style={styles.inputGroup}>
+                <Text style={[styles.inputLabel, { color: theme.textSecondary }]}>AMOUNT REQUESTED (₦)</Text>
+                <TextInput
+                  style={[styles.input, { backgroundColor: theme.background, color: theme.text }]}
+                  placeholder="0.00"
+                  placeholderTextColor={theme.textSecondary}
+                  keyboardType="numeric"
+                  value={amount}
+                  onChangeText={setAmount}
+                />
+              </View>
+
+              <View style={styles.inputGroup}>
+                <Text style={[styles.inputLabel, { color: theme.textSecondary }]}>REPAYMENT PERIOD (MONTHS)</Text>
+                <View style={[styles.pickerContainer, { backgroundColor: theme.background }]}>
+                  {['3', '6', '12', '18', '24'].map((months) => (
+                    <Pressable
+                      key={months}
+                      style={[
+                        styles.pickerItem,
+                        tenure === months && { backgroundColor: theme.primary },
+                      ]}
+                      onPress={() => setTenure(months)}
+                    >
+                      <Text
+                        style={[
+                          styles.pickerItemText,
+                          { color: tenure === months ? '#FFF' : theme.text },
+                        ]}
+                      >
+                        {months}
+                      </Text>
+                    </Pressable>
+                  ))}
+                </View>
+              </View>
+
+              <View style={styles.inputGroup}>
+                <Text style={[styles.inputLabel, { color: theme.textSecondary }]}>REASON FOR REQUEST</Text>
+                <TextInput
+                  style={[
+                    styles.input,
+                    styles.textArea,
+                    { backgroundColor: theme.background, color: theme.text },
+                  ]}
+                  placeholder="Briefly describe why you need this facility..."
+                  placeholderTextColor={theme.textSecondary}
+                  multiline={true}
+                  numberOfLines={4}
+                  value={reason}
+                  onChangeText={setReason}
+                />
+              </View>
+            </ScrollView>
+
+            <View style={styles.modalFooter}>
+              <Pressable
+                style={[styles.modalButton, styles.cancelButton, { backgroundColor: theme.background }]}
+                onPress={() => setShowModal(false)}
+              >
+                <Text style={[styles.modalButtonText, { color: theme.text }]}>Cancel</Text>
+              </Pressable>
+              <Pressable
+                style={[
+                  styles.modalButton,
+                  styles.submitButton,
+                  { backgroundColor: theme.primary, opacity: submitting ? 0.7 : 1 },
+                ]}
+                onPress={handleApply}
+                disabled={submitting}
+              >
+                {submitting ? (
+                  <ActivityIndicator color="#FFF" size="small" />
+                ) : (
+                  <Text style={[styles.modalButtonText, { color: '#FFF' }]}>Submit Request</Text>
+                )}
+              </Pressable>
+            </View>
+          </View>
+        </View>
+      </Modal>
     </SafeAreaView>
   );
 }
@@ -254,6 +390,10 @@ const styles = StyleSheet.create({
   backButton: {
     padding: 8,
     marginLeft: -8,
+  },
+  addButton: {
+    padding: 8,
+    marginRight: -8,
   },
   headerTitle: {
     fontFamily: 'PlusJakartaSans_700Bold',
@@ -395,4 +535,101 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     lineHeight: 18,
   },
+  // Modal styles
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    justifyContent: 'flex-end',
+  },
+  modalContent: {
+    borderTopLeftRadius: 32,
+    borderTopRightRadius: 32,
+    padding: 24,
+    maxHeight: '80%',
+  },
+  modalHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 8,
+  },
+  modalTitle: {
+    fontFamily: 'PlusJakartaSans_800ExtraBold',
+    fontSize: 24,
+  },
+  closeButton: {
+    padding: 8,
+    marginRight: -8,
+  },
+  modalSubtitle: {
+    fontFamily: 'PlusJakartaSans_500Medium',
+    fontSize: 14,
+    marginBottom: 24,
+  },
+  modalScroll: {
+    paddingBottom: 24,
+  },
+  inputGroup: {
+    marginBottom: 20,
+  },
+  inputLabel: {
+    fontFamily: 'PlusJakartaSans_700Bold',
+    fontSize: 11,
+    letterSpacing: 0.5,
+    marginBottom: 8,
+  },
+  input: {
+    fontFamily: 'PlusJakartaSans_600SemiBold',
+    fontSize: 16,
+    borderRadius: 16,
+    padding: 16,
+  },
+  textArea: {
+    height: 120,
+    textAlignVertical: 'top',
+  },
+  pickerContainer: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 8,
+    borderRadius: 16,
+    padding: 8,
+  },
+  pickerItem: {
+    paddingVertical: 10,
+    paddingHorizontal: 16,
+    borderRadius: 12,
+  },
+  pickerItemText: {
+    fontFamily: 'PlusJakartaSans_700Bold',
+    fontSize: 14,
+  },
+  modalFooter: {
+    flexDirection: 'row',
+    gap: 12,
+    paddingTop: 16,
+  },
+  modalButton: {
+    flex: 1,
+    padding: 16,
+    borderRadius: 16,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  cancelButton: {
+    borderWidth: 1,
+    borderColor: 'transparent',
+  },
+  submitButton: {
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    elevation: 4,
+  },
+  modalButtonText: {
+    fontFamily: 'PlusJakartaSans_700Bold',
+    fontSize: 15,
+  },
 });
+

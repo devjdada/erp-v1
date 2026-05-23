@@ -10,7 +10,7 @@
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\expo-env.d.ts": {
-    "mtime": 1779362343.5042665,
+    "mtime": 1779523596.4470632,
     "ast_hash": "0dd9dccdb4b08595bc83df70d6a154d3",
     "semantic_hash": ""
   },
@@ -55,8 +55,8 @@
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\.expo\\types\\router.d.ts": {
-    "mtime": 1779362367.385361,
-    "ast_hash": "ec89074a9d06f985f5ed06a2e0ef7d89",
+    "mtime": 1779523597.4511354,
+    "ast_hash": "f2edaca3c623026abb20c2db6bd7c4ae",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\.vscode\\extensions.json": {
@@ -180,13 +180,13 @@
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\app\\(app)\\workspace\\tasks.tsx": {
-    "mtime": 1779309080.62156,
-    "ast_hash": "7077d5fdd93cc70158927f680a0a45d4",
+    "mtime": 1779518683.5990067,
+    "ast_hash": "d0a769893c5c9fb84b0c52b631bbea6c",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\app\\(app)\\workspace\\tickets.tsx": {
-    "mtime": 1779359811.7141776,
-    "ast_hash": "798756f33db6197ac872af55679b7da6",
+    "mtime": 1779372917.641033,
+    "ast_hash": "260aa5b519599211ef957363b582cf7f",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\app\\(app)\\workspace\\tools.tsx": {
@@ -205,13 +205,18 @@
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\app\\(app)\\workspace\\_layout.tsx": {
-    "mtime": 1779236338.4167385,
-    "ast_hash": "c150b6c2708bedbb4575cebac9a04cfd",
+    "mtime": 1779523490.8537233,
+    "ast_hash": "c0b45d06b5ff7b8c1ce3c347872021b4",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\app\\(app)\\workspace\\_types.ts": {
     "mtime": 1779262415.761515,
     "ast_hash": "d30b753f1466f06c31b6629630d6cf2e",
+    "semantic_hash": ""
+  },
+  "C:\\erp\\erp-app\\src\\app\\(app)\\workspace\\task\\[id].tsx": {
+    "mtime": 1779521222.1302578,
+    "ast_hash": "ba8402d76b4ceaa2fb86176356458566",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\app\\(auth)\\login.tsx": {
@@ -365,8 +370,8 @@
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\services\\ticketService.ts": {
-    "mtime": 1779359510.7599611,
-    "ast_hash": "5106dde0381c5686912d0dd1db8490c1",
+    "mtime": 1779372799.0924613,
+    "ast_hash": "24e6e3b358122716ae6062010bf52234",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\services\\workspaceService.ts": {

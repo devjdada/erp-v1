@@ -87,157 +87,292 @@
   },
   "nodes": [
     {
-      "label": "_types.ts",
+      "label": "_layout.tsx",
       "file_type": "code",
-      "source_file": "_types.ts",
+      "source_file": "app/(app)/workspace/_layout.tsx",
       "source_location": "L1",
-      "id": "types_ts",
-      "community": 32,
-      "norm_label": "_types.ts"
+      "id": "app_app_workspace_layout_tsx",
+      "community": 31,
+      "norm_label": "_layout.tsx"
     },
     {
-      "label": "ChatAttachment",
+      "label": "WorkspaceLayout()",
       "file_type": "code",
-      "source_file": "_types.ts",
+      "source_file": "app/(app)/workspace/_layout.tsx",
+      "source_location": "L8",
+      "id": "workspace_layout_workspacelayout",
+      "community": 31,
+      "norm_label": "workspacelayout()"
+    },
+    {
+      "label": "[id].tsx",
+      "file_type": "code",
+      "source_file": "app/(app)/workspace/task/[id].tsx",
       "source_location": "L1",
-      "id": "workspace_types_chatattachment",
-      "community": 32,
-      "norm_label": "chatattachment"
+      "id": "app_app_workspace_task_id_tsx",
+      "community": 31,
+      "norm_label": "[id].tsx"
     },
     {
-      "label": "EntityLink",
+      "label": "TaskDetailScreen()",
       "file_type": "code",
-      "source_file": "_types.ts",
-      "source_location": "L7",
-      "id": "workspace_types_entitylink",
-      "community": 32,
-      "norm_label": "entitylink"
+      "source_file": "app/(app)/workspace/task/[id].tsx",
+      "source_location": "L37",
+      "id": "task_id_taskdetailscreen",
+      "community": 31,
+      "norm_label": "taskdetailscreen()"
     },
     {
-      "label": "ChatMessageMetadata",
+      "label": "SmartItem()",
       "file_type": "code",
-      "source_file": "_types.ts",
-      "source_location": "L13",
-      "id": "workspace_types_chatmessagemetadata",
-      "community": 32,
-      "norm_label": "chatmessagemetadata"
+      "source_file": "app/(app)/workspace/task/[id].tsx",
+      "source_location": "L563",
+      "id": "task_id_smartitem",
+      "community": 31,
+      "norm_label": "smartitem()"
     },
     {
-      "label": "ChatMessage",
+      "label": "getStyles()",
       "file_type": "code",
-      "source_file": "_types.ts",
-      "source_location": "L17",
-      "id": "workspace_types_chatmessage",
-      "community": 32,
-      "norm_label": "chatmessage"
+      "source_file": "app/(app)/workspace/task/[id].tsx",
+      "source_location": "L578",
+      "id": "task_id_getstyles",
+      "community": 31,
+      "norm_label": "getstyles()"
     },
     {
-      "label": "ChatParticipant",
+      "label": "tasks.tsx",
       "file_type": "code",
-      "source_file": "_types.ts",
-      "source_location": "L35",
-      "id": "workspace_types_chatparticipant",
-      "community": 32,
-      "norm_label": "chatparticipant"
-    },
-    {
-      "label": "ChatThread",
-      "file_type": "code",
-      "source_file": "_types.ts",
-      "source_location": "L50",
-      "id": "workspace_types_chatthread",
-      "community": 32,
-      "norm_label": "chatthread"
-    },
-    {
-      "label": "StaffResource",
-      "file_type": "code",
-      "source_file": "_types.ts",
-      "source_location": "L70",
-      "id": "workspace_types_staffresource",
-      "community": 32,
-      "norm_label": "staffresource"
-    },
-    {
-      "label": "DepartmentResource",
-      "file_type": "code",
-      "source_file": "_types.ts",
-      "source_location": "L77",
-      "id": "workspace_types_departmentresource",
-      "community": 32,
-      "norm_label": "departmentresource"
-    },
-    {
-      "label": "chat.tsx",
-      "file_type": "code",
-      "source_file": "chat.tsx",
+      "source_file": "app/(app)/workspace/tasks.tsx",
       "source_location": "L1",
-      "id": "chat_tsx",
-      "community": 32,
-      "norm_label": "chat.tsx"
+      "id": "app_app_workspace_tasks_tsx",
+      "community": 31,
+      "norm_label": "tasks.tsx"
     },
     {
-      "label": "ChatScreen()",
+      "label": "User",
       "file_type": "code",
-      "source_file": "chat.tsx",
-      "source_location": "L39",
-      "id": "workspace_chat_chatscreen",
-      "community": 32,
-      "norm_label": "chatscreen()"
+      "source_file": "app/(app)/workspace/tasks.tsx",
+      "source_location": "L37",
+      "id": "workspace_tasks_user",
+      "community": 31,
+      "norm_label": "user"
     },
     {
-      "label": "styles",
+      "label": "TaskRecord",
       "file_type": "code",
-      "source_file": "chat.tsx",
-      "source_location": "L739",
-      "id": "workspace_chat_styles",
-      "community": 32,
-      "norm_label": "styles"
+      "source_file": "app/(app)/workspace/tasks.tsx",
+      "source_location": "L43",
+      "id": "workspace_tasks_taskrecord",
+      "community": 31,
+      "norm_label": "taskrecord"
     },
     {
-      "label": "messages.tsx",
+      "label": "TasksScreen()",
       "file_type": "code",
-      "source_file": "messages.tsx",
-      "source_location": "L1",
-      "id": "messages_tsx",
-      "community": 32,
-      "norm_label": "messages.tsx"
-    },
-    {
-      "label": "MessagesScreen()",
-      "file_type": "code",
-      "source_file": "messages.tsx",
-      "source_location": "L39",
-      "id": "workspace_messages_messagesscreen",
-      "community": 32,
-      "norm_label": "messagesscreen()"
-    },
-    {
-      "label": "styles",
-      "file_type": "code",
-      "source_file": "messages.tsx",
-      "source_location": "L751",
-      "id": "workspace_messages_styles",
-      "community": 32,
-      "norm_label": "styles"
+      "source_file": "app/(app)/workspace/tasks.tsx",
+      "source_location": "L58",
+      "id": "workspace_tasks_tasksscreen",
+      "community": 31,
+      "norm_label": "tasksscreen()"
     },
     {
       "label": "tickets.tsx",
       "file_type": "code",
       "source_file": "app/(app)/workspace/tickets.tsx",
       "source_location": "L1",
+      "id": "app_app_workspace_tickets_tsx",
       "community": 6,
-      "norm_label": "tickets.tsx",
-      "id": "app_app_workspace_tickets_tsx"
+      "norm_label": "tickets.tsx"
     },
     {
       "label": "StaffTicket",
       "file_type": "code",
       "source_file": "app/(app)/workspace/tickets.tsx",
       "source_location": "L22",
+      "id": "workspace_tickets_staffticket",
       "community": 6,
-      "norm_label": "staffticket",
-      "id": "workspace_tickets_staffticket"
+      "norm_label": "staffticket"
+    },
+    {
+      "label": "TicketsScreen()",
+      "file_type": "code",
+      "source_file": "app/(app)/workspace/tickets.tsx",
+      "source_location": "L46",
+      "id": "workspace_tickets_ticketsscreen",
+      "community": 6,
+      "norm_label": "ticketsscreen()"
+    },
+    {
+      "label": "styles",
+      "file_type": "code",
+      "source_file": "app/(app)/workspace/tickets.tsx",
+      "source_location": "L537",
+      "id": "workspace_tickets_styles",
+      "community": 6,
+      "norm_label": "styles"
+    },
+    {
+      "label": "ticketService.ts",
+      "file_type": "code",
+      "source_file": "services/ticketService.ts",
+      "source_location": "L1",
+      "id": "services_ticketservice_ts",
+      "community": 6,
+      "norm_label": "ticketservice.ts"
+    },
+    {
+      "label": "CreateTicketPayload",
+      "file_type": "code",
+      "source_file": "services/ticketService.ts",
+      "source_location": "L3",
+      "id": "services_ticketservice_createticketpayload",
+      "community": 6,
+      "norm_label": "createticketpayload"
+    },
+    {
+      "label": "ticketService",
+      "file_type": "code",
+      "source_file": "services/ticketService.ts",
+      "source_location": "L11",
+      "id": "services_ticketservice_ticketservice",
+      "community": 6,
+      "norm_label": "ticketservice"
+    },
+    {
+      "label": "_types.ts",
+      "file_type": "code",
+      "source_file": "_types.ts",
+      "source_location": "L1",
+      "community": 32,
+      "norm_label": "_types.ts",
+      "id": "types_ts"
+    },
+    {
+      "label": "ChatAttachment",
+      "file_type": "code",
+      "source_file": "_types.ts",
+      "source_location": "L1",
+      "community": 32,
+      "norm_label": "chatattachment",
+      "id": "workspace_types_chatattachment"
+    },
+    {
+      "label": "EntityLink",
+      "file_type": "code",
+      "source_file": "_types.ts",
+      "source_location": "L7",
+      "community": 32,
+      "norm_label": "entitylink",
+      "id": "workspace_types_entitylink"
+    },
+    {
+      "label": "ChatMessageMetadata",
+      "file_type": "code",
+      "source_file": "_types.ts",
+      "source_location": "L13",
+      "community": 32,
+      "norm_label": "chatmessagemetadata",
+      "id": "workspace_types_chatmessagemetadata"
+    },
+    {
+      "label": "ChatMessage",
+      "file_type": "code",
+      "source_file": "_types.ts",
+      "source_location": "L17",
+      "community": 32,
+      "norm_label": "chatmessage",
+      "id": "workspace_types_chatmessage"
+    },
+    {
+      "label": "ChatParticipant",
+      "file_type": "code",
+      "source_file": "_types.ts",
+      "source_location": "L35",
+      "community": 32,
+      "norm_label": "chatparticipant",
+      "id": "workspace_types_chatparticipant"
+    },
+    {
+      "label": "ChatThread",
+      "file_type": "code",
+      "source_file": "_types.ts",
+      "source_location": "L50",
+      "community": 32,
+      "norm_label": "chatthread",
+      "id": "workspace_types_chatthread"
+    },
+    {
+      "label": "StaffResource",
+      "file_type": "code",
+      "source_file": "_types.ts",
+      "source_location": "L70",
+      "community": 32,
+      "norm_label": "staffresource",
+      "id": "workspace_types_staffresource"
+    },
+    {
+      "label": "DepartmentResource",
+      "file_type": "code",
+      "source_file": "_types.ts",
+      "source_location": "L77",
+      "community": 32,
+      "norm_label": "departmentresource",
+      "id": "workspace_types_departmentresource"
+    },
+    {
+      "label": "chat.tsx",
+      "file_type": "code",
+      "source_file": "chat.tsx",
+      "source_location": "L1",
+      "community": 32,
+      "norm_label": "chat.tsx",
+      "id": "chat_tsx"
+    },
+    {
+      "label": "ChatScreen()",
+      "file_type": "code",
+      "source_file": "chat.tsx",
+      "source_location": "L39",
+      "community": 32,
+      "norm_label": "chatscreen()",
+      "id": "workspace_chat_chatscreen"
+    },
+    {
+      "label": "styles",
+      "file_type": "code",
+      "source_file": "chat.tsx",
+      "source_location": "L739",
+      "community": 32,
+      "norm_label": "styles",
+      "id": "workspace_chat_styles"
+    },
+    {
+      "label": "messages.tsx",
+      "file_type": "code",
+      "source_file": "messages.tsx",
+      "source_location": "L1",
+      "community": 32,
+      "norm_label": "messages.tsx",
+      "id": "messages_tsx"
+    },
+    {
+      "label": "MessagesScreen()",
+      "file_type": "code",
+      "source_file": "messages.tsx",
+      "source_location": "L39",
+      "community": 32,
+      "norm_label": "messagesscreen()",
+      "id": "workspace_messages_messagesscreen"
+    },
+    {
+      "label": "styles",
+      "file_type": "code",
+      "source_file": "messages.tsx",
+      "source_location": "L751",
+      "community": 32,
+      "norm_label": "styles",
+      "id": "workspace_messages_styles"
     },
     {
       "label": "MOCK_DEPARTMENTS",
@@ -247,24 +382,6 @@
       "community": 6,
       "norm_label": "mock_departments",
       "id": "workspace_tickets_mock_departments"
-    },
-    {
-      "label": "TicketsScreen()",
-      "file_type": "code",
-      "source_file": "app/(app)/workspace/tickets.tsx",
-      "source_location": "L52",
-      "community": 31,
-      "norm_label": "ticketsscreen()",
-      "id": "workspace_tickets_ticketsscreen"
-    },
-    {
-      "label": "styles",
-      "file_type": "code",
-      "source_file": "app/(app)/workspace/tickets.tsx",
-      "source_location": "L505",
-      "community": 6,
-      "norm_label": "styles",
-      "id": "workspace_tickets_styles"
     },
     {
       "label": "visitors.tsx",
@@ -301,33 +418,6 @@
       "community": 31,
       "norm_label": "styles",
       "id": "workspace_visitors_styles"
-    },
-    {
-      "label": "ticketService.ts",
-      "file_type": "code",
-      "source_file": "services/ticketService.ts",
-      "source_location": "L1",
-      "community": 6,
-      "norm_label": "ticketservice.ts",
-      "id": "services_ticketservice_ts"
-    },
-    {
-      "label": "CreateTicketPayload",
-      "file_type": "code",
-      "source_file": "services/ticketService.ts",
-      "source_location": "L3",
-      "community": 6,
-      "norm_label": "createticketpayload",
-      "id": "services_ticketservice_createticketpayload"
-    },
-    {
-      "label": "ticketService",
-      "file_type": "code",
-      "source_file": "services/ticketService.ts",
-      "source_location": "L11",
-      "community": 6,
-      "norm_label": "ticketservice",
-      "id": "services_ticketservice_ticketservice"
     },
     {
       "label": "_layout.tsx",
@@ -589,33 +679,6 @@
       "community": 31,
       "norm_label": "tasks.tsx",
       "id": "tasks_tsx"
-    },
-    {
-      "label": "User",
-      "file_type": "code",
-      "source_file": "tasks.tsx",
-      "source_location": "L37",
-      "community": 31,
-      "norm_label": "user",
-      "id": "workspace_tasks_user"
-    },
-    {
-      "label": "TaskRecord",
-      "file_type": "code",
-      "source_file": "tasks.tsx",
-      "source_location": "L43",
-      "community": 31,
-      "norm_label": "taskrecord",
-      "id": "workspace_tasks_taskrecord"
-    },
-    {
-      "label": "TasksScreen()",
-      "file_type": "code",
-      "source_file": "tasks.tsx",
-      "source_location": "L58",
-      "community": 31,
-      "norm_label": "tasksscreen()",
-      "id": "workspace_tasks_tasksscreen"
     },
     {
       "label": "tools.tsx",
@@ -1432,7 +1495,7 @@
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/index.tsx",
       "source_location": "L86",
-      "community": 31,
+      "community": 38,
       "norm_label": "workspacedashboard()",
       "id": "workspace_index_workspacedashboard"
     },
@@ -1549,7 +1612,7 @@
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/leave.tsx",
       "source_location": "L248",
-      "community": 31,
+      "community": 39,
       "norm_label": "leavescreen()",
       "id": "workspace_leave_leavescreen"
     },
@@ -1603,7 +1666,7 @@
       "file_type": "code",
       "source_file": "src/app/(auth)/login.tsx",
       "source_location": "L1",
-      "community": 31,
+      "community": 42,
       "norm_label": "login.tsx",
       "id": "src_app_auth_login_tsx"
     },
@@ -1612,7 +1675,7 @@
       "file_type": "code",
       "source_file": "src/app/(auth)/login.tsx",
       "source_location": "L11",
-      "community": 31,
+      "community": 42,
       "norm_label": "loginscreen()",
       "id": "auth_login_loginscreen"
     },
@@ -1621,7 +1684,7 @@
       "file_type": "code",
       "source_file": "src/app/(auth)/login.tsx",
       "source_location": "L96",
-      "community": 31,
+      "community": 42,
       "norm_label": "styles",
       "id": "auth_login_styles"
     },
@@ -1630,7 +1693,7 @@
       "file_type": "code",
       "source_file": "src/app/(auth)/register.tsx",
       "source_location": "L1",
-      "community": 31,
+      "community": 42,
       "norm_label": "register.tsx",
       "id": "src_app_auth_register_tsx"
     },
@@ -1639,7 +1702,7 @@
       "file_type": "code",
       "source_file": "src/app/(auth)/register.tsx",
       "source_location": "L11",
-      "community": 31,
+      "community": 42,
       "norm_label": "registerscreen()",
       "id": "auth_register_registerscreen"
     },
@@ -1648,7 +1711,7 @@
       "file_type": "code",
       "source_file": "src/app/(auth)/register.tsx",
       "source_location": "L104",
-      "community": 31,
+      "community": 42,
       "norm_label": "styles",
       "id": "auth_register_styles"
     },
@@ -1657,7 +1720,7 @@
       "file_type": "code",
       "source_file": "src/context/AuthContext.tsx",
       "source_location": "L1",
-      "community": 31,
+      "community": 38,
       "norm_label": "authcontext.tsx",
       "id": "src_context_authcontext_tsx"
     },
@@ -3115,7 +3178,7 @@
       "file_type": "code",
       "source_file": "src/app/(app)/_layout.tsx",
       "source_location": "L1",
-      "community": 31,
+      "community": 1,
       "norm_label": "_layout.tsx",
       "id": "src_app_app_layout_tsx"
     },
@@ -3124,7 +3187,7 @@
       "file_type": "code",
       "source_file": "src/app/(app)/_layout.tsx",
       "source_location": "L8",
-      "community": 31,
+      "community": 1,
       "norm_label": "applayout()",
       "id": "app_layout_applayout"
     },
@@ -3169,7 +3232,7 @@
       "file_type": "code",
       "source_file": "src/app/(app)/fleet/map.tsx",
       "source_location": "L1",
-      "community": 3,
+      "community": 1,
       "norm_label": "map.tsx",
       "id": "src_app_app_fleet_map_tsx"
     },
@@ -3178,7 +3241,7 @@
       "file_type": "code",
       "source_file": "src/app/(app)/fleet/map.tsx",
       "source_location": "L6",
-      "community": 3,
+      "community": 1,
       "norm_label": "fleetmap()",
       "id": "fleet_map_fleetmap"
     },
@@ -3187,7 +3250,7 @@
       "file_type": "code",
       "source_file": "src/app/(app)/fleet/map.tsx",
       "source_location": "L84",
-      "community": 3,
+      "community": 1,
       "norm_label": "styles",
       "id": "fleet_map_styles"
     },
@@ -3196,7 +3259,7 @@
       "file_type": "code",
       "source_file": "src/app/(app)/fleet/_layout.tsx",
       "source_location": "L1",
-      "community": 31,
+      "community": 1,
       "norm_label": "_layout.tsx",
       "id": "src_app_app_fleet_layout_tsx"
     },
@@ -3205,7 +3268,7 @@
       "file_type": "code",
       "source_file": "src/app/(app)/fleet/_layout.tsx",
       "source_location": "L6",
-      "community": 31,
+      "community": 1,
       "norm_label": "fleetlayout()",
       "id": "fleet_layout_fleetlayout"
     },
@@ -3520,7 +3583,7 @@
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/tickets.tsx",
       "source_location": "L1",
-      "community": 31,
+      "community": 6,
       "norm_label": "tickets.tsx",
       "id": "src_app_app_workspace_tickets_tsx"
     },
@@ -3529,7 +3592,7 @@
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/tickets.tsx",
       "source_location": "L21",
-      "community": 31,
+      "community": 6,
       "norm_label": "ictticket",
       "id": "workspace_tickets_ictticket"
     },
@@ -3595,15 +3658,6 @@
       "community": 31,
       "norm_label": "_layout.tsx",
       "id": "src_app_app_workspace_layout_tsx"
-    },
-    {
-      "label": "WorkspaceLayout()",
-      "file_type": "code",
-      "source_file": "src/app/(app)/workspace/_layout.tsx",
-      "source_location": "L9",
-      "community": 31,
-      "norm_label": "workspacelayout()",
-      "id": "workspace_layout_workspacelayout"
     },
     {
       "label": "styles",
@@ -3835,7 +3889,7 @@
       "file_type": "code",
       "source_file": "src/components/ERPButton.tsx",
       "source_location": "L1",
-      "community": 31,
+      "community": 42,
       "norm_label": "erpbutton.tsx",
       "id": "src_components_erpbutton_tsx"
     },
@@ -3853,7 +3907,7 @@
       "file_type": "code",
       "source_file": "src/components/ERPButton.tsx",
       "source_location": "L14",
-      "community": 31,
+      "community": 42,
       "norm_label": "erpbutton()",
       "id": "components_erpbutton_erpbutton"
     },
@@ -3862,7 +3916,7 @@
       "file_type": "code",
       "source_file": "src/components/ERPButton.tsx",
       "source_location": "L51",
-      "community": 31,
+      "community": 42,
       "norm_label": "styles",
       "id": "components_erpbutton_styles"
     },
@@ -3871,7 +3925,7 @@
       "file_type": "code",
       "source_file": "src/components/ERPInput.tsx",
       "source_location": "L1",
-      "community": 31,
+      "community": 42,
       "norm_label": "erpinput.tsx",
       "id": "src_components_erpinput_tsx"
     },
@@ -3889,7 +3943,7 @@
       "file_type": "code",
       "source_file": "src/components/ERPInput.tsx",
       "source_location": "L10",
-      "community": 31,
+      "community": 42,
       "norm_label": "erpinput()",
       "id": "components_erpinput_erpinput"
     },
@@ -3898,7 +3952,7 @@
       "file_type": "code",
       "source_file": "src/components/ERPInput.tsx",
       "source_location": "L35",
-      "community": 31,
+      "community": 42,
       "norm_label": "styles",
       "id": "components_erpinput_styles"
     },
@@ -3934,7 +3988,7 @@
       "file_type": "code",
       "source_file": "src/components/hint-row.tsx",
       "source_location": "L1",
-      "community": 3,
+      "community": 1,
       "norm_label": "hint-row.tsx",
       "id": "src_components_hint_row_tsx"
     },
@@ -3943,7 +3997,7 @@
       "file_type": "code",
       "source_file": "src/components/hint-row.tsx",
       "source_location": "L9",
-      "community": 3,
+      "community": 1,
       "norm_label": "hintrowprops",
       "id": "components_hint_row_hintrowprops"
     },
@@ -3952,7 +4006,7 @@
       "file_type": "code",
       "source_file": "src/components/hint-row.tsx",
       "source_location": "L14",
-      "community": 3,
+      "community": 1,
       "norm_label": "hintrow()",
       "id": "components_hint_row_hintrow"
     },
@@ -3961,7 +4015,7 @@
       "file_type": "code",
       "source_file": "src/components/hint-row.tsx",
       "source_location": "L25",
-      "community": 3,
+      "community": 1,
       "norm_label": "styles",
       "id": "components_hint_row_styles"
     },
@@ -3970,7 +4024,7 @@
       "file_type": "code",
       "source_file": "src/components/themed-text.tsx",
       "source_location": "L1",
-      "community": 3,
+      "community": 1,
       "norm_label": "themed-text.tsx",
       "id": "src_components_themed_text_tsx"
     },
@@ -3979,7 +4033,7 @@
       "file_type": "code",
       "source_file": "src/components/themed-text.tsx",
       "source_location": "L7",
-      "community": 3,
+      "community": 1,
       "norm_label": "themedtextprops",
       "id": "components_themed_text_themedtextprops"
     },
@@ -3988,7 +4042,7 @@
       "file_type": "code",
       "source_file": "src/components/themed-text.tsx",
       "source_location": "L12",
-      "community": 3,
+      "community": 1,
       "norm_label": "themedtext()",
       "id": "components_themed_text_themedtext"
     },
@@ -3997,7 +4051,7 @@
       "file_type": "code",
       "source_file": "src/components/themed-text.tsx",
       "source_location": "L38",
-      "community": 3,
+      "community": 1,
       "norm_label": "styles",
       "id": "components_themed_text_styles"
     },
@@ -4006,7 +4060,7 @@
       "file_type": "code",
       "source_file": "src/components/themed-view.tsx",
       "source_location": "L1",
-      "community": 3,
+      "community": 1,
       "norm_label": "themed-view.tsx",
       "id": "src_components_themed_view_tsx"
     },
@@ -4015,7 +4069,7 @@
       "file_type": "code",
       "source_file": "src/components/themed-view.tsx",
       "source_location": "L6",
-      "community": 3,
+      "community": 1,
       "norm_label": "themedviewprops",
       "id": "components_themed_view_themedviewprops"
     },
@@ -4024,7 +4078,7 @@
       "file_type": "code",
       "source_file": "src/components/themed-view.tsx",
       "source_location": "L12",
-      "community": 3,
+      "community": 1,
       "norm_label": "themedview()",
       "id": "components_themed_view_themedview"
     },
@@ -4033,7 +4087,7 @@
       "file_type": "code",
       "source_file": "src/components/web-badge.tsx",
       "source_location": "L1",
-      "community": 3,
+      "community": 1,
       "norm_label": "web-badge.tsx",
       "id": "src_components_web_badge_tsx"
     },
@@ -4042,7 +4096,7 @@
       "file_type": "code",
       "source_file": "src/components/web-badge.tsx",
       "source_location": "L11",
-      "community": 3,
+      "community": 1,
       "norm_label": "webbadge()",
       "id": "components_web_badge_webbadge"
     },
@@ -4051,7 +4105,7 @@
       "file_type": "code",
       "source_file": "src/components/web-badge.tsx",
       "source_location": "L31",
-      "community": 3,
+      "community": 1,
       "norm_label": "styles",
       "id": "components_web_badge_styles"
     },
@@ -4060,7 +4114,7 @@
       "file_type": "code",
       "source_file": "src/components/ui/collapsible.tsx",
       "source_location": "L1",
-      "community": 3,
+      "community": 1,
       "norm_label": "collapsible.tsx",
       "id": "src_components_ui_collapsible_tsx"
     },
@@ -4069,7 +4123,7 @@
       "file_type": "code",
       "source_file": "src/components/ui/collapsible.tsx",
       "source_location": "L11",
-      "community": 3,
+      "community": 31,
       "norm_label": "collapsible()",
       "id": "ui_collapsible_collapsible"
     },
@@ -4078,7 +4132,7 @@
       "file_type": "code",
       "source_file": "src/components/ui/collapsible.tsx",
       "source_location": "L43",
-      "community": 3,
+      "community": 1,
       "norm_label": "styles",
       "id": "ui_collapsible_styles"
     },
@@ -4087,7 +4141,7 @@
       "file_type": "code",
       "source_file": "src/constants/theme.ts",
       "source_location": "L1",
-      "community": 3,
+      "community": 1,
       "norm_label": "theme.ts",
       "id": "src_constants_theme_ts"
     },
@@ -4105,7 +4159,7 @@
       "file_type": "code",
       "source_file": "src/constants/theme.ts",
       "source_location": "L31",
-      "community": 3,
+      "community": 1,
       "norm_label": "themecolor",
       "id": "constants_theme_themecolor"
     },
@@ -4114,7 +4168,7 @@
       "file_type": "code",
       "source_file": "src/constants/theme.ts",
       "source_location": "L33",
-      "community": 3,
+      "community": 1,
       "norm_label": "fonts",
       "id": "constants_theme_fonts"
     },
@@ -4123,7 +4177,7 @@
       "file_type": "code",
       "source_file": "src/constants/theme.ts",
       "source_location": "L58",
-      "community": 3,
+      "community": 1,
       "norm_label": "spacing",
       "id": "constants_theme_spacing"
     },
@@ -4348,7 +4402,7 @@
       "file_type": "code",
       "source_file": "src/hooks/use-color-scheme.ts",
       "source_location": "L1",
-      "community": 3,
+      "community": 1,
       "norm_label": "use-color-scheme.ts",
       "id": "src_hooks_use_color_scheme_ts"
     },
@@ -4357,7 +4411,7 @@
       "file_type": "code",
       "source_file": "src/hooks/use-color-scheme.web.ts",
       "source_location": "L1",
-      "community": 3,
+      "community": 1,
       "norm_label": "use-color-scheme.web.ts",
       "id": "src_hooks_use_color_scheme_web_ts"
     },
@@ -4366,7 +4420,7 @@
       "file_type": "code",
       "source_file": "src/hooks/use-color-scheme.web.ts",
       "source_location": "L7",
-      "community": 3,
+      "community": 1,
       "norm_label": "usecolorscheme()",
       "id": "hooks_use_color_scheme_web_usecolorscheme"
     },
@@ -4375,7 +4429,7 @@
       "file_type": "code",
       "source_file": "src/hooks/use-theme.ts",
       "source_location": "L1",
-      "community": 31,
+      "community": 1,
       "norm_label": "use-theme.ts",
       "id": "src_hooks_use_theme_ts"
     },
@@ -5266,7 +5320,7 @@
       "file_type": "code",
       "source_file": "(app)/workspace/index.tsx",
       "source_location": "L1",
-      "community": 31,
+      "community": 38,
       "norm_label": "index.tsx",
       "id": "app_workspace_index_tsx"
     },
@@ -5293,7 +5347,7 @@
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/index.tsx",
       "source_location": "L61",
-      "community": 38,
+      "community": 42,
       "norm_label": "metriccard()",
       "id": "workspace_index_metriccard"
     },
@@ -5580,7 +5634,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 42,
+      "community": 1,
       "norm_label": "settings screen",
       "id": "settings_tsx_screen"
     },
@@ -5801,7 +5855,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 1,
       "norm_label": "hintrow",
       "id": "hint_row_hintrow"
     },
@@ -5814,7 +5868,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 1,
       "norm_label": "themedtext",
       "id": "themed_text_themedtext"
     },
@@ -5827,7 +5881,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 1,
       "norm_label": "themedview",
       "id": "themed_view_themedview"
     },
@@ -5840,7 +5894,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 1,
       "norm_label": "webbadge",
       "id": "web_badge_webbadge"
     },
@@ -5853,7 +5907,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 1,
       "norm_label": "collapsible",
       "id": "collapsible_collapsible"
     },
@@ -5866,7 +5920,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 1,
       "norm_label": "theme colors",
       "id": "theme_colors"
     },
@@ -5879,7 +5933,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 1,
       "norm_label": "themeprovider",
       "id": "themecontext_themeprovider"
     },
@@ -5892,7 +5946,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 1,
       "norm_label": "usetheme",
       "id": "use_theme_usetheme"
     },
@@ -5932,7 +5986,7 @@
       "author": null,
       "contributor": null,
       "rationale": "Re-calculates color scheme on client-side for web to prevent hydration mismatch errors during static rendering.",
-      "community": 3,
+      "community": 1,
       "norm_label": "static hydration support for web",
       "id": "mechanism_static_hydration_web"
     },
@@ -5946,7 +6000,7 @@
       "author": null,
       "contributor": null,
       "rationale": "Supports persistent theme preferences (light, dark, system) saved via AsyncStorage and evaluated based on React Native's useColorScheme.",
-      "community": 3,
+      "community": 1,
       "norm_label": "theme preference mechanism",
       "id": "mechanism_theme_preference"
     },
@@ -5981,349 +6035,76 @@
   ],
   "links": [
     {
-      "relation": "contains",
+      "relation": "imports",
+      "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "_types.ts",
-      "source_location": "L1",
+      "source_file": "app/(app)/workspace/_layout.tsx",
+      "source_location": "L4",
       "weight": 1.0,
-      "source": "types_ts",
-      "target": "workspace_types_chatattachment",
+      "source": "app_app_workspace_layout_tsx",
+      "target": "hooks_use_theme_usetheme",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "_types.ts",
+      "source_file": "app/(app)/workspace/_layout.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "app_app_workspace_layout_tsx",
+      "target": "workspace_layout_workspacelayout",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/_layout.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_layout_tsx",
+      "target": "workspace_layout_workspacelayout"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/_layout.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_layout_tsx",
+      "target": "workspace_layout_workspacelayout"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/(app)/workspace/_layout.tsx",
       "source_location": "L7",
       "weight": 1.0,
-      "source": "types_ts",
-      "target": "workspace_types_entitylink",
-      "confidence_score": 1.0
+      "source": "workspace_layout_workspacelayout",
+      "target": "hooks_use_theme_usetheme"
     },
     {
-      "relation": "contains",
+      "relation": "calls",
+      "context": "call",
       "confidence": "EXTRACTED",
-      "source_file": "_types.ts",
-      "source_location": "L13",
-      "weight": 1.0,
-      "source": "types_ts",
-      "target": "workspace_types_chatmessagemetadata",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "_types.ts",
-      "source_location": "L17",
-      "weight": 1.0,
-      "source": "types_ts",
-      "target": "workspace_types_chatmessage",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "_types.ts",
-      "source_location": "L35",
-      "weight": 1.0,
-      "source": "types_ts",
-      "target": "workspace_types_chatparticipant",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "_types.ts",
-      "source_location": "L50",
-      "weight": 1.0,
-      "source": "types_ts",
-      "target": "workspace_types_chatthread",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "_types.ts",
-      "source_location": "L70",
-      "weight": 1.0,
-      "source": "types_ts",
-      "target": "workspace_types_staffresource",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "_types.ts",
-      "source_location": "L77",
-      "weight": 1.0,
-      "source": "types_ts",
-      "target": "workspace_types_departmentresource",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "chat.tsx",
-      "source_location": "L36",
-      "weight": 1.0,
-      "source": "chat_tsx",
-      "target": "types_ts",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "messages.tsx",
-      "source_location": "L36",
-      "weight": 1.0,
-      "source": "messages_tsx",
-      "target": "types_ts",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "chat.tsx",
-      "source_location": "L36",
-      "weight": 1.0,
-      "source": "chat_tsx",
-      "target": "workspace_types_chatattachment",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/chat.tsx",
-      "source_location": "L36",
-      "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "src_app_app_workspace_chat_tsx",
-      "target": "workspace_types_chatattachment"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/types.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_workspace_types_ts",
-      "target": "workspace_types_chatattachment"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "chat.tsx",
-      "source_location": "L36",
-      "weight": 1.0,
-      "source": "chat_tsx",
-      "target": "workspace_types_entitylink",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/chat.tsx",
-      "source_location": "L36",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_workspace_chat_tsx",
-      "target": "workspace_types_entitylink"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/types.ts",
+      "source_file": "src/app/(app)/workspace/_layout.tsx",
       "source_location": "L7",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_workspace_types_ts",
-      "target": "workspace_types_entitylink"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/types.ts",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_workspace_types_ts",
-      "target": "workspace_types_chatmessagemetadata"
+      "source": "workspace_layout_workspacelayout",
+      "target": "use_theme_usetheme"
     },
     {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "chat.tsx",
-      "source_location": "L36",
-      "weight": 1.0,
-      "source": "chat_tsx",
-      "target": "workspace_types_chatmessage",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/chat.tsx",
-      "source_location": "L36",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_workspace_chat_tsx",
-      "target": "workspace_types_chatmessage"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/types.ts",
+      "source_file": "app/(app)/workspace/task/[id].tsx",
       "source_location": "L17",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_workspace_types_ts",
-      "target": "workspace_types_chatmessage"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/types.ts",
-      "source_location": "L35",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_workspace_types_ts",
-      "target": "workspace_types_chatparticipant"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "chat.tsx",
-      "source_location": "L36",
-      "weight": 1.0,
-      "source": "chat_tsx",
-      "target": "workspace_types_chatthread",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "messages.tsx",
-      "source_location": "L36",
-      "weight": 1.0,
-      "source": "messages_tsx",
-      "target": "workspace_types_chatthread",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/chat.tsx",
-      "source_location": "L36",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_workspace_chat_tsx",
-      "target": "workspace_types_chatthread"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/messages.tsx",
-      "source_location": "L36",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_workspace_messages_tsx",
-      "target": "workspace_types_chatthread"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/types.ts",
-      "source_location": "L50",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_workspace_types_ts",
-      "target": "workspace_types_chatthread"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "messages.tsx",
-      "source_location": "L36",
-      "weight": 1.0,
-      "source": "messages_tsx",
-      "target": "workspace_types_staffresource",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/messages.tsx",
-      "source_location": "L36",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_workspace_messages_tsx",
-      "target": "workspace_types_staffresource"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/types.ts",
-      "source_location": "L70",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_workspace_types_ts",
-      "target": "workspace_types_staffresource"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "messages.tsx",
-      "source_location": "L36",
-      "weight": 1.0,
-      "source": "messages_tsx",
-      "target": "workspace_types_departmentresource",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/messages.tsx",
-      "source_location": "L36",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_workspace_messages_tsx",
-      "target": "workspace_types_departmentresource"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/types.ts",
-      "source_location": "L77",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_workspace_types_ts",
-      "target": "workspace_types_departmentresource"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "chat.tsx",
-      "source_location": "L18",
-      "weight": 1.0,
-      "source": "chat_tsx",
+      "source": "app_app_workspace_task_id_tsx",
       "target": "hooks_use_theme_usetheme",
       "confidence_score": 1.0
     },
@@ -6331,94 +6112,73 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "chat.tsx",
-      "source_location": "L19",
+      "source_file": "app/(app)/workspace/task/[id].tsx",
+      "source_location": "L33",
       "weight": 1.0,
-      "source": "chat_tsx",
+      "source": "app_app_workspace_task_id_tsx",
       "target": "context_authcontext_useauth",
       "confidence_score": 1.0
     },
     {
-      "relation": "imports",
-      "context": "import",
+      "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "chat.tsx",
+      "source_file": "app/(app)/workspace/task/[id].tsx",
       "source_location": "L37",
       "weight": 1.0,
-      "source": "chat_tsx",
-      "target": "services_messageservice_messageservice",
+      "source": "app_app_workspace_task_id_tsx",
+      "target": "task_id_taskdetailscreen",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "chat.tsx",
-      "source_location": "L39",
+      "source_file": "app/(app)/workspace/task/[id].tsx",
+      "source_location": "L563",
       "weight": 1.0,
-      "source": "chat_tsx",
-      "target": "workspace_chat_chatscreen",
+      "source": "app_app_workspace_task_id_tsx",
+      "target": "task_id_smartitem",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "chat.tsx",
-      "source_location": "L739",
+      "source_file": "app/(app)/workspace/task/[id].tsx",
+      "source_location": "L578",
       "weight": 1.0,
-      "source": "chat_tsx",
-      "target": "workspace_chat_styles",
+      "source": "app_app_workspace_task_id_tsx",
+      "target": "task_id_getstyles",
       "confidence_score": 1.0
     },
     {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/app/(app)/workspace/chat.tsx",
-      "source_location": "L42",
+      "source_file": "app/(app)/workspace/task/[id].tsx",
+      "source_location": "L40",
       "weight": 1.0,
-      "source": "workspace_chat_chatscreen",
-      "target": "context_authcontext_useauth"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/chat.tsx",
-      "source_location": "L38",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_workspace_chat_tsx",
-      "target": "workspace_chat_chatscreen"
+      "source": "task_id_taskdetailscreen",
+      "target": "task_id_getstyles",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/app/(app)/workspace/chat.tsx",
-      "source_location": "L41",
+      "source_file": "app/(app)/workspace/task/[id].tsx",
+      "source_location": "L564",
       "weight": 1.0,
-      "source": "workspace_chat_chatscreen",
-      "target": "hooks_use_theme_usetheme"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/chat.tsx",
-      "source_location": "L362",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_workspace_chat_tsx",
-      "target": "workspace_chat_styles"
+      "source": "task_id_smartitem",
+      "target": "task_id_getstyles",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "messages.tsx",
-      "source_location": "L17",
+      "source_file": "app/(app)/workspace/tasks.tsx",
+      "source_location": "L18",
       "weight": 1.0,
-      "source": "messages_tsx",
+      "source": "app_app_workspace_tasks_tsx",
       "target": "hooks_use_theme_usetheme",
       "confidence_score": 1.0
     },
@@ -6426,85 +6186,124 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "messages.tsx",
-      "source_location": "L18",
+      "source_file": "app/(app)/workspace/tasks.tsx",
+      "source_location": "L33",
       "weight": 1.0,
-      "source": "messages_tsx",
+      "source": "app_app_workspace_tasks_tsx",
       "target": "context_authcontext_useauth",
       "confidence_score": 1.0
     },
     {
-      "relation": "imports",
-      "context": "import",
+      "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "messages.tsx",
+      "source_file": "app/(app)/workspace/tasks.tsx",
       "source_location": "L37",
       "weight": 1.0,
-      "source": "messages_tsx",
-      "target": "services_messageservice_messageservice",
+      "source": "app_app_workspace_tasks_tsx",
+      "target": "workspace_tasks_user",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "messages.tsx",
-      "source_location": "L39",
+      "source_file": "app/(app)/workspace/tasks.tsx",
+      "source_location": "L43",
       "weight": 1.0,
-      "source": "messages_tsx",
-      "target": "workspace_messages_messagesscreen",
+      "source": "app_app_workspace_tasks_tsx",
+      "target": "workspace_tasks_taskrecord",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "messages.tsx",
-      "source_location": "L751",
+      "source_file": "app/(app)/workspace/tasks.tsx",
+      "source_location": "L58",
       "weight": 1.0,
-      "source": "messages_tsx",
-      "target": "workspace_messages_styles",
+      "source": "app_app_workspace_tasks_tsx",
+      "target": "workspace_tasks_tasksscreen",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tasks.tsx",
+      "source_location": "L37",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tasks_tsx",
+      "target": "workspace_tasks_user"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/tasks.tsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_tasks_tsx",
+      "target": "workspace_tasks_user"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tasks.tsx",
+      "source_location": "L43",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tasks_tsx",
+      "target": "workspace_tasks_taskrecord"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/tasks.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_tasks_tsx",
+      "target": "workspace_tasks_taskrecord"
     },
     {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "src/app/(app)/workspace/messages.tsx",
-      "source_location": "L81",
+      "source_file": "src/app/(app)/workspace/tasks.tsx",
+      "source_location": "L33",
       "weight": 1.0,
-      "source": "workspace_messages_messagesscreen",
+      "source": "workspace_tasks_tasksscreen",
       "target": "context_authcontext_useauth"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/messages.tsx",
-      "source_location": "L9",
+      "source_file": "tasks.tsx",
+      "source_location": "L58",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "src_app_app_workspace_messages_tsx",
-      "target": "workspace_messages_messagesscreen"
+      "source": "tasks_tsx",
+      "target": "workspace_tasks_tasksscreen"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/tasks.tsx",
+      "source_location": "L30",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_tasks_tsx",
+      "target": "workspace_tasks_tasksscreen"
     },
     {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "src/app/(app)/workspace/messages.tsx",
-      "source_location": "L10",
+      "source_file": "src/app/(app)/workspace/tasks.tsx",
+      "source_location": "L31",
       "weight": 1.0,
-      "source": "workspace_messages_messagesscreen",
+      "source": "workspace_tasks_tasksscreen",
       "target": "hooks_use_theme_usetheme"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/messages.tsx",
-      "source_location": "L128",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_workspace_messages_tsx",
-      "target": "workspace_messages_styles"
     },
     {
       "relation": "imports",
@@ -6564,16 +6363,6 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app/(app)/workspace/tickets.tsx",
-      "source_location": "L45",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_app_workspace_tickets_tsx",
-      "target": "workspace_tickets_mock_departments"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(app)/workspace/tickets.tsx",
       "source_location": "L52",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -6589,6 +6378,16 @@
       "confidence_score": 1.0,
       "source": "app_app_workspace_tickets_tsx",
       "target": "workspace_tickets_styles"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/tickets.tsx",
+      "source_location": "L45",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_tickets_tsx",
+      "target": "workspace_tickets_mock_departments"
     },
     {
       "relation": "calls",
@@ -6631,6 +6430,552 @@
       "confidence_score": 1.0,
       "source": "src_app_app_workspace_tickets_tsx",
       "target": "workspace_tickets_styles"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ticketService.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_ticketservice_ts",
+      "target": "services_ticketservice_createticketpayload"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/ticketService.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_ticketservice_ts",
+      "target": "services_ticketservice_ticketservice"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "_types.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "types_ts",
+      "target": "workspace_types_chatattachment"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "_types.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "types_ts",
+      "target": "workspace_types_entitylink"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "_types.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "types_ts",
+      "target": "workspace_types_chatmessagemetadata"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "_types.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "types_ts",
+      "target": "workspace_types_chatmessage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "_types.ts",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "types_ts",
+      "target": "workspace_types_chatparticipant"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "_types.ts",
+      "source_location": "L50",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "types_ts",
+      "target": "workspace_types_chatthread"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "_types.ts",
+      "source_location": "L70",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "types_ts",
+      "target": "workspace_types_staffresource"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "_types.ts",
+      "source_location": "L77",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "types_ts",
+      "target": "workspace_types_departmentresource"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "chat.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_tsx",
+      "target": "types_ts"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "messages.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "messages_tsx",
+      "target": "types_ts"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "chat.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_tsx",
+      "target": "workspace_types_chatattachment"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/chat.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_chat_tsx",
+      "target": "workspace_types_chatattachment"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/types.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_types_ts",
+      "target": "workspace_types_chatattachment"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "chat.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_tsx",
+      "target": "workspace_types_entitylink"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/chat.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_chat_tsx",
+      "target": "workspace_types_entitylink"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/types.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_types_ts",
+      "target": "workspace_types_entitylink"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/types.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_types_ts",
+      "target": "workspace_types_chatmessagemetadata"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "chat.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_tsx",
+      "target": "workspace_types_chatmessage"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/chat.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_chat_tsx",
+      "target": "workspace_types_chatmessage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/types.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_types_ts",
+      "target": "workspace_types_chatmessage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/types.ts",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_types_ts",
+      "target": "workspace_types_chatparticipant"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "chat.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_tsx",
+      "target": "workspace_types_chatthread"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "messages.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "messages_tsx",
+      "target": "workspace_types_chatthread"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/chat.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_chat_tsx",
+      "target": "workspace_types_chatthread"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/messages.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_messages_tsx",
+      "target": "workspace_types_chatthread"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/types.ts",
+      "source_location": "L50",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_types_ts",
+      "target": "workspace_types_chatthread"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "messages.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "messages_tsx",
+      "target": "workspace_types_staffresource"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/messages.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_messages_tsx",
+      "target": "workspace_types_staffresource"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/types.ts",
+      "source_location": "L70",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_types_ts",
+      "target": "workspace_types_staffresource"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "messages.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "messages_tsx",
+      "target": "workspace_types_departmentresource"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/messages.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_messages_tsx",
+      "target": "workspace_types_departmentresource"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/types.ts",
+      "source_location": "L77",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_types_ts",
+      "target": "workspace_types_departmentresource"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "chat.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_tsx",
+      "target": "hooks_use_theme_usetheme"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "chat.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_tsx",
+      "target": "context_authcontext_useauth"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "chat.tsx",
+      "source_location": "L37",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_tsx",
+      "target": "services_messageservice_messageservice"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "chat.tsx",
+      "source_location": "L39",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_tsx",
+      "target": "workspace_chat_chatscreen"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "chat.tsx",
+      "source_location": "L739",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_tsx",
+      "target": "workspace_chat_styles"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/(app)/workspace/chat.tsx",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "workspace_chat_chatscreen",
+      "target": "context_authcontext_useauth"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/chat.tsx",
+      "source_location": "L38",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_chat_tsx",
+      "target": "workspace_chat_chatscreen"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/(app)/workspace/chat.tsx",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "workspace_chat_chatscreen",
+      "target": "hooks_use_theme_usetheme"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/chat.tsx",
+      "source_location": "L362",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_chat_tsx",
+      "target": "workspace_chat_styles"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "messages.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "messages_tsx",
+      "target": "hooks_use_theme_usetheme"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "messages.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "messages_tsx",
+      "target": "context_authcontext_useauth"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "messages.tsx",
+      "source_location": "L37",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "messages_tsx",
+      "target": "services_messageservice_messageservice"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "messages.tsx",
+      "source_location": "L39",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "messages_tsx",
+      "target": "workspace_messages_messagesscreen"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "messages.tsx",
+      "source_location": "L751",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "messages_tsx",
+      "target": "workspace_messages_styles"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/(app)/workspace/messages.tsx",
+      "source_location": "L81",
+      "weight": 1.0,
+      "source": "workspace_messages_messagesscreen",
+      "target": "context_authcontext_useauth"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/messages.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_messages_tsx",
+      "target": "workspace_messages_messagesscreen"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/app/(app)/workspace/messages.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "workspace_messages_messagesscreen",
+      "target": "hooks_use_theme_usetheme"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/messages.tsx",
+      "source_location": "L128",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_messages_tsx",
+      "target": "workspace_messages_styles"
     },
     {
       "relation": "imports",
@@ -6765,26 +7110,6 @@
       "confidence_score": 1.0,
       "source": "src_app_app_workspace_visitors_tsx",
       "target": "workspace_visitors_styles"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "services/ticketService.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_ticketservice_ts",
-      "target": "services_ticketservice_createticketpayload"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "services/ticketService.ts",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_ticketservice_ts",
-      "target": "services_ticketservice_ticketservice"
     },
     {
       "relation": "imports",
@@ -7118,17 +7443,6 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "tasks_tsx",
-      "target": "context_authcontext_useauth"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/app/(app)/workspace/tasks.tsx",
-      "source_location": "L33",
-      "weight": 1.0,
-      "source": "workspace_tasks_tasksscreen",
       "target": "context_authcontext_useauth"
     },
     {
@@ -7750,77 +8064,6 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "tasks_tsx",
-      "target": "hooks_use_theme_usetheme"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "tasks.tsx",
-      "source_location": "L37",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tasks_tsx",
-      "target": "workspace_tasks_user"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "tasks.tsx",
-      "source_location": "L43",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tasks_tsx",
-      "target": "workspace_tasks_taskrecord"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "tasks.tsx",
-      "source_location": "L58",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tasks_tsx",
-      "target": "workspace_tasks_tasksscreen"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/tasks.tsx",
-      "source_location": "L29",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_workspace_tasks_tsx",
-      "target": "workspace_tasks_user"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/tasks.tsx",
-      "source_location": "L20",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_workspace_tasks_tsx",
-      "target": "workspace_tasks_taskrecord"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/tasks.tsx",
-      "source_location": "L30",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_workspace_tasks_tsx",
-      "target": "workspace_tasks_tasksscreen"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/app/(app)/workspace/tasks.tsx",
-      "source_location": "L31",
-      "weight": 1.0,
-      "source": "workspace_tasks_tasksscreen",
       "target": "hooks_use_theme_usetheme"
     },
     {
@@ -12097,16 +12340,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/_layout.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_layout_tsx",
-      "target": "workspace_layout_workspacelayout"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "src/app/(auth)/_layout.tsx",
       "source_location": "L2",
       "weight": 1.0,
@@ -13322,43 +13555,11 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/(app)/workspace/_layout.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_workspace_layout_tsx",
-      "target": "workspace_layout_workspacelayout"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/_layout.tsx",
       "source_location": "L219",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "src_app_app_workspace_layout_tsx",
       "target": "workspace_layout_styles"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/app/(app)/workspace/_layout.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "workspace_layout_workspacelayout",
-      "target": "hooks_use_theme_usetheme"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/app/(app)/workspace/_layout.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "workspace_layout_workspacelayout",
-      "target": "use_theme_usetheme"
     },
     {
       "relation": "contains",
@@ -16627,5 +16828,5 @@
       "source_file": "src/app/(onboarding)/index.tsx"
     }
   ],
-  "built_at_commit": "bf3ca9838bd103d156b82488e15f5f361c8d2a82"
+  "built_at_commit": "07c491d3844059fbda1d95c586c8246a8b01c591"
 }
