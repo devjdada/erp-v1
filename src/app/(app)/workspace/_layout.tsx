@@ -83,7 +83,9 @@ export default function WorkspaceLayout() {
         <Tabs.Screen name="movements" options={{ href: null }} />
         <Tabs.Screen name="requisitions" options={{ href: null }} />
         <Tabs.Screen name="tools" options={{ href: null }} />
-        <Tabs.Screen name="task" options={{ href: null }} />
+        <Tabs.Screen name="task/[id]" options={{ href: null }} />
+        <Tabs.Screen name="requisition/[id]" options={{ href: null }} />
+        <Tabs.Screen name="requisition/create" options={{ href: null }} />
       </Tabs>
     </View>
   );

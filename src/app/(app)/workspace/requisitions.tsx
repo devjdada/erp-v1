@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import {
   StyleSheet,
   View,
@@ -10,52 +10,34 @@ import {
   RefreshControl,
 } from 'react-native';
 import { useTheme } from '@/hooks/use-theme';
-import { useRouter } from 'expo-router';
-import { ArrowLeft, ShoppingCart, Calendar, DollarSign, Receipt, Info } from 'lucide-react-native';
-import { useAuth } from '@/context/AuthContext';
-
-const API_BASE_URL = 'https://oki.wchapel.com/api/v1';
-
-interface RequisitionItem {
-  id: number;
-  requisition_no: string;
-  title: string;
-  estimated_cost: number;
-  status: 'pending' | 'approved' | 'rejected' | 'ordered' | 'completed' | string;
-  created_at: string;
-  requested_by_user?: {
-    name: string;
-  } | null;
-}
+import { useRouter, useFocusEffect } from 'expo-router';
+import { ArrowLeft, ShoppingCart, Calendar, Plus, MapPin, Building2, PackageOpen, AlertTriangle } from 'lucide-react-native';
+import requisitionService, { Requisition } from '@/services/requisitionService';
 
 export default function RequisitionsScreen() {
   const theme = useTheme();
   const router = useRouter();
-  const { authToken } = useAuth();
 
   // State
-  const [requisitions, setRequisitions] = useState<RequisitionItem[]>([]);
+  const [requisitions, setRequisitions] = useState<Requisition[]>([]);
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
+  const [page, setPage] = useState(1);
+  const [hasMore, setHasMore] = useState(true);
 
-  const fetchRequisitions = useCallback(async (showLoader = false) => {
-    if (!authToken) return;
+  const fetchRequisitions = useCallback(async (pageNum = 1, showLoader = false) => {
     if (showLoader) setLoading(true);
 
     try {
-      const response = await fetch(`${API_BASE_URL}/procurement/requisitions`, {
-        method: 'GET',
-        headers: {
-          'Accept': 'application/json',
-          'Authorization': `Bearer ${authToken}`,
-        },
-      });
-
-      if (response.ok) {
-        const result = await response.json();
-        if (result.success && result.data) {
-          setRequisitions(result.data);
+      const result = await requisitionService.getRequisitions(pageNum);
+      if (result.status === 'success' && result.data) {
+        if (pageNum === 1) {
+          setRequisitions(result.data.data);
+        } else {
+          setRequisitions(prev => [...prev, ...result.data.data]);
         }
+        setHasMore(result.data.current_page < result.data.last_page);
+        setPage(pageNum);
       }
     } catch (error) {
       console.error('Error fetching requisitions:', error);
@@ -63,37 +45,44 @@ export default function RequisitionsScreen() {
       setLoading(false);
       setRefreshing(false);
     }
-  }, [authToken]);
+  }, []);
 
-  useEffect(() => {
-    fetchRequisitions(true);
-  }, [fetchRequisitions]);
+  useFocusEffect(
+    useCallback(() => {
+      fetchRequisitions(1, true);
+    }, [fetchRequisitions])
+  );
 
   const onRefresh = () => {
     setRefreshing(true);
-    fetchRequisitions(false);
+    fetchRequisitions(1, false);
   };
 
   const getStatusColor = (status: string) => {
     const s = status?.toLowerCase();
-    if (s === 'approved' || s === 'completed' || s === 'ordered') return '#10B981';
+    if (s === 'approved' || s === 'completed' || s === 'dispensed') return '#10B981';
     if (s === 'rejected') return '#EF4444';
-    return '#F59E0B';
+    if (s === 'partially dispensed') return '#F59E0B';
+    if (s === 'converted to pr') return '#3B82F6';
+    return '#64748B';
   };
 
   const getStatusBg = (status: string) => {
     const s = status?.toLowerCase();
-    if (s === 'approved' || s === 'completed' || s === 'ordered') return 'rgba(16, 185, 129, 0.08)';
+    if (s === 'approved' || s === 'completed' || s === 'dispensed') return 'rgba(16, 185, 129, 0.08)';
     if (s === 'rejected') return 'rgba(239, 68, 68, 0.08)';
-    return 'rgba(245, 158, 11, 0.08)';
+    if (s === 'partially dispensed') return 'rgba(245, 158, 11, 0.08)';
+    if (s === 'converted to pr') return 'rgba(59, 130, 246, 0.08)';
+    return 'rgba(100, 116, 139, 0.08)';
   };
 
-  const formatCurrency = (amount: number | null | undefined) => {
-    if (amount === undefined || amount === null) return '₦0.00';
-    return new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(amount);
+  const getPriorityColor = (priority: string) => {
+    const p = priority?.toLowerCase();
+    if (p === 'critical') return '#EF4444';
+    if (p === 'high') return '#F97316';
+    if (p === 'medium') return '#EAB308';
+    return '#10B981';
   };
-
-  const totalCost = requisitions.reduce((sum, r) => sum + r.estimated_cost, 0);
 
   return (
     <SafeAreaView style={[styles.safeArea, { backgroundColor: theme.background }]}>
@@ -102,11 +91,13 @@ export default function RequisitionsScreen() {
         <Pressable onPress={() => router.back()} style={styles.backButton}>
           <ArrowLeft color={theme.text} size={24} />
         </Pressable>
-        <Text style={[styles.headerTitle, { color: theme.text }]}>Purchase Requisitions</Text>
-        <View style={{ width: 40 }} />
+        <Text style={[styles.headerTitle, { color: theme.text }]}>Material Requisitions</Text>
+        <Pressable onPress={() => router.push('/workspace/requisition/create')} style={styles.createButton}>
+          <Plus color={theme.primary} size={24} />
+        </Pressable>
       </View>
 
-      {loading ? (
+      {loading && requisitions.length === 0 ? (
         <View style={styles.centered}>
           <ActivityIndicator size="large" color={theme.primary} />
         </View>
@@ -118,37 +109,33 @@ export default function RequisitionsScreen() {
             <RefreshControl refreshing={refreshing} onRefresh={onRefresh} colors={[theme.primary]} />
           }
         >
-          {/* Total Stats Banner */}
-          <View style={[styles.statsBanner, { backgroundColor: theme.backgroundElement, borderColor: theme.border }]}>
-            <View style={styles.bannerLeft}>
-              <Receipt size={24} color={theme.primary} />
-              <View>
-                <Text style={[styles.bannerTitle, { color: theme.text }]}>Estimated Budget</Text>
-                <Text style={[styles.bannerLabel, { color: theme.textSecondary }]}>Total value of requested items</Text>
-              </View>
-            </View>
-            <Text style={[styles.bannerCost, { color: theme.text }]}>{formatCurrency(totalCost)}</Text>
-          </View>
-
-          <Text style={[styles.sectionTitle, { color: theme.text }]}>My Requisitions</Text>
           {requisitions.length > 0 ? (
             <View style={styles.listContainer}>
               {requisitions.map((req) => {
                 const statusColor = getStatusColor(req.status);
                 const statusBg = getStatusBg(req.status);
+                const priorityColor = getPriorityColor(req.priority);
 
                 return (
-                  <View
+                  <Pressable
                     key={req.id}
-                    style={[styles.requisitionCard, { backgroundColor: theme.backgroundElement, borderColor: theme.border }]}
+                    onPress={() => router.push(`/workspace/requisition/${req.id}`)}
+                    style={({ pressed }) => [
+                      styles.requisitionCard,
+                      { 
+                        backgroundColor: theme.backgroundElement, 
+                        borderColor: theme.border,
+                        opacity: pressed ? 0.8 : 1
+                      }
+                    ]}
                   >
                     <View style={styles.cardHeader}>
-                      <View>
+                      <View style={{ flex: 1 }}>
                         <Text style={[styles.reqNo, { color: theme.primary }]}>
-                          {req.requisition_no}
+                          {req.requisition_number}
                         </Text>
-                        <Text style={[styles.reqTitle, { color: theme.text }]} numberOfLines={2}>
-                          {req.title}
+                        <Text style={[styles.reqTitle, { color: theme.text }]} numberOfLines={1}>
+                          {req.type} Requisition
                         </Text>
                       </View>
                       <View style={[styles.statusBadge, { backgroundColor: statusBg }]}>
@@ -159,41 +146,68 @@ export default function RequisitionsScreen() {
                     </View>
 
                     <View style={[styles.detailsSection, { borderColor: theme.border }]}>
-                      <View style={styles.detailRow}>
-                        <DollarSign size={14} color={theme.textSecondary} />
-                        <Text style={[styles.detailLabel, { color: theme.textSecondary }]}>ESTIMATED COST:</Text>
-                        <Text style={[styles.detailValue, { color: theme.text, fontFamily: 'PlusJakartaSans_700Bold' }]}>
-                          {formatCurrency(req.estimated_cost)}
-                        </Text>
-                      </View>
-                      
-                      {req.requested_by_user && (
+                      {req.project && (
                         <View style={styles.detailRow}>
-                          <Info size={14} color={theme.textSecondary} />
-                          <Text style={[styles.detailLabel, { color: theme.textSecondary }]}>REQUESTED BY:</Text>
-                          <Text style={[styles.detailValue, { color: theme.text }]}>
-                            {req.requested_by_user.name}
+                          <MapPin size={14} color={theme.textSecondary} />
+                          <Text style={[styles.detailLabel, { color: theme.textSecondary }]}>PROJECT:</Text>
+                          <Text style={[styles.detailValue, { color: theme.text }]} numberOfLines={1}>
+                            {req.project.name}
                           </Text>
                         </View>
                       )}
+                      
+                      {req.department && (
+                        <View style={styles.detailRow}>
+                          <Building2 size={14} color={theme.textSecondary} />
+                          <Text style={[styles.detailLabel, { color: theme.textSecondary }]}>DEPARTMENT:</Text>
+                          <Text style={[styles.detailValue, { color: theme.text }]} numberOfLines={1}>
+                            {req.department.name}
+                          </Text>
+                        </View>
+                      )}
+
+                      <View style={styles.detailRow}>
+                        <AlertTriangle size={14} color={priorityColor} />
+                        <Text style={[styles.detailLabel, { color: theme.textSecondary }]}>PRIORITY:</Text>
+                        <Text style={[styles.detailValue, { color: priorityColor, fontFamily: 'PlusJakartaSans_700Bold' }]}>
+                          {req.priority}
+                        </Text>
+                      </View>
                     </View>
 
                     <View style={styles.cardFooter}>
-                      <Calendar size={12} color={theme.textSecondary} />
-                      <Text style={[styles.dateText, { color: theme.textSecondary }]}>
-                        Date: {new Date(req.created_at).toLocaleDateString()}
-                      </Text>
+                      <View style={styles.footerItem}>
+                        <Calendar size={12} color={theme.textSecondary} />
+                        <Text style={[styles.dateText, { color: theme.textSecondary }]}>
+                          Req: {new Date(req.required_date).toLocaleDateString()}
+                        </Text>
+                      </View>
+                      <View style={styles.footerItem}>
+                        <PackageOpen size={12} color={theme.textSecondary} />
+                        <Text style={[styles.dateText, { color: theme.textSecondary }]}>
+                          Type: {req.type}
+                        </Text>
+                      </View>
                     </View>
-                  </View>
+                  </Pressable>
                 );
               })}
+
+              {hasMore && (
+                <Pressable 
+                  style={[styles.loadMoreBtn, { backgroundColor: theme.primary + '15' }]} 
+                  onPress={() => fetchRequisitions(page + 1)}
+                >
+                  <Text style={[styles.loadMoreText, { color: theme.primary }]}>Load More</Text>
+                </Pressable>
+              )}
             </View>
           ) : (
             <View style={styles.emptyContainer}>
-              <ShoppingCart color={theme.textSecondary} size={48} strokeWidth={1} style={{ marginBottom: 12 }} />
+              <PackageOpen color={theme.textSecondary} size={48} strokeWidth={1} style={{ marginBottom: 12 }} />
               <Text style={[styles.emptyTitle, { color: theme.text }]}>No requisitions found</Text>
               <Text style={[styles.emptySubtitle, { color: theme.textSecondary }]}>
-                Materials and procurement requests for project sites will appear here.
+                Material requests you make will appear here. Tap the + icon to create one.
               </Text>
             </View>
           )}
@@ -219,6 +233,10 @@ const styles = StyleSheet.create({
     padding: 8,
     marginLeft: -8,
   },
+  createButton: {
+    padding: 8,
+    marginRight: -8,
+  },
   headerTitle: {
     fontFamily: 'PlusJakartaSans_700Bold',
     fontSize: 18,
@@ -231,40 +249,6 @@ const styles = StyleSheet.create({
   scrollContent: {
     padding: 20,
     paddingBottom: 40,
-  },
-  statsBanner: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: 16,
-    borderRadius: 20,
-    borderWidth: 1,
-    marginBottom: 24,
-  },
-  bannerLeft: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 12,
-    flex: 1,
-  },
-  bannerTitle: {
-    fontFamily: 'PlusJakartaSans_700Bold',
-    fontSize: 14.5,
-  },
-  bannerLabel: {
-    fontFamily: 'PlusJakartaSans_500Medium',
-    fontSize: 11.5,
-  },
-  bannerCost: {
-    fontFamily: 'PlusJakartaSans_800ExtraBold',
-    fontSize: 16,
-  },
-  sectionTitle: {
-    fontFamily: 'PlusJakartaSans_700Bold',
-    fontSize: 14,
-    textTransform: 'uppercase',
-    letterSpacing: 0.5,
-    marginBottom: 14,
   },
   listContainer: {
     gap: 16,
@@ -288,7 +272,6 @@ const styles = StyleSheet.create({
   reqTitle: {
     fontFamily: 'PlusJakartaSans_700Bold',
     fontSize: 14.5,
-    maxWidth: 180,
   },
   statusBadge: {
     paddingHorizontal: 8,
@@ -314,7 +297,7 @@ const styles = StyleSheet.create({
   detailLabel: {
     fontFamily: 'PlusJakartaSans_700Bold',
     fontSize: 9,
-    width: 100,
+    width: 90,
     letterSpacing: 0.5,
   },
   detailValue: {
@@ -325,7 +308,12 @@ const styles = StyleSheet.create({
   cardFooter: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 6,
+    justifyContent: 'space-between',
+  },
+  footerItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
   },
   dateText: {
     fontFamily: 'PlusJakartaSans_500Medium',
@@ -347,5 +335,15 @@ const styles = StyleSheet.create({
     fontSize: 13,
     textAlign: 'center',
     lineHeight: 18,
+  },
+  loadMoreBtn: {
+    paddingVertical: 12,
+    borderRadius: 12,
+    alignItems: 'center',
+    marginTop: 8,
+  },
+  loadMoreText: {
+    fontFamily: 'PlusJakartaSans_700Bold',
+    fontSize: 14,
   },
 });

@@ -17,6 +17,7 @@ import { useTheme } from '@/hooks/use-theme';
 import { useRouter } from 'expo-router';
 import { ArrowLeft, Hammer, Calendar, ClipboardList, PackageOpen, Wrench, Clock, Plus, X, Info, Hand } from 'lucide-react-native';
 import { useAuth } from '@/context/AuthContext';
+import { toolService } from '@/services/toolService';
 
 const API_BASE_URL = 'https://oki.wchapel.com/api/v1';
 
@@ -45,7 +46,7 @@ interface ToolRequest {
 export default function ToolsScreen() {
   const theme = useTheme();
   const router = useRouter();
-  const { authToken } = useAuth();
+  const { authToken, user } = useAuth();
 
   // State
   const [activeTab, setActiveTab] = useState<'inventory' | 'requests'>('inventory');
@@ -65,38 +66,28 @@ export default function ToolsScreen() {
   const [newTool, setNewTool] = useState({ name: '', tool_id: '', type: 'Work Tool', model: '', serial_number: '' });
   const [addingTool, setAddingTool] = useState(false);
 
+  // Resolve Modal State
+  const [resolveModalVisible, setResolveModalVisible] = useState(false);
+  const [selectedRequest, setSelectedRequest] = useState<any>(null);
+  const [resolveStatus, setResolveStatus] = useState('');
+  const [resolveNotes, setResolveNotes] = useState('');
+  const [resolving, setResolving] = useState(false);
+
   const fetchToolsData = useCallback(async (showLoader = false) => {
     if (!authToken) return;
     if (showLoader) setLoading(true);
 
     try {
       if (activeTab === 'inventory') {
-        const response = await fetch(`${API_BASE_URL}/tools`, {
-          method: 'GET',
-          headers: {
-            'Accept': 'application/json',
-            'Authorization': `Bearer ${authToken}`,
-          },
-        });
-        if (response.ok) {
-          const result = await response.json();
-          if (result.success && result.data) {
-            setTools(result.data);
-          }
+        const result = await toolService.getTools();
+        if (result && result.success && result.data) {
+          setTools(result.data);
         }
       } else {
-        const response = await fetch(`${API_BASE_URL}/tools/requests`, {
-          method: 'GET',
-          headers: {
-            'Accept': 'application/json',
-            'Authorization': `Bearer ${authToken}`,
-          },
-        });
-        if (response.ok) {
-          const result = await response.json();
-          if (result.success && result.data) {
-            setRequests(result.data);
-          }
+        const isAdmin = user?.role === 'admin' || user?.roles?.includes('admin');
+        const result = await toolService.getRequests(isAdmin);
+        if (result && result.success && result.data) {
+          setRequests(result.data);
         }
       }
     } catch (error) {
@@ -105,7 +96,7 @@ export default function ToolsScreen() {
       setLoading(false);
       setRefreshing(false);
     }
-  }, [authToken, activeTab]);
+  }, [authToken, activeTab, user]);
 
   useEffect(() => {
     fetchToolsData(true);
@@ -124,21 +115,12 @@ export default function ToolsScreen() {
     
     setSubmitting(true);
     try {
-        const response = await fetch(`${API_BASE_URL}/tools/requests`, {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${authToken}`
-            },
-            body: JSON.stringify({
-                tool_id: selectedToolId,
-                notes: requestNotes
-            })
+        const result = await toolService.submitRequest({
+            tool_id: selectedToolId,
+            notes: requestNotes
         });
         
-        const result = await response.json();
-        if (response.ok && result.success) {
+        if (result && result.success) {
             Alert.alert('Success', 'Tool request submitted successfully.');
             setRequestModalVisible(false);
             setSelectedToolId(null);
@@ -146,7 +128,7 @@ export default function ToolsScreen() {
             setActiveTab('requests');
             fetchToolsData(true);
         } else {
-            Alert.alert('Error', result.message || 'Failed to submit request');
+            Alert.alert('Error', result?.message || 'Failed to submit request');
         }
     } catch (err) {
         Alert.alert('Error', 'An unexpected error occurred.');
@@ -163,30 +145,49 @@ export default function ToolsScreen() {
     
     setAddingTool(true);
     try {
-        const response = await fetch(`${API_BASE_URL}/tools`, {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${authToken}`
-            },
-            body: JSON.stringify(newTool)
-        });
+        const result = await toolService.addTool(newTool);
         
-        const result = await response.json();
-        if (response.ok && result.success) {
+        if (result && result.success) {
             Alert.alert('Success', 'Tool added to inventory.');
             setAddToolModalVisible(false);
             setNewTool({ name: '', tool_id: '', type: 'Work Tool', model: '', serial_number: '' });
             setActiveTab('inventory');
             fetchToolsData(true);
         } else {
-            Alert.alert('Error', result.message || 'Failed to add tool. ' + (result.errors ? JSON.stringify(result.errors) : ''));
+            Alert.alert('Error', result?.message || 'Failed to add tool. ' + (result?.errors ? JSON.stringify(result.errors) : ''));
         }
     } catch (err) {
         Alert.alert('Error', 'An unexpected error occurred.');
     } finally {
         setAddingTool(false);
+    }
+  };
+
+  const handleResolveSubmit = async () => {
+    if (!selectedRequest || !resolveStatus) {
+        Alert.alert('Error', 'Please select an outcome.');
+        return;
+    }
+    setResolving(true);
+    try {
+        const result = await toolService.resolveRequest(selectedRequest.id, {
+            status: resolveStatus,
+            admin_notes: resolveNotes
+        });
+        if (result && result.success) {
+            Alert.alert('Success', 'Request resolved.');
+            setResolveModalVisible(false);
+            setSelectedRequest(null);
+            setResolveStatus('');
+            setResolveNotes('');
+            fetchToolsData(true);
+        } else {
+            Alert.alert('Error', result?.message || 'Failed to resolve request.');
+        }
+    } catch (err) {
+        Alert.alert('Error', 'An unexpected error occurred.');
+    } finally {
+        setResolving(false);
     }
   };
 
@@ -244,17 +245,17 @@ export default function ToolsScreen() {
               styles.segment,
               activeTab === 'requests' && [styles.segmentActive, { backgroundColor: theme.text }]
             ]}
-          >
-            <Clock size={16} color={activeTab === 'requests' ? theme.background : theme.textSecondary} />
-            <Text
-              style={[
-                styles.segmentText,
-                { color: activeTab === 'requests' ? theme.background : theme.textSecondary }
-              ]}
             >
-              My Requests
-            </Text>
-          </Pressable>
+              <Clock size={16} color={activeTab === 'requests' ? theme.background : theme.textSecondary} />
+              <Text
+                style={[
+                  styles.segmentText,
+                  { color: activeTab === 'requests' ? theme.background : theme.textSecondary }
+                ]}
+              >
+                {(user?.role === 'admin' || user?.roles?.includes('admin')) ? 'Requests' : 'My Requests'}
+              </Text>
+            </Pressable>
         </View>
       </View>
 
@@ -362,6 +363,19 @@ export default function ToolsScreen() {
                     </View>
 
                     <View style={styles.cardFooter}>
+                      { (user?.role === 'admin' || user?.roles?.includes('admin')) && req.status?.toLowerCase() === 'pending' ? (
+                        <Pressable 
+                          onPress={() => {
+                            setSelectedRequest(req);
+                            setResolveStatus('');
+                            setResolveNotes('');
+                            setResolveModalVisible(true);
+                          }}
+                          style={{ backgroundColor: theme.primary, paddingHorizontal: 12, paddingVertical: 6, borderRadius: 8 }}
+                        >
+                          <Text style={{ color: '#fff', fontSize: 12, fontFamily: 'PlusJakartaSans_700Bold' }}>Review</Text>
+                        </Pressable>
+                      ) : null }
                       <Text style={[styles.dateText, { color: theme.textSecondary }]}>
                         Requested on {new Date(req.created_at).toLocaleDateString()}
                       </Text>
@@ -511,6 +525,72 @@ export default function ToolsScreen() {
                   disabled={!newTool.name || !newTool.tool_id || addingTool}
               >
                   {addingTool ? <ActivityIndicator color="#fff" /> : <Text style={styles.submitButtonText}>Add to Inventory</Text>}
+              </Pressable>
+            </View>
+          </View>
+        </View>
+      </Modal>
+
+      {/* Resolve Request Modal */}
+      <Modal visible={resolveModalVisible} animationType="slide" transparent={true}>
+        <View style={styles.modalOverlay}>
+          <View style={[styles.modalContent, { backgroundColor: theme.background }]}>
+            <View style={styles.modalHeader}>
+              <Text style={[styles.modalTitle, { color: theme.text }]}>Review Request</Text>
+              <Pressable onPress={() => setResolveModalVisible(false)} style={styles.closeButton}>
+                <X color={theme.text} size={24} />
+              </Pressable>
+            </View>
+            
+            <ScrollView style={styles.modalScroll} showsVerticalScrollIndicator={false}>
+              {selectedRequest && (
+                <View style={{ backgroundColor: theme.backgroundElement, padding: 16, borderRadius: 12, marginBottom: 20 }}>
+                  <Text style={{ color: theme.text, fontFamily: 'PlusJakartaSans_700Bold', marginBottom: 4 }}>
+                    {selectedRequest.tool?.name} ({selectedRequest.tool?.tool_id})
+                  </Text>
+                  <Text style={{ color: theme.textSecondary, fontFamily: 'PlusJakartaSans_500Medium', marginBottom: 8 }}>
+                    Requested by: {selectedRequest.staff?.user?.name || 'Unknown User'}
+                  </Text>
+                  <Text style={{ color: theme.textSecondary, fontFamily: 'PlusJakartaSans_500Medium' }}>
+                    Notes: {selectedRequest.notes || 'N/A'}
+                  </Text>
+                </View>
+              )}
+
+              <Text style={[styles.inputLabel, { color: theme.text }]}>Outcome *</Text>
+              <View style={styles.segmentedControlForm}>
+                <Pressable
+                    onPress={() => setResolveStatus('Approved')}
+                    style={[styles.segment, resolveStatus === 'Approved' && [styles.segmentActiveForm, { backgroundColor: '#10B981' }]]}
+                >
+                    <Text style={[styles.segmentTextForm, { color: resolveStatus === 'Approved' ? '#fff' : theme.textSecondary }]}>Approve</Text>
+                </Pressable>
+                <Pressable
+                    onPress={() => setResolveStatus('Rejected')}
+                    style={[styles.segment, resolveStatus === 'Rejected' && [styles.segmentActiveForm, { backgroundColor: '#EF4444' }]]}
+                >
+                    <Text style={[styles.segmentTextForm, { color: resolveStatus === 'Rejected' ? '#fff' : theme.textSecondary }]}>Reject</Text>
+                </Pressable>
+              </View>
+
+              <Text style={[styles.inputLabel, { color: theme.text, marginTop: 16 }]}>Admin Notes (Optional)</Text>
+              <TextInput
+                  style={[styles.textInput, { color: theme.text, borderColor: theme.border, backgroundColor: theme.backgroundElement, minHeight: 80, paddingVertical: 12 }]}
+                  placeholder="Enter response notes..."
+                  placeholderTextColor={theme.textSecondary}
+                  multiline
+                  value={resolveNotes}
+                  onChangeText={setResolveNotes}
+              />
+            </ScrollView>
+
+            <View style={[styles.modalFooter, { borderTopColor: theme.border }]}>
+              <Pressable 
+                  style={[styles.submitButton, { backgroundColor: theme.primary }, (!resolveStatus || resolving) && { opacity: 0.5 }]}
+                  onPress={handleResolveSubmit}
+                  disabled={!resolveStatus || resolving}
+              >
+                  {resolving ? <ActivityIndicator color="#fff" /> : <Text style={styles.submitButtonText}>Submit Resolution</Text>}
               </Pressable>
             </View>
           </View>

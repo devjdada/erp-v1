@@ -16,8 +16,7 @@ import { useTheme } from '@/hooks/use-theme';
 import { useRouter } from 'expo-router';
 import { ArrowLeft, Clock, Calendar, CheckCircle2, AlertCircle, X, ChevronDown, Plus } from 'lucide-react-native';
 import { useAuth } from '@/context/AuthContext';
-
-const API_BASE_URL = 'https://oki.wchapel.com/api/v1';
+import { attendanceService } from '@/services/attendanceService';
 
 interface CorrectionRequest {
   id: number;
@@ -67,38 +66,22 @@ export default function CorrectionsScreen() {
 
     try {
       // Fetch user's corrections
-      const resCorrections = await fetch(`${API_BASE_URL}/attendance/corrections`, {
-        method: 'GET',
-        headers: {
-          'Accept': 'application/json',
-          'Authorization': `Bearer ${authToken}`,
-        },
-      });
+      const result = await attendanceService.getCorrections();
 
-      if (resCorrections.ok) {
-        const result = await resCorrections.json();
-        if (result.success && result.data) {
-          // Filter to only include this staff member's requests
-          const staffId = user?.staff?.id;
-          const myCorrections = result.data.filter((req: any) => !staffId || req.staff_id === staffId);
-          setCorrections(myCorrections);
-        }
+      if (result && result.success && result.data) {
+        // Filter to only include this staff member's requests
+        const staffId = user?.staff?.id;
+        const myCorrections = result.data.filter((req: any) => !staffId || req.staff_id === staffId);
+        setCorrections(myCorrections);
       }
 
       // Fetch user's recent attendance logs to correct
       if (user?.staff?.id) {
-        const resLogs = await fetch(`${API_BASE_URL}/attendance?staff_id=${user.staff.id}`, {
-          method: 'GET',
-          headers: {
-            'Accept': 'application/json',
-            'Authorization': `Bearer ${authToken}`,
-          },
-        });
-        if (resLogs.ok) {
-          const resultLogs = await resLogs.json();
-          if (resultLogs.success && resultLogs.data) {
-            setAttendanceLogs(resultLogs.data.slice(0, 10)); // Take last 10 logs
-          }
+        const resultLogs = await attendanceService.getLogs(user.staff.id);
+        if (resultLogs && resultLogs.success && resultLogs.data) {
+          // Handle Laravel paginated response (resultLogs.data.data) or flat array (resultLogs.data)
+          const logsArray = Array.isArray(resultLogs.data) ? resultLogs.data : (resultLogs.data.data || []);
+          setAttendanceLogs(logsArray.slice(0, 10)); // Take last 10 logs
         }
       }
     } catch (error) {
@@ -126,23 +109,14 @@ export default function CorrectionsScreen() {
 
     setSubmitting(true);
     try {
-      const response = await fetch(`${API_BASE_URL}/attendance/corrections`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-          'Authorization': `Bearer ${authToken}`,
-        },
-        body: JSON.stringify({
-          attendance_id: selectedLogId,
-          corrected_clock_in: correctedIn || null,
-          corrected_clock_out: correctedOut || null,
-          reason: reason,
-        }),
+      const result = await attendanceService.submitCorrection({
+        attendance_id: selectedLogId,
+        corrected_clock_in: correctedIn || null,
+        corrected_clock_out: correctedOut || null,
+        reason: reason,
       });
 
-      const result = await response.json();
-      if (response.ok && result.success) {
+      if (result && result.success) {
         Alert.alert('Success', 'Correction request submitted successfully.');
         setModalVisible(false);
         // Reset form
@@ -154,9 +128,9 @@ export default function CorrectionsScreen() {
       } else {
         Alert.alert('Error', result.message || 'Failed to submit correction.');
       }
-    } catch (e) {
+    } catch (e: any) {
       console.error('Error submitting correction:', e);
-      Alert.alert('Error', 'Network error. Please try again.');
+      Alert.alert('Error', e?.response?.data?.message || 'Network error. Please try again.');
     } finally {
       setSubmitting(false);
     }

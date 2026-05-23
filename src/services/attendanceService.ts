@@ -25,7 +25,12 @@ export const attendanceService = {
   },
 
   getPermissions: async () => {
-    const response = await api.get('/settings/attendance-permissions');
+    const response = await api.get('/attendance/permissions');
+    return response.data;
+  },
+
+  submitPermission: async (data: { date: string; type: string; reason: string }) => {
+    const response = await api.post('/attendance/permissions', data);
     return response.data;
   },
 };

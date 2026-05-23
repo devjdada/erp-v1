@@ -8,22 +8,29 @@ import {
   Pressable,
   ActivityIndicator,
   RefreshControl,
+  Modal,
+  TextInput,
+  Alert,
+  Platform,
 } from 'react-native';
 import { useTheme } from '@/hooks/use-theme';
 import { useRouter } from 'expo-router';
-import { ArrowLeft, ShieldAlert, KeyRound, Calendar, ShieldCheck } from 'lucide-react-native';
+import { ArrowLeft, ShieldAlert, KeyRound, Calendar, ShieldCheck, Plus, X, ChevronDown, AlertCircle } from 'lucide-react-native';
 import { useAuth } from '@/context/AuthContext';
-
-const API_BASE_URL = 'https://oki.wchapel.com/api/v1';
+import { attendanceService } from '@/services/attendanceService';
+import DateTimePicker from '@react-native-community/datetimepicker';
 
 interface PermissionRecord {
   id: number;
-  permission_type: string;
-  start_date: string;
-  end_date: string;
+  permission_type?: string;
+  type?: string;
+  start_date?: string;
+  end_date?: string;
+  date?: string;
   reason: string;
   status: 'pending' | 'approved' | 'rejected' | string;
-  created_at: string;
+  created_at?: string;
+  hr_remarks?: string | null;
   approved_by_user?: {
     name: string;
   } | null;
@@ -44,19 +51,9 @@ export default function PermissionsScreen() {
     if (showLoader) setLoading(true);
 
     try {
-      const response = await fetch(`${API_BASE_URL}/settings/attendance-permissions`, {
-        method: 'GET',
-        headers: {
-          'Accept': 'application/json',
-          'Authorization': `Bearer ${authToken}`,
-        },
-      });
-
-      if (response.ok) {
-        const result = await response.json();
-        if (result.success && result.data) {
-          setPermissions(result.data);
-        }
+      const result = await attendanceService.getPermissions();
+      if (result && result.success && result.data) {
+        setPermissions(result.data);
       }
     } catch (error) {
       console.error('Error fetching permissions:', error);
@@ -89,6 +86,48 @@ export default function PermissionsScreen() {
     return 'rgba(245, 158, 11, 0.08)';
   };
 
+  // Modal state
+  const [modalVisible, setModalVisible] = useState(false);
+  const [showTypeDropdown, setShowTypeDropdown] = useState(false);
+  const [dateStr, setDateStr] = useState('');
+  const [dateValue, setDateValue] = useState(new Date());
+  const [showDatePicker, setShowDatePicker] = useState(false);
+  const [type, setType] = useState('lateness');
+  const [reason, setReason] = useState('');
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSubmit = async () => {
+    if (!dateStr || !type || !reason) {
+      Alert.alert('Error', 'Please fill in all required fields.');
+      return;
+    }
+
+    setSubmitting(true);
+    try {
+      const result = await attendanceService.submitPermission({
+        date: dateStr,
+        type: type,
+        reason: reason,
+      });
+
+      if (result && result.success) {
+        Alert.alert('Success', 'Permission request submitted successfully.');
+        setModalVisible(false);
+        setDateStr('');
+        setType('lateness');
+        setReason('');
+        fetchPermissions(false);
+      } else {
+        Alert.alert('Error', result.message || 'Failed to submit request.');
+      }
+    } catch (e: any) {
+      console.error('Error submitting permission:', e);
+      Alert.alert('Error', e?.response?.data?.message || 'Network error. Please try again.');
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   return (
     <SafeAreaView style={[styles.safeArea, { backgroundColor: theme.background }]}>
       {/* Header */}
@@ -97,7 +136,9 @@ export default function PermissionsScreen() {
           <ArrowLeft color={theme.text} size={24} />
         </Pressable>
         <Text style={[styles.headerTitle, { color: theme.text }]}>Attendance Permissions</Text>
-        <View style={{ width: 40 }} />
+        <Pressable onPress={() => setModalVisible(true)} style={[styles.addButton, { backgroundColor: theme.primary }]}>
+          <Plus color="#FFFFFF" size={18} />
+        </Pressable>
       </View>
 
       {loading ? (
@@ -130,9 +171,13 @@ export default function PermissionsScreen() {
                           <KeyRound color={theme.primary} size={18} />
                         </View>
                         <View>
-                          <Text style={[styles.permType, { color: theme.text }]}>{perm.permission_type}</Text>
+                          <Text style={[styles.permType, { color: theme.text }]}>
+                            {perm.type || perm.permission_type || 'Permission'}
+                          </Text>
                           <Text style={[styles.permDuration, { color: theme.textSecondary }]}>
-                            {new Date(perm.start_date).toLocaleDateString()} - {new Date(perm.end_date).toLocaleDateString()}
+                            {perm.date 
+                              ? new Date(perm.date).toLocaleDateString() 
+                              : (perm.start_date ? new Date(perm.start_date).toLocaleDateString() : '')}
                           </Text>
                         </View>
                       </View>
@@ -147,6 +192,15 @@ export default function PermissionsScreen() {
                       <Text style={[styles.detailLabel, { color: theme.textSecondary }]}>REASON:</Text>
                       <Text style={[styles.detailValue, { color: theme.text }]}>{perm.reason}</Text>
                       
+                      {perm.hr_remarks && (
+                        <View style={styles.approverRow}>
+                          <ShieldCheck size={14} color="#10B981" />
+                          <Text style={[styles.approverText, { color: theme.textSecondary }]}>
+                            HR Remarks: <Text style={{ color: theme.text, fontFamily: 'PlusJakartaSans_600SemiBold' }}>{perm.hr_remarks}</Text>
+                          </Text>
+                        </View>
+                      )}
+                      
                       {perm.approved_by_user && (
                         <View style={styles.approverRow}>
                           <ShieldCheck size={14} color="#10B981" />
@@ -160,7 +214,7 @@ export default function PermissionsScreen() {
                     <View style={styles.cardFooter}>
                       <Calendar size={12} color={theme.textSecondary} />
                       <Text style={[styles.dateText, { color: theme.textSecondary }]}>
-                        Requested: {new Date(perm.created_at).toLocaleDateString()}
+                        Requested: {perm.created_at ? new Date(perm.created_at).toLocaleDateString() : new Date().toLocaleDateString()}
                       </Text>
                     </View>
                   </View>
@@ -178,6 +232,128 @@ export default function PermissionsScreen() {
           )}
         </ScrollView>
       )}
+
+      {/* Request Modal */}
+      <Modal visible={modalVisible} animationType="slide" transparent={true}>
+        <View style={styles.modalBackdrop}>
+          <View style={[styles.modalContent, { backgroundColor: theme.backgroundElement }]}>
+            <View style={[styles.modalHeader, { borderBottomColor: theme.border }]}>
+              <Text style={[styles.modalTitle, { color: theme.text }]}>Request Permission</Text>
+              <Pressable onPress={() => setModalVisible(false)}>
+                <X color={theme.text} size={20} />
+              </Pressable>
+            </View>
+
+            <ScrollView contentContainerStyle={styles.modalForm}>
+              <Text style={[styles.fieldLabel, { color: theme.text }]}>Date (YYYY-MM-DD) *</Text>
+              
+              {Platform.OS === 'web' ? (
+                // @ts-ignore - web specific attribute
+                <input 
+                  type="date"
+                  value={dateStr}
+                  onChange={(e: any) => setDateStr(e.target.value)}
+                  style={{
+                    height: 44,
+                    borderWidth: 1,
+                    borderRadius: 10,
+                    paddingLeft: 12,
+                    paddingRight: 12,
+                    borderColor: theme.border,
+                    backgroundColor: 'transparent',
+                    color: theme.text,
+                    fontFamily: 'PlusJakartaSans_500Medium',
+                    fontSize: 13.5,
+                    marginBottom: 8,
+                    outline: 'none',
+                  }}
+                />
+              ) : (
+                <Pressable onPress={() => setShowDatePicker(true)} style={[styles.input, { color: theme.text, borderColor: theme.border, justifyContent: 'center' }]}>
+                  <Text style={{ color: dateStr ? theme.text : theme.textSecondary, fontFamily: 'PlusJakartaSans_500Medium' }}>
+                    {dateStr || 'Select Date'}
+                  </Text>
+                </Pressable>
+              )}
+
+              {Platform.OS !== 'web' && showDatePicker && (
+                <DateTimePicker
+                  value={dateValue}
+                  mode="date"
+                  display="default"
+                  onChange={(event, selectedDate) => {
+                    setShowDatePicker(false);
+                    if (selectedDate) {
+                      setDateValue(selectedDate);
+                      setDateStr(selectedDate.toISOString().split('T')[0]);
+                    }
+                  }}
+                />
+              )}
+
+              <Text style={[styles.fieldLabel, { color: theme.text }]}>Type *</Text>
+              <Pressable
+                onPress={() => setShowTypeDropdown(!showTypeDropdown)}
+                style={[styles.selectBox, { borderColor: theme.border }]}
+              >
+                <Text style={{ color: theme.text, fontFamily: 'PlusJakartaSans_500Medium', textTransform: 'capitalize' }}>
+                  {type}
+                </Text>
+                <ChevronDown color={theme.textSecondary} size={18} />
+              </Pressable>
+
+              {showTypeDropdown && (
+                <View style={[styles.dropdown, { borderColor: theme.border, backgroundColor: theme.background }]}>
+                  {['lateness', 'absence'].map((opt) => (
+                    <Pressable
+                      key={opt}
+                      onPress={() => {
+                        setType(opt);
+                        setShowTypeDropdown(false);
+                      }}
+                      style={styles.dropdownItem}
+                    >
+                      <Text style={[styles.dropdownItemText, { color: theme.text, textTransform: 'capitalize' }]}>
+                        {opt}
+                      </Text>
+                    </Pressable>
+                  ))}
+                </View>
+              )}
+
+              <Text style={[styles.fieldLabel, { color: theme.text }]}>Reason *</Text>
+              <TextInput
+                value={reason}
+                onChangeText={setReason}
+                placeholder="Explain why you are requesting this permission..."
+                placeholderTextColor={theme.textSecondary}
+                multiline={true}
+                numberOfLines={3}
+                style={[styles.textArea, { color: theme.text, borderColor: theme.border }]}
+              />
+
+              <View style={[styles.infoAlert, { backgroundColor: `${theme.primary}12`, borderColor: `${theme.primary}30` }]}>
+                <AlertCircle size={16} color={theme.primary} />
+                <Text style={[styles.infoAlertText, { color: theme.primary }]}>
+                  Approved requests will prevent automatic salary deductions during payroll processing.
+                </Text>
+              </View>
+
+              <Pressable
+                onPress={handleSubmit}
+                disabled={submitting}
+                style={[styles.submitBtn, { backgroundColor: theme.primary }]}
+              >
+                {submitting ? (
+                  <ActivityIndicator color="#FFFFFF" size="small" />
+                ) : (
+                  <Text style={styles.submitBtnText}>Submit to HR</Text>
+                )}
+              </Pressable>
+            </ScrollView>
+          </View>
+        </View>
+      </Modal>
     </SafeAreaView>
   );
 }
@@ -201,6 +377,13 @@ const styles = StyleSheet.create({
   headerTitle: {
     fontFamily: 'PlusJakartaSans_700Bold',
     fontSize: 18,
+  },
+  addButton: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   centered: {
     flex: 1,
@@ -314,5 +497,108 @@ const styles = StyleSheet.create({
     fontSize: 13,
     textAlign: 'center',
     lineHeight: 18,
+  },
+  modalBackdrop: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    justifyContent: 'flex-end',
+  },
+  modalContent: {
+    borderTopLeftRadius: 24,
+    borderTopRightRadius: 24,
+    maxHeight: '90%',
+    paddingBottom: 24,
+  },
+  modalHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: 20,
+    borderBottomWidth: 1,
+  },
+  modalTitle: {
+    fontFamily: 'PlusJakartaSans_700Bold',
+    fontSize: 17.5,
+  },
+  modalForm: {
+    padding: 20,
+  },
+  fieldLabel: {
+    fontFamily: 'PlusJakartaSans_700Bold',
+    fontSize: 13,
+    marginBottom: 8,
+    marginTop: 12,
+  },
+  selectBox: {
+    height: 44,
+    borderWidth: 1,
+    borderRadius: 10,
+    paddingHorizontal: 12,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: 8,
+  },
+  dropdown: {
+    borderWidth: 1,
+    borderRadius: 10,
+    overflow: 'hidden',
+    marginBottom: 12,
+  },
+  dropdownItem: {
+    padding: 12,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomColor: 'rgba(0,0,0,0.05)',
+  },
+  dropdownItemText: {
+    fontFamily: 'PlusJakartaSans_500Medium',
+    fontSize: 13,
+  },
+  input: {
+    height: 44,
+    borderWidth: 1,
+    borderRadius: 10,
+    paddingHorizontal: 12,
+    fontFamily: 'PlusJakartaSans_500Medium',
+    fontSize: 13.5,
+    marginBottom: 8,
+  },
+  textArea: {
+    height: 80,
+    borderWidth: 1,
+    borderRadius: 10,
+    paddingHorizontal: 12,
+    paddingVertical: 10,
+    textAlignVertical: 'top',
+    fontFamily: 'PlusJakartaSans_500Medium',
+    fontSize: 13.5,
+    marginBottom: 18,
+  },
+  infoAlert: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    gap: 10,
+    padding: 14,
+    borderRadius: 12,
+    borderWidth: 1,
+    marginBottom: 18,
+  },
+  infoAlertText: {
+    flex: 1,
+    fontFamily: 'PlusJakartaSans_600SemiBold',
+    fontSize: 12,
+    lineHeight: 16,
+  },
+  submitBtn: {
+    height: 48,
+    borderRadius: 12,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 10,
+  },
+  submitBtnText: {
+    fontFamily: 'PlusJakartaSans_700Bold',
+    fontSize: 14.5,
+    color: '#FFFFFF',
   },
 });
