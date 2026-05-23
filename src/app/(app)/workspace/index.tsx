@@ -69,6 +69,51 @@ const getFriendlyErrorMessage = (message: string, action: 'in' | 'out') => {
   return message;
 };
 
+const parseAttendanceDateTime = (dateStr: string | undefined, timeStr: string | null | undefined): Date | null => {
+  if (!timeStr) return null;
+  if (timeStr.includes('T') || timeStr.includes('-')) {
+    const d = new Date(timeStr);
+    if (!isNaN(d.getTime())) return d;
+  }
+  const datePart = dateStr || new Date().toISOString().split('T')[0];
+  const combinedStr = `${datePart}T${timeStr}`;
+  const d = new Date(combinedStr);
+  if (!isNaN(d.getTime())) return d;
+  
+  const spaceCombinedStr = `${datePart} ${timeStr}`;
+  const d2 = new Date(spaceCombinedStr.replace(/-/g, '/'));
+  if (!isNaN(d2.getTime())) return d2;
+
+  return null;
+};
+
+const formatAttendanceTime = (timeStr: string | null | undefined) => {
+  if (!timeStr) return '';
+  try {
+    if (timeStr.includes('T') || timeStr.includes('-') || timeStr.includes(' ')) {
+      const date = new Date(timeStr);
+      if (!isNaN(date.getTime())) {
+        let hours = date.getHours();
+        const minutes = date.getMinutes();
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12 || 12;
+        return `${hours}:${String(minutes).padStart(2, '0')} ${ampm}`;
+      }
+    }
+    const parts = timeStr.split(':');
+    if (parts.length >= 2) {
+      let hours = parseInt(parts[0], 10);
+      const minutes = parseInt(parts[1], 10);
+      const ampm = hours >= 12 ? 'PM' : 'AM';
+      hours = hours % 12 || 12;
+      return `${hours}:${String(minutes).padStart(2, '0')} ${ampm}`;
+    }
+  } catch (e) {
+    console.error('Error formatting time:', e);
+  }
+  return timeStr;
+};
+
 interface DashboardStats {
   attendance: {
     present: number;
@@ -78,8 +123,9 @@ interface DashboardStats {
   today_attendance: {
     id: number;
     status: string;
-    clock_in_time: string;
-    clock_out_time: string | null;
+    clock_in: string;
+    clock_out: string | null;
+    date?: string;
   } | null;
 }
 
@@ -137,19 +183,27 @@ export default function WorkspaceDashboard() {
     fetchDashboardStats(false);
   };
 
-  const isClockedIn = !!(stats?.today_attendance && !stats.today_attendance.clock_out_time);
+  const todayAttendance = stats?.today_attendance;
+  const hasClockedIn = !!(todayAttendance && todayAttendance.clock_in);
+  const hasClockedOut = !!(todayAttendance && todayAttendance.clock_out);
+  const isClockedIn = hasClockedIn && !hasClockedOut;
 
   // Calculate shift duration
   useEffect(() => {
     let timer: NodeJS.Timeout;
-    if (isClockedIn && stats?.today_attendance?.clock_in_time) {
-      const clockInDate = new Date(stats.today_attendance.clock_in_time);
-      const updateSeconds = () => {
-        const diffMs = new Date().getTime() - clockInDate.getTime();
-        setShiftSeconds(Math.max(0, Math.floor(diffMs / 1000)));
-      };
-      updateSeconds();
-      timer = setInterval(updateSeconds, 1000);
+    if (isClockedIn && stats?.today_attendance?.clock_in) {
+      const clockInDate = parseAttendanceDateTime(
+        stats.today_attendance.date,
+        stats.today_attendance.clock_in
+      );
+      if (clockInDate) {
+        const updateSeconds = () => {
+          const diffMs = new Date().getTime() - clockInDate.getTime();
+          setShiftSeconds(Math.max(0, Math.floor(diffMs / 1000)));
+        };
+        updateSeconds();
+        timer = setInterval(updateSeconds, 1000);
+      }
     } else {
       setShiftSeconds(0);
     }
@@ -443,29 +497,54 @@ export default function WorkspaceDashboard() {
               </View>
             )}
 
-            <Pressable
-              onPress={handleClockInOut}
-              disabled={clockActionLoading}
-              style={({ pressed }) => [
-                styles.clockButton,
-                { backgroundColor: isClockedIn ? '#EF4444' : theme.primary },
-                pressed && { opacity: 0.85 }
-              ]}
-            >
-              {clockActionLoading ? (
-                <ActivityIndicator color="#FFFFFF" size="small" />
-              ) : isClockedIn ? (
-                <>
-                  <Square color="#FFFFFF" size={14} fill="#FFFFFF" style={{ marginRight: 8 }} />
-                  <Text style={styles.clockButtonText}>CLOCK OUT NOW</Text>
-                </>
-              ) : (
-                <>
-                  <Play color="#FFFFFF" size={14} fill="#FFFFFF" style={{ marginRight: 8 }} />
-                  <Text style={styles.clockButtonText}>CLOCK IN NOW</Text>
-                </>
-              )}
-            </Pressable>
+            {hasClockedOut ? (
+              <View style={[styles.shiftCompletedCard, { borderColor: theme.border }]}>
+                <View style={styles.shiftTimesRow}>
+                  <View style={styles.shiftTimeCol}>
+                    <Text style={[styles.shiftTimeLabel, { color: theme.textSecondary }]}>CLOCKED IN</Text>
+                    <Text style={[styles.shiftTimeValue, { color: '#10B981' }]}>
+                      {formatAttendanceTime(stats?.today_attendance?.clock_in)}
+                    </Text>
+                  </View>
+                  <View style={[styles.verticalDivider, { backgroundColor: theme.border }]} />
+                  <View style={styles.shiftTimeCol}>
+                    <Text style={[styles.shiftTimeLabel, { color: theme.textSecondary }]}>CLOCKED OUT</Text>
+                    <Text style={[styles.shiftTimeValue, { color: '#EF4444' }]}>
+                      {formatAttendanceTime(stats?.today_attendance?.clock_out)}
+                    </Text>
+                  </View>
+                </View>
+                
+                <View style={styles.completedBadge}>
+                  <ShieldCheck color="#10B981" size={16} style={{ marginRight: 6 }} />
+                  <Text style={styles.completedBadgeText}>SHIFT COMPLETED</Text>
+                </View>
+              </View>
+            ) : (
+              <Pressable
+                onPress={handleClockInOut}
+                disabled={clockActionLoading}
+                style={({ pressed }) => [
+                  styles.clockButton,
+                  { backgroundColor: isClockedIn ? '#EF4444' : theme.primary },
+                  pressed && { opacity: 0.85 }
+                ]}
+              >
+                {clockActionLoading ? (
+                  <ActivityIndicator color="#FFFFFF" size="small" />
+                ) : isClockedIn ? (
+                  <>
+                    <Square color="#FFFFFF" size={14} fill="#FFFFFF" style={{ marginRight: 8 }} />
+                    <Text style={styles.clockButtonText}>CLOCK OUT NOW</Text>
+                  </>
+                ) : (
+                  <>
+                    <Play color="#FFFFFF" size={14} fill="#FFFFFF" style={{ marginRight: 8 }} />
+                    <Text style={styles.clockButtonText}>CLOCK IN NOW</Text>
+                  </>
+                )}
+              </Pressable>
+            )}
           </View>
 
           {/* Applications Grid Section */}
@@ -796,5 +875,53 @@ const styles = StyleSheet.create({
   },
   closeErrorButton: {
     padding: 4,
+  },
+  shiftCompletedCard: {
+    borderWidth: 1,
+    borderRadius: 16,
+    padding: 14,
+    backgroundColor: 'rgba(16, 185, 129, 0.05)',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  shiftTimesRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    width: '100%',
+    marginBottom: 12,
+  },
+  shiftTimeCol: {
+    alignItems: 'center',
+    flex: 1,
+  },
+  shiftTimeLabel: {
+    fontFamily: 'PlusJakartaSans_700Bold',
+    fontSize: 10,
+    letterSpacing: 0.5,
+    marginBottom: 4,
+  },
+  shiftTimeValue: {
+    fontFamily: 'PlusJakartaSans_800ExtraBold',
+    fontSize: 18,
+  },
+  verticalDivider: {
+    width: 1,
+    height: 30,
+  },
+  completedBadge: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(16, 185, 129, 0.1)',
+    borderRadius: 20,
+    paddingVertical: 6,
+    paddingHorizontal: 12,
+  },
+  completedBadgeText: {
+    fontFamily: 'PlusJakartaSans_700Bold',
+    fontSize: 11,
+    color: '#10B981',
+    letterSpacing: 0.5,
   },
 });

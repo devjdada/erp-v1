@@ -290,7 +290,7 @@
       "source_file": "app.json",
       "source_location": "L46",
       "id": "erp_app_app_expo_experiments",
-      "community": 35,
+      "community": 0,
       "norm_label": "experiments"
     },
     {
@@ -299,7 +299,7 @@
       "source_file": "app.json",
       "source_location": "L47",
       "id": "erp_app_app_experiments_typedroutes",
-      "community": 35,
+      "community": 0,
       "norm_label": "typedroutes"
     },
     {
@@ -308,7 +308,7 @@
       "source_file": "app.json",
       "source_location": "L48",
       "id": "erp_app_app_experiments_reactcompiler",
-      "community": 35,
+      "community": 0,
       "norm_label": "reactcompiler"
     },
     {
@@ -785,7 +785,7 @@
       "source_file": "package.json",
       "source_location": "L48",
       "id": "erp_app_package_devdependencies",
-      "community": 34,
+      "community": 29,
       "norm_label": "devdependencies"
     },
     {
@@ -794,7 +794,7 @@
       "source_file": "package.json",
       "source_location": "L49",
       "id": "erp_app_package_devdependencies_types_react",
-      "community": 34,
+      "community": 29,
       "norm_label": "@types/react"
     },
     {
@@ -803,7 +803,7 @@
       "source_file": "package.json",
       "source_location": "L50",
       "id": "erp_app_package_devdependencies_eslint",
-      "community": 34,
+      "community": 29,
       "norm_label": "eslint"
     },
     {
@@ -812,7 +812,7 @@
       "source_file": "package.json",
       "source_location": "L51",
       "id": "erp_app_package_devdependencies_eslint_config_expo",
-      "community": 34,
+      "community": 29,
       "norm_label": "eslint-config-expo"
     },
     {
@@ -821,7 +821,7 @@
       "source_file": "package.json",
       "source_location": "L52",
       "id": "erp_app_package_devdependencies_typescript",
-      "community": 34,
+      "community": 29,
       "norm_label": "typescript"
     },
     {
@@ -1694,7 +1694,7 @@
       "source_file": "src/app/index.tsx",
       "source_location": "L1",
       "id": "src_app_index_tsx",
-      "community": 38,
+      "community": 42,
       "norm_label": "index.tsx"
     },
     {
@@ -1703,7 +1703,7 @@
       "source_file": "src/app/index.tsx",
       "source_location": "L7",
       "id": "app_index_entryscreen",
-      "community": 38,
+      "community": 42,
       "norm_label": "entryscreen()"
     },
     {
@@ -1712,7 +1712,7 @@
       "source_file": "src/app/_layout.tsx",
       "source_location": "L1",
       "id": "src_app_layout_tsx",
-      "community": 3,
+      "community": 31,
       "norm_label": "_layout.tsx"
     },
     {
@@ -1721,7 +1721,7 @@
       "source_file": "src/app/_layout.tsx",
       "source_location": "L14",
       "id": "app_layout_appcontent",
-      "community": 3,
+      "community": 31,
       "norm_label": "appcontent()"
     },
     {
@@ -1730,7 +1730,7 @@
       "source_file": "src/app/_layout.tsx",
       "source_location": "L57",
       "id": "app_layout_rootlayout",
-      "community": 3,
+      "community": 31,
       "norm_label": "rootlayout()"
     },
     {
@@ -1739,7 +1739,7 @@
       "source_file": "src/app/(app)/settings.tsx",
       "source_location": "L1",
       "id": "src_app_app_settings_tsx",
-      "community": 3,
+      "community": 31,
       "norm_label": "settings.tsx"
     },
     {
@@ -1748,7 +1748,7 @@
       "source_file": "src/app/(app)/settings.tsx",
       "source_location": "L8",
       "id": "app_settings_settingsscreen",
-      "community": 3,
+      "community": 31,
       "norm_label": "settingsscreen()"
     },
     {
@@ -1757,7 +1757,7 @@
       "source_file": "src/app/(app)/settings.tsx",
       "source_location": "L78",
       "id": "app_settings_styles",
-      "community": 3,
+      "community": 31,
       "norm_label": "styles"
     },
     {
@@ -1766,7 +1766,7 @@
       "source_file": "src/app/(app)/_layout.tsx",
       "source_location": "L1",
       "id": "src_app_app_layout_tsx",
-      "community": 3,
+      "community": 42,
       "norm_label": "_layout.tsx"
     },
     {
@@ -1775,7 +1775,7 @@
       "source_file": "src/app/(app)/_layout.tsx",
       "source_location": "L8",
       "id": "app_layout_applayout",
-      "community": 3,
+      "community": 42,
       "norm_label": "applayout()"
     },
     {
@@ -1784,7 +1784,7 @@
       "source_file": "src/app/(app)/fleet/index.tsx",
       "source_location": "L1",
       "id": "src_app_app_fleet_index_tsx",
-      "community": 3,
+      "community": 42,
       "norm_label": "index.tsx"
     },
     {
@@ -1793,7 +1793,7 @@
       "source_file": "src/app/(app)/fleet/index.tsx",
       "source_location": "L6",
       "id": "fleet_index_vehicle",
-      "community": 38,
+      "community": 42,
       "norm_label": "vehicle"
     },
     {
@@ -1802,7 +1802,7 @@
       "source_file": "src/app/(app)/fleet/index.tsx",
       "source_location": "L15",
       "id": "fleet_index_fleetvehicles",
-      "community": 3,
+      "community": 42,
       "norm_label": "fleetvehicles()"
     },
     {
@@ -1811,7 +1811,7 @@
       "source_file": "src/app/(app)/fleet/index.tsx",
       "source_location": "L101",
       "id": "fleet_index_styles",
-      "community": 3,
+      "community": 42,
       "norm_label": "styles"
     },
     {
@@ -1820,7 +1820,7 @@
       "source_file": "src/app/(app)/fleet/map.tsx",
       "source_location": "L1",
       "id": "src_app_app_fleet_map_tsx",
-      "community": 3,
+      "community": 42,
       "norm_label": "map.tsx"
     },
     {
@@ -1829,7 +1829,7 @@
       "source_file": "src/app/(app)/fleet/map.tsx",
       "source_location": "L6",
       "id": "fleet_map_fleetmap",
-      "community": 3,
+      "community": 42,
       "norm_label": "fleetmap()"
     },
     {
@@ -1847,7 +1847,7 @@
       "source_file": "src/app/(app)/fleet/_layout.tsx",
       "source_location": "L1",
       "id": "src_app_app_fleet_layout_tsx",
-      "community": 3,
+      "community": 42,
       "norm_label": "_layout.tsx"
     },
     {
@@ -1856,7 +1856,7 @@
       "source_file": "src/app/(app)/fleet/_layout.tsx",
       "source_location": "L6",
       "id": "fleet_layout_fleetlayout",
-      "community": 3,
+      "community": 42,
       "norm_label": "fleetlayout()"
     },
     {
@@ -1865,7 +1865,7 @@
       "source_file": "src/app/(app)/workspace/announcements.tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_announcements_tsx",
-      "community": 3,
+      "community": 42,
       "norm_label": "announcements.tsx"
     },
     {
@@ -1874,7 +1874,7 @@
       "source_file": "src/app/(app)/workspace/announcements.tsx",
       "source_location": "L7",
       "id": "workspace_announcements_announcementitem",
-      "community": 3,
+      "community": 42,
       "norm_label": "announcementitem"
     },
     {
@@ -1883,7 +1883,7 @@
       "source_file": "src/app/(app)/workspace/announcements.tsx",
       "source_location": "L19",
       "id": "workspace_announcements_announcementsscreen",
-      "community": 3,
+      "community": 42,
       "norm_label": "announcementsscreen()"
     },
     {
@@ -1892,7 +1892,7 @@
       "source_file": "src/app/(app)/workspace/announcements.tsx",
       "source_location": "L214",
       "id": "workspace_announcements_styles",
-      "community": 3,
+      "community": 42,
       "norm_label": "styles"
     },
     {
@@ -1928,7 +1928,7 @@
       "source_file": "src/app/(app)/workspace/corrections.tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_corrections_tsx",
-      "community": 38,
+      "community": 1,
       "norm_label": "corrections.tsx"
     },
     {
@@ -1937,7 +1937,7 @@
       "source_file": "src/app/(app)/workspace/corrections.tsx",
       "source_location": "L21",
       "id": "workspace_corrections_correctionrequest",
-      "community": 38,
+      "community": 1,
       "norm_label": "correctionrequest"
     },
     {
@@ -1946,7 +1946,7 @@
       "source_file": "src/app/(app)/workspace/corrections.tsx",
       "source_location": "L36",
       "id": "workspace_corrections_attendancelog",
-      "community": 38,
+      "community": 1,
       "norm_label": "attendancelog"
     },
     {
@@ -1955,7 +1955,7 @@
       "source_file": "src/app/(app)/workspace/corrections.tsx",
       "source_location": "L43",
       "id": "workspace_corrections_correctionsscreen",
-      "community": 38,
+      "community": 1,
       "norm_label": "correctionsscreen()"
     },
     {
@@ -1964,7 +1964,7 @@
       "source_file": "src/app/(app)/workspace/corrections.tsx",
       "source_location": "L335",
       "id": "workspace_corrections_styles",
-      "community": 38,
+      "community": 1,
       "norm_label": "styles"
     },
     {
@@ -1973,7 +1973,7 @@
       "source_file": "src/app/(app)/workspace/documents.tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_documents_tsx",
-      "community": 31,
+      "community": 42,
       "norm_label": "documents.tsx"
     },
     {
@@ -1982,7 +1982,7 @@
       "source_file": "src/app/(app)/workspace/documents.tsx",
       "source_location": "L22",
       "id": "workspace_documents_staffdocument",
-      "community": 31,
+      "community": 42,
       "norm_label": "staffdocument"
     },
     {
@@ -1991,7 +1991,7 @@
       "source_file": "src/app/(app)/workspace/documents.tsx",
       "source_location": "L30",
       "id": "workspace_documents_documentsscreen",
-      "community": 31,
+      "community": 42,
       "norm_label": "documentsscreen()"
     },
     {
@@ -2000,7 +2000,7 @@
       "source_file": "src/app/(app)/workspace/documents.tsx",
       "source_location": "L387",
       "id": "workspace_documents_styles",
-      "community": 31,
+      "community": 42,
       "norm_label": "styles"
     },
     {
@@ -2022,10 +2022,28 @@
       "norm_label": "getfriendlyerrormessage()"
     },
     {
-      "label": "DashboardStats",
+      "label": "parseAttendanceDateTime()",
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/index.tsx",
       "source_location": "L72",
+      "id": "workspace_index_parseattendancedatetime",
+      "community": 38,
+      "norm_label": "parseattendancedatetime()"
+    },
+    {
+      "label": "formatAttendanceTime()",
+      "file_type": "code",
+      "source_file": "src/app/(app)/workspace/index.tsx",
+      "source_location": "L90",
+      "id": "workspace_index_formatattendancetime",
+      "community": 38,
+      "norm_label": "formatattendancetime()"
+    },
+    {
+      "label": "DashboardStats",
+      "file_type": "code",
+      "source_file": "src/app/(app)/workspace/index.tsx",
+      "source_location": "L117",
       "id": "workspace_index_dashboardstats",
       "community": 38,
       "norm_label": "dashboardstats"
@@ -2034,7 +2052,7 @@
       "label": "WorkspaceDashboard()",
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/index.tsx",
-      "source_location": "L86",
+      "source_location": "L132",
       "id": "workspace_index_workspacedashboard",
       "community": 38,
       "norm_label": "workspacedashboard()"
@@ -2043,7 +2061,7 @@
       "label": "styles",
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/index.tsx",
-      "source_location": "L510",
+      "source_location": "L589",
       "id": "workspace_index_styles",
       "community": 38,
       "norm_label": "styles"
@@ -2153,7 +2171,7 @@
       "source_file": "src/app/(app)/workspace/leave.tsx",
       "source_location": "L248",
       "id": "workspace_leave_leavescreen",
-      "community": 39,
+      "community": 42,
       "norm_label": "leavescreen()"
     },
     {
@@ -2189,7 +2207,7 @@
       "source_file": "src/app/(app)/workspace/loans.tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_loans_tsx",
-      "community": 31,
+      "community": 38,
       "norm_label": "loans.tsx"
     },
     {
@@ -2198,7 +2216,7 @@
       "source_file": "src/app/(app)/workspace/loans.tsx",
       "source_location": "L21",
       "id": "workspace_loans_loanrecord",
-      "community": 31,
+      "community": 38,
       "norm_label": "loanrecord"
     },
     {
@@ -2207,7 +2225,7 @@
       "source_file": "src/app/(app)/workspace/loans.tsx",
       "source_location": "L38",
       "id": "workspace_loans_loansscreen",
-      "community": 31,
+      "community": 38,
       "norm_label": "loansscreen()"
     },
     {
@@ -2216,7 +2234,7 @@
       "source_file": "src/app/(app)/workspace/loans.tsx",
       "source_location": "L378",
       "id": "workspace_loans_styles",
-      "community": 31,
+      "community": 38,
       "norm_label": "styles"
     },
     {
@@ -2252,7 +2270,7 @@
       "source_file": "src/app/(app)/workspace/movements.tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_movements_tsx",
-      "community": 31,
+      "community": 42,
       "norm_label": "movements.tsx"
     },
     {
@@ -2261,7 +2279,7 @@
       "source_file": "src/app/(app)/workspace/movements.tsx",
       "source_location": "L23",
       "id": "workspace_movements_movement",
-      "community": 31,
+      "community": 42,
       "norm_label": "movement"
     },
     {
@@ -2270,7 +2288,7 @@
       "source_file": "src/app/(app)/workspace/movements.tsx",
       "source_location": "L37",
       "id": "workspace_movements_staffmovementsscreen",
-      "community": 31,
+      "community": 42,
       "norm_label": "staffmovementsscreen()"
     },
     {
@@ -2279,7 +2297,7 @@
       "source_file": "src/app/(app)/workspace/movements.tsx",
       "source_location": "L437",
       "id": "workspace_movements_styles",
-      "community": 31,
+      "community": 42,
       "norm_label": "styles"
     },
     {
@@ -2288,7 +2306,7 @@
       "source_file": "src/app/(app)/workspace/permissions.tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_permissions_tsx",
-      "community": 38,
+      "community": 1,
       "norm_label": "permissions.tsx"
     },
     {
@@ -2297,7 +2315,7 @@
       "source_file": "src/app/(app)/workspace/permissions.tsx",
       "source_location": "L23",
       "id": "workspace_permissions_permissionrecord",
-      "community": 38,
+      "community": 1,
       "norm_label": "permissionrecord"
     },
     {
@@ -2306,7 +2324,7 @@
       "source_file": "src/app/(app)/workspace/permissions.tsx",
       "source_location": "L39",
       "id": "workspace_permissions_permissionsscreen",
-      "community": 38,
+      "community": 1,
       "norm_label": "permissionsscreen()"
     },
     {
@@ -2315,7 +2333,7 @@
       "source_file": "src/app/(app)/workspace/permissions.tsx",
       "source_location": "L361",
       "id": "workspace_permissions_styles",
-      "community": 38,
+      "community": 1,
       "norm_label": "styles"
     },
     {
@@ -2324,7 +2342,7 @@
       "source_file": "src/app/(app)/workspace/profile.tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_profile_tsx",
-      "community": 31,
+      "community": 42,
       "norm_label": "profile.tsx"
     },
     {
@@ -2333,7 +2351,7 @@
       "source_file": "src/app/(app)/workspace/profile.tsx",
       "source_location": "L10",
       "id": "workspace_profile_profilescreen",
-      "community": 31,
+      "community": 42,
       "norm_label": "profilescreen()"
     },
     {
@@ -2342,7 +2360,7 @@
       "source_file": "src/app/(app)/workspace/profile.tsx",
       "source_location": "L280",
       "id": "workspace_profile_styles",
-      "community": 31,
+      "community": 42,
       "norm_label": "styles"
     },
     {
@@ -2378,7 +2396,7 @@
       "source_file": "src/app/(app)/workspace/tasks.tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_tasks_tsx",
-      "community": 31,
+      "community": 42,
       "norm_label": "tasks.tsx"
     },
     {
@@ -2387,7 +2405,7 @@
       "source_file": "src/app/(app)/workspace/tasks.tsx",
       "source_location": "L37",
       "id": "workspace_tasks_user",
-      "community": 31,
+      "community": 42,
       "norm_label": "user"
     },
     {
@@ -2396,7 +2414,7 @@
       "source_file": "src/app/(app)/workspace/tasks.tsx",
       "source_location": "L43",
       "id": "workspace_tasks_taskrecord",
-      "community": 31,
+      "community": 42,
       "norm_label": "taskrecord"
     },
     {
@@ -2405,7 +2423,7 @@
       "source_file": "src/app/(app)/workspace/tasks.tsx",
       "source_location": "L58",
       "id": "workspace_tasks_tasksscreen",
-      "community": 31,
+      "community": 42,
       "norm_label": "tasksscreen()"
     },
     {
@@ -2432,7 +2450,7 @@
       "source_file": "src/app/(app)/workspace/tickets.tsx",
       "source_location": "L46",
       "id": "workspace_tickets_ticketsscreen",
-      "community": 6,
+      "community": 42,
       "norm_label": "ticketsscreen()"
     },
     {
@@ -2450,7 +2468,7 @@
       "source_file": "src/app/(app)/workspace/tools.tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_tools_tsx",
-      "community": 31,
+      "community": 35,
       "norm_label": "tools.tsx"
     },
     {
@@ -2459,7 +2477,7 @@
       "source_file": "src/app/(app)/workspace/tools.tsx",
       "source_location": "L24",
       "id": "workspace_tools_tool",
-      "community": 31,
+      "community": 35,
       "norm_label": "tool"
     },
     {
@@ -2468,7 +2486,7 @@
       "source_file": "src/app/(app)/workspace/tools.tsx",
       "source_location": "L34",
       "id": "workspace_tools_toolrequest",
-      "community": 31,
+      "community": 35,
       "norm_label": "toolrequest"
     },
     {
@@ -2477,7 +2495,7 @@
       "source_file": "src/app/(app)/workspace/tools.tsx",
       "source_location": "L46",
       "id": "workspace_tools_toolsscreen",
-      "community": 31,
+      "community": 35,
       "norm_label": "toolsscreen()"
     },
     {
@@ -2486,7 +2504,7 @@
       "source_file": "src/app/(app)/workspace/tools.tsx",
       "source_location": "L604",
       "id": "workspace_tools_styles",
-      "community": 31,
+      "community": 35,
       "norm_label": "styles"
     },
     {
@@ -2495,7 +2513,7 @@
       "source_file": "src/app/(app)/workspace/visitors.tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_visitors_tsx",
-      "community": 31,
+      "community": 42,
       "norm_label": "visitors.tsx"
     },
     {
@@ -2504,7 +2522,7 @@
       "source_file": "src/app/(app)/workspace/visitors.tsx",
       "source_location": "L28",
       "id": "workspace_visitors_visitorlog",
-      "community": 31,
+      "community": 42,
       "norm_label": "visitorlog"
     },
     {
@@ -2513,7 +2531,7 @@
       "source_file": "src/app/(app)/workspace/visitors.tsx",
       "source_location": "L47",
       "id": "workspace_visitors_visitorsscreen",
-      "community": 31,
+      "community": 42,
       "norm_label": "visitorsscreen()"
     },
     {
@@ -2522,7 +2540,7 @@
       "source_file": "src/app/(app)/workspace/visitors.tsx",
       "source_location": "L461",
       "id": "workspace_visitors_styles",
-      "community": 31,
+      "community": 42,
       "norm_label": "styles"
     },
     {
@@ -2531,7 +2549,7 @@
       "source_file": "src/app/(app)/workspace/work-order.tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_work_order_tsx",
-      "community": 3,
+      "community": 42,
       "norm_label": "work-order.tsx"
     },
     {
@@ -2540,7 +2558,7 @@
       "source_file": "src/app/(app)/workspace/work-order.tsx",
       "source_location": "L8",
       "id": "workspace_work_order_tabtype",
-      "community": 3,
+      "community": 42,
       "norm_label": "tabtype"
     },
     {
@@ -2549,7 +2567,7 @@
       "source_file": "src/app/(app)/workspace/work-order.tsx",
       "source_location": "L10",
       "id": "workspace_work_order_workorderscreen",
-      "community": 3,
+      "community": 42,
       "norm_label": "workorderscreen()"
     },
     {
@@ -2558,7 +2576,7 @@
       "source_file": "src/app/(app)/workspace/work-order.tsx",
       "source_location": "L108",
       "id": "workspace_work_order_styles",
-      "community": 3,
+      "community": 42,
       "norm_label": "styles"
     },
     {
@@ -2567,7 +2585,7 @@
       "source_file": "src/app/(app)/workspace/_layout.tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_layout_tsx",
-      "community": 3,
+      "community": 42,
       "norm_label": "_layout.tsx"
     },
     {
@@ -2576,7 +2594,7 @@
       "source_file": "src/app/(app)/workspace/_layout.tsx",
       "source_location": "L8",
       "id": "workspace_layout_workspacelayout",
-      "community": 3,
+      "community": 42,
       "norm_label": "workspacelayout()"
     },
     {
@@ -2693,7 +2711,7 @@
       "source_file": "src/app/(app)/workspace/requisition/[id].tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_requisition_id_tsx",
-      "community": 48,
+      "community": 42,
       "norm_label": "[id].tsx"
     },
     {
@@ -2702,7 +2720,7 @@
       "source_file": "src/app/(app)/workspace/requisition/[id].tsx",
       "source_location": "L16",
       "id": "requisition_id_requisitiondetailscreen",
-      "community": 48,
+      "community": 42,
       "norm_label": "requisitiondetailscreen()"
     },
     {
@@ -2711,7 +2729,7 @@
       "source_file": "src/app/(app)/workspace/requisition/[id].tsx",
       "source_location": "L232",
       "id": "requisition_id_styles",
-      "community": 48,
+      "community": 42,
       "norm_label": "styles"
     },
     {
@@ -2720,7 +2738,7 @@
       "source_file": "src/app/(app)/workspace/task/[id].tsx",
       "source_location": "L1",
       "id": "src_app_app_workspace_task_id_tsx",
-      "community": 31,
+      "community": 42,
       "norm_label": "[id].tsx"
     },
     {
@@ -2729,7 +2747,7 @@
       "source_file": "src/app/(app)/workspace/task/[id].tsx",
       "source_location": "L37",
       "id": "task_id_taskdetailscreen",
-      "community": 31,
+      "community": 42,
       "norm_label": "taskdetailscreen()"
     },
     {
@@ -2738,7 +2756,7 @@
       "source_file": "src/app/(app)/workspace/task/[id].tsx",
       "source_location": "L563",
       "id": "task_id_smartitem",
-      "community": 31,
+      "community": 42,
       "norm_label": "smartitem()"
     },
     {
@@ -2747,7 +2765,7 @@
       "source_file": "src/app/(app)/workspace/task/[id].tsx",
       "source_location": "L578",
       "id": "task_id_getstyles",
-      "community": 31,
+      "community": 42,
       "norm_label": "getstyles()"
     },
     {
@@ -2810,7 +2828,7 @@
       "source_file": "src/app/(auth)/_layout.tsx",
       "source_location": "L1",
       "id": "src_app_auth_layout_tsx",
-      "community": 3,
+      "community": 31,
       "norm_label": "_layout.tsx"
     },
     {
@@ -2819,7 +2837,7 @@
       "source_file": "src/app/(auth)/_layout.tsx",
       "source_location": "L2",
       "id": "auth_layout_authlayout",
-      "community": 3,
+      "community": 31,
       "norm_label": "authlayout()"
     },
     {
@@ -2855,7 +2873,7 @@
       "source_file": "src/app/(onboarding)/_layout.tsx",
       "source_location": "L1",
       "id": "src_app_onboarding_layout_tsx",
-      "community": 3,
+      "community": 31,
       "norm_label": "_layout.tsx"
     },
     {
@@ -2864,7 +2882,7 @@
       "source_file": "src/app/(onboarding)/_layout.tsx",
       "source_location": "L2",
       "id": "onboarding_layout_onboardinglayout",
-      "community": 3,
+      "community": 31,
       "norm_label": "onboardinglayout()"
     },
     {
@@ -2999,7 +3017,7 @@
       "source_file": "src/components/CustomDrawerContent.tsx",
       "source_location": "L1",
       "id": "src_components_customdrawercontent_tsx",
-      "community": 3,
+      "community": 31,
       "norm_label": "customdrawercontent.tsx"
     },
     {
@@ -3008,7 +3026,7 @@
       "source_file": "src/components/CustomDrawerContent.tsx",
       "source_location": "L9",
       "id": "components_customdrawercontent_customdrawercontent",
-      "community": 3,
+      "community": 31,
       "norm_label": "customdrawercontent()"
     },
     {
@@ -3017,7 +3035,7 @@
       "source_file": "src/components/CustomDrawerContent.tsx",
       "source_location": "L124",
       "id": "components_customdrawercontent_styles",
-      "community": 3,
+      "community": 31,
       "norm_label": "styles"
     },
     {
@@ -3287,7 +3305,7 @@
       "source_file": "src/constants/theme.ts",
       "source_location": "L10",
       "id": "constants_theme_colors",
-      "community": 3,
+      "community": 31,
       "norm_label": "colors"
     },
     {
@@ -3377,7 +3395,7 @@
       "source_file": "src/context/AlertContext.tsx",
       "source_location": "L28",
       "id": "context_alertcontext_alertprovider",
-      "community": 3,
+      "community": 31,
       "norm_label": "alertprovider()"
     },
     {
@@ -3449,7 +3467,7 @@
       "source_file": "src/context/AuthContext.tsx",
       "source_location": "L43",
       "id": "context_authcontext_authprovider",
-      "community": 3,
+      "community": 31,
       "norm_label": "authprovider()"
     },
     {
@@ -3467,7 +3485,7 @@
       "source_file": "src/context/AuthContext.tsx",
       "source_location": "L265",
       "id": "context_authcontext_useauth",
-      "community": 31,
+      "community": 42,
       "norm_label": "useauth()"
     },
     {
@@ -3476,7 +3494,7 @@
       "source_file": "src/context/FontSizeContext.tsx",
       "source_location": "L1",
       "id": "src_context_fontsizecontext_tsx",
-      "community": 36,
+      "community": 31,
       "norm_label": "fontsizecontext.tsx"
     },
     {
@@ -3485,7 +3503,7 @@
       "source_file": "src/context/FontSizeContext.tsx",
       "source_location": "L4",
       "id": "context_fontsizecontext_fontsizecontexttype",
-      "community": 36,
+      "community": 31,
       "norm_label": "fontsizecontexttype"
     },
     {
@@ -3494,7 +3512,7 @@
       "source_file": "src/context/FontSizeContext.tsx",
       "source_location": "L9",
       "id": "context_fontsizecontext_fontsizecontext",
-      "community": 36,
+      "community": 31,
       "norm_label": "fontsizecontext"
     },
     {
@@ -3503,7 +3521,7 @@
       "source_file": "src/context/FontSizeContext.tsx",
       "source_location": "L13",
       "id": "context_fontsizecontext_fontsizeprovider",
-      "community": 36,
+      "community": 31,
       "norm_label": "fontsizeprovider()"
     },
     {
@@ -3512,7 +3530,7 @@
       "source_file": "src/context/FontSizeContext.tsx",
       "source_location": "L58",
       "id": "context_fontsizecontext_usefontscale",
-      "community": 3,
+      "community": 31,
       "norm_label": "usefontscale()"
     },
     {
@@ -3521,7 +3539,7 @@
       "source_file": "src/context/FontSizeContext.tsx",
       "source_location": "L68",
       "id": "context_fontsizecontext_text_rntext_stylesheet_rnstylesheet",
-      "community": 36,
+      "community": 31,
       "norm_label": "{ text: rntext, stylesheet: rnstylesheet }"
     },
     {
@@ -3530,7 +3548,7 @@
       "source_file": "src/context/FontSizeContext.tsx",
       "source_location": "L77",
       "id": "context_fontsizecontext_fontscale",
-      "community": 36,
+      "community": 31,
       "norm_label": "{ fontscale }"
     },
     {
@@ -3539,7 +3557,7 @@
       "source_file": "src/context/FontSizeContext.tsx",
       "source_location": "L79",
       "id": "context_fontsizecontext_flat",
-      "community": 36,
+      "community": 31,
       "norm_label": "flat"
     },
     {
@@ -3548,7 +3566,7 @@
       "source_file": "src/context/FontSizeContext.tsx",
       "source_location": "L80",
       "id": "context_fontsizecontext_newstyle",
-      "community": 36,
+      "community": 31,
       "norm_label": "newstyle"
     },
     {
@@ -3557,7 +3575,7 @@
       "source_file": "src/context/ThemeContext.tsx",
       "source_location": "L1",
       "id": "src_context_themecontext_tsx",
-      "community": 3,
+      "community": 31,
       "norm_label": "themecontext.tsx"
     },
     {
@@ -3566,7 +3584,7 @@
       "source_file": "src/context/ThemeContext.tsx",
       "source_location": "L7",
       "id": "context_themecontext_themepreference",
-      "community": 3,
+      "community": 31,
       "norm_label": "themepreference"
     },
     {
@@ -3575,7 +3593,7 @@
       "source_file": "src/context/ThemeContext.tsx",
       "source_location": "L9",
       "id": "context_themecontext_themecontexttype",
-      "community": 3,
+      "community": 31,
       "norm_label": "themecontexttype"
     },
     {
@@ -3584,7 +3602,7 @@
       "source_file": "src/context/ThemeContext.tsx",
       "source_location": "L16",
       "id": "context_themecontext_themecontext",
-      "community": 3,
+      "community": 31,
       "norm_label": "themecontext"
     },
     {
@@ -3593,7 +3611,7 @@
       "source_file": "src/context/ThemeContext.tsx",
       "source_location": "L20",
       "id": "context_themecontext_themeprovider",
-      "community": 3,
+      "community": 31,
       "norm_label": "themeprovider()"
     },
     {
@@ -3602,7 +3620,7 @@
       "source_file": "src/context/ThemeContext.tsx",
       "source_location": "L70",
       "id": "context_themecontext_usethemecontext",
-      "community": 3,
+      "community": 31,
       "norm_label": "usethemecontext()"
     },
     {
@@ -3638,7 +3656,7 @@
       "source_file": "src/hooks/use-theme.ts",
       "source_location": "L1",
       "id": "src_hooks_use_theme_ts",
-      "community": 3,
+      "community": 42,
       "norm_label": "use-theme.ts"
     },
     {
@@ -3647,7 +3665,7 @@
       "source_file": "src/hooks/use-theme.ts",
       "source_location": "L3",
       "id": "hooks_use_theme_usetheme",
-      "community": 3,
+      "community": 42,
       "norm_label": "usetheme()"
     },
     {
@@ -3719,7 +3737,7 @@
       "source_file": "src/services/attendanceService.ts",
       "source_location": "L1",
       "id": "src_services_attendanceservice_ts",
-      "community": 38,
+      "community": 1,
       "norm_label": "attendanceservice.ts"
     },
     {
@@ -3728,7 +3746,7 @@
       "source_file": "src/services/attendanceService.ts",
       "source_location": "L3",
       "id": "services_attendanceservice_attendanceservice",
-      "community": 38,
+      "community": 1,
       "norm_label": "attendanceservice"
     },
     {
@@ -3845,7 +3863,7 @@
       "source_file": "src/services/loanService.ts",
       "source_location": "L1",
       "id": "src_services_loanservice_ts",
-      "community": 31,
+      "community": 38,
       "norm_label": "loanservice.ts"
     },
     {
@@ -3854,7 +3872,7 @@
       "source_file": "src/services/loanService.ts",
       "source_location": "L3",
       "id": "services_loanservice_loanservice",
-      "community": 31,
+      "community": 38,
       "norm_label": "loanservice"
     },
     {
@@ -4016,7 +4034,7 @@
       "source_file": "src/services/toolService.ts",
       "source_location": "L1",
       "id": "src_services_toolservice_ts",
-      "community": 31,
+      "community": 35,
       "norm_label": "toolservice.ts"
     },
     {
@@ -4025,7 +4043,7 @@
       "source_file": "src/services/toolService.ts",
       "source_location": "L3",
       "id": "services_toolservice_toolservice",
-      "community": 31,
+      "community": 35,
       "norm_label": "toolservice"
     },
     {
@@ -5244,11 +5262,110 @@
       "norm_label": "pre-delivery checklist"
     },
     {
+      "label": "_layout.tsx",
+      "file_type": "code",
+      "source_file": "app/(app)/workspace/_layout.tsx",
+      "source_location": "L1",
+      "community": 42,
+      "norm_label": "_layout.tsx",
+      "id": "app_app_workspace_layout_tsx"
+    },
+    {
+      "label": "corrections.tsx",
+      "file_type": "code",
+      "source_file": "app/(app)/workspace/corrections.tsx",
+      "source_location": "L1",
+      "community": 1,
+      "norm_label": "corrections.tsx",
+      "id": "app_app_workspace_corrections_tsx"
+    },
+    {
+      "label": "movements.tsx",
+      "file_type": "code",
+      "source_file": "app/(app)/workspace/movements.tsx",
+      "source_location": "L1",
+      "community": 42,
+      "norm_label": "movements.tsx",
+      "id": "app_app_workspace_movements_tsx"
+    },
+    {
+      "label": "permissions.tsx",
+      "file_type": "code",
+      "source_file": "app/(app)/workspace/permissions.tsx",
+      "source_location": "L1",
+      "community": 1,
+      "norm_label": "permissions.tsx",
+      "id": "app_app_workspace_permissions_tsx"
+    },
+    {
+      "label": "[id].tsx",
+      "file_type": "code",
+      "source_file": "app/(app)/workspace/requisition/[id].tsx",
+      "source_location": "L1",
+      "community": 42,
+      "norm_label": "[id].tsx",
+      "id": "app_app_workspace_requisition_id_tsx"
+    },
+    {
+      "label": "create.tsx",
+      "file_type": "code",
+      "source_file": "app/(app)/workspace/requisition/create.tsx",
+      "source_location": "L1",
+      "community": 48,
+      "norm_label": "create.tsx",
+      "id": "app_app_workspace_requisition_create_tsx"
+    },
+    {
+      "label": "requisitions.tsx",
+      "file_type": "code",
+      "source_file": "app/(app)/workspace/requisitions.tsx",
+      "source_location": "L1",
+      "community": 48,
+      "norm_label": "requisitions.tsx",
+      "id": "app_app_workspace_requisitions_tsx"
+    },
+    {
+      "label": "tools.tsx",
+      "file_type": "code",
+      "source_file": "app/(app)/workspace/tools.tsx",
+      "source_location": "L1",
+      "community": 35,
+      "norm_label": "tools.tsx",
+      "id": "app_app_workspace_tools_tsx"
+    },
+    {
+      "label": "attendanceService.ts",
+      "file_type": "code",
+      "source_file": "services/attendanceService.ts",
+      "source_location": "L1",
+      "community": 1,
+      "norm_label": "attendanceservice.ts",
+      "id": "services_attendanceservice_ts"
+    },
+    {
+      "label": "requisitionService.ts",
+      "file_type": "code",
+      "source_file": "services/requisitionService.ts",
+      "source_location": "L1",
+      "community": 48,
+      "norm_label": "requisitionservice.ts",
+      "id": "services_requisitionservice_ts"
+    },
+    {
+      "label": "toolService.ts",
+      "file_type": "code",
+      "source_file": "services/toolService.ts",
+      "source_location": "L1",
+      "community": 35,
+      "norm_label": "toolservice.ts",
+      "id": "services_toolservice_ts"
+    },
+    {
       "label": "loans.tsx",
       "file_type": "code",
       "source_file": "app/(app)/workspace/loans.tsx",
       "source_location": "L1",
-      "community": 31,
+      "community": 38,
       "norm_label": "loans.tsx",
       "id": "app_app_workspace_loans_tsx"
     },
@@ -5257,7 +5374,7 @@
       "file_type": "code",
       "source_file": "app/(app)/workspace/visitors.tsx",
       "source_location": "L1",
-      "community": 31,
+      "community": 42,
       "norm_label": "visitors.tsx",
       "id": "app_app_workspace_visitors_tsx"
     },
@@ -5266,25 +5383,16 @@
       "file_type": "code",
       "source_file": "services/loanService.ts",
       "source_location": "L1",
-      "community": 31,
+      "community": 38,
       "norm_label": "loanservice.ts",
       "id": "services_loanservice_ts"
-    },
-    {
-      "label": "_layout.tsx",
-      "file_type": "code",
-      "source_file": "app/(app)/workspace/_layout.tsx",
-      "source_location": "L1",
-      "community": 3,
-      "norm_label": "_layout.tsx",
-      "id": "app_app_workspace_layout_tsx"
     },
     {
       "label": "[id].tsx",
       "file_type": "code",
       "source_file": "app/(app)/workspace/task/[id].tsx",
       "source_location": "L1",
-      "community": 31,
+      "community": 42,
       "norm_label": "[id].tsx",
       "id": "app_app_workspace_task_id_tsx"
     },
@@ -5293,7 +5401,7 @@
       "file_type": "code",
       "source_file": "app/(app)/workspace/tasks.tsx",
       "source_location": "L1",
-      "community": 31,
+      "community": 42,
       "norm_label": "tasks.tsx",
       "id": "app_app_workspace_tasks_tsx"
     },
@@ -5356,7 +5464,7 @@
       "file_type": "code",
       "source_file": "app/_layout.tsx",
       "source_location": "L1",
-      "community": 3,
+      "community": 31,
       "norm_label": "_layout.tsx",
       "id": "app_layout_tsx"
     },
@@ -5401,7 +5509,7 @@
       "file_type": "code",
       "source_file": "tasks.tsx",
       "source_location": "L1",
-      "community": 31,
+      "community": 42,
       "norm_label": "tasks.tsx",
       "id": "tasks_tsx"
     },
@@ -5410,7 +5518,7 @@
       "file_type": "code",
       "source_file": "tools.tsx",
       "source_location": "L1",
-      "community": 31,
+      "community": 35,
       "norm_label": "tools.tsx",
       "id": "tools_tsx"
     },
@@ -5419,7 +5527,7 @@
       "file_type": "code",
       "source_file": "visitors.tsx",
       "source_location": "L1",
-      "community": 31,
+      "community": 42,
       "norm_label": "visitors.tsx",
       "id": "visitors_tsx"
     },
@@ -5428,7 +5536,7 @@
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/tasks.tsx",
       "source_location": "L343",
-      "community": 31,
+      "community": 42,
       "norm_label": "styles",
       "id": "workspace_tasks_styles"
     },
@@ -5455,7 +5563,7 @@
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/movements.tsx",
       "source_location": "L19",
-      "community": 31,
+      "community": 42,
       "norm_label": "movementrecord",
       "id": "workspace_movements_movementrecord"
     },
@@ -5464,7 +5572,7 @@
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/movements.tsx",
       "source_location": "L32",
-      "community": 31,
+      "community": 42,
       "norm_label": "movementsscreen()",
       "id": "workspace_movements_movementsscreen"
     },
@@ -5491,7 +5599,7 @@
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/_layout.tsx",
       "source_location": "L273",
-      "community": 3,
+      "community": 42,
       "norm_label": "styles",
       "id": "workspace_layout_styles"
     },
@@ -5554,7 +5662,7 @@
       "file_type": "code",
       "source_file": "src/context/FontSizeContext.tsx",
       "source_location": "L73",
-      "community": 36,
+      "community": 31,
       "norm_label": "patchedtext",
       "id": "context_fontsizecontext_patchedtext"
     },
@@ -5563,7 +5671,7 @@
       "file_type": "code",
       "source_file": "src/context/FontSizeContext.tsx",
       "source_location": "L104",
-      "community": 36,
+      "community": 31,
       "norm_label": "rnmodule",
       "id": "context_fontsizecontext_rnmodule"
     },
@@ -5572,7 +5680,7 @@
       "file_type": "code",
       "source_file": "src/context/FontSizeContext.tsx",
       "source_location": "L107",
-      "community": 36,
+      "community": 31,
       "norm_label": "get()",
       "id": "context_fontsizecontext_get"
     },
@@ -5590,7 +5698,7 @@
       "file_type": "code",
       "source_file": "_layout.tsx",
       "source_location": "L1",
-      "community": 3,
+      "community": 31,
       "norm_label": "_layout.tsx",
       "id": "layout_tsx"
     },
@@ -5599,7 +5707,7 @@
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/documents.tsx",
       "source_location": "L7",
-      "community": 31,
+      "community": 42,
       "norm_label": "documentitem",
       "id": "workspace_documents_documentitem"
     },
@@ -5608,7 +5716,7 @@
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/index.tsx",
       "source_location": "L61",
-      "community": 38,
+      "community": 42,
       "norm_label": "metriccard()",
       "id": "workspace_index_metriccard"
     },
@@ -5617,7 +5725,7 @@
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/index.tsx",
       "source_location": "L74",
-      "community": 38,
+      "community": 42,
       "norm_label": "activityrow()",
       "id": "workspace_index_activityrow"
     },
@@ -5626,7 +5734,7 @@
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/tasks.tsx",
       "source_location": "L6",
-      "community": 31,
+      "community": 42,
       "norm_label": "task",
       "id": "workspace_tasks_task"
     },
@@ -5635,7 +5743,7 @@
       "file_type": "code",
       "source_file": "src/app/(app)/workspace/tasks.tsx",
       "source_location": "L13",
-      "community": 3,
+      "community": 42,
       "norm_label": "workspacetasks()",
       "id": "workspace_tasks_workspacetasks"
     },
@@ -5765,7 +5873,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
+      "community": 31,
       "norm_label": "reset project utility",
       "id": "reset_project_js"
     },
@@ -5869,7 +5977,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
+      "community": 31,
       "norm_label": "entry screen",
       "id": "index_tsx_entry"
     },
@@ -5882,7 +5990,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
+      "community": 31,
       "norm_label": "root layout",
       "id": "layout_tsx_root"
     },
@@ -5895,7 +6003,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 31,
       "norm_label": "settings screen",
       "id": "settings_tsx_screen"
     },
@@ -5908,7 +6016,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
+      "community": 31,
       "norm_label": "app navigation layout",
       "id": "layout_tsx_app"
     },
@@ -5921,7 +6029,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
+      "community": 31,
       "norm_label": "fleet inventory screen",
       "id": "fleet_index_tsx_vehicles"
     },
@@ -5934,7 +6042,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
+      "community": 31,
       "norm_label": "gps tracking map",
       "id": "fleet_map_tsx_map"
     },
@@ -5947,7 +6055,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
+      "community": 31,
       "norm_label": "fleet navigation tabs",
       "id": "fleet_layout_tsx_layout"
     },
@@ -5960,7 +6068,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
+      "community": 31,
       "norm_label": "workspace dashboard",
       "id": "workspace_index_tsx_dashboard"
     },
@@ -5973,7 +6081,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
+      "community": 31,
       "norm_label": "workspace tasks list",
       "id": "workspace_tasks_tsx_tasks"
     },
@@ -5986,7 +6094,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
+      "community": 31,
       "norm_label": "workspace navigation tabs",
       "id": "workspace_layout_tsx_layout"
     },
@@ -5999,7 +6107,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 1,
+      "community": 31,
       "norm_label": "expo router type declarations",
       "id": "expo_router_types"
     },
@@ -6194,7 +6302,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 31,
       "norm_label": "themeprovider",
       "id": "themecontext_themeprovider"
     },
@@ -6207,7 +6315,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 42,
       "norm_label": "usetheme",
       "id": "use_theme_usetheme"
     },
@@ -6261,7 +6369,7 @@
       "author": null,
       "contributor": null,
       "rationale": "Supports persistent theme preferences (light, dark, system) saved via AsyncStorage and evaluated based on React Native's useColorScheme.",
-      "community": 3,
+      "community": 31,
       "norm_label": "theme preference mechanism",
       "id": "mechanism_theme_preference"
     },
@@ -9839,6 +9947,26 @@
       "target": "workspace_corrections_styles"
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/corrections.tsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_corrections_tsx",
+      "target": "workspace_corrections_correctionrequest"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/corrections.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_corrections_tsx",
+      "target": "workspace_corrections_attendancelog"
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -9859,6 +9987,26 @@
       "weight": 1.0,
       "source": "workspace_corrections_correctionsscreen",
       "target": "context_authcontext_useauth"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/corrections.tsx",
+      "source_location": "L43",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_corrections_tsx",
+      "target": "workspace_corrections_correctionsscreen"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/corrections.tsx",
+      "source_location": "L335",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_corrections_tsx",
+      "target": "workspace_corrections_styles"
     },
     {
       "relation": "imports_from",
@@ -10090,6 +10238,26 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/(app)/workspace/index.tsx",
+      "source_location": "L72",
+      "weight": 1.0,
+      "source": "src_app_app_workspace_index_tsx",
+      "target": "workspace_index_parseattendancedatetime",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/index.tsx",
+      "source_location": "L90",
+      "weight": 1.0,
+      "source": "src_app_app_workspace_index_tsx",
+      "target": "workspace_index_formatattendancetime",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/index.tsx",
       "source_location": "L42",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -10145,6 +10313,17 @@
       "confidence_score": 1.0,
       "source": "src_app_app_workspace_index_tsx",
       "target": "workspace_index_activityrow"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/index.tsx",
+      "source_location": "L506",
+      "weight": 1.0,
+      "source": "workspace_index_workspacedashboard",
+      "target": "workspace_index_formatattendancetime",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -10892,6 +11071,16 @@
       "target": "workspace_movements_movementsscreen"
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/movements.tsx",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_movements_tsx",
+      "target": "workspace_movements_movement"
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -10912,6 +11101,26 @@
       "weight": 1.0,
       "source": "workspace_movements_staffmovementsscreen",
       "target": "context_authcontext_useauth"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/movements.tsx",
+      "source_location": "L37",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_movements_tsx",
+      "target": "workspace_movements_staffmovementsscreen"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/movements.tsx",
+      "source_location": "L437",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_movements_tsx",
+      "target": "workspace_movements_styles"
     },
     {
       "relation": "imports_from",
@@ -11010,6 +11219,16 @@
       "target": "workspace_permissions_styles"
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/permissions.tsx",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_permissions_tsx",
+      "target": "workspace_permissions_permissionrecord"
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -11030,6 +11249,26 @@
       "weight": 1.0,
       "source": "workspace_permissions_permissionsscreen",
       "target": "context_authcontext_useauth"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/permissions.tsx",
+      "source_location": "L39",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_permissions_tsx",
+      "target": "workspace_permissions_permissionsscreen"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/permissions.tsx",
+      "source_location": "L361",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_permissions_tsx",
+      "target": "workspace_permissions_styles"
     },
     {
       "relation": "imports_from",
@@ -11225,6 +11464,16 @@
       "target": "hooks_use_theme_usetheme"
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/requisitions.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_requisitions_tsx",
+      "target": "workspace_requisitions_requisitionsscreen"
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -11234,6 +11483,16 @@
       "weight": 1.0,
       "source": "workspace_requisitions_requisitionsscreen",
       "target": "context_authcontext_useauth"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/requisitions.tsx",
+      "source_location": "L220",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_requisitions_tsx",
+      "target": "workspace_requisitions_styles"
     },
     {
       "relation": "imports_from",
@@ -11710,12 +11969,32 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/tools.tsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_tools_tsx",
+      "target": "workspace_tools_tool"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "tools.tsx",
       "source_location": "L23",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "tools_tsx",
       "target": "workspace_tools_tool"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/tools.tsx",
+      "source_location": "L34",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_tools_tsx",
+      "target": "workspace_tools_toolrequest"
     },
     {
       "relation": "contains",
@@ -11752,12 +12031,32 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/tools.tsx",
+      "source_location": "L46",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_tools_tsx",
+      "target": "workspace_tools_toolsscreen"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "tools.tsx",
       "source_location": "L45",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "tools_tsx",
       "target": "workspace_tools_toolsscreen"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/tools.tsx",
+      "source_location": "L604",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_tools_tsx",
+      "target": "workspace_tools_styles"
     },
     {
       "relation": "contains",
@@ -12397,6 +12696,26 @@
       "target": "hooks_use_theme_usetheme"
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/requisition/create.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_requisition_create_tsx",
+      "target": "requisition_create_createrequisitionscreen"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/requisition/create.tsx",
+      "source_location": "L394",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_requisition_create_tsx",
+      "target": "requisition_create_styles"
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -12470,6 +12789,26 @@
       "weight": 1.0,
       "source": "requisition_id_requisitiondetailscreen",
       "target": "hooks_use_theme_usetheme"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/requisition/[id].tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_requisition_id_tsx",
+      "target": "requisition_id_requisitiondetailscreen"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/requisition/[id].tsx",
+      "source_location": "L232",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_requisition_id_tsx",
+      "target": "requisition_id_styles"
     },
     {
       "relation": "imports_from",
@@ -14593,6 +14932,50 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/corrections.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_corrections_tsx",
+      "target": "context_authcontext_useauth"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/movements.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_movements_tsx",
+      "target": "context_authcontext_useauth"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/permissions.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_permissions_tsx",
+      "target": "context_authcontext_useauth"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/tools.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_tools_tsx",
+      "target": "context_authcontext_useauth"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "app/(app)/workspace/loans.tsx",
       "source_location": "L18",
       "weight": 1.0,
@@ -15109,6 +15492,94 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/_layout.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_layout_tsx",
+      "target": "hooks_use_theme_usetheme"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/corrections.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_corrections_tsx",
+      "target": "hooks_use_theme_usetheme"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/movements.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_movements_tsx",
+      "target": "hooks_use_theme_usetheme"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/permissions.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_permissions_tsx",
+      "target": "hooks_use_theme_usetheme"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/requisition/[id].tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_requisition_id_tsx",
+      "target": "hooks_use_theme_usetheme"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/requisition/create.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_requisition_create_tsx",
+      "target": "hooks_use_theme_usetheme"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/requisitions.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_requisitions_tsx",
+      "target": "hooks_use_theme_usetheme"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/tools.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_tools_tsx",
+      "target": "hooks_use_theme_usetheme"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "app/(app)/workspace/loans.tsx",
       "source_location": "L15",
       "weight": 1.0,
@@ -15125,17 +15596,6 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "app_app_workspace_visitors_tsx",
-      "target": "hooks_use_theme_usetheme"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(app)/workspace/_layout.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_app_workspace_layout_tsx",
       "target": "hooks_use_theme_usetheme"
     },
     {
@@ -15511,6 +15971,38 @@
       "target": "services_attendanceservice_attendanceservice"
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/corrections.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_corrections_tsx",
+      "target": "services_attendanceservice_attendanceservice"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/permissions.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_permissions_tsx",
+      "target": "services_attendanceservice_attendanceservice"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/attendanceService.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_attendanceservice_ts",
+      "target": "services_attendanceservice_attendanceservice"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/services/authEvents.ts",
@@ -15817,6 +16309,100 @@
       "target": "services_requisitionservice_requisitionservice"
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/requisition/[id].tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_requisition_id_tsx",
+      "target": "services_requisitionservice_requisition"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/requisitions.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_requisitions_tsx",
+      "target": "services_requisitionservice_requisition"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/requisitionService.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_requisitionservice_ts",
+      "target": "services_requisitionservice_requisition"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/requisitionService.ts",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_requisitionservice_ts",
+      "target": "services_requisitionservice_requisitionitem"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/requisition/create.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_requisition_create_tsx",
+      "target": "services_requisitionservice_requisitionoptions"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/requisitionService.ts",
+      "source_location": "L37",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_requisitionservice_ts",
+      "target": "services_requisitionservice_requisitionoptions"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/requisition/create.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_requisition_create_tsx",
+      "target": "services_requisitionservice_requisitionpayload"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/requisitionService.ts",
+      "source_location": "L43",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_requisitionservice_ts",
+      "target": "services_requisitionservice_requisitionpayload"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/requisitionService.ts",
+      "source_location": "L60",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_requisitionservice_ts",
+      "target": "services_requisitionservice_stocksearchitem"
+    },
+    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "src/services/requisitionService.ts",
@@ -15865,6 +16451,16 @@
       "confidence_score": 1.0,
       "source": "services_requisitionservice_requisitionservice",
       "target": "services_requisitionservice_requisitionservice_getrequisition"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/requisitionService.ts",
+      "source_location": "L68",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_requisitionservice_ts",
+      "target": "services_requisitionservice_requisitionservice"
     },
     {
       "relation": "contains",
@@ -15936,6 +16532,27 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "src_services_toolservice_ts",
+      "target": "services_toolservice_toolservice"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/tools.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_tools_tsx",
+      "target": "services_toolservice_toolservice"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/toolService.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_toolservice_ts",
       "target": "services_toolservice_toolservice"
     },
     {
@@ -17202,6 +17819,72 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/corrections.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_corrections_tsx",
+      "target": "services_attendanceservice_ts"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/permissions.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_permissions_tsx",
+      "target": "services_attendanceservice_ts"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/requisition/[id].tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_requisition_id_tsx",
+      "target": "services_requisitionservice_ts"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/requisition/create.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_requisition_create_tsx",
+      "target": "services_requisitionservice_ts"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/requisitions.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_requisitions_tsx",
+      "target": "services_requisitionservice_ts"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/workspace/tools.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_workspace_tools_tsx",
+      "target": "services_toolservice_ts"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "app/(app)/workspace/loans.tsx",
       "source_location": "L19",
       "weight": 1.0,
@@ -18017,5 +18700,5 @@
       "source_file": "src/app/(onboarding)/index.tsx"
     }
   ],
-  "built_at_commit": "df928d66b605aa4db9368c916f4e72cbdd25d18d"
+  "built_at_commit": "0c1e86944c216d18ba6cfde078a8c2ebc93722ac"
 }
