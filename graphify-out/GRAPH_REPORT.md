@@ -1,16 +1,16 @@
 # Graph Report - erp-app  (2026-05-24)
 
 ## Corpus Check
-- 101 files · ~116,245 words
+- 101 files · ~116,557 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 716 nodes · 1236 edges · 40 communities (32 shown, 8 thin omitted)
+- 720 nodes · 1244 edges · 40 communities (32 shown, 8 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 22 edges (avg confidence: 0.86)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `4bc1a044`
+- Built from commit: `b0060dff`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -54,16 +54,16 @@
 - [[_COMMUNITY_Community 48|Community 48]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `useTheme()` - 103 edges
+1. `useTheme()` - 104 edges
 2. `useAuth()` - 58 edges
-3. `dependencies` - 35 edges
+3. `dependencies` - 36 edges
 4. `useTheme` - 21 edges
 5. `expo` - 17 edges
 6. `styles` - 14 edges
 7. `useThemeContext()` - 13 edges
 8. `DesignSystemGenerator Class` - 13 edges
 9. `scripts` - 11 edges
-10. `DesignSystemGenerator` - 11 edges
+10. `hrService` - 11 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `LoginScreen` --conceptually_related_to--> `Design System Master`  [INFERRED]
@@ -92,16 +92,16 @@ Cohesion: 0.15
 Nodes (14): reactCompiler, typedRoutes, expo, experiments, icon, ios, name, orientation (+6 more)
 
 ### Community 1 - "Community 1"
-Cohesion: 0.1
-Nodes (33): EntryScreen(), Collapsible, HintRowProps, styles, styles, ThemedText(), ThemedTextProps, ThemedView() (+25 more)
+Cohesion: 0.09
+Nodes (34): EntryScreen(), Collapsible, HintRowProps, styles, styles, ThemedText(), ThemedTextProps, ThemedView() (+26 more)
 
 ### Community 2 - "Community 2"
 Cohesion: 0.06
-Nodes (34): dependencies, axios, expo, expo-constants, expo-device, expo-font, expo-glass-effect, @expo-google-fonts/plus-jakarta-sans (+26 more)
+Nodes (35): dependencies, axios, dayjs, expo, expo-constants, expo-device, expo-font, expo-glass-effect (+27 more)
 
 ### Community 3 - "Community 3"
 Cohesion: 0.1
-Nodes (9): styles, styles, styles, styles, styles, styles, styles, styles (+1 more)
+Nodes (10): styles, styles, styles, HRDirectory(), styles, styles, styles, styles (+2 more)
 
 ### Community 4 - "Community 4"
 Cohesion: 0.06
@@ -176,7 +176,7 @@ Cohesion: 0.07
 Nodes (37): AppContent(), RootLayout(), SettingsScreen(), styles, AuthLayout(), CustomDrawerContent(), styles, Colors (+29 more)
 
 ### Community 32 - "Community 32"
-Cohesion: 0.18
+Cohesion: 0.17
 Nodes (18): messageService, ChatScreen(), Message, styles, ApiMessage, DepartmentResource, GroupedThread, MessagesScreen() (+10 more)
 
 ### Community 34 - "Community 34"
@@ -193,7 +193,7 @@ Nodes (9): leaveService, Colleague, LeaveBalance, LeaveRequestItem, LeaveScreen(
 
 ### Community 42 - "Community 42"
 Cohesion: 0.05
-Nodes (54): AppLayout(), useAuth(), FleetLayout(), useTheme(), styles, attendanceService, loanService, toolService (+46 more)
+Nodes (53): AppLayout(), useAuth(), useTheme(), styles, attendanceService, loanService, toolService, getStyles() (+45 more)
 
 ### Community 43 - "Community 43"
 Cohesion: 0.1
@@ -204,7 +204,7 @@ Cohesion: 0.14
 Nodes (13): CreateRequisitionScreen(), styles, RequisitionDetailScreen(), styles, Requisition, RequisitionItem, RequisitionOptions, RequisitionPayload (+5 more)
 
 ## Knowledge Gaps
-- **277 isolated node(s):** `styles`, `styles`, `styles`, `styles`, `styles` (+272 more)
+- **277 isolated node(s):** `main`, `start`, `reset-project`, `android`, `ios` (+272 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **8 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -212,15 +212,15 @@ Nodes (13): CreateRequisitionScreen(), styles, RequisitionDetailScreen(), styles
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `useTheme()` connect `Community 42` to `Community 32`, `Community 1`, `Community 34`, `Community 3`, `Community 38`, `Community 39`, `Community 6`, `Community 48`, `Community 31`?**
-  _High betweenness centrality (0.240) - this node is a cross-community bridge._
+  _High betweenness centrality (0.243) - this node is a cross-community bridge._
 - **Why does `scripts` connect `Community 27` to `Community 0`, `Community 24`, `Community 28`, `Community 29`?**
   _High betweenness centrality (0.154) - this node is a cross-community bridge._
 - **Why does `path` connect `Community 4` to `Community 24`?**
   _High betweenness centrality (0.112) - this node is a cross-community bridge._
-- **What connects `styles`, `styles`, `styles` to the rest of the system?**
+- **What connects `main`, `start`, `reset-project` to the rest of the system?**
   _277 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 1` be split into smaller, more focused modules?**
-  _Cohesion score 0.1 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.09 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
   _Cohesion score 0.06 - nodes in this community are weakly interconnected._
 - **Should `Community 3` be split into smaller, more focused modules?**

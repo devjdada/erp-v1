@@ -87,135 +87,486 @@
   },
   "nodes": [
     {
-      "label": "_layout.tsx",
+      "label": "package.json",
       "file_type": "code",
-      "source_file": "app/(app)/_layout.tsx",
+      "source_file": "package.json",
       "source_location": "L1",
-      "id": "app_app_layout_tsx",
-      "community": 42,
-      "norm_label": "_layout.tsx"
+      "id": "package_json",
+      "community": 29,
+      "norm_label": "package.json"
     },
     {
-      "label": "AppLayout()",
+      "label": "name",
       "file_type": "code",
-      "source_file": "app/(app)/_layout.tsx",
-      "source_location": "L8",
-      "id": "app_layout_applayout",
-      "community": 42,
-      "norm_label": "applayout()"
+      "source_file": "package.json",
+      "source_location": "L2",
+      "id": "erp_app_package_name",
+      "community": 29,
+      "norm_label": "name"
     },
     {
-      "label": "_layout.tsx",
+      "label": "main",
       "file_type": "code",
-      "source_file": "app/(app)/hr/_layout.tsx",
-      "source_location": "L1",
-      "id": "app_app_hr_layout_tsx",
-      "community": 42,
-      "norm_label": "_layout.tsx"
+      "source_file": "package.json",
+      "source_location": "L3",
+      "id": "erp_app_package_main",
+      "community": 29,
+      "norm_label": "main"
     },
     {
-      "label": "HRLayout()",
+      "label": "version",
       "file_type": "code",
-      "source_file": "app/(app)/hr/_layout.tsx",
-      "source_location": "L8",
-      "id": "hr_layout_hrlayout",
-      "community": 42,
-      "norm_label": "hrlayout()"
+      "source_file": "package.json",
+      "source_location": "L4",
+      "id": "erp_app_package_version",
+      "community": 29,
+      "norm_label": "version"
     },
     {
-      "label": "attendance.tsx",
+      "label": "scripts",
       "file_type": "code",
-      "source_file": "app/(app)/hr/attendance.tsx",
-      "source_location": "L1",
-      "id": "app_app_hr_attendance_tsx",
-      "community": 3,
-      "norm_label": "attendance.tsx"
+      "source_file": "package.json",
+      "source_location": "L5",
+      "id": "erp_app_package_scripts",
+      "community": 27,
+      "norm_label": "scripts"
     },
     {
-      "label": "HRAttendance()",
+      "label": "start",
       "file_type": "code",
-      "source_file": "app/(app)/hr/attendance.tsx",
-      "source_location": "L8",
-      "id": "hr_attendance_hrattendance",
-      "community": 3,
-      "norm_label": "hrattendance()"
+      "source_file": "package.json",
+      "source_location": "L6",
+      "id": "erp_app_package_scripts_start",
+      "community": 27,
+      "norm_label": "start"
     },
     {
-      "label": "styles",
+      "label": "reset-project",
       "file_type": "code",
-      "source_file": "app/(app)/hr/attendance.tsx",
-      "source_location": "L107",
-      "id": "hr_attendance_styles",
-      "community": 3,
-      "norm_label": "styles"
-    },
-    {
-      "label": "careers.tsx",
-      "file_type": "code",
-      "source_file": "app/(app)/hr/careers.tsx",
-      "source_location": "L1",
-      "id": "app_app_hr_careers_tsx",
-      "community": 3,
-      "norm_label": "careers.tsx"
-    },
-    {
-      "label": "HRCareers()",
-      "file_type": "code",
-      "source_file": "app/(app)/hr/careers.tsx",
-      "source_location": "L8",
-      "id": "hr_careers_hrcareers",
-      "community": 3,
-      "norm_label": "hrcareers()"
-    },
-    {
-      "label": "styles",
-      "file_type": "code",
-      "source_file": "app/(app)/hr/careers.tsx",
-      "source_location": "L102",
-      "id": "hr_careers_styles",
-      "community": 3,
-      "norm_label": "styles"
-    },
-    {
-      "label": "departments.tsx",
-      "file_type": "code",
-      "source_file": "app/(app)/hr/departments.tsx",
-      "source_location": "L1",
-      "id": "app_app_hr_departments_tsx",
-      "community": 3,
-      "norm_label": "departments.tsx"
-    },
-    {
-      "label": "HRDepartments()",
-      "file_type": "code",
-      "source_file": "app/(app)/hr/departments.tsx",
+      "source_file": "package.json",
       "source_location": "L7",
-      "id": "hr_departments_hrdepartments",
-      "community": 3,
-      "norm_label": "hrdepartments()"
+      "id": "erp_app_package_scripts_reset_project",
+      "community": 27,
+      "norm_label": "reset-project"
     },
     {
-      "label": "styles",
+      "label": "android",
       "file_type": "code",
-      "source_file": "app/(app)/hr/departments.tsx",
-      "source_location": "L91",
-      "id": "hr_departments_styles",
-      "community": 3,
-      "norm_label": "styles"
+      "source_file": "package.json",
+      "source_location": "L8",
+      "id": "erp_app_package_scripts_android",
+      "community": 27,
+      "norm_label": "android"
+    },
+    {
+      "label": "ios",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "id": "erp_app_package_scripts_ios",
+      "community": 27,
+      "norm_label": "ios"
+    },
+    {
+      "label": "web",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L10",
+      "id": "erp_app_package_scripts_web",
+      "community": 27,
+      "norm_label": "web"
+    },
+    {
+      "label": "lint",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L11",
+      "id": "erp_app_package_scripts_lint",
+      "community": 27,
+      "norm_label": "lint"
+    },
+    {
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "id": "erp_app_package_dependencies",
+      "community": 2,
+      "norm_label": "dependencies"
+    },
+    {
+      "label": "@expo-google-fonts/plus-jakarta-sans",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "id": "erp_app_package_dependencies_expo_google_fonts_plus_jakarta_sans",
+      "community": 2,
+      "norm_label": "@expo-google-fonts/plus-jakarta-sans"
+    },
+    {
+      "label": "@react-native-async-storage/async-storage",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "id": "erp_app_package_dependencies_react_native_async_storage_async_storage",
+      "community": 2,
+      "norm_label": "@react-native-async-storage/async-storage"
+    },
+    {
+      "label": "@react-native-community/datetimepicker",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "id": "erp_app_package_dependencies_react_native_community_datetimepicker",
+      "community": 2,
+      "norm_label": "@react-native-community/datetimepicker"
+    },
+    {
+      "label": "@react-native-community/slider",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "id": "erp_app_package_dependencies_react_native_community_slider",
+      "community": 2,
+      "norm_label": "@react-native-community/slider"
+    },
+    {
+      "label": "@react-navigation/bottom-tabs",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L18",
+      "id": "erp_app_package_dependencies_react_navigation_bottom_tabs",
+      "community": 2,
+      "norm_label": "@react-navigation/bottom-tabs"
+    },
+    {
+      "label": "@react-navigation/drawer",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L19",
+      "id": "erp_app_package_dependencies_react_navigation_drawer",
+      "community": 2,
+      "norm_label": "@react-navigation/drawer"
+    },
+    {
+      "label": "@react-navigation/elements",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "id": "erp_app_package_dependencies_react_navigation_elements",
+      "community": 2,
+      "norm_label": "@react-navigation/elements"
+    },
+    {
+      "label": "@react-navigation/native",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L21",
+      "id": "erp_app_package_dependencies_react_navigation_native",
+      "community": 2,
+      "norm_label": "@react-navigation/native"
+    },
+    {
+      "label": "axios",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L22",
+      "id": "erp_app_package_dependencies_axios",
+      "community": 2,
+      "norm_label": "axios"
+    },
+    {
+      "label": "dayjs",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L23",
+      "id": "erp_app_package_dependencies_dayjs",
+      "community": 2,
+      "norm_label": "dayjs"
+    },
+    {
+      "label": "expo",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L24",
+      "id": "erp_app_package_dependencies_expo",
+      "community": 2,
+      "norm_label": "expo"
+    },
+    {
+      "label": "expo-constants",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L25",
+      "id": "erp_app_package_dependencies_expo_constants",
+      "community": 2,
+      "norm_label": "expo-constants"
+    },
+    {
+      "label": "expo-device",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L26",
+      "id": "erp_app_package_dependencies_expo_device",
+      "community": 2,
+      "norm_label": "expo-device"
+    },
+    {
+      "label": "expo-font",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L27",
+      "id": "erp_app_package_dependencies_expo_font",
+      "community": 2,
+      "norm_label": "expo-font"
+    },
+    {
+      "label": "expo-glass-effect",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L28",
+      "id": "erp_app_package_dependencies_expo_glass_effect",
+      "community": 2,
+      "norm_label": "expo-glass-effect"
+    },
+    {
+      "label": "expo-image",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L29",
+      "id": "erp_app_package_dependencies_expo_image",
+      "community": 2,
+      "norm_label": "expo-image"
+    },
+    {
+      "label": "expo-linking",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L30",
+      "id": "erp_app_package_dependencies_expo_linking",
+      "community": 2,
+      "norm_label": "expo-linking"
+    },
+    {
+      "label": "expo-location",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L31",
+      "id": "erp_app_package_dependencies_expo_location",
+      "community": 2,
+      "norm_label": "expo-location"
+    },
+    {
+      "label": "expo-router",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L32",
+      "id": "erp_app_package_dependencies_expo_router",
+      "community": 2,
+      "norm_label": "expo-router"
+    },
+    {
+      "label": "expo-splash-screen",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L33",
+      "id": "erp_app_package_dependencies_expo_splash_screen",
+      "community": 2,
+      "norm_label": "expo-splash-screen"
+    },
+    {
+      "label": "expo-status-bar",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L34",
+      "id": "erp_app_package_dependencies_expo_status_bar",
+      "community": 2,
+      "norm_label": "expo-status-bar"
+    },
+    {
+      "label": "expo-symbols",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L35",
+      "id": "erp_app_package_dependencies_expo_symbols",
+      "community": 2,
+      "norm_label": "expo-symbols"
+    },
+    {
+      "label": "expo-system-ui",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L36",
+      "id": "erp_app_package_dependencies_expo_system_ui",
+      "community": 2,
+      "norm_label": "expo-system-ui"
+    },
+    {
+      "label": "expo-web-browser",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L37",
+      "id": "erp_app_package_dependencies_expo_web_browser",
+      "community": 2,
+      "norm_label": "expo-web-browser"
+    },
+    {
+      "label": "lucide-react-native",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L38",
+      "id": "erp_app_package_dependencies_lucide_react_native",
+      "community": 2,
+      "norm_label": "lucide-react-native"
+    },
+    {
+      "label": "react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L39",
+      "id": "erp_app_package_dependencies_react",
+      "community": 2,
+      "norm_label": "react"
+    },
+    {
+      "label": "react-dom",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L40",
+      "id": "erp_app_package_dependencies_react_dom",
+      "community": 2,
+      "norm_label": "react-dom"
+    },
+    {
+      "label": "react-native",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L41",
+      "id": "erp_app_package_dependencies_react_native",
+      "community": 2,
+      "norm_label": "react-native"
+    },
+    {
+      "label": "react-native-gesture-handler",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L42",
+      "id": "erp_app_package_dependencies_react_native_gesture_handler",
+      "community": 2,
+      "norm_label": "react-native-gesture-handler"
+    },
+    {
+      "label": "react-native-reanimated",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L43",
+      "id": "erp_app_package_dependencies_react_native_reanimated",
+      "community": 2,
+      "norm_label": "react-native-reanimated"
+    },
+    {
+      "label": "react-native-safe-area-context",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L44",
+      "id": "erp_app_package_dependencies_react_native_safe_area_context",
+      "community": 2,
+      "norm_label": "react-native-safe-area-context"
+    },
+    {
+      "label": "react-native-screens",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L45",
+      "id": "erp_app_package_dependencies_react_native_screens",
+      "community": 2,
+      "norm_label": "react-native-screens"
+    },
+    {
+      "label": "react-native-web",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L46",
+      "id": "erp_app_package_dependencies_react_native_web",
+      "community": 2,
+      "norm_label": "react-native-web"
+    },
+    {
+      "label": "react-native-worklets",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L47",
+      "id": "erp_app_package_dependencies_react_native_worklets",
+      "community": 2,
+      "norm_label": "react-native-worklets"
+    },
+    {
+      "label": "devDependencies",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L49",
+      "id": "erp_app_package_devdependencies",
+      "community": 29,
+      "norm_label": "devdependencies"
+    },
+    {
+      "label": "@types/react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L50",
+      "id": "erp_app_package_devdependencies_types_react",
+      "community": 29,
+      "norm_label": "@types/react"
+    },
+    {
+      "label": "eslint",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L51",
+      "id": "erp_app_package_devdependencies_eslint",
+      "community": 29,
+      "norm_label": "eslint"
+    },
+    {
+      "label": "eslint-config-expo",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L52",
+      "id": "erp_app_package_devdependencies_eslint_config_expo",
+      "community": 29,
+      "norm_label": "eslint-config-expo"
+    },
+    {
+      "label": "typescript",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L53",
+      "id": "erp_app_package_devdependencies_typescript",
+      "community": 29,
+      "norm_label": "typescript"
+    },
+    {
+      "label": "private",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L55",
+      "id": "erp_app_package_private",
+      "community": 29,
+      "norm_label": "private"
     },
     {
       "label": "directory.tsx",
       "file_type": "code",
-      "source_file": "app/(app)/hr/directory.tsx",
+      "source_file": "src/app/(app)/hr/directory.tsx",
       "source_location": "L1",
-      "id": "app_app_hr_directory_tsx",
+      "id": "src_app_app_hr_directory_tsx",
       "community": 3,
       "norm_label": "directory.tsx"
     },
     {
       "label": "HRDirectory()",
       "file_type": "code",
-      "source_file": "app/(app)/hr/directory.tsx",
+      "source_file": "src/app/(app)/hr/directory.tsx",
       "source_location": "L7",
       "id": "hr_directory_hrdirectory",
       "community": 3,
@@ -224,164 +575,389 @@
     {
       "label": "styles",
       "file_type": "code",
-      "source_file": "app/(app)/hr/directory.tsx",
-      "source_location": "L92",
+      "source_file": "src/app/(app)/hr/directory.tsx",
+      "source_location": "L210",
       "id": "hr_directory_styles",
       "community": 3,
       "norm_label": "styles"
     },
     {
-      "label": "leave.tsx",
+      "label": "_types.ts",
       "file_type": "code",
-      "source_file": "app/(app)/hr/leave.tsx",
+      "source_file": "src/app/(app)/workspace/_types.ts",
       "source_location": "L1",
-      "id": "app_app_hr_leave_tsx",
-      "community": 3,
-      "norm_label": "leave.tsx"
+      "id": "src_app_app_workspace_types_ts",
+      "community": 32,
+      "norm_label": "_types.ts"
     },
     {
-      "label": "HRLeave()",
+      "label": "ChatAttachment",
       "file_type": "code",
-      "source_file": "app/(app)/hr/leave.tsx",
-      "source_location": "L8",
-      "id": "hr_leave_hrleave",
-      "community": 3,
-      "norm_label": "hrleave()"
-    },
-    {
-      "label": "styles",
-      "file_type": "code",
-      "source_file": "app/(app)/hr/leave.tsx",
-      "source_location": "L109",
-      "id": "hr_leave_styles",
-      "community": 3,
-      "norm_label": "styles"
-    },
-    {
-      "label": "more.tsx",
-      "file_type": "code",
-      "source_file": "app/(app)/hr/more.tsx",
+      "source_file": "src/app/(app)/workspace/_types.ts",
       "source_location": "L1",
-      "id": "app_app_hr_more_tsx",
-      "community": 42,
-      "norm_label": "more.tsx"
+      "id": "workspace_types_chatattachment",
+      "community": 32,
+      "norm_label": "chatattachment"
     },
     {
-      "label": "HRMore()",
+      "label": "EntityLink",
       "file_type": "code",
-      "source_file": "app/(app)/hr/more.tsx",
+      "source_file": "src/app/(app)/workspace/_types.ts",
       "source_location": "L7",
-      "id": "hr_more_hrmore",
-      "community": 42,
-      "norm_label": "hrmore()"
+      "id": "workspace_types_entitylink",
+      "community": 32,
+      "norm_label": "entitylink"
     },
     {
-      "label": "styles",
+      "label": "ChatMessageMetadata",
       "file_type": "code",
-      "source_file": "app/(app)/hr/more.tsx",
-      "source_location": "L57",
-      "id": "hr_more_styles",
-      "community": 42,
-      "norm_label": "styles"
+      "source_file": "src/app/(app)/workspace/_types.ts",
+      "source_location": "L13",
+      "id": "workspace_types_chatmessagemetadata",
+      "community": 32,
+      "norm_label": "chatmessagemetadata"
     },
     {
-      "label": "permissions.tsx",
+      "label": "ChatMessage",
       "file_type": "code",
-      "source_file": "app/(app)/hr/permissions.tsx",
-      "source_location": "L1",
-      "id": "app_app_hr_permissions_tsx",
-      "community": 3,
-      "norm_label": "permissions.tsx"
+      "source_file": "src/app/(app)/workspace/_types.ts",
+      "source_location": "L17",
+      "id": "workspace_types_chatmessage",
+      "community": 32,
+      "norm_label": "chatmessage"
     },
     {
-      "label": "HRPermissions()",
+      "label": "ChatParticipant",
       "file_type": "code",
-      "source_file": "app/(app)/hr/permissions.tsx",
-      "source_location": "L9",
-      "id": "hr_permissions_hrpermissions",
-      "community": 3,
-      "norm_label": "hrpermissions()"
+      "source_file": "src/app/(app)/workspace/_types.ts",
+      "source_location": "L35",
+      "id": "workspace_types_chatparticipant",
+      "community": 32,
+      "norm_label": "chatparticipant"
     },
     {
-      "label": "styles",
+      "label": "ChatThread",
       "file_type": "code",
-      "source_file": "app/(app)/hr/permissions.tsx",
-      "source_location": "L126",
-      "id": "hr_permissions_styles",
-      "community": 3,
-      "norm_label": "styles"
+      "source_file": "src/app/(app)/workspace/_types.ts",
+      "source_location": "L50",
+      "id": "workspace_types_chatthread",
+      "community": 32,
+      "norm_label": "chatthread"
     },
     {
-      "label": "reports.tsx",
+      "label": "StaffResource",
       "file_type": "code",
-      "source_file": "app/(app)/hr/reports.tsx",
-      "source_location": "L1",
-      "id": "app_app_hr_reports_tsx",
-      "community": 3,
-      "norm_label": "reports.tsx"
+      "source_file": "src/app/(app)/workspace/_types.ts",
+      "source_location": "L70",
+      "id": "workspace_types_staffresource",
+      "community": 32,
+      "norm_label": "staffresource"
     },
     {
-      "label": "HRReports()",
+      "label": "DepartmentResource",
       "file_type": "code",
-      "source_file": "app/(app)/hr/reports.tsx",
-      "source_location": "L7",
-      "id": "hr_reports_hrreports",
-      "community": 3,
-      "norm_label": "hrreports()"
+      "source_file": "src/app/(app)/workspace/_types.ts",
+      "source_location": "L77",
+      "id": "workspace_types_departmentresource",
+      "community": 32,
+      "norm_label": "departmentresource"
     },
     {
-      "label": "styles",
+      "label": "Types()",
       "file_type": "code",
-      "source_file": "app/(app)/hr/reports.tsx",
-      "source_location": "L73",
-      "id": "hr_reports_styles",
-      "community": 3,
-      "norm_label": "styles"
-    },
-    {
-      "label": "tools.tsx",
-      "file_type": "code",
-      "source_file": "app/(app)/hr/tools.tsx",
-      "source_location": "L1",
-      "id": "app_app_hr_tools_tsx",
-      "community": 3,
-      "norm_label": "tools.tsx"
-    },
-    {
-      "label": "HRTools()",
-      "file_type": "code",
-      "source_file": "app/(app)/hr/tools.tsx",
-      "source_location": "L7",
-      "id": "hr_tools_hrtools",
-      "community": 3,
-      "norm_label": "hrtools()"
-    },
-    {
-      "label": "styles",
-      "file_type": "code",
-      "source_file": "app/(app)/hr/tools.tsx",
-      "source_location": "L90",
-      "id": "hr_tools_styles",
-      "community": 3,
-      "norm_label": "styles"
+      "source_file": "src/app/(app)/workspace/_types.ts",
+      "source_location": "L82",
+      "id": "workspace_types_types",
+      "community": 32,
+      "norm_label": "types()"
     },
     {
       "label": "hrService.ts",
       "file_type": "code",
-      "source_file": "services/hrService.ts",
+      "source_file": "src/services/hrService.ts",
       "source_location": "L1",
-      "id": "services_hrservice_ts",
+      "id": "src_services_hrservice_ts",
       "community": 3,
       "norm_label": "hrservice.ts"
     },
     {
       "label": "hrService",
       "file_type": "code",
-      "source_file": "services/hrService.ts",
+      "source_file": "src/services/hrService.ts",
       "source_location": "L3",
       "id": "services_hrservice_hrservice",
       "community": 3,
       "norm_label": "hrservice"
+    },
+    {
+      "label": "_layout.tsx",
+      "file_type": "code",
+      "source_file": "app/(app)/_layout.tsx",
+      "source_location": "L1",
+      "community": 42,
+      "norm_label": "_layout.tsx",
+      "id": "app_app_layout_tsx"
+    },
+    {
+      "label": "AppLayout()",
+      "file_type": "code",
+      "source_file": "app/(app)/_layout.tsx",
+      "source_location": "L8",
+      "community": 42,
+      "norm_label": "applayout()",
+      "id": "app_layout_applayout"
+    },
+    {
+      "label": "_layout.tsx",
+      "file_type": "code",
+      "source_file": "app/(app)/hr/_layout.tsx",
+      "source_location": "L1",
+      "community": 42,
+      "norm_label": "_layout.tsx",
+      "id": "app_app_hr_layout_tsx"
+    },
+    {
+      "label": "HRLayout()",
+      "file_type": "code",
+      "source_file": "app/(app)/hr/_layout.tsx",
+      "source_location": "L8",
+      "community": 42,
+      "norm_label": "hrlayout()",
+      "id": "hr_layout_hrlayout"
+    },
+    {
+      "label": "attendance.tsx",
+      "file_type": "code",
+      "source_file": "app/(app)/hr/attendance.tsx",
+      "source_location": "L1",
+      "community": 3,
+      "norm_label": "attendance.tsx",
+      "id": "app_app_hr_attendance_tsx"
+    },
+    {
+      "label": "HRAttendance()",
+      "file_type": "code",
+      "source_file": "app/(app)/hr/attendance.tsx",
+      "source_location": "L8",
+      "community": 3,
+      "norm_label": "hrattendance()",
+      "id": "hr_attendance_hrattendance"
+    },
+    {
+      "label": "styles",
+      "file_type": "code",
+      "source_file": "app/(app)/hr/attendance.tsx",
+      "source_location": "L107",
+      "community": 3,
+      "norm_label": "styles",
+      "id": "hr_attendance_styles"
+    },
+    {
+      "label": "careers.tsx",
+      "file_type": "code",
+      "source_file": "app/(app)/hr/careers.tsx",
+      "source_location": "L1",
+      "community": 3,
+      "norm_label": "careers.tsx",
+      "id": "app_app_hr_careers_tsx"
+    },
+    {
+      "label": "HRCareers()",
+      "file_type": "code",
+      "source_file": "app/(app)/hr/careers.tsx",
+      "source_location": "L8",
+      "community": 3,
+      "norm_label": "hrcareers()",
+      "id": "hr_careers_hrcareers"
+    },
+    {
+      "label": "styles",
+      "file_type": "code",
+      "source_file": "app/(app)/hr/careers.tsx",
+      "source_location": "L102",
+      "community": 3,
+      "norm_label": "styles",
+      "id": "hr_careers_styles"
+    },
+    {
+      "label": "departments.tsx",
+      "file_type": "code",
+      "source_file": "app/(app)/hr/departments.tsx",
+      "source_location": "L1",
+      "community": 3,
+      "norm_label": "departments.tsx",
+      "id": "app_app_hr_departments_tsx"
+    },
+    {
+      "label": "HRDepartments()",
+      "file_type": "code",
+      "source_file": "app/(app)/hr/departments.tsx",
+      "source_location": "L7",
+      "community": 3,
+      "norm_label": "hrdepartments()",
+      "id": "hr_departments_hrdepartments"
+    },
+    {
+      "label": "styles",
+      "file_type": "code",
+      "source_file": "app/(app)/hr/departments.tsx",
+      "source_location": "L91",
+      "community": 3,
+      "norm_label": "styles",
+      "id": "hr_departments_styles"
+    },
+    {
+      "label": "directory.tsx",
+      "file_type": "code",
+      "source_file": "app/(app)/hr/directory.tsx",
+      "source_location": "L1",
+      "community": 3,
+      "norm_label": "directory.tsx",
+      "id": "app_app_hr_directory_tsx"
+    },
+    {
+      "label": "leave.tsx",
+      "file_type": "code",
+      "source_file": "app/(app)/hr/leave.tsx",
+      "source_location": "L1",
+      "community": 3,
+      "norm_label": "leave.tsx",
+      "id": "app_app_hr_leave_tsx"
+    },
+    {
+      "label": "HRLeave()",
+      "file_type": "code",
+      "source_file": "app/(app)/hr/leave.tsx",
+      "source_location": "L8",
+      "community": 3,
+      "norm_label": "hrleave()",
+      "id": "hr_leave_hrleave"
+    },
+    {
+      "label": "styles",
+      "file_type": "code",
+      "source_file": "app/(app)/hr/leave.tsx",
+      "source_location": "L109",
+      "community": 3,
+      "norm_label": "styles",
+      "id": "hr_leave_styles"
+    },
+    {
+      "label": "more.tsx",
+      "file_type": "code",
+      "source_file": "app/(app)/hr/more.tsx",
+      "source_location": "L1",
+      "community": 42,
+      "norm_label": "more.tsx",
+      "id": "app_app_hr_more_tsx"
+    },
+    {
+      "label": "HRMore()",
+      "file_type": "code",
+      "source_file": "app/(app)/hr/more.tsx",
+      "source_location": "L7",
+      "community": 42,
+      "norm_label": "hrmore()",
+      "id": "hr_more_hrmore"
+    },
+    {
+      "label": "styles",
+      "file_type": "code",
+      "source_file": "app/(app)/hr/more.tsx",
+      "source_location": "L57",
+      "community": 42,
+      "norm_label": "styles",
+      "id": "hr_more_styles"
+    },
+    {
+      "label": "permissions.tsx",
+      "file_type": "code",
+      "source_file": "app/(app)/hr/permissions.tsx",
+      "source_location": "L1",
+      "community": 3,
+      "norm_label": "permissions.tsx",
+      "id": "app_app_hr_permissions_tsx"
+    },
+    {
+      "label": "HRPermissions()",
+      "file_type": "code",
+      "source_file": "app/(app)/hr/permissions.tsx",
+      "source_location": "L9",
+      "community": 3,
+      "norm_label": "hrpermissions()",
+      "id": "hr_permissions_hrpermissions"
+    },
+    {
+      "label": "styles",
+      "file_type": "code",
+      "source_file": "app/(app)/hr/permissions.tsx",
+      "source_location": "L126",
+      "community": 3,
+      "norm_label": "styles",
+      "id": "hr_permissions_styles"
+    },
+    {
+      "label": "reports.tsx",
+      "file_type": "code",
+      "source_file": "app/(app)/hr/reports.tsx",
+      "source_location": "L1",
+      "community": 3,
+      "norm_label": "reports.tsx",
+      "id": "app_app_hr_reports_tsx"
+    },
+    {
+      "label": "HRReports()",
+      "file_type": "code",
+      "source_file": "app/(app)/hr/reports.tsx",
+      "source_location": "L7",
+      "community": 3,
+      "norm_label": "hrreports()",
+      "id": "hr_reports_hrreports"
+    },
+    {
+      "label": "styles",
+      "file_type": "code",
+      "source_file": "app/(app)/hr/reports.tsx",
+      "source_location": "L73",
+      "community": 3,
+      "norm_label": "styles",
+      "id": "hr_reports_styles"
+    },
+    {
+      "label": "tools.tsx",
+      "file_type": "code",
+      "source_file": "app/(app)/hr/tools.tsx",
+      "source_location": "L1",
+      "community": 3,
+      "norm_label": "tools.tsx",
+      "id": "app_app_hr_tools_tsx"
+    },
+    {
+      "label": "HRTools()",
+      "file_type": "code",
+      "source_file": "app/(app)/hr/tools.tsx",
+      "source_location": "L7",
+      "community": 3,
+      "norm_label": "hrtools()",
+      "id": "hr_tools_hrtools"
+    },
+    {
+      "label": "styles",
+      "file_type": "code",
+      "source_file": "app/(app)/hr/tools.tsx",
+      "source_location": "L90",
+      "community": 3,
+      "norm_label": "styles",
+      "id": "hr_tools_styles"
+    },
+    {
+      "label": "hrService.ts",
+      "file_type": "code",
+      "source_file": "services/hrService.ts",
+      "source_location": "L1",
+      "community": 3,
+      "norm_label": "hrservice.ts",
+      "id": "services_hrservice_ts"
     },
     {
       "label": "index.tsx",
@@ -733,465 +1309,6 @@
       "community": 8,
       "norm_label": "config",
       "id": "erp_app_metro_config_config"
-    },
-    {
-      "label": "package.json",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L1",
-      "community": 29,
-      "norm_label": "package.json",
-      "id": "package_json"
-    },
-    {
-      "label": "name",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L2",
-      "community": 29,
-      "norm_label": "name",
-      "id": "erp_app_package_name"
-    },
-    {
-      "label": "main",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L3",
-      "community": 29,
-      "norm_label": "main",
-      "id": "erp_app_package_main"
-    },
-    {
-      "label": "version",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L4",
-      "community": 29,
-      "norm_label": "version",
-      "id": "erp_app_package_version"
-    },
-    {
-      "label": "scripts",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L5",
-      "community": 27,
-      "norm_label": "scripts",
-      "id": "erp_app_package_scripts"
-    },
-    {
-      "label": "start",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L6",
-      "community": 27,
-      "norm_label": "start",
-      "id": "erp_app_package_scripts_start"
-    },
-    {
-      "label": "reset-project",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L7",
-      "community": 27,
-      "norm_label": "reset-project",
-      "id": "erp_app_package_scripts_reset_project"
-    },
-    {
-      "label": "android",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L8",
-      "community": 27,
-      "norm_label": "android",
-      "id": "erp_app_package_scripts_android"
-    },
-    {
-      "label": "ios",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L9",
-      "community": 27,
-      "norm_label": "ios",
-      "id": "erp_app_package_scripts_ios"
-    },
-    {
-      "label": "web",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L10",
-      "community": 27,
-      "norm_label": "web",
-      "id": "erp_app_package_scripts_web"
-    },
-    {
-      "label": "lint",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L11",
-      "community": 27,
-      "norm_label": "lint",
-      "id": "erp_app_package_scripts_lint"
-    },
-    {
-      "label": "dependencies",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L13",
-      "community": 2,
-      "norm_label": "dependencies",
-      "id": "erp_app_package_dependencies"
-    },
-    {
-      "label": "@expo-google-fonts/plus-jakarta-sans",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L14",
-      "community": 2,
-      "norm_label": "@expo-google-fonts/plus-jakarta-sans",
-      "id": "erp_app_package_dependencies_expo_google_fonts_plus_jakarta_sans"
-    },
-    {
-      "label": "@react-native-async-storage/async-storage",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L15",
-      "community": 2,
-      "norm_label": "@react-native-async-storage/async-storage",
-      "id": "erp_app_package_dependencies_react_native_async_storage_async_storage"
-    },
-    {
-      "label": "@react-native-community/datetimepicker",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L16",
-      "community": 2,
-      "norm_label": "@react-native-community/datetimepicker",
-      "id": "erp_app_package_dependencies_react_native_community_datetimepicker"
-    },
-    {
-      "label": "@react-native-community/slider",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L17",
-      "community": 2,
-      "norm_label": "@react-native-community/slider",
-      "id": "erp_app_package_dependencies_react_native_community_slider"
-    },
-    {
-      "label": "@react-navigation/bottom-tabs",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L18",
-      "community": 2,
-      "norm_label": "@react-navigation/bottom-tabs",
-      "id": "erp_app_package_dependencies_react_navigation_bottom_tabs"
-    },
-    {
-      "label": "@react-navigation/drawer",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L19",
-      "community": 2,
-      "norm_label": "@react-navigation/drawer",
-      "id": "erp_app_package_dependencies_react_navigation_drawer"
-    },
-    {
-      "label": "@react-navigation/elements",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L20",
-      "community": 2,
-      "norm_label": "@react-navigation/elements",
-      "id": "erp_app_package_dependencies_react_navigation_elements"
-    },
-    {
-      "label": "@react-navigation/native",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L21",
-      "community": 2,
-      "norm_label": "@react-navigation/native",
-      "id": "erp_app_package_dependencies_react_navigation_native"
-    },
-    {
-      "label": "axios",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L22",
-      "community": 2,
-      "norm_label": "axios",
-      "id": "erp_app_package_dependencies_axios"
-    },
-    {
-      "label": "expo",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L23",
-      "community": 2,
-      "norm_label": "expo",
-      "id": "erp_app_package_dependencies_expo"
-    },
-    {
-      "label": "expo-constants",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L24",
-      "community": 2,
-      "norm_label": "expo-constants",
-      "id": "erp_app_package_dependencies_expo_constants"
-    },
-    {
-      "label": "expo-device",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L25",
-      "community": 2,
-      "norm_label": "expo-device",
-      "id": "erp_app_package_dependencies_expo_device"
-    },
-    {
-      "label": "expo-font",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L26",
-      "community": 2,
-      "norm_label": "expo-font",
-      "id": "erp_app_package_dependencies_expo_font"
-    },
-    {
-      "label": "expo-glass-effect",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L27",
-      "community": 2,
-      "norm_label": "expo-glass-effect",
-      "id": "erp_app_package_dependencies_expo_glass_effect"
-    },
-    {
-      "label": "expo-image",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L28",
-      "community": 2,
-      "norm_label": "expo-image",
-      "id": "erp_app_package_dependencies_expo_image"
-    },
-    {
-      "label": "expo-linking",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L29",
-      "community": 2,
-      "norm_label": "expo-linking",
-      "id": "erp_app_package_dependencies_expo_linking"
-    },
-    {
-      "label": "expo-location",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L30",
-      "community": 2,
-      "norm_label": "expo-location",
-      "id": "erp_app_package_dependencies_expo_location"
-    },
-    {
-      "label": "expo-router",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L31",
-      "community": 2,
-      "norm_label": "expo-router",
-      "id": "erp_app_package_dependencies_expo_router"
-    },
-    {
-      "label": "expo-splash-screen",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L32",
-      "community": 2,
-      "norm_label": "expo-splash-screen",
-      "id": "erp_app_package_dependencies_expo_splash_screen"
-    },
-    {
-      "label": "expo-status-bar",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L33",
-      "community": 2,
-      "norm_label": "expo-status-bar",
-      "id": "erp_app_package_dependencies_expo_status_bar"
-    },
-    {
-      "label": "expo-symbols",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L34",
-      "community": 2,
-      "norm_label": "expo-symbols",
-      "id": "erp_app_package_dependencies_expo_symbols"
-    },
-    {
-      "label": "expo-system-ui",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L35",
-      "community": 2,
-      "norm_label": "expo-system-ui",
-      "id": "erp_app_package_dependencies_expo_system_ui"
-    },
-    {
-      "label": "expo-web-browser",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L36",
-      "community": 2,
-      "norm_label": "expo-web-browser",
-      "id": "erp_app_package_dependencies_expo_web_browser"
-    },
-    {
-      "label": "lucide-react-native",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L37",
-      "community": 2,
-      "norm_label": "lucide-react-native",
-      "id": "erp_app_package_dependencies_lucide_react_native"
-    },
-    {
-      "label": "react",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L38",
-      "community": 2,
-      "norm_label": "react",
-      "id": "erp_app_package_dependencies_react"
-    },
-    {
-      "label": "react-dom",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L39",
-      "community": 2,
-      "norm_label": "react-dom",
-      "id": "erp_app_package_dependencies_react_dom"
-    },
-    {
-      "label": "react-native",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L40",
-      "community": 2,
-      "norm_label": "react-native",
-      "id": "erp_app_package_dependencies_react_native"
-    },
-    {
-      "label": "react-native-gesture-handler",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L41",
-      "community": 2,
-      "norm_label": "react-native-gesture-handler",
-      "id": "erp_app_package_dependencies_react_native_gesture_handler"
-    },
-    {
-      "label": "react-native-reanimated",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L42",
-      "community": 2,
-      "norm_label": "react-native-reanimated",
-      "id": "erp_app_package_dependencies_react_native_reanimated"
-    },
-    {
-      "label": "react-native-safe-area-context",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L43",
-      "community": 2,
-      "norm_label": "react-native-safe-area-context",
-      "id": "erp_app_package_dependencies_react_native_safe_area_context"
-    },
-    {
-      "label": "react-native-screens",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L44",
-      "community": 2,
-      "norm_label": "react-native-screens",
-      "id": "erp_app_package_dependencies_react_native_screens"
-    },
-    {
-      "label": "react-native-web",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L45",
-      "community": 2,
-      "norm_label": "react-native-web",
-      "id": "erp_app_package_dependencies_react_native_web"
-    },
-    {
-      "label": "react-native-worklets",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L46",
-      "community": 2,
-      "norm_label": "react-native-worklets",
-      "id": "erp_app_package_dependencies_react_native_worklets"
-    },
-    {
-      "label": "devDependencies",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L48",
-      "community": 29,
-      "norm_label": "devdependencies",
-      "id": "erp_app_package_devdependencies"
-    },
-    {
-      "label": "@types/react",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L49",
-      "community": 29,
-      "norm_label": "@types/react",
-      "id": "erp_app_package_devdependencies_types_react"
-    },
-    {
-      "label": "eslint",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L50",
-      "community": 29,
-      "norm_label": "eslint",
-      "id": "erp_app_package_devdependencies_eslint"
-    },
-    {
-      "label": "eslint-config-expo",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L51",
-      "community": 29,
-      "norm_label": "eslint-config-expo",
-      "id": "erp_app_package_devdependencies_eslint_config_expo"
-    },
-    {
-      "label": "typescript",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L52",
-      "community": 29,
-      "norm_label": "typescript",
-      "id": "erp_app_package_devdependencies_typescript"
-    },
-    {
-      "label": "private",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L54",
-      "community": 29,
-      "norm_label": "private",
-      "id": "erp_app_package_private"
     },
     {
       "label": "tsconfig.json",
@@ -2197,7 +2314,7 @@
       "file_type": "code",
       "source_file": "src/app/(app)/fleet/_layout.tsx",
       "source_location": "L1",
-      "community": 42,
+      "community": 1,
       "norm_label": "_layout.tsx",
       "id": "src_app_app_fleet_layout_tsx"
     },
@@ -2206,7 +2323,7 @@
       "file_type": "code",
       "source_file": "src/app/(app)/fleet/_layout.tsx",
       "source_location": "L6",
-      "community": 42,
+      "community": 1,
       "norm_label": "fleetlayout()",
       "id": "fleet_layout_fleetlayout"
     },
@@ -2893,87 +3010,6 @@
       "community": 42,
       "norm_label": "workspacelayout()",
       "id": "workspace_layout_workspacelayout"
-    },
-    {
-      "label": "_types.ts",
-      "file_type": "code",
-      "source_file": "src/app/(app)/workspace/_types.ts",
-      "source_location": "L1",
-      "community": 32,
-      "norm_label": "_types.ts",
-      "id": "src_app_app_workspace_types_ts"
-    },
-    {
-      "label": "ChatAttachment",
-      "file_type": "code",
-      "source_file": "src/app/(app)/workspace/_types.ts",
-      "source_location": "L1",
-      "community": 32,
-      "norm_label": "chatattachment",
-      "id": "workspace_types_chatattachment"
-    },
-    {
-      "label": "EntityLink",
-      "file_type": "code",
-      "source_file": "src/app/(app)/workspace/_types.ts",
-      "source_location": "L7",
-      "community": 32,
-      "norm_label": "entitylink",
-      "id": "workspace_types_entitylink"
-    },
-    {
-      "label": "ChatMessageMetadata",
-      "file_type": "code",
-      "source_file": "src/app/(app)/workspace/_types.ts",
-      "source_location": "L13",
-      "community": 32,
-      "norm_label": "chatmessagemetadata",
-      "id": "workspace_types_chatmessagemetadata"
-    },
-    {
-      "label": "ChatMessage",
-      "file_type": "code",
-      "source_file": "src/app/(app)/workspace/_types.ts",
-      "source_location": "L17",
-      "community": 32,
-      "norm_label": "chatmessage",
-      "id": "workspace_types_chatmessage"
-    },
-    {
-      "label": "ChatParticipant",
-      "file_type": "code",
-      "source_file": "src/app/(app)/workspace/_types.ts",
-      "source_location": "L35",
-      "community": 32,
-      "norm_label": "chatparticipant",
-      "id": "workspace_types_chatparticipant"
-    },
-    {
-      "label": "ChatThread",
-      "file_type": "code",
-      "source_file": "src/app/(app)/workspace/_types.ts",
-      "source_location": "L50",
-      "community": 32,
-      "norm_label": "chatthread",
-      "id": "workspace_types_chatthread"
-    },
-    {
-      "label": "StaffResource",
-      "file_type": "code",
-      "source_file": "src/app/(app)/workspace/_types.ts",
-      "source_location": "L70",
-      "community": 32,
-      "norm_label": "staffresource",
-      "id": "workspace_types_staffresource"
-    },
-    {
-      "label": "DepartmentResource",
-      "file_type": "code",
-      "source_file": "src/app/(app)/workspace/_types.ts",
-      "source_location": "L77",
-      "community": 32,
-      "norm_label": "departmentresource",
-      "id": "workspace_types_departmentresource"
     },
     {
       "label": "create.tsx",
@@ -6701,15 +6737,1153 @@
   ],
   "links": [
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_json",
+      "target": "erp_app_package_name"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_json",
+      "target": "erp_app_package_main"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_json",
+      "target": "erp_app_package_version"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_json",
+      "target": "erp_app_package_scripts"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_json",
+      "target": "erp_app_package_dependencies"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L44",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_json",
+      "target": "erp_app_package_devdependencies"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L48",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_json",
+      "target": "erp_app_package_private"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "package.json",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "package_json",
+      "target": "app_json"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/web-badge.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_web_badge_tsx",
+      "target": "package_json"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "tsconfig.json",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "tsconfig_json",
+      "target": "package_json"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_app_expo",
+      "target": "erp_app_package_name"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_app_expo",
+      "target": "erp_app_package_version"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_scripts",
+      "target": "erp_app_package_scripts_start"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_scripts",
+      "target": "erp_app_package_scripts_reset_project"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_scripts",
+      "target": "erp_app_package_scripts_android"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_scripts",
+      "target": "erp_app_package_scripts_ios"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_scripts",
+      "target": "erp_app_package_scripts_web"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_scripts",
+      "target": "erp_app_package_scripts_lint"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_scripts",
+      "target": "erp_app_app_expo_ios"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_scripts",
+      "target": "erp_app_app_expo_android"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_scripts",
+      "target": "erp_app_app_expo_web"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_scripts",
+      "target": "scripts_reset_project_js"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_dependencies",
+      "target": "erp_app_package_dependencies_expo_google_fonts_plus_jakarta_sans"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_dependencies",
+      "target": "erp_app_package_dependencies_react_native_async_storage_async_storage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_dependencies",
+      "target": "erp_app_package_dependencies_react_native_community_datetimepicker"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L43",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_dependencies",
+      "target": "erp_app_package_dependencies_react_native_community_slider"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_dependencies",
+      "target": "erp_app_package_dependencies_react_navigation_bottom_tabs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_dependencies",
+      "target": "erp_app_package_dependencies_react_navigation_drawer"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_dependencies",
+      "target": "erp_app_package_dependencies_react_navigation_elements"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_dependencies",
+      "target": "erp_app_package_dependencies_react_navigation_native"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_dependencies",
+      "target": "erp_app_package_dependencies_axios"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "erp_app_package_dependencies",
+      "target": "erp_app_package_dependencies_dayjs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_dependencies",
+      "target": "erp_app_package_dependencies_expo"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_dependencies",
+      "target": "erp_app_package_dependencies_expo_constants"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_dependencies",
+      "target": "erp_app_package_dependencies_expo_device"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_dependencies",
+      "target": "erp_app_package_dependencies_expo_font"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_dependencies",
+      "target": "erp_app_package_dependencies_expo_glass_effect"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_dependencies",
+      "target": "erp_app_package_dependencies_expo_image"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_dependencies",
+      "target": "erp_app_package_dependencies_expo_linking"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_dependencies",
+      "target": "erp_app_package_dependencies_expo_location"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_dependencies",
+      "target": "erp_app_package_dependencies_expo_router"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_dependencies",
+      "target": "erp_app_package_dependencies_expo_splash_screen"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_dependencies",
+      "target": "erp_app_package_dependencies_expo_status_bar"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L30",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_dependencies",
+      "target": "erp_app_package_dependencies_expo_symbols"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_dependencies",
+      "target": "erp_app_package_dependencies_expo_system_ui"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_dependencies",
+      "target": "erp_app_package_dependencies_expo_web_browser"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L33",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_dependencies",
+      "target": "erp_app_package_dependencies_lucide_react_native"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L34",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_dependencies",
+      "target": "erp_app_package_dependencies_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_dependencies",
+      "target": "erp_app_package_dependencies_react_dom"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L41",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_dependencies",
+      "target": "erp_app_package_dependencies_react_native"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L37",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_dependencies",
+      "target": "erp_app_package_dependencies_react_native_gesture_handler"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L38",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_dependencies",
+      "target": "erp_app_package_dependencies_react_native_reanimated"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L39",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_dependencies",
+      "target": "erp_app_package_dependencies_react_native_safe_area_context"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L40",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_dependencies",
+      "target": "erp_app_package_dependencies_react_native_screens"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L41",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_dependencies",
+      "target": "erp_app_package_dependencies_react_native_web"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L42",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_dependencies",
+      "target": "erp_app_package_dependencies_react_native_worklets"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_dependencies",
+      "target": "erp_app_app_expo"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L45",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_devdependencies",
+      "target": "erp_app_package_devdependencies_types_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L46",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_devdependencies",
+      "target": "erp_app_package_devdependencies_eslint"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L47",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_devdependencies",
+      "target": "erp_app_package_devdependencies_eslint_config_expo"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L46",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "erp_app_package_devdependencies",
+      "target": "erp_app_package_devdependencies_typescript"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/hr/directory.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_app_app_hr_directory_tsx",
+      "target": "hooks_use_theme_usetheme",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/hr/directory.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "src_app_app_hr_directory_tsx",
+      "target": "src_services_hrservice_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/hr/directory.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "src_app_app_hr_directory_tsx",
+      "target": "services_hrservice_hrservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/hr/directory.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "src_app_app_hr_directory_tsx",
+      "target": "hr_directory_hrdirectory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/hr/directory.tsx",
+      "source_location": "L210",
+      "weight": 1.0,
+      "source": "src_app_app_hr_directory_tsx",
+      "target": "hr_directory_styles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/hr/directory.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_hr_directory_tsx",
+      "target": "hr_directory_hrdirectory"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/hr/directory.tsx",
+      "source_location": "L92",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_hr_directory_tsx",
+      "target": "hr_directory_styles"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/types.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_types_ts",
+      "target": "workspace_types_chatattachment"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/types.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_types_ts",
+      "target": "workspace_types_entitylink"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/types.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_types_ts",
+      "target": "workspace_types_chatmessagemetadata"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/types.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_types_ts",
+      "target": "workspace_types_chatmessage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/types.ts",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_types_ts",
+      "target": "workspace_types_chatparticipant"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/types.ts",
+      "source_location": "L50",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_types_ts",
+      "target": "workspace_types_chatthread"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/types.ts",
+      "source_location": "L70",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_types_ts",
+      "target": "workspace_types_staffresource"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/types.ts",
+      "source_location": "L77",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_types_ts",
+      "target": "workspace_types_departmentresource"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/_types.ts",
+      "source_location": "L82",
+      "weight": 1.0,
+      "source": "src_app_app_workspace_types_ts",
+      "target": "workspace_types_types",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/chat.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_chat_tsx",
+      "target": "src_app_app_workspace_types_ts"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/messages.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_messages_tsx",
+      "target": "src_app_app_workspace_types_ts"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/chat.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_chat_tsx",
+      "target": "workspace_types_chatattachment"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "_types.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "types_ts",
+      "target": "workspace_types_chatattachment"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "chat.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_tsx",
+      "target": "workspace_types_chatattachment"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/chat.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_chat_tsx",
+      "target": "workspace_types_entitylink"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "_types.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "types_ts",
+      "target": "workspace_types_entitylink"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "chat.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_tsx",
+      "target": "workspace_types_entitylink"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "_types.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "types_ts",
+      "target": "workspace_types_chatmessagemetadata"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/chat.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_chat_tsx",
+      "target": "workspace_types_chatmessage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "_types.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "types_ts",
+      "target": "workspace_types_chatmessage"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "chat.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_tsx",
+      "target": "workspace_types_chatmessage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "_types.ts",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "types_ts",
+      "target": "workspace_types_chatparticipant"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/chat.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_chat_tsx",
+      "target": "workspace_types_chatthread"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/messages.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_messages_tsx",
+      "target": "workspace_types_chatthread"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "_types.ts",
+      "source_location": "L50",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "types_ts",
+      "target": "workspace_types_chatthread"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "chat.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "chat_tsx",
+      "target": "workspace_types_chatthread"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "messages.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "messages_tsx",
+      "target": "workspace_types_chatthread"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/messages.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_messages_tsx",
+      "target": "workspace_types_staffresource"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "_types.ts",
+      "source_location": "L70",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "types_ts",
+      "target": "workspace_types_staffresource"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "messages.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "messages_tsx",
+      "target": "workspace_types_staffresource"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/(app)/workspace/messages.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_app_workspace_messages_tsx",
+      "target": "workspace_types_departmentresource"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "_types.ts",
+      "source_location": "L77",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "types_ts",
+      "target": "workspace_types_departmentresource"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "messages.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "messages_tsx",
+      "target": "workspace_types_departmentresource"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/hrService.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_services_hrservice_ts",
+      "target": "services_hrservice_hrservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/hr/attendance.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_hr_attendance_tsx",
+      "target": "services_hrservice_hrservice"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/hr/careers.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_hr_careers_tsx",
+      "target": "services_hrservice_hrservice"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/hr/departments.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_hr_departments_tsx",
+      "target": "services_hrservice_hrservice"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/hr/directory.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_hr_directory_tsx",
+      "target": "services_hrservice_hrservice"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/hr/leave.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_hr_leave_tsx",
+      "target": "services_hrservice_hrservice"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/hr/permissions.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_hr_permissions_tsx",
+      "target": "services_hrservice_hrservice"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/hr/reports.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_hr_reports_tsx",
+      "target": "services_hrservice_hrservice"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/(app)/hr/tools.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_app_hr_tools_tsx",
+      "target": "services_hrservice_hrservice"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/hrService.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_hrservice_ts",
+      "target": "services_hrservice_hrservice"
+    },
+    {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app/(app)/_layout.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_layout_tsx",
-      "target": "hooks_use_theme_usetheme",
-      "confidence_score": 1.0
+      "target": "hooks_use_theme_usetheme"
     },
     {
       "relation": "contains",
@@ -6717,9 +7891,9 @@
       "source_file": "app/(app)/_layout.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_layout_tsx",
-      "target": "app_layout_applayout",
-      "confidence_score": 1.0
+      "target": "app_layout_applayout"
     },
     {
       "relation": "contains",
@@ -6770,9 +7944,9 @@
       "source_file": "app/(app)/hr/_layout.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_hr_layout_tsx",
-      "target": "hooks_use_theme_usetheme",
-      "confidence_score": 1.0
+      "target": "hooks_use_theme_usetheme"
     },
     {
       "relation": "contains",
@@ -6780,9 +7954,9 @@
       "source_file": "app/(app)/hr/_layout.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_hr_layout_tsx",
-      "target": "hr_layout_hrlayout",
-      "confidence_score": 1.0
+      "target": "hr_layout_hrlayout"
     },
     {
       "relation": "imports",
@@ -6791,9 +7965,9 @@
       "source_file": "app/(app)/hr/attendance.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_hr_attendance_tsx",
-      "target": "hooks_use_theme_usetheme",
-      "confidence_score": 1.0
+      "target": "hooks_use_theme_usetheme"
     },
     {
       "relation": "imports_from",
@@ -6802,20 +7976,9 @@
       "source_file": "app/(app)/hr/attendance.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_hr_attendance_tsx",
-      "target": "services_hrservice_ts",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(app)/hr/attendance.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "app_app_hr_attendance_tsx",
-      "target": "services_hrservice_hrservice",
-      "confidence_score": 1.0
+      "target": "services_hrservice_ts"
     },
     {
       "relation": "contains",
@@ -6823,9 +7986,9 @@
       "source_file": "app/(app)/hr/attendance.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_hr_attendance_tsx",
-      "target": "hr_attendance_hrattendance",
-      "confidence_score": 1.0
+      "target": "hr_attendance_hrattendance"
     },
     {
       "relation": "contains",
@@ -6833,9 +7996,9 @@
       "source_file": "app/(app)/hr/attendance.tsx",
       "source_location": "L107",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_hr_attendance_tsx",
-      "target": "hr_attendance_styles",
-      "confidence_score": 1.0
+      "target": "hr_attendance_styles"
     },
     {
       "relation": "imports",
@@ -6844,9 +8007,9 @@
       "source_file": "app/(app)/hr/careers.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_hr_careers_tsx",
-      "target": "hooks_use_theme_usetheme",
-      "confidence_score": 1.0
+      "target": "hooks_use_theme_usetheme"
     },
     {
       "relation": "imports_from",
@@ -6855,20 +8018,9 @@
       "source_file": "app/(app)/hr/careers.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_hr_careers_tsx",
-      "target": "services_hrservice_ts",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(app)/hr/careers.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "source": "app_app_hr_careers_tsx",
-      "target": "services_hrservice_hrservice",
-      "confidence_score": 1.0
+      "target": "services_hrservice_ts"
     },
     {
       "relation": "contains",
@@ -6876,9 +8028,9 @@
       "source_file": "app/(app)/hr/careers.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_hr_careers_tsx",
-      "target": "hr_careers_hrcareers",
-      "confidence_score": 1.0
+      "target": "hr_careers_hrcareers"
     },
     {
       "relation": "contains",
@@ -6886,9 +8038,9 @@
       "source_file": "app/(app)/hr/careers.tsx",
       "source_location": "L102",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_hr_careers_tsx",
-      "target": "hr_careers_styles",
-      "confidence_score": 1.0
+      "target": "hr_careers_styles"
     },
     {
       "relation": "imports",
@@ -6897,9 +8049,9 @@
       "source_file": "app/(app)/hr/departments.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_hr_departments_tsx",
-      "target": "hooks_use_theme_usetheme",
-      "confidence_score": 1.0
+      "target": "hooks_use_theme_usetheme"
     },
     {
       "relation": "imports_from",
@@ -6908,20 +8060,9 @@
       "source_file": "app/(app)/hr/departments.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_hr_departments_tsx",
-      "target": "services_hrservice_ts",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(app)/hr/departments.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "source": "app_app_hr_departments_tsx",
-      "target": "services_hrservice_hrservice",
-      "confidence_score": 1.0
+      "target": "services_hrservice_ts"
     },
     {
       "relation": "contains",
@@ -6929,9 +8070,9 @@
       "source_file": "app/(app)/hr/departments.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_hr_departments_tsx",
-      "target": "hr_departments_hrdepartments",
-      "confidence_score": 1.0
+      "target": "hr_departments_hrdepartments"
     },
     {
       "relation": "contains",
@@ -6939,9 +8080,9 @@
       "source_file": "app/(app)/hr/departments.tsx",
       "source_location": "L91",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_hr_departments_tsx",
-      "target": "hr_departments_styles",
-      "confidence_score": 1.0
+      "target": "hr_departments_styles"
     },
     {
       "relation": "imports",
@@ -6950,9 +8091,9 @@
       "source_file": "app/(app)/hr/directory.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_hr_directory_tsx",
-      "target": "hooks_use_theme_usetheme",
-      "confidence_score": 1.0
+      "target": "hooks_use_theme_usetheme"
     },
     {
       "relation": "imports_from",
@@ -6961,40 +8102,9 @@
       "source_file": "app/(app)/hr/directory.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_hr_directory_tsx",
-      "target": "services_hrservice_ts",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(app)/hr/directory.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "app_app_hr_directory_tsx",
-      "target": "services_hrservice_hrservice",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(app)/hr/directory.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "app_app_hr_directory_tsx",
-      "target": "hr_directory_hrdirectory",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(app)/hr/directory.tsx",
-      "source_location": "L92",
-      "weight": 1.0,
-      "source": "app_app_hr_directory_tsx",
-      "target": "hr_directory_styles",
-      "confidence_score": 1.0
+      "target": "services_hrservice_ts"
     },
     {
       "relation": "imports",
@@ -7003,9 +8113,9 @@
       "source_file": "app/(app)/hr/leave.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_hr_leave_tsx",
-      "target": "hooks_use_theme_usetheme",
-      "confidence_score": 1.0
+      "target": "hooks_use_theme_usetheme"
     },
     {
       "relation": "imports_from",
@@ -7014,20 +8124,9 @@
       "source_file": "app/(app)/hr/leave.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_hr_leave_tsx",
-      "target": "services_hrservice_ts",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(app)/hr/leave.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "app_app_hr_leave_tsx",
-      "target": "services_hrservice_hrservice",
-      "confidence_score": 1.0
+      "target": "services_hrservice_ts"
     },
     {
       "relation": "contains",
@@ -7035,9 +8134,9 @@
       "source_file": "app/(app)/hr/leave.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_hr_leave_tsx",
-      "target": "hr_leave_hrleave",
-      "confidence_score": 1.0
+      "target": "hr_leave_hrleave"
     },
     {
       "relation": "contains",
@@ -7045,9 +8144,9 @@
       "source_file": "app/(app)/hr/leave.tsx",
       "source_location": "L109",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_hr_leave_tsx",
-      "target": "hr_leave_styles",
-      "confidence_score": 1.0
+      "target": "hr_leave_styles"
     },
     {
       "relation": "imports",
@@ -7056,9 +8155,9 @@
       "source_file": "app/(app)/hr/more.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_hr_more_tsx",
-      "target": "hooks_use_theme_usetheme",
-      "confidence_score": 1.0
+      "target": "hooks_use_theme_usetheme"
     },
     {
       "relation": "contains",
@@ -7066,9 +8165,9 @@
       "source_file": "app/(app)/hr/more.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_hr_more_tsx",
-      "target": "hr_more_hrmore",
-      "confidence_score": 1.0
+      "target": "hr_more_hrmore"
     },
     {
       "relation": "contains",
@@ -7076,9 +8175,9 @@
       "source_file": "app/(app)/hr/more.tsx",
       "source_location": "L57",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_hr_more_tsx",
-      "target": "hr_more_styles",
-      "confidence_score": 1.0
+      "target": "hr_more_styles"
     },
     {
       "relation": "imports",
@@ -7087,9 +8186,9 @@
       "source_file": "app/(app)/hr/permissions.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_hr_permissions_tsx",
-      "target": "hooks_use_theme_usetheme",
-      "confidence_score": 1.0
+      "target": "hooks_use_theme_usetheme"
     },
     {
       "relation": "imports_from",
@@ -7098,20 +8197,9 @@
       "source_file": "app/(app)/hr/permissions.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_hr_permissions_tsx",
-      "target": "services_hrservice_ts",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(app)/hr/permissions.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "app_app_hr_permissions_tsx",
-      "target": "services_hrservice_hrservice",
-      "confidence_score": 1.0
+      "target": "services_hrservice_ts"
     },
     {
       "relation": "contains",
@@ -7119,9 +8207,9 @@
       "source_file": "app/(app)/hr/permissions.tsx",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_hr_permissions_tsx",
-      "target": "hr_permissions_hrpermissions",
-      "confidence_score": 1.0
+      "target": "hr_permissions_hrpermissions"
     },
     {
       "relation": "contains",
@@ -7129,9 +8217,9 @@
       "source_file": "app/(app)/hr/permissions.tsx",
       "source_location": "L126",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_hr_permissions_tsx",
-      "target": "hr_permissions_styles",
-      "confidence_score": 1.0
+      "target": "hr_permissions_styles"
     },
     {
       "relation": "imports",
@@ -7140,9 +8228,9 @@
       "source_file": "app/(app)/hr/reports.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_hr_reports_tsx",
-      "target": "hooks_use_theme_usetheme",
-      "confidence_score": 1.0
+      "target": "hooks_use_theme_usetheme"
     },
     {
       "relation": "imports_from",
@@ -7151,20 +8239,9 @@
       "source_file": "app/(app)/hr/reports.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_hr_reports_tsx",
-      "target": "services_hrservice_ts",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(app)/hr/reports.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "source": "app_app_hr_reports_tsx",
-      "target": "services_hrservice_hrservice",
-      "confidence_score": 1.0
+      "target": "services_hrservice_ts"
     },
     {
       "relation": "contains",
@@ -7172,9 +8249,9 @@
       "source_file": "app/(app)/hr/reports.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_hr_reports_tsx",
-      "target": "hr_reports_hrreports",
-      "confidence_score": 1.0
+      "target": "hr_reports_hrreports"
     },
     {
       "relation": "contains",
@@ -7182,9 +8259,9 @@
       "source_file": "app/(app)/hr/reports.tsx",
       "source_location": "L73",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_hr_reports_tsx",
-      "target": "hr_reports_styles",
-      "confidence_score": 1.0
+      "target": "hr_reports_styles"
     },
     {
       "relation": "imports",
@@ -7193,9 +8270,9 @@
       "source_file": "app/(app)/hr/tools.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_hr_tools_tsx",
-      "target": "hooks_use_theme_usetheme",
-      "confidence_score": 1.0
+      "target": "hooks_use_theme_usetheme"
     },
     {
       "relation": "imports_from",
@@ -7204,20 +8281,9 @@
       "source_file": "app/(app)/hr/tools.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_hr_tools_tsx",
-      "target": "services_hrservice_ts",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app/(app)/hr/tools.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "source": "app_app_hr_tools_tsx",
-      "target": "services_hrservice_hrservice",
-      "confidence_score": 1.0
+      "target": "services_hrservice_ts"
     },
     {
       "relation": "contains",
@@ -7225,9 +8291,9 @@
       "source_file": "app/(app)/hr/tools.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_hr_tools_tsx",
-      "target": "hr_tools_hrtools",
-      "confidence_score": 1.0
+      "target": "hr_tools_hrtools"
     },
     {
       "relation": "contains",
@@ -7235,19 +8301,9 @@
       "source_file": "app/(app)/hr/tools.tsx",
       "source_location": "L90",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_app_hr_tools_tsx",
-      "target": "hr_tools_styles",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "services/hrService.ts",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "services_hrservice_ts",
-      "target": "services_hrservice_hrservice",
-      "confidence_score": 1.0
+      "target": "hr_tools_styles"
     },
     {
       "relation": "imports",
@@ -7509,16 +8565,6 @@
       "target": "erp_app_app_expo"
     },
     {
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "source_file": "package.json",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "package_json",
-      "target": "app_json"
-    },
-    {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -7652,36 +8698,6 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "app.json",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_app_expo",
-      "target": "erp_app_package_name"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app.json",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_app_expo",
-      "target": "erp_app_package_version"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L20",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_dependencies",
-      "target": "erp_app_app_expo"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "app.json",
       "source_location": "L7",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -7697,16 +8713,6 @@
       "confidence_score": 1.0,
       "source": "erp_app_app_expo_ios",
       "target": "erp_app_app_ios_icon"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_scripts",
-      "target": "erp_app_app_expo_ios"
     },
     {
       "relation": "contains",
@@ -7727,16 +8733,6 @@
       "confidence_score": 1.0,
       "source": "erp_app_app_expo_android",
       "target": "erp_app_app_android_predictivebackgestureenabled"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_scripts",
-      "target": "erp_app_app_expo_android"
     },
     {
       "relation": "contains",
@@ -7801,16 +8797,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_scripts",
-      "target": "erp_app_app_expo_web"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "app.json",
       "source_location": "L40",
       "weight": 1.0,
@@ -7867,537 +8853,6 @@
       "confidence_score": 1.0,
       "source": "metro_config_js",
       "target": "erp_app_metro_config_config"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_json",
-      "target": "erp_app_package_name"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_json",
-      "target": "erp_app_package_main"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_json",
-      "target": "erp_app_package_version"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_json",
-      "target": "erp_app_package_scripts"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_json",
-      "target": "erp_app_package_dependencies"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L44",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_json",
-      "target": "erp_app_package_devdependencies"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L48",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_json",
-      "target": "erp_app_package_private"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/web-badge.tsx",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_web_badge_tsx",
-      "target": "package_json"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "source_file": "tsconfig.json",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "tsconfig_json",
-      "target": "package_json"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_scripts",
-      "target": "erp_app_package_scripts_start"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_scripts",
-      "target": "erp_app_package_scripts_reset_project"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_scripts",
-      "target": "erp_app_package_scripts_android"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_scripts",
-      "target": "erp_app_package_scripts_ios"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_scripts",
-      "target": "erp_app_package_scripts_web"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_scripts",
-      "target": "erp_app_package_scripts_lint"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_scripts",
-      "target": "scripts_reset_project_js"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_dependencies",
-      "target": "erp_app_package_dependencies_expo_google_fonts_plus_jakarta_sans"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L15",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_dependencies",
-      "target": "erp_app_package_dependencies_react_native_async_storage_async_storage"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_dependencies",
-      "target": "erp_app_package_dependencies_react_native_community_datetimepicker"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L43",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_dependencies",
-      "target": "erp_app_package_dependencies_react_native_community_slider"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_dependencies",
-      "target": "erp_app_package_dependencies_react_navigation_bottom_tabs"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_dependencies",
-      "target": "erp_app_package_dependencies_react_navigation_drawer"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L18",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_dependencies",
-      "target": "erp_app_package_dependencies_react_navigation_elements"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L19",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_dependencies",
-      "target": "erp_app_package_dependencies_react_navigation_native"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L21",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_dependencies",
-      "target": "erp_app_package_dependencies_axios"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L20",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_dependencies",
-      "target": "erp_app_package_dependencies_expo"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L21",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_dependencies",
-      "target": "erp_app_package_dependencies_expo_constants"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L22",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_dependencies",
-      "target": "erp_app_package_dependencies_expo_device"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L23",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_dependencies",
-      "target": "erp_app_package_dependencies_expo_font"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L24",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_dependencies",
-      "target": "erp_app_package_dependencies_expo_glass_effect"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L25",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_dependencies",
-      "target": "erp_app_package_dependencies_expo_image"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L26",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_dependencies",
-      "target": "erp_app_package_dependencies_expo_linking"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L28",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_dependencies",
-      "target": "erp_app_package_dependencies_expo_location"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L27",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_dependencies",
-      "target": "erp_app_package_dependencies_expo_router"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L28",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_dependencies",
-      "target": "erp_app_package_dependencies_expo_splash_screen"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L29",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_dependencies",
-      "target": "erp_app_package_dependencies_expo_status_bar"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L30",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_dependencies",
-      "target": "erp_app_package_dependencies_expo_symbols"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L31",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_dependencies",
-      "target": "erp_app_package_dependencies_expo_system_ui"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L32",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_dependencies",
-      "target": "erp_app_package_dependencies_expo_web_browser"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L33",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_dependencies",
-      "target": "erp_app_package_dependencies_lucide_react_native"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L34",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_dependencies",
-      "target": "erp_app_package_dependencies_react"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L35",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_dependencies",
-      "target": "erp_app_package_dependencies_react_dom"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L41",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_dependencies",
-      "target": "erp_app_package_dependencies_react_native"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L37",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_dependencies",
-      "target": "erp_app_package_dependencies_react_native_gesture_handler"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L38",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_dependencies",
-      "target": "erp_app_package_dependencies_react_native_reanimated"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L39",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_dependencies",
-      "target": "erp_app_package_dependencies_react_native_safe_area_context"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L40",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_dependencies",
-      "target": "erp_app_package_dependencies_react_native_screens"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L41",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_dependencies",
-      "target": "erp_app_package_dependencies_react_native_web"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L42",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_dependencies",
-      "target": "erp_app_package_dependencies_react_native_worklets"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L45",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_devdependencies",
-      "target": "erp_app_package_devdependencies_types_react"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L46",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_devdependencies",
-      "target": "erp_app_package_devdependencies_eslint"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L47",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_devdependencies",
-      "target": "erp_app_package_devdependencies_eslint_config_expo"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L46",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "erp_app_package_devdependencies",
-      "target": "erp_app_package_devdependencies_typescript"
     },
     {
       "relation": "contains",
@@ -10749,61 +11204,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/app/(app)/workspace/chat.tsx",
-      "source_location": "L36",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_workspace_chat_tsx",
-      "target": "src_app_app_workspace_types_ts"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/chat.tsx",
-      "source_location": "L36",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_workspace_chat_tsx",
-      "target": "workspace_types_chatmessage"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/chat.tsx",
-      "source_location": "L36",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_workspace_chat_tsx",
-      "target": "workspace_types_chatthread"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/chat.tsx",
-      "source_location": "L36",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_workspace_chat_tsx",
-      "target": "workspace_types_chatattachment"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/chat.tsx",
-      "source_location": "L36",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_workspace_chat_tsx",
-      "target": "workspace_types_entitylink"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/chat.tsx",
       "source_location": "L37",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -11726,50 +12126,6 @@
       "confidence_score": 1.0,
       "source": "src_app_app_workspace_messages_tsx",
       "target": "context_authcontext_useauth"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/messages.tsx",
-      "source_location": "L36",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_workspace_messages_tsx",
-      "target": "src_app_app_workspace_types_ts"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/messages.tsx",
-      "source_location": "L36",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_workspace_messages_tsx",
-      "target": "workspace_types_chatthread"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/messages.tsx",
-      "source_location": "L36",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_workspace_messages_tsx",
-      "target": "workspace_types_staffresource"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/messages.tsx",
-      "source_location": "L36",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_workspace_messages_tsx",
-      "target": "workspace_types_departmentresource"
     },
     {
       "relation": "imports_from",
@@ -13290,243 +13646,6 @@
       "weight": 1.0,
       "source": "workspace_layout_workspacelayout",
       "target": "use_theme_usetheme"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/types.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_workspace_types_ts",
-      "target": "workspace_types_chatattachment"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/types.ts",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_workspace_types_ts",
-      "target": "workspace_types_entitylink"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/types.ts",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_workspace_types_ts",
-      "target": "workspace_types_chatmessagemetadata"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/types.ts",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_workspace_types_ts",
-      "target": "workspace_types_chatmessage"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/types.ts",
-      "source_location": "L35",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_workspace_types_ts",
-      "target": "workspace_types_chatparticipant"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/types.ts",
-      "source_location": "L50",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_workspace_types_ts",
-      "target": "workspace_types_chatthread"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/types.ts",
-      "source_location": "L70",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_workspace_types_ts",
-      "target": "workspace_types_staffresource"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/app/(app)/workspace/types.ts",
-      "source_location": "L77",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_app_workspace_types_ts",
-      "target": "workspace_types_departmentresource"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "_types.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "types_ts",
-      "target": "workspace_types_chatattachment"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "chat.tsx",
-      "source_location": "L36",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "chat_tsx",
-      "target": "workspace_types_chatattachment"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "_types.ts",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "types_ts",
-      "target": "workspace_types_entitylink"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "chat.tsx",
-      "source_location": "L36",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "chat_tsx",
-      "target": "workspace_types_entitylink"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "_types.ts",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "types_ts",
-      "target": "workspace_types_chatmessagemetadata"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "_types.ts",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "types_ts",
-      "target": "workspace_types_chatmessage"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "chat.tsx",
-      "source_location": "L36",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "chat_tsx",
-      "target": "workspace_types_chatmessage"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "_types.ts",
-      "source_location": "L35",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "types_ts",
-      "target": "workspace_types_chatparticipant"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "_types.ts",
-      "source_location": "L50",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "types_ts",
-      "target": "workspace_types_chatthread"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "chat.tsx",
-      "source_location": "L36",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "chat_tsx",
-      "target": "workspace_types_chatthread"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "messages.tsx",
-      "source_location": "L36",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "messages_tsx",
-      "target": "workspace_types_chatthread"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "_types.ts",
-      "source_location": "L70",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "types_ts",
-      "target": "workspace_types_staffresource"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "messages.tsx",
-      "source_location": "L36",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "messages_tsx",
-      "target": "workspace_types_staffresource"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "_types.ts",
-      "source_location": "L77",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "types_ts",
-      "target": "workspace_types_departmentresource"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "messages.tsx",
-      "source_location": "L36",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "messages_tsx",
-      "target": "workspace_types_departmentresource"
     },
     {
       "relation": "imports_from",
@@ -19619,5 +19738,5 @@
       "source_file": "src/app/(onboarding)/index.tsx"
     }
   ],
-  "built_at_commit": "4bc1a0440cc98e988f1cc8b0ae4ef596c06d0e61"
+  "built_at_commit": "b0060dffe82a6f0fee4d0469a49adf8a71dc906e"
 }
