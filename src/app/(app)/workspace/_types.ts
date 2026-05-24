@@ -78,3 +78,5 @@ export interface DepartmentResource {
   id: number;
   name: string;
 }
+
+export default function Types() { return null; }

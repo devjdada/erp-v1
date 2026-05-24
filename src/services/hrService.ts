@@ -1,8 +1,8 @@
 import api from './api';
 
 export const hrService = {
-  getDirectory: async () => {
-    const response = await api.get('/staff');
+  getDirectory: async (params?: any) => {
+    const response = await api.get('/staff', { params });
     return response.data;
   },
   getAttendance: async () => {

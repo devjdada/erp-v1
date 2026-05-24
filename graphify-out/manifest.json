@@ -55,8 +55,8 @@
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\.expo\\types\\router.d.ts": {
-    "mtime": 1779565010.0244052,
-    "ast_hash": "7fc68092d492518378b1636de3129879",
+    "mtime": 1779606823.507376,
+    "ast_hash": "c495765622c1681b390f50395f46e333",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\.vscode\\extensions.json": {
@@ -95,8 +95,8 @@
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\app\\(app)\\_layout.tsx": {
-    "mtime": 1779229189.1219964,
-    "ast_hash": "e25e08cdafc00a4a574ed3d5c6afdcf6",
+    "mtime": 1779606048.3269255,
+    "ast_hash": "d42275a044eef4fdfd1cf3f60b10094d",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\app\\(app)\\fleet\\index.tsx": {
@@ -112,6 +112,56 @@
   "C:\\erp\\erp-app\\src\\app\\(app)\\fleet\\_layout.tsx": {
     "mtime": 1779227270.3423212,
     "ast_hash": "84a19dfc0d55881d40833a9bef65ee61",
+    "semantic_hash": ""
+  },
+  "C:\\erp\\erp-app\\src\\app\\(app)\\hr\\attendance.tsx": {
+    "mtime": 1779606491.7836263,
+    "ast_hash": "eda41d3a3519254455c5604b6c7f8a09",
+    "semantic_hash": ""
+  },
+  "C:\\erp\\erp-app\\src\\app\\(app)\\hr\\careers.tsx": {
+    "mtime": 1779606800.1267037,
+    "ast_hash": "16350a6fd53f9e8253b390d299aee8fa",
+    "semantic_hash": ""
+  },
+  "C:\\erp\\erp-app\\src\\app\\(app)\\hr\\departments.tsx": {
+    "mtime": 1779606777.2189674,
+    "ast_hash": "7dcef3b1d65e495a65e25b0b7ecd6dd5",
+    "semantic_hash": ""
+  },
+  "C:\\erp\\erp-app\\src\\app\\(app)\\hr\\directory.tsx": {
+    "mtime": 1779606452.3260572,
+    "ast_hash": "c2b5246a84bf37b26fcee4f785628802",
+    "semantic_hash": ""
+  },
+  "C:\\erp\\erp-app\\src\\app\\(app)\\hr\\leave.tsx": {
+    "mtime": 1779606575.1512253,
+    "ast_hash": "9bb7315ab070474a1a20cb48f853c8d4",
+    "semantic_hash": ""
+  },
+  "C:\\erp\\erp-app\\src\\app\\(app)\\hr\\more.tsx": {
+    "mtime": 1779606718.9472344,
+    "ast_hash": "053c0d5a73f409938591b724a1832016",
+    "semantic_hash": ""
+  },
+  "C:\\erp\\erp-app\\src\\app\\(app)\\hr\\permissions.tsx": {
+    "mtime": 1779606614.7567186,
+    "ast_hash": "f4d6526d2fb16951952f12b6c602f89d",
+    "semantic_hash": ""
+  },
+  "C:\\erp\\erp-app\\src\\app\\(app)\\hr\\reports.tsx": {
+    "mtime": 1779606748.3676493,
+    "ast_hash": "4afdda4d4209e0ec4b8deb1c851172b7",
+    "semantic_hash": ""
+  },
+  "C:\\erp\\erp-app\\src\\app\\(app)\\hr\\tools.tsx": {
+    "mtime": 1779606822.3748665,
+    "ast_hash": "c733c7123276bac5379d2d6d2cfb58f1",
+    "semantic_hash": ""
+  },
+  "C:\\erp\\erp-app\\src\\app\\(app)\\hr\\_layout.tsx": {
+    "mtime": 1779606078.9069188,
+    "ast_hash": "6d3386ea872a652ac0f53e71f19611b0",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\app\\(app)\\workspace\\announcements.tsx": {
@@ -362,6 +412,11 @@
   "C:\\erp\\erp-app\\src\\services\\authService.ts": {
     "mtime": 1779336904.6845007,
     "ast_hash": "17cb96b9fa62ed797bdb113e4ae67b57",
+    "semantic_hash": ""
+  },
+  "C:\\erp\\erp-app\\src\\services\\hrService.ts": {
+    "mtime": 1779606424.3362517,
+    "ast_hash": "7d693e9e9f70322bf0d065070674c1c3",
     "semantic_hash": ""
   },
   "C:\\erp\\erp-app\\src\\services\\leaveService.ts": {
