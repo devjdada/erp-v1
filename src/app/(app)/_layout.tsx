@@ -2,7 +2,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Drawer } from 'expo-router/drawer';
 import React from 'react';
 import { useTheme } from '@/hooks/use-theme';
-import { Briefcase, Truck, Settings } from 'lucide-react-native';
+import { Briefcase, Truck, Settings, Users } from 'lucide-react-native';
 import CustomDrawerContent from '@/components/CustomDrawerContent';
 
 export default function AppLayout() {
@@ -53,6 +53,13 @@ export default function AppLayout() {
           options={{
             title: 'Fleet Management',
             drawerIcon: ({ color, size }) => <Truck color={color} size={size} />,
+          }}
+        />
+        <Drawer.Screen
+          name="hr"
+          options={{
+            title: 'HR',
+            drawerIcon: ({ color, size }) => <Users color={color} size={size} />,
           }}
         />
         <Drawer.Screen
